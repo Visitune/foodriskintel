@@ -1,7 +1,7 @@
 name: Monthly Food Risk Intelligence Update
 on:
   schedule:
-    - cron: '0 8 15 * *'
+    - cron: '0 8 28 * *'
   workflow_dispatch:
 
 jobs:
@@ -25,5 +25,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/inventory.json data/inventory_ffn.json data/raw_extractions.json data/raw_ffn_extractions.json data/dataset.json data/dataset_ffn.json data/dataset_cross.json app/public/dataset.json app/public/dataset_ffn.json app/public/dataset_cross.json
-          git diff --staged --quiet || git commit -m "chore(data): monthly update $(date -u +%Y-%m-%d) [skip ci]"
+          git diff --staged --quiet || git commit -m "chore(data): monthly update $(date -u +%Y-%m-%d)"
           git push || echo "nothing to push"

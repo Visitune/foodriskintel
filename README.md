@@ -45,7 +45,7 @@ python scripts/build_ffn_dataset.py     # → data/dataset_ffn.json + dataset_cr
 Copy-Item data\dataset.json, data\dataset_ffn.json, data\dataset_cross.json app\public\
 ```
 
-`python scripts/update_monthly.py` rejoue toute la chaîne mensuellement (utilisé par la GitHub Action planifiée le 15 de chaque mois).
+`python scripts/update_monthly.py` rejoue toute la chaîne. La GitHub Action est planifiée **le 28 de chaque mois** : l'IFS et la DG SANTE publient le rapport du mois M entre le ~20 et le ~27 du mois M+1, donc le run du 28 récupère le nouveau mois dès sa sortie. Chaque run qui modifie les datasets déclenche automatiquement le re-déploiement Pages.
 
 ## 📁 Structure
 
