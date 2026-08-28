@@ -1,0 +1,2620 @@
+{
+  "generated_at": "2026-08-28T15:58:56.201607",
+  "total_reports": 27,
+  "extractions": [
+    {
+      "file": "IFS_Trend_Risk_Report_February_2024.pdf",
+      "publication_month": "February",
+      "publication_year": 2024,
+      "data_period": null,
+      "recalls": {
+        "England": 16,
+        "Iceland": 7,
+        "Denmark": 5,
+        "Finnland": 6,
+        "Ireland": 13,
+        "Scotland": 13,
+        "Netherlands": 9,
+        "Poland": 3,
+        "Hungary": 1,
+        "Canada": 18,
+        "Luxembourg": 19,
+        "Germany": 21,
+        "Czech Rep.": 50,
+        "Slovakia": 0,
+        "South Korea": 9,
+        "Japan": 37,
+        "USA (FDA)": 34,
+        "Belgium": 41,
+        "France": 160,
+        "Austria": 3,
+        "Croatia": 7,
+        "Romania": 9,
+        "Spain": 4,
+        "China": 4,
+        "Israel": 0,
+        "Italy": 17,
+        "Greece": 0,
+        "Viet Nam": 0,
+        "Brazil": 0,
+        "Philippines": 70,
+        "Singapore": 6,
+        "Argentina": 0,
+        "Australia": 5,
+        "New Zealand": 5
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Meats",
+          "reason_raw": "Contraband",
+          "country_raw": "Cambodia",
+          "detected_in": "Feb 2024"
+        },
+        {
+          "product_raw": "Buffalo meat",
+          "reason_raw": "Contraband",
+          "country_raw": "Thailand",
+          "detected_in": "Feb 2024"
+        },
+        {
+          "product_raw": "Chicken",
+          "reason_raw": "Document forgery",
+          "country_raw": "UK",
+          "detected_in": "Feb 2024"
+        },
+        {
+          "product_raw": "Bushmeat",
+          "reason_raw": "Grey market",
+          "country_raw": "Belgium",
+          "detected_in": "Feb 2024"
+        },
+        {
+          "product_raw": "Fish",
+          "reason_raw": "Grey market",
+          "country_raw": "Italy",
+          "detected_in": "Feb 2024"
+        },
+        {
+          "product_raw": "Octopus and fish",
+          "reason_raw": "Grey market",
+          "country_raw": "Spain",
+          "detected_in": "Feb 2024"
+        },
+        {
+          "product_raw": "Seafood",
+          "reason_raw": "Product tampering",
+          "country_raw": "Italy",
+          "detected_in": "Feb 2024"
+        },
+        {
+          "product_raw": "Fish and\nSeafood",
+          "reason_raw": "Adulteration",
+          "country_raw": "Mexico",
+          "detected_in": "Feb 2024"
+        },
+        {
+          "product_raw": "Eggs",
+          "reason_raw": "Grey market",
+          "country_raw": "Burkina Faso",
+          "detected_in": "Feb 2024"
+        },
+        {
+          "product_raw": "Rice",
+          "reason_raw": "Misbranding",
+          "country_raw": "India",
+          "detected_in": "Feb 2024"
+        },
+        {
+          "product_raw": "Honey",
+          "reason_raw": "Adulteration",
+          "country_raw": "Brazil",
+          "detected_in": "Feb 2024"
+        },
+        {
+          "product_raw": "Flour",
+          "reason_raw": "Product tampering",
+          "country_raw": "Brazil",
+          "detected_in": "Feb 2024"
+        },
+        {
+          "product_raw": "Traditional dairy\nproducts",
+          "reason_raw": "Adulteration",
+          "country_raw": "Pakistan",
+          "detected_in": "Feb 2024"
+        },
+        {
+          "product_raw": "Mineral Water",
+          "reason_raw": "Product tampering\n/ Mislabelling",
+          "country_raw": "France",
+          "detected_in": "Feb 2024"
+        },
+        {
+          "product_raw": "Liquor",
+          "reason_raw": "Grey market",
+          "country_raw": "India",
+          "detected_in": "Feb 2024"
+        }
+      ],
+      "errors": [],
+      "source_url": "https://www.foodsafetykongress.de/files/hut/FoodSafetyKongress2024/Blog/IFS_Trend_Risk_Report_February_2024.pdf",
+      "report_id": "ifs-2024-feb"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_April_2024.pdf",
+      "publication_month": "April",
+      "publication_year": 2024,
+      "data_period": null,
+      "recalls": {
+        "England": 10,
+        "Iceland": 6,
+        "Denmark": 5,
+        "Finnland": 1,
+        "Ireland": 10,
+        "Scotland": 9,
+        "Netherlands": 6,
+        "Poland": 9,
+        "Hungary": 1,
+        "Canada": 10,
+        "Luxembourg": 10,
+        "Germany": 20,
+        "Czech Rep.": 31,
+        "Slovakia": 0,
+        "South Korea": 9,
+        "Japan": 64,
+        "USA (FDA)": 17,
+        "France": 147,
+        "Austria": 2,
+        "Croatia": 7,
+        "Romania": 1,
+        "Spain": 16,
+        "China": 1,
+        "Israel": 2,
+        "Italy": 95,
+        "Greece": 3,
+        "Viet Nam": 1,
+        "Brazil": 4,
+        "Philippines": 50,
+        "Singapore": 10,
+        "Argentina": 0,
+        "Australia": 9,
+        "New Zealand": 5
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Various foods",
+          "reason_raw": "Contraband",
+          "country_raw": "Italy",
+          "detected_in": "April 2024"
+        },
+        {
+          "product_raw": "Meat",
+          "reason_raw": "Grey market",
+          "country_raw": "Malaysia",
+          "detected_in": "April 2024"
+        },
+        {
+          "product_raw": "Meat",
+          "reason_raw": "Product tampering",
+          "country_raw": "Italy",
+          "detected_in": "April 2024"
+        },
+        {
+          "product_raw": "Meat",
+          "reason_raw": "Grey market",
+          "country_raw": "UK",
+          "detected_in": "April 2024"
+        },
+        {
+          "product_raw": "Fish",
+          "reason_raw": "Grey market",
+          "country_raw": "Italy",
+          "detected_in": "April 2024"
+        },
+        {
+          "product_raw": "Mussels",
+          "reason_raw": "Grey market",
+          "country_raw": "Italy",
+          "detected_in": "April 2024"
+        },
+        {
+          "product_raw": "Fruit &\nVegetables",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Spain",
+          "detected_in": "April 2024"
+        },
+        {
+          "product_raw": "Garlic &\nOnions",
+          "reason_raw": "Grey market",
+          "country_raw": "Brazil",
+          "detected_in": "April 2024"
+        },
+        {
+          "product_raw": "Fruit &\nVegetables",
+          "reason_raw": "Product tampering",
+          "country_raw": "India",
+          "detected_in": "April 2024"
+        },
+        {
+          "product_raw": "Berries & Fruits",
+          "reason_raw": "Grey market",
+          "country_raw": "Russia",
+          "detected_in": "April 2024"
+        },
+        {
+          "product_raw": "Honey",
+          "reason_raw": "Adulteration",
+          "country_raw": "USA",
+          "detected_in": "April 2024"
+        },
+        {
+          "product_raw": "Milk and Milk\nproducts",
+          "reason_raw": "Adulteration",
+          "country_raw": "Italy",
+          "detected_in": "April 2024"
+        },
+        {
+          "product_raw": "Wine",
+          "reason_raw": "Grey market",
+          "country_raw": "Ireland",
+          "detected_in": "April 2024"
+        },
+        {
+          "product_raw": "Non-alcoholic\nbeverages",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Pakistan",
+          "detected_in": "April 2024"
+        },
+        {
+          "product_raw": "Olive oil",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Italy",
+          "detected_in": "April 2024"
+        }
+      ],
+      "errors": [],
+      "source_url": "https://www.foodsafetykongress.de/files/hut/FoodSafetyKongress2024/Blog/IFS_Trend_Risk_Report_April_2024.pdf",
+      "report_id": "ifs-2024-apr"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_June_2024.pdf",
+      "publication_month": "June",
+      "publication_year": 2024,
+      "data_period": null,
+      "recalls": {
+        "England": 18,
+        "Iceland": 1,
+        "Denmark": 3,
+        "Finnland": 2,
+        "Ireland": 5,
+        "Scotland": 13,
+        "Netherlands": 8,
+        "Poland": 4,
+        "Hungary": 3,
+        "Canada": 15,
+        "Luxembourg": 13,
+        "Germany": 22,
+        "Czech Rep.": 32,
+        "South Korea": 8,
+        "Japan": 57,
+        "USA (FDA)": 29,
+        "Belgium": 36,
+        "France": 116,
+        "Austria": 0,
+        "Croatia": 8,
+        "Romania": 1,
+        "Spain": 6,
+        "China": 5,
+        "Israel": 6,
+        "Italy": 35,
+        "Greece": 3,
+        "Viet Nam": 0,
+        "Brazil": 23,
+        "Philippines": 54,
+        "Singapore": 2,
+        "Argentina": 0,
+        "Australia": 10,
+        "New Zealand": 4
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Various foods",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Portugal",
+          "detected_in": "June 24"
+        },
+        {
+          "product_raw": "Meat",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Lithuania",
+          "detected_in": "June 24"
+        },
+        {
+          "product_raw": "Chicken",
+          "reason_raw": "Document forgery",
+          "country_raw": "Türkiye",
+          "detected_in": "June 24"
+        },
+        {
+          "product_raw": "Fish",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Italy",
+          "detected_in": "June 24"
+        },
+        {
+          "product_raw": "Fish",
+          "reason_raw": "Document forgery",
+          "country_raw": "Italy",
+          "detected_in": "June 24"
+        },
+        {
+          "product_raw": "Clams",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Italy",
+          "detected_in": "June 24"
+        },
+        {
+          "product_raw": "Cheese",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Austria",
+          "detected_in": "June 24"
+        },
+        {
+          "product_raw": "Tomatoes",
+          "reason_raw": "Smuggling",
+          "country_raw": "Paraguay",
+          "detected_in": "June 24"
+        },
+        {
+          "product_raw": "Citrus fruits",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Spain",
+          "detected_in": "June 24"
+        },
+        {
+          "product_raw": "Rice",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Burkina Faso",
+          "detected_in": "June 24"
+        },
+        {
+          "product_raw": "Sugar",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Bangladesh",
+          "detected_in": "June 24"
+        },
+        {
+          "product_raw": "Liquor",
+          "reason_raw": "Product tampering",
+          "country_raw": "Morocco",
+          "detected_in": "June 24"
+        },
+        {
+          "product_raw": "Alcohol",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Colombia",
+          "detected_in": "June 24"
+        },
+        {
+          "product_raw": "Spices",
+          "reason_raw": "Product tampering",
+          "country_raw": "India",
+          "detected_in": "June 24"
+        },
+        {
+          "product_raw": "Cocoa beans",
+          "reason_raw": "Smuggling",
+          "country_raw": "Ghana",
+          "detected_in": "June 24"
+        }
+      ],
+      "errors": [],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_June_2024.pdf",
+      "report_id": "ifs-2024-jun"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_July_2024.pdf",
+      "publication_month": "July",
+      "publication_year": 2024,
+      "data_period": null,
+      "recalls": {
+        "England": 12,
+        "Iceland": 4,
+        "Denmark": 8,
+        "Finnland": 3,
+        "Ireland": 15,
+        "Scotland": 10,
+        "Netherlands": 5,
+        "Poland": 6,
+        "Hungary": 5,
+        "Canada": 9,
+        "Luxembourg": 8,
+        "Germany": 37,
+        "Czech Rep.": 11,
+        "South Korea": 8,
+        "Japan": 33,
+        "USA (FDA)": 25,
+        "Belgium": 27,
+        "France": 209,
+        "Austria": 0,
+        "Croatia": 13,
+        "Romania": 5,
+        "Spain": 8,
+        "China": 2,
+        "Israel": 7,
+        "Italy": 36,
+        "Greece": 3,
+        "Viet Nam": 0,
+        "Brazil": 13,
+        "Philippines": 71,
+        "Singapore": 0,
+        "Argentina": 0,
+        "Australia": 12,
+        "New Zealand": 23
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Various foods",
+          "reason_raw": "Document forgery",
+          "country_raw": "Brazil",
+          "detected_in": "July 24"
+        },
+        {
+          "product_raw": "Meats",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Portugal",
+          "detected_in": "July 24"
+        },
+        {
+          "product_raw": "Meats",
+          "reason_raw": "Document forgery",
+          "country_raw": "Spain",
+          "detected_in": "July 24"
+        },
+        {
+          "product_raw": "Fish",
+          "reason_raw": "Document forgery",
+          "country_raw": "Italy",
+          "detected_in": "July 24"
+        },
+        {
+          "product_raw": "Fish",
+          "reason_raw": "Document forgery",
+          "country_raw": "Italy",
+          "detected_in": "July 24"
+        },
+        {
+          "product_raw": "Baby eels",
+          "reason_raw": "Grey market",
+          "country_raw": "Canada",
+          "detected_in": "July 24"
+        },
+        {
+          "product_raw": "Mozarella",
+          "reason_raw": "Document forgery",
+          "country_raw": "Italy",
+          "detected_in": "July 24"
+        },
+        {
+          "product_raw": "Milk",
+          "reason_raw": "Adulteration",
+          "country_raw": "Malaysia",
+          "detected_in": "July 24"
+        },
+        {
+          "product_raw": "Flour",
+          "reason_raw": "Document forgery",
+          "country_raw": "Bolivia",
+          "detected_in": "July 24"
+        },
+        {
+          "product_raw": "Wine",
+          "reason_raw": "Adulteration",
+          "country_raw": "Brazil",
+          "detected_in": "July 24"
+        },
+        {
+          "product_raw": "Alcohol",
+          "reason_raw": "Adulteration",
+          "country_raw": "India",
+          "detected_in": "July 24"
+        },
+        {
+          "product_raw": "Alcohol",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Colombia",
+          "detected_in": "July 24"
+        },
+        {
+          "product_raw": "Spices",
+          "reason_raw": "Grey market",
+          "country_raw": "Pakistan",
+          "detected_in": "July 24"
+        }
+      ],
+      "errors": [],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_July_2024.pdf",
+      "report_id": "ifs-2024-jul"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_September_2024.pdf",
+      "publication_month": "September",
+      "publication_year": 2024,
+      "data_period": null,
+      "recalls": {
+        "England": 23,
+        "Iceland": 6,
+        "Denmark": 9,
+        "Finnland": 2,
+        "Ireland": 11,
+        "Scotland": 22,
+        "Netherlands": 9,
+        "Poland": 3,
+        "Hungary": 3,
+        "Canada": 12,
+        "Luxembourg": 14,
+        "Germany": 25,
+        "Czech Rep.": 48,
+        "South Korea": 0,
+        "Japan": 53,
+        "USA (FDA)": 12,
+        "Belgium": 23,
+        "France": 178,
+        "Austria": 3,
+        "Croatia": 6,
+        "Romania": 1,
+        "Spain": 6,
+        "China": 3,
+        "Israel": 9,
+        "Italy": 35,
+        "Greece": 3,
+        "Viet Nam": 0,
+        "Brazil": 5,
+        "Philippines": 64,
+        "Singapore": 9,
+        "Argentina": 0,
+        "Australia": 5,
+        "New Zealand": 5
+      },
+      "food_fraud": [],
+      "errors": [],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_September_2024.pdf",
+      "report_id": "ifs-2024-sep"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_October_2024.pdf",
+      "publication_month": "October",
+      "publication_year": 2024,
+      "data_period": null,
+      "recalls": {
+        "England": 23,
+        "Iceland": 8,
+        "Denmark": 14,
+        "Finnland": 3,
+        "Ireland": 17,
+        "Scotland": 28,
+        "Netherlands": 12,
+        "Poland": 7,
+        "Hungary": 8,
+        "Canada": 20,
+        "Luxembourg": 22,
+        "Germany": 25,
+        "Czech Rep.": 41,
+        "South Korea": 10,
+        "Japan": 54,
+        "USA (FDA)": 21,
+        "Belgium": 39,
+        "France": 263,
+        "Austria": 8,
+        "Croatia": 10,
+        "Romania": 4,
+        "Spain": 14,
+        "China": 2,
+        "Israel": 7,
+        "Italy": 15,
+        "Greece": 2,
+        "Viet Nam": 0,
+        "Brazil": 2,
+        "Philippines": 58,
+        "Singapore": 3,
+        "Argentina": 0,
+        "Australia": 5,
+        "New Zealand": 9
+      },
+      "food_fraud": [],
+      "errors": [],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_October_2024.pdf",
+      "report_id": "ifs-2024-oct"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_November_2024.pdf",
+      "publication_month": "November",
+      "publication_year": 2024,
+      "data_period": null,
+      "recalls": {
+        "England": 18,
+        "Iceland": 4,
+        "Denmark": 12,
+        "Finnland": 7,
+        "Ireland": 15,
+        "Scotland": 23,
+        "Netherlands": 11,
+        "Poland": 10,
+        "Hungary": 4,
+        "Canada": 23,
+        "Luxembourg": 15,
+        "Germany": 32,
+        "Czech Rep.": 20,
+        "South Korea": 31,
+        "Japan": 53,
+        "USA (FDA)": 25,
+        "Belgium": 31,
+        "France": 234,
+        "Austria": 7,
+        "Croatia": 11,
+        "Romania": 1,
+        "Spain": 5,
+        "China": 5,
+        "Israel": 9,
+        "Italy": 44,
+        "Greece": 3,
+        "Viet Nam": 1,
+        "Brazil": 3,
+        "Philippines": 116,
+        "Singapore": 2,
+        "Argentina": 5,
+        "Australia": 5,
+        "New Zealand": 8
+      },
+      "food_fraud": [],
+      "errors": [],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_November_2024.pdf",
+      "report_id": "ifs-2024-nov"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_December_2024.pdf",
+      "publication_month": "December",
+      "publication_year": 2024,
+      "data_period": null,
+      "recalls": {
+        "England": 8,
+        "Iceland": 3,
+        "Denmark": 4,
+        "Finnland": 5,
+        "Ireland": 7,
+        "Scotland": 8,
+        "Netherlands": 8,
+        "Poland": 5,
+        "Hungary": 4,
+        "Canada": 28,
+        "Luxembourg": 12,
+        "Germany": 21,
+        "Czech Rep.": 42,
+        "South Korea": 3,
+        "Japan": 46,
+        "USA (FDA)": 25,
+        "Belgium": 29,
+        "France": 122,
+        "Austria": 5,
+        "Croatia": 5,
+        "Romania": 4,
+        "Spain": 8,
+        "China": 2,
+        "Italy": 0,
+        "Israel": 5,
+        "Greece": 1,
+        "Türkiye": 92,
+        "Viet Nam": 0,
+        "Brazil": 5,
+        "Philippines": 48,
+        "Singapore": 3,
+        "Argentina": 5,
+        "Australia": 8,
+        "New Zealand": 3
+      },
+      "food_fraud": [],
+      "errors": [
+        "Text month October 2025 differs from filename December 2024 — keeping filename"
+      ],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_December_2024.pdf",
+      "report_id": "ifs-2024-dec"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_January_2025.pdf",
+      "publication_month": "January",
+      "publication_year": 2025,
+      "data_period": null,
+      "recalls": {
+        "England": 9,
+        "Iceland": 6,
+        "Denmark": 9,
+        "Finnland": 4,
+        "Ireland": 7,
+        "Scotland": 11,
+        "Netherlands": 3,
+        "Poland": 4,
+        "Hungary": 1,
+        "Canada": 11,
+        "Luxembourg": 10,
+        "Germany": 25,
+        "Czech Rep.": 49,
+        "South Korea": 8,
+        "Japan": 35,
+        "USA (FDA)": 16,
+        "Belgium": 24,
+        "France": 144,
+        "Austria": 3,
+        "Croatia": 5,
+        "Romania": 1,
+        "Spain": 6,
+        "Italy": 0,
+        "Israel": 6,
+        "China": 0,
+        "Greece": 4,
+        "Türkiye": 127,
+        "Viet Nam": 0,
+        "Philippines": 164,
+        "Singapore": 3,
+        "Argentina": 5,
+        "Australia": 4,
+        "New Zealand": 6
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Meats",
+          "reason_raw": "Counterfeit",
+          "country_raw": "United\nKingdom",
+          "detected_in": "Nov/Dec 24"
+        },
+        {
+          "product_raw": "Meats",
+          "reason_raw": "Document forgery",
+          "country_raw": "Spain",
+          "detected_in": "Nov/Dec 24"
+        },
+        {
+          "product_raw": "Meats",
+          "reason_raw": "Adulteration",
+          "country_raw": "Greece",
+          "detected_in": "Nov/Dec 24"
+        },
+        {
+          "product_raw": "Fish",
+          "reason_raw": "Document forgery",
+          "country_raw": "Ireland",
+          "detected_in": "Nov/Dec 24"
+        },
+        {
+          "product_raw": "Fish",
+          "reason_raw": "Document forgery",
+          "country_raw": "Italy",
+          "detected_in": "Nov/Dec 24"
+        },
+        {
+          "product_raw": "Fish",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Spain",
+          "detected_in": "Nov/Dec 24"
+        },
+        {
+          "product_raw": "Eggs",
+          "reason_raw": "Grey market",
+          "country_raw": "United\nKingdom",
+          "detected_in": "Nov/Dec 24"
+        },
+        {
+          "product_raw": "Milk",
+          "reason_raw": "Adulteration",
+          "country_raw": "Brazil",
+          "detected_in": "Nov/Dec 24"
+        },
+        {
+          "product_raw": "Alcoholic\nbeverages",
+          "reason_raw": "Adulteration",
+          "country_raw": "Italy",
+          "detected_in": "Nov/Dec 24"
+        },
+        {
+          "product_raw": "Olive oil",
+          "reason_raw": "Adulteration",
+          "country_raw": "Portugal",
+          "detected_in": "Nov/Dec 24"
+        },
+        {
+          "product_raw": "Olive oil",
+          "reason_raw": "Product\ntampering",
+          "country_raw": "Italy",
+          "detected_in": "Nov/Dec 24"
+        },
+        {
+          "product_raw": "Honey and\nroyal jelly",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Türkiye",
+          "detected_in": "Nov/Dec 24"
+        },
+        {
+          "product_raw": "Honey and\nroyal jelly",
+          "reason_raw": "Adulteration",
+          "country_raw": "Italy",
+          "detected_in": "Nov/Dec 24"
+        },
+        {
+          "product_raw": "Cacao",
+          "reason_raw": "Grey market",
+          "country_raw": "Ivory Coast",
+          "detected_in": "Nov/Dec 24"
+        }
+      ],
+      "errors": [],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_January_2025.pdf",
+      "report_id": "ifs-2025-jan"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_February_2025.pdf",
+      "publication_month": "February",
+      "publication_year": 2025,
+      "data_period": null,
+      "recalls": {
+        "England": 15,
+        "Iceland": 1,
+        "Denmark": 5,
+        "Finnland": 4,
+        "Ireland": 13,
+        "Scotland": 11,
+        "Netherlands": 6,
+        "Poland": 10,
+        "Hungary": 0,
+        "Canada": 15,
+        "Luxembourg": 15,
+        "Germany": 20,
+        "Czech Rep.": 37,
+        "South Korea": 9,
+        "Japan": 35,
+        "USA (FDA)": 17,
+        "Belgium": 21,
+        "France": 185,
+        "Austria": 3,
+        "Croatia": 4,
+        "Romania": 3,
+        "Spain": 4,
+        "Italy": 25,
+        "Israel": 4,
+        "China": 4,
+        "Greece": 1,
+        "Türkiye": 121,
+        "Viet Nam": 0,
+        "Philippines": 5,
+        "Singapore": 5,
+        "Argentina": 8,
+        "Australia": 6,
+        "New Zealand": 1
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Chicken",
+          "reason_raw": "Contraband",
+          "country_raw": "Paraguay",
+          "detected_in": "January 25"
+        },
+        {
+          "product_raw": "Live animals",
+          "reason_raw": "Misbranding",
+          "country_raw": "Italy",
+          "detected_in": "January 25"
+        },
+        {
+          "product_raw": "Bluefin tuna",
+          "reason_raw": "Grey market",
+          "country_raw": "Spain",
+          "detected_in": "January 25"
+        },
+        {
+          "product_raw": "Fish and fish\nproducts",
+          "reason_raw": "Document forgery",
+          "country_raw": "Argentina",
+          "detected_in": "January 25"
+        },
+        {
+          "product_raw": "Ricotta\ncheese",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Italy",
+          "detected_in": "January 25"
+        },
+        {
+          "product_raw": "Carrots,\nwhite onions",
+          "reason_raw": "Grey market",
+          "country_raw": "Philippines",
+          "detected_in": "January 25"
+        },
+        {
+          "product_raw": "Honey",
+          "reason_raw": "Adulteration",
+          "country_raw": "France",
+          "detected_in": "January 25"
+        },
+        {
+          "product_raw": "Honey",
+          "reason_raw": "Adulteration",
+          "country_raw": "China / Italy",
+          "detected_in": "January 25"
+        },
+        {
+          "product_raw": "Alcoholic\nbeverages",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Türkiye",
+          "detected_in": "January 25"
+        },
+        {
+          "product_raw": "Grappa",
+          "reason_raw": "Misbranding",
+          "country_raw": "Sweden",
+          "detected_in": "January 25"
+        },
+        {
+          "product_raw": "Olive oil",
+          "reason_raw": "Adulteration",
+          "country_raw": "Italy",
+          "detected_in": "January 25"
+        },
+        {
+          "product_raw": "Coffee",
+          "reason_raw": "Grey market",
+          "country_raw": "Côte d‘Ivoire",
+          "detected_in": "January 25"
+        },
+        {
+          "product_raw": "Tea",
+          "reason_raw": "Adulteration",
+          "country_raw": "India",
+          "detected_in": "January 25"
+        },
+        {
+          "product_raw": "Cacao",
+          "reason_raw": "Grey market",
+          "country_raw": "Ghana",
+          "detected_in": "January 25"
+        },
+        {
+          "product_raw": "Cacao",
+          "reason_raw": "Grey market",
+          "country_raw": "Côte d‘Ivoire",
+          "detected_in": "January 25"
+        }
+      ],
+      "errors": [
+        "Text month January 2025 differs from filename February 2025 — keeping filename"
+      ],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_February_2025.pdf",
+      "report_id": "ifs-2025-feb"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_March_2025.pdf",
+      "publication_month": "March",
+      "publication_year": 2025,
+      "data_period": null,
+      "recalls": {
+        "England": 14,
+        "Iceland": 4,
+        "Denmark": 7,
+        "Finnland": 5,
+        "Ireland": 10,
+        "Scotland": 15,
+        "Netherlands": 5,
+        "Poland": 1,
+        "Hungary": 1,
+        "Canada": 17,
+        "Luxembourg": 20,
+        "Germany": 17,
+        "Czech Rep.": 31,
+        "South Korea": 24,
+        "Japan": 35,
+        "USA (FDA)": 4,
+        "Belgium": 35,
+        "France": 105,
+        "Austria": 6,
+        "Croatia": 3,
+        "Romania": 2,
+        "Spain": 7,
+        "Italy": 37,
+        "Israel": 4,
+        "China": 2,
+        "Greece": 1,
+        "Türkiye": 98,
+        "Viet Nam": 0,
+        "Brazil": 13,
+        "Philippines": 181,
+        "Singapore": 1,
+        "Argentina": 2,
+        "Australia": 8,
+        "New Zealand": 5
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Meat",
+          "reason_raw": "Grey market",
+          "country_raw": "Bolivia",
+          "detected_in": "Feb 25"
+        },
+        {
+          "product_raw": "Meat",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Spain",
+          "detected_in": "Feb 25"
+        },
+        {
+          "product_raw": "Fish",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Italy",
+          "detected_in": "Feb 25"
+        },
+        {
+          "product_raw": "Milk",
+          "reason_raw": "Adulteration",
+          "country_raw": "Mexico",
+          "detected_in": "Feb 25"
+        },
+        {
+          "product_raw": "Milk",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Italy",
+          "detected_in": "Feb 25"
+        },
+        {
+          "product_raw": "Wine",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Spain",
+          "detected_in": "Feb 25"
+        },
+        {
+          "product_raw": "Olive oil",
+          "reason_raw": "Grey market",
+          "country_raw": "Tunesia",
+          "detected_in": "Feb 25"
+        },
+        {
+          "product_raw": "Olive oil",
+          "reason_raw": "Grey market",
+          "country_raw": "Italy",
+          "detected_in": "Feb 25"
+        },
+        {
+          "product_raw": "Olive oil",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Brazil",
+          "detected_in": "Feb 25"
+        },
+        {
+          "product_raw": "Cacao",
+          "reason_raw": "Grey market",
+          "country_raw": "Ghana",
+          "detected_in": "Feb 25"
+        },
+        {
+          "product_raw": "Coffee",
+          "reason_raw": "Grey market",
+          "country_raw": "Cuba",
+          "detected_in": "Feb 25"
+        }
+      ],
+      "errors": [
+        "Text month February 2025 differs from filename March 2025 — keeping filename"
+      ],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_March_2025.pdf",
+      "report_id": "ifs-2025-mar"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_April_2025.pdf",
+      "publication_month": "April",
+      "publication_year": 2025,
+      "data_period": null,
+      "recalls": {
+        "England": 13,
+        "Iceland": 4,
+        "Denmark": 6,
+        "Finnland": 7,
+        "Ireland": 8,
+        "Scotland": 11,
+        "Netherlands": 11,
+        "Poland": 5,
+        "Hungary": 1,
+        "Canada": 21,
+        "Luxembourg": 9,
+        "Germany": 22,
+        "Czech Rep.": 27,
+        "South Korea": 11,
+        "Japan": 45,
+        "USA (FDA)": 23,
+        "Belgium": 26,
+        "France": 212,
+        "Austria": 11,
+        "Croatia": 8,
+        "Romania": 3,
+        "Spain": 8,
+        "Italy": 29,
+        "Israel": 4,
+        "China": 2,
+        "Greece": 2,
+        "Türkiye": 194,
+        "Viet Nam": 0,
+        "Brazil": 7,
+        "Philippines": 112,
+        "Singapore": 2,
+        "Argentina": 0,
+        "Australia": 3,
+        "New Zealand": 8
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Various\nfoods",
+          "reason_raw": "Grey market",
+          "country_raw": "Bolivia",
+          "detected_in": "March 2025"
+        },
+        {
+          "product_raw": "Meat",
+          "reason_raw": "Smuggling",
+          "country_raw": "Switzerland",
+          "detected_in": "March 2025"
+        },
+        {
+          "product_raw": "Fish",
+          "reason_raw": "Misbranding",
+          "country_raw": "Italy",
+          "detected_in": "March 2025"
+        },
+        {
+          "product_raw": "Octopus",
+          "reason_raw": "Misbranding",
+          "country_raw": "Italy",
+          "detected_in": "March 2025"
+        },
+        {
+          "product_raw": "Eggs",
+          "reason_raw": "Grey market",
+          "country_raw": "USA",
+          "detected_in": "March 2025"
+        },
+        {
+          "product_raw": "Eggs",
+          "reason_raw": "Grey market",
+          "country_raw": "Cambodia",
+          "detected_in": "March 2025"
+        },
+        {
+          "product_raw": "Flour",
+          "reason_raw": "Misbranding",
+          "country_raw": "Sri Lanka",
+          "detected_in": "March 2025"
+        },
+        {
+          "product_raw": "Honey",
+          "reason_raw": "Adulteration",
+          "country_raw": "Türkiye",
+          "detected_in": "March 2025"
+        },
+        {
+          "product_raw": "Bread",
+          "reason_raw": "Misbranding",
+          "country_raw": "Argentina",
+          "detected_in": "March 2025"
+        },
+        {
+          "product_raw": "Alcoholic\nbeverages",
+          "reason_raw": "Adulteration",
+          "country_raw": "Türkiye",
+          "detected_in": "March 2025"
+        },
+        {
+          "product_raw": "Alcoholic\nbeverages",
+          "reason_raw": "Adulteration",
+          "country_raw": "South Africa",
+          "detected_in": "March 2025"
+        },
+        {
+          "product_raw": "Olive oil",
+          "reason_raw": "Adulteration",
+          "country_raw": "Brazil",
+          "detected_in": "March 2025"
+        },
+        {
+          "product_raw": "Cacao",
+          "reason_raw": "Grey market",
+          "country_raw": "Côte d‘Ivoire",
+          "detected_in": "March 2025"
+        },
+        {
+          "product_raw": "Tea",
+          "reason_raw": "Adulteration",
+          "country_raw": "Sri Lanka",
+          "detected_in": "March 2025"
+        }
+      ],
+      "errors": [
+        "Text month March 2025 differs from filename April 2025 — keeping filename"
+      ],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_April_2025.pdf",
+      "report_id": "ifs-2025-apr"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_May_2025.pdf",
+      "publication_month": "May",
+      "publication_year": 2025,
+      "data_period": null,
+      "recalls": {
+        "England": 12,
+        "Iceland": 4,
+        "Denmark": 11,
+        "Finnland": 6,
+        "Ireland": 9,
+        "Scotland": 7,
+        "Netherlands": 13,
+        "Poland": 7,
+        "Hungary": 2,
+        "Canada": 21,
+        "Luxembourg": 22,
+        "Germany": 29,
+        "Czech Rep.": 15,
+        "South Korea": 8,
+        "Japan": 48,
+        "USA (FDA)": 30,
+        "Belgium": 30,
+        "France": 194,
+        "Austria": 6,
+        "Croatia": 9,
+        "Romania": 8,
+        "Spain": 3,
+        "Italy": 37,
+        "Israel": 8,
+        "China": 0,
+        "Greece": 3,
+        "Türkiye": 141,
+        "Viet Nam": 0,
+        "Brazil": 11,
+        "Philippines": 0,
+        "Singapore": 2,
+        "Argentina": 4,
+        "Australia": 9,
+        "New Zealand": 4
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Various",
+          "reason_raw": "Document forgery",
+          "country_raw": "Morocco",
+          "detected_in": "April 2025"
+        },
+        {
+          "product_raw": "Poultry meat",
+          "reason_raw": "Product tampering",
+          "country_raw": "Spain",
+          "detected_in": "April 2025"
+        },
+        {
+          "product_raw": "Cattle",
+          "reason_raw": "Document forgery",
+          "country_raw": "Germany",
+          "detected_in": "April 2025"
+        },
+        {
+          "product_raw": "Fish",
+          "reason_raw": "Document forgery",
+          "country_raw": "Italy",
+          "detected_in": "April 2025"
+        },
+        {
+          "product_raw": "Seafood",
+          "reason_raw": "Document forgery",
+          "country_raw": "Chile",
+          "detected_in": "April 2025"
+        },
+        {
+          "product_raw": "Milk powder",
+          "reason_raw": "Counterfeit /\nAdulteration",
+          "country_raw": "Vietnam",
+          "detected_in": "April 2025"
+        },
+        {
+          "product_raw": "Butter",
+          "reason_raw": "Adulteration",
+          "country_raw": "Brazil",
+          "detected_in": "April 2025"
+        },
+        {
+          "product_raw": "Fruit &\nvegetables",
+          "reason_raw": "Grey market",
+          "country_raw": "Singapore",
+          "detected_in": "April 2025"
+        },
+        {
+          "product_raw": "Vegetable\nCandy",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Vietnam",
+          "detected_in": "April 2025"
+        },
+        {
+          "product_raw": "Liquor",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Türkiye",
+          "detected_in": "April 2025"
+        },
+        {
+          "product_raw": "Vodka",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Armenia",
+          "detected_in": "April 2025"
+        },
+        {
+          "product_raw": "Olive oil",
+          "reason_raw": "Product tampering",
+          "country_raw": "Greece",
+          "detected_in": "April 2025"
+        },
+        {
+          "product_raw": "Cooking oil",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Vietnam",
+          "detected_in": "April 2025"
+        },
+        {
+          "product_raw": "Chocolate",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Italy",
+          "detected_in": "April 2025"
+        },
+        {
+          "product_raw": "Cacao",
+          "reason_raw": "Grey market",
+          "country_raw": "Côte d‘Ivoire",
+          "detected_in": "April 2025"
+        }
+      ],
+      "errors": [
+        "Text month April 2025 differs from filename May 2025 — keeping filename"
+      ],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_May_2025.pdf",
+      "report_id": "ifs-2025-may"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_June_2025.pdf",
+      "publication_month": "June",
+      "publication_year": 2025,
+      "data_period": null,
+      "recalls": {
+        "England": 11,
+        "Iceland": 4,
+        "Denmark": 12,
+        "Finnland": 1,
+        "Ireland": 14,
+        "Scotland": 9,
+        "Netherlands": 14,
+        "Poland": 11,
+        "Hungary": 1,
+        "Canada": 13,
+        "Luxembourg": 8,
+        "Germany": 23,
+        "Czech Rep.": 20,
+        "South Korea": 31,
+        "Japan": 44,
+        "USA (FDA)": 20,
+        "Belgium": 21,
+        "France": 132,
+        "Austria": 4,
+        "Croatia": 9,
+        "Romania": 2,
+        "Spain": 5,
+        "Italy": 33,
+        "Israel": 2,
+        "China": 3,
+        "Greece": 2,
+        "Türkiye": 79,
+        "Viet Nam": 0,
+        "Brazil": 20,
+        "Philippines": 2,
+        "Singapore": 1,
+        "Argentina": 9,
+        "Australia": 4,
+        "New Zealand": 4
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Meat",
+          "reason_raw": "Document forgery",
+          "country_raw": "Türkiye",
+          "detected_in": "May 2025"
+        },
+        {
+          "product_raw": "Poultry",
+          "reason_raw": "Grey market",
+          "country_raw": "Zimbabwe",
+          "detected_in": "May 2025"
+        },
+        {
+          "product_raw": "Eggs",
+          "reason_raw": "Misbranding",
+          "country_raw": "Spain",
+          "detected_in": "May 2025"
+        },
+        {
+          "product_raw": "Bluefin tuna",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Italy",
+          "detected_in": "May 2025"
+        },
+        {
+          "product_raw": "Cheese",
+          "reason_raw": "Adulteration",
+          "country_raw": "Türkiye",
+          "detected_in": "May 2025"
+        },
+        {
+          "product_raw": "Chestnuts",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Italy",
+          "detected_in": "May 2025"
+        },
+        {
+          "product_raw": "Rice",
+          "reason_raw": "Grey market",
+          "country_raw": "India",
+          "detected_in": "May 2025"
+        },
+        {
+          "product_raw": "Wine",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Italy",
+          "detected_in": "May 2025"
+        },
+        {
+          "product_raw": "Olive oil",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Spain",
+          "detected_in": "May 2025"
+        },
+        {
+          "product_raw": "Dietary\nsupplements",
+          "reason_raw": "Bribery of officials",
+          "country_raw": "Vietnam",
+          "detected_in": "May 2025"
+        },
+        {
+          "product_raw": "Tea",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Pakistan",
+          "detected_in": "May 2025"
+        },
+        {
+          "product_raw": "Tea",
+          "reason_raw": "Document forgery",
+          "country_raw": "Scotland",
+          "detected_in": "May 2025"
+        }
+      ],
+      "errors": [
+        "Text month May 2025 differs from filename June 2025 — keeping filename"
+      ],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_June_2025.pdf",
+      "report_id": "ifs-2025-jun"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_July_2025.pdf",
+      "publication_month": "July",
+      "publication_year": 2025,
+      "data_period": null,
+      "recalls": {
+        "England": 14,
+        "Iceland": 3,
+        "Denmark": 12,
+        "Finnland": 5,
+        "Ireland": 11,
+        "Scotland": 12,
+        "Netherlands": 16,
+        "Poland": 8,
+        "Hungary": 1,
+        "Canada": 23,
+        "Luxembourg": 25,
+        "Germany": 37,
+        "Czech Rep.": 35,
+        "South Korea": 37,
+        "Japan": 38,
+        "USA (FDA)": 22,
+        "Belgium": 30,
+        "France": 233,
+        "Austria": 1,
+        "Croatia": 9,
+        "Romania": 0,
+        "Spain": 7,
+        "Italy": 37,
+        "Israel": 7,
+        "China": 4,
+        "Greece": 0,
+        "Türkiye": 142,
+        "Viet Nam": 0,
+        "Brazil": 13,
+        "Philippines": 43,
+        "Singapore": 1,
+        "Argentina": 10,
+        "Australia": 5,
+        "New Zealand": 3
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Chicken",
+          "reason_raw": "Grey market",
+          "country_raw": "Uruguay",
+          "detected_in": "June 2025"
+        },
+        {
+          "product_raw": "Beed jerky",
+          "reason_raw": "Mislabelling",
+          "country_raw": "UK",
+          "detected_in": "June 2025"
+        },
+        {
+          "product_raw": "Pork",
+          "reason_raw": "Grey market",
+          "country_raw": "Bolivia",
+          "detected_in": "June 2025"
+        },
+        {
+          "product_raw": "Eggs",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Spain",
+          "detected_in": "June 2025"
+        },
+        {
+          "product_raw": "Bluefin tuna",
+          "reason_raw": "Document forgery",
+          "country_raw": "Italy",
+          "detected_in": "June 2025"
+        },
+        {
+          "product_raw": "Paneer",
+          "reason_raw": "Product tampering",
+          "country_raw": "India",
+          "detected_in": "June 2025"
+        },
+        {
+          "product_raw": "Oranges",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Italy",
+          "detected_in": "June 2025"
+        },
+        {
+          "product_raw": "Honey",
+          "reason_raw": "Adulteration",
+          "country_raw": "Spain",
+          "detected_in": "June 2025"
+        },
+        {
+          "product_raw": "Alcoholic\nbeverages",
+          "reason_raw": "Product tampering",
+          "country_raw": "Colombia",
+          "detected_in": "June 2025"
+        },
+        {
+          "product_raw": "Alcoholic\nbeverages",
+          "reason_raw": "Grey market",
+          "country_raw": "India",
+          "detected_in": "June 2025"
+        },
+        {
+          "product_raw": "Non-alcoholic\nbeverages",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Pakistan",
+          "detected_in": "June 2025"
+        },
+        {
+          "product_raw": "Cooking oil",
+          "reason_raw": "Grey market",
+          "country_raw": "Bolivia",
+          "detected_in": "June 2025"
+        },
+        {
+          "product_raw": "Sugar",
+          "reason_raw": "Grey market",
+          "country_raw": "Peru",
+          "detected_in": "June 2025"
+        },
+        {
+          "product_raw": "Coffee",
+          "reason_raw": "Product tampering",
+          "country_raw": "Vietnam",
+          "detected_in": "June 2025"
+        }
+      ],
+      "errors": [
+        "Text month June 2025 differs from filename July 2025 — keeping filename"
+      ],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_July_2025.pdf",
+      "report_id": "ifs-2025-jul"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_August_2025.pdf",
+      "publication_month": "August",
+      "publication_year": 2025,
+      "data_period": null,
+      "recalls": {
+        "England": 12,
+        "Iceland": 7,
+        "Denmark": 5,
+        "Finnland": 0,
+        "Ireland": 19,
+        "Scotland": 6,
+        "Netherlands": 17,
+        "Poland": 8,
+        "Hungary": 1,
+        "Canada": 32,
+        "Luxembourg": 24,
+        "Germany": 30,
+        "Czech Rep.": 30,
+        "South Korea": 36,
+        "Japan": 55,
+        "USA (FDA)": 19,
+        "Belgium": 35,
+        "France": 266,
+        "Austria": 1,
+        "Croatia": 5,
+        "Romania": 2,
+        "Spain": 8,
+        "Italy": 51,
+        "Israel": 5,
+        "China": 6,
+        "Greece": 1,
+        "Türkiye": 32,
+        "Viet Nam": 0,
+        "Brazil": 10,
+        "Philippines": 85,
+        "Singapore": 5,
+        "Argentina": 4,
+        "Australia": 10,
+        "New Zealand": 10
+      },
+      "food_fraud": [],
+      "errors": [],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2025.pdf",
+      "report_id": "ifs-2025-aug"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_September_2025.pdf",
+      "publication_month": "September",
+      "publication_year": 2025,
+      "data_period": null,
+      "recalls": {
+        "England": 17,
+        "Iceland": 5,
+        "Denmark": 13,
+        "Finnland": 1,
+        "Ireland": 10,
+        "Scotland": 6,
+        "Netherlands": 22,
+        "Poland": 4,
+        "Hungary": 0,
+        "Canada": 26,
+        "Luxembourg": 23,
+        "Germany": 19,
+        "Czech Rep.": 30,
+        "South Korea": 17,
+        "Japan": 45,
+        "USA (FDA)": 25,
+        "Belgium": 29,
+        "France": 208,
+        "Austria": 3,
+        "Croatia": 11,
+        "Romania": 15,
+        "Spain": 8,
+        "Italy": 31,
+        "Israel": 0,
+        "China": 3,
+        "Greece": 1,
+        "Türkiye": 109,
+        "Viet Nam": 0,
+        "Brazil": 13,
+        "Philippines": 100,
+        "Singapore": 1,
+        "Argentina": 7,
+        "Australia": 10,
+        "New Zealand": 3
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Pork",
+          "reason_raw": "Smuggling",
+          "country_raw": "Malaysia",
+          "detected_in": "Aug 2025"
+        },
+        {
+          "product_raw": "Lamb",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Italy",
+          "detected_in": "Aug 2025"
+        },
+        {
+          "product_raw": "Eggs",
+          "reason_raw": "Grey market",
+          "country_raw": "Uruguay",
+          "detected_in": "Aug 2025"
+        },
+        {
+          "product_raw": "Fish",
+          "reason_raw": "Document forgery",
+          "country_raw": "Spain",
+          "detected_in": "Aug 2025"
+        },
+        {
+          "product_raw": "Red tuna",
+          "reason_raw": "Document forgery",
+          "country_raw": "Spain",
+          "detected_in": "Aug 2025"
+        },
+        {
+          "product_raw": "Mushrooms",
+          "reason_raw": "Grey market",
+          "country_raw": "Kosovo",
+          "detected_in": "Aug 2025"
+        },
+        {
+          "product_raw": "Basmati rice",
+          "reason_raw": "Counterfeit",
+          "country_raw": "UK",
+          "detected_in": "Aug 2025"
+        },
+        {
+          "product_raw": "“Chacha”\nWine",
+          "reason_raw": "Adulteration",
+          "country_raw": "Russia",
+          "detected_in": "Aug 2025"
+        },
+        {
+          "product_raw": "Liquor",
+          "reason_raw": "Counterfeit",
+          "country_raw": "India",
+          "detected_in": "Aug 2025"
+        },
+        {
+          "product_raw": "Liquor",
+          "reason_raw": "Smuggling",
+          "country_raw": "France",
+          "detected_in": "Aug 2025"
+        },
+        {
+          "product_raw": "Coffee",
+          "reason_raw": "Product tampering",
+          "country_raw": "Brazil",
+          "detected_in": "Aug 2025"
+        }
+      ],
+      "errors": [
+        "Text month August 2025 differs from filename September 2025 — keeping filename"
+      ],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_September_2025.pdf",
+      "report_id": "ifs-2025-sep"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_October_2025.pdf",
+      "publication_month": "October",
+      "publication_year": 2025,
+      "data_period": null,
+      "recalls": {
+        "England": 17,
+        "Iceland": 7,
+        "Denmark": 3,
+        "Finnland": 2,
+        "Ireland": 15,
+        "Netherlands": 10,
+        "Poland": 5,
+        "Hungary": 0,
+        "Canada": 34,
+        "Luxembourg": 29,
+        "Germany": 30,
+        "Czech Rep.": 50,
+        "South Korea": 16,
+        "Japan": 23,
+        "USA (FDA)": 19,
+        "Belgium": 40,
+        "France": 318,
+        "Austria": 13,
+        "Croatia": 19,
+        "Romania": 5,
+        "Spain": 12,
+        "Italy": 64,
+        "Israel": 1,
+        "China": 1,
+        "Greece": 4,
+        "Türkiye": 85,
+        "Viet Nam": 0,
+        "Brazil": 16,
+        "Philippines": 260,
+        "Singapore": 1,
+        "Argentina": 11,
+        "Australia": 6,
+        "New Zealand": 10
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Meats",
+          "reason_raw": "Smuggling",
+          "country_raw": "UK",
+          "detected_in": ""
+        },
+        {
+          "product_raw": "Milk",
+          "reason_raw": "Adulteration",
+          "country_raw": "Italy",
+          "detected_in": ""
+        },
+        {
+          "product_raw": "Wheat",
+          "reason_raw": "Illegal hoarding",
+          "country_raw": "Pakistan",
+          "detected_in": ""
+        },
+        {
+          "product_raw": "Honey",
+          "reason_raw": "Adulteration",
+          "country_raw": "Italy",
+          "detected_in": ""
+        },
+        {
+          "product_raw": "Honey",
+          "reason_raw": "Adulteration",
+          "country_raw": "Pakistan",
+          "detected_in": ""
+        },
+        {
+          "product_raw": "Wine",
+          "reason_raw": "Product tampering",
+          "country_raw": "Austria",
+          "detected_in": ""
+        },
+        {
+          "product_raw": "Spirits",
+          "reason_raw": "Smuggling",
+          "country_raw": "Luxembourg",
+          "detected_in": ""
+        },
+        {
+          "product_raw": "Wine",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Italy",
+          "detected_in": ""
+        },
+        {
+          "product_raw": "Tea",
+          "reason_raw": "Adulteration",
+          "country_raw": "Pakistan",
+          "detected_in": ""
+        },
+        {
+          "product_raw": "Coffee",
+          "reason_raw": "Adulteration",
+          "country_raw": "Brazil",
+          "detected_in": ""
+        }
+      ],
+      "errors": [
+        "Text month September 2025 differs from filename October 2025 — keeping filename"
+      ],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_October_2025.pdf",
+      "report_id": "ifs-2025-oct"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_November_2025_EN.pdf",
+      "publication_month": "November",
+      "publication_year": 2025,
+      "data_period": null,
+      "recalls": {
+        "England": 9,
+        "Iceland": 7,
+        "Denmark": 8,
+        "Finnland": 7,
+        "Ireland": 10,
+        "Scotland": 8,
+        "Netherlands": 18,
+        "Poland": 9,
+        "Hungary": 1,
+        "Canada": 30,
+        "Luxembourg": 14,
+        "Germany": 24,
+        "Czech Rep.": 8,
+        "South Korea": 30,
+        "Japan": 45,
+        "USA (FDA)": 0,
+        "Belgium": 37,
+        "France": 196,
+        "Austria": 8,
+        "Croatia": 9,
+        "Romania": 6,
+        "Spain": 15,
+        "Italy": 41,
+        "Israel": 5,
+        "China": 0,
+        "Greece": 0,
+        "Türkiye": 68,
+        "Viet Nam": 0,
+        "Brazil": 25,
+        "Philippines": 49,
+        "Singapore": 1,
+        "Argentina": 7,
+        "Australia": 11,
+        "New Zealand": 2
+      },
+      "food_fraud": [],
+      "errors": [],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_November_2025_EN.pdf",
+      "report_id": "ifs-2025-nov"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_December_2025_EN.pdf",
+      "publication_month": "December",
+      "publication_year": 2025,
+      "data_period": null,
+      "recalls": {
+        "England": 15,
+        "Iceland": 3,
+        "Denmark": 7,
+        "Finnland": 5,
+        "Ireland": 14,
+        "Scotland": 4,
+        "Netherlands": 10,
+        "Poland": 7,
+        "Hungary": 1,
+        "Canada": 17,
+        "Luxembourg": 14,
+        "Germany": 13,
+        "Czech Rep.": 53,
+        "South Korea": 18,
+        "Japan": 40,
+        "USA (FDA)": 26,
+        "Belgium": 42,
+        "France": 149,
+        "Austria": 6,
+        "Croatia": 13,
+        "Romania": 9,
+        "Spain": 8,
+        "Italy": 42,
+        "Israel": 6,
+        "China": 1,
+        "Greece": 7,
+        "Türkiye": 84,
+        "Viet Nam": 0,
+        "Brazil": 12,
+        "Philippines": 5,
+        "Singapore": 3,
+        "Argentina": 0,
+        "Australia": 5,
+        "New Zealand": 2
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Various\nfoods",
+          "reason_raw": "Document forgery",
+          "country_raw": "Ukraine",
+          "detected_in": "Oct/Nov 2025"
+        },
+        {
+          "product_raw": "Beef",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Mexico",
+          "detected_in": "Oct/Nov 2025"
+        },
+        {
+          "product_raw": "Parma ham",
+          "reason_raw": "Document forgery",
+          "country_raw": "Italy",
+          "detected_in": "Oct/Nov 2025"
+        },
+        {
+          "product_raw": "Fish",
+          "reason_raw": "Misbranding",
+          "country_raw": "Spain",
+          "detected_in": "Oct/Nov 2025"
+        },
+        {
+          "product_raw": "Ghee",
+          "reason_raw": "Adulteration",
+          "country_raw": "India",
+          "detected_in": "Oct/Nov 2025"
+        },
+        {
+          "product_raw": "Tomato\npuree",
+          "reason_raw": "Misbranding",
+          "country_raw": "Italy",
+          "detected_in": "Oct/Nov 2025"
+        },
+        {
+          "product_raw": "Fruits & nuts",
+          "reason_raw": "Document forgery",
+          "country_raw": "Hungary",
+          "detected_in": "Oct/Nov 2025"
+        },
+        {
+          "product_raw": "Rice",
+          "reason_raw": "Misbranding",
+          "country_raw": "Italy",
+          "detected_in": "Oct/Nov 2025"
+        },
+        {
+          "product_raw": "Rice",
+          "reason_raw": "Misbranding",
+          "country_raw": "Spain",
+          "detected_in": "Oct/Nov 2025"
+        },
+        {
+          "product_raw": "Honey",
+          "reason_raw": "Misbranding",
+          "country_raw": "Italy",
+          "detected_in": "Oct/Nov 2025"
+        },
+        {
+          "product_raw": "Honey",
+          "reason_raw": "Document forgery",
+          "country_raw": "Portugal",
+          "detected_in": "Oct/Nov 2025"
+        },
+        {
+          "product_raw": "Alcoholic\nbeverages",
+          "reason_raw": "Adulteration",
+          "country_raw": "Brazil",
+          "detected_in": "Oct/Nov 2025"
+        },
+        {
+          "product_raw": "Wine",
+          "reason_raw": "Misbranding",
+          "country_raw": "Italy",
+          "detected_in": "Oct/Nov 2025"
+        },
+        {
+          "product_raw": "Instant coffee",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Georgia",
+          "detected_in": "Oct/Nov 2025"
+        }
+      ],
+      "errors": [
+        "Text month November 2025 differs from filename December 2025 — keeping filename"
+      ],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_December_2025_EN.pdf",
+      "report_id": "ifs-2025-dec"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_January_2026_EN.pdf",
+      "publication_month": "January",
+      "publication_year": 2026,
+      "data_period": null,
+      "recalls": {
+        "England": 17,
+        "Iceland": 9,
+        "Denmark": 7,
+        "Finnland": 2,
+        "Ireland": 12,
+        "Scotland": 1,
+        "Netherlands": 13,
+        "Poland": 4,
+        "Hungary": 0,
+        "Canada": 21,
+        "Luxembourg": 24,
+        "Germany": 15,
+        "Czech Rep.": 42,
+        "South Korea": 13,
+        "Japan": 39,
+        "USA (FDA)": 8,
+        "Belgium": 29,
+        "France": 97,
+        "Austria": 6,
+        "Croatia": 8,
+        "Romania": 10,
+        "Spain": 6,
+        "Italy": 61,
+        "Israel": 4,
+        "China": 1,
+        "Greece": 1,
+        "Türkiye": 78,
+        "Viet Nam": 0,
+        "Brazil": 31,
+        "Philippines": 81,
+        "Singapore": 5,
+        "Argentina": 2,
+        "Australia": 5,
+        "New Zealand": 2
+      },
+      "food_fraud": [],
+      "errors": [],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_January_2026_EN.pdf",
+      "report_id": "ifs-2026-jan"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_February_2026_EN.pdf",
+      "publication_month": "February",
+      "publication_year": 2026,
+      "data_period": null,
+      "recalls": {
+        "England": 14,
+        "Iceland": 10,
+        "Denmark": 5,
+        "Finnland": 3,
+        "Ireland": 12,
+        "Scotland": 1,
+        "Netherlands": 9,
+        "Poland": 7,
+        "Hungary": 4,
+        "Canada": 11,
+        "Luxembourg": 11,
+        "Germany": 12,
+        "Czech Rep.": 30,
+        "South Korea": 8,
+        "Japan": 29,
+        "USA (FDA)": 18,
+        "Belgium": 30,
+        "France": 174,
+        "Austria": 6,
+        "Croatia": 12,
+        "Romania": 11,
+        "Spain": 12,
+        "Italy": 47,
+        "Israel": 12,
+        "China": 3,
+        "Greece": 1,
+        "Türkiye": 55,
+        "Viet Nam": 0,
+        "Brazil": 16,
+        "Philippines": 74,
+        "Singapore": 1,
+        "Argentina": 1,
+        "Australia": 5,
+        "New Zealand": 6
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Olive oil",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Morocco",
+          "detected_in": "Jan 2026"
+        },
+        {
+          "product_raw": "Olive oil",
+          "reason_raw": "Adulteration",
+          "country_raw": "Italy",
+          "detected_in": "Jan 2026"
+        },
+        {
+          "product_raw": "Liquor",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Türkiye",
+          "detected_in": "Jan 2026"
+        },
+        {
+          "product_raw": "Meat",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Türkiye",
+          "detected_in": "Jan 2026"
+        },
+        {
+          "product_raw": "Fish",
+          "reason_raw": "Grey market",
+          "country_raw": "Indonesia",
+          "detected_in": "Jan 2026"
+        },
+        {
+          "product_raw": "Canned fish",
+          "reason_raw": "Document forgery",
+          "country_raw": "Sri Lanka",
+          "detected_in": "Jan 2026"
+        },
+        {
+          "product_raw": "Peanuts",
+          "reason_raw": "Grey market",
+          "country_raw": "Indonesia",
+          "detected_in": "Jan 2026"
+        },
+        {
+          "product_raw": "Spices",
+          "reason_raw": "Adulteration",
+          "country_raw": "Oman",
+          "detected_in": "Jan 2026"
+        },
+        {
+          "product_raw": "Coffee",
+          "reason_raw": "Adulteration",
+          "country_raw": "Vietnam",
+          "detected_in": "Jan 2026"
+        },
+        {
+          "product_raw": "Milk",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Bangladesh",
+          "detected_in": "Jan 2026"
+        },
+        {
+          "product_raw": "Rice",
+          "reason_raw": "Grey market",
+          "country_raw": "Malaysia",
+          "detected_in": "Jan 2026"
+        }
+      ],
+      "errors": [
+        "Text month January 2026 differs from filename February 2026 — keeping filename",
+        "Recalls extraction error on page 2: invalid literal for int() with base 10: '₂'"
+      ],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_February_2026_EN.pdf",
+      "report_id": "ifs-2026-feb"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_March_2026_EN.pdf",
+      "publication_month": "March",
+      "publication_year": 2026,
+      "data_period": null,
+      "recalls": {
+        "England": 10,
+        "Iceland": 4,
+        "Denmark": 4,
+        "Finnland": 6,
+        "Ireland": 2,
+        "Scotland": 0,
+        "Netherlands": 7,
+        "Poland": 2,
+        "Hungary": 2,
+        "Canada": 21,
+        "Luxembourg": 12,
+        "Germany": 17,
+        "Czech Rep.": 22,
+        "Slovakia": 0,
+        "South Korea": 25,
+        "Japan": 30,
+        "USA (FDA)": 9,
+        "Belgium": 16,
+        "France": 224,
+        "Austria": 0,
+        "Croatia": 2,
+        "Romania": 9,
+        "Spain": 6,
+        "Italy": 39,
+        "Israel": 7,
+        "China": 1,
+        "Greece": 2,
+        "Türkiye": 69,
+        "Viet Nam": 0,
+        "Brazil": 20,
+        "Philippines": 73,
+        "Singapore": 4,
+        "Argentina": 0,
+        "Australia": 10,
+        "New Zealand": 7
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Milk",
+          "reason_raw": "",
+          "country_raw": "Adulteration",
+          "detected_in": ""
+        }
+      ],
+      "errors": [],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_March_2026_EN.pdf",
+      "report_id": "ifs-2026-mar"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_April_2026_EN.pdf",
+      "publication_month": "April",
+      "publication_year": 2026,
+      "data_period": null,
+      "recalls": {
+        "England": 12,
+        "Iceland": 6,
+        "Denmark": 6,
+        "Finnland": 3,
+        "Ireland": 8,
+        "Scotland": 0,
+        "Netherlands": 5,
+        "Poland": 12,
+        "Hungary": 1,
+        "Canada": 25,
+        "Luxembourg": 11,
+        "Germany": 30,
+        "Czech Rep.": 24,
+        "Slovakia": 3,
+        "South Korea": 23,
+        "Japan": 36,
+        "USA (FDA)": 12,
+        "Belgium": 24,
+        "France": 229,
+        "Austria": 6,
+        "Croatia": 7,
+        "Romania": 9,
+        "Spain": 12,
+        "Italy": 38,
+        "Israel": 1,
+        "China": 2,
+        "Greece": 4,
+        "Türkiye": 69,
+        "Viet Nam": 0,
+        "Brazil": 13,
+        "Philippines": 73,
+        "Singapore": 1,
+        "Argentina": 0,
+        "Australia": 5,
+        "New Zealand": 3
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Olive oil",
+          "reason_raw": "Misbranding",
+          "country_raw": "Argentina",
+          "detected_in": "Feb/March\n2026"
+        },
+        {
+          "product_raw": "Wine",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Italy",
+          "detected_in": "Feb/March\n2026"
+        },
+        {
+          "product_raw": "Wine",
+          "reason_raw": "Misbranding",
+          "country_raw": "USA",
+          "detected_in": "Feb/March\n2026"
+        },
+        {
+          "product_raw": "Poultry",
+          "reason_raw": "Grey market",
+          "country_raw": "Ireland",
+          "detected_in": "Feb/March\n2026"
+        },
+        {
+          "product_raw": "Meat products",
+          "reason_raw": "Product tampering",
+          "country_raw": "Italy",
+          "detected_in": "Feb/March\n2026"
+        },
+        {
+          "product_raw": "Meat",
+          "reason_raw": "Grey market /\nProduct tampering",
+          "country_raw": "UK",
+          "detected_in": "Feb/March\n2026"
+        },
+        {
+          "product_raw": "Fish and fish\nproducts",
+          "reason_raw": "Misbranding",
+          "country_raw": "Spain",
+          "detected_in": "Feb/March\n2026"
+        },
+        {
+          "product_raw": "Tomatoes &\nonions",
+          "reason_raw": "Document forgery",
+          "country_raw": "Burkina Faso",
+          "detected_in": "Feb/March\n2026"
+        },
+        {
+          "product_raw": "Fruits",
+          "reason_raw": "Product tampering",
+          "country_raw": "Romania",
+          "detected_in": "Feb/March\n2026"
+        },
+        {
+          "product_raw": "Supplements",
+          "reason_raw": "Grey market",
+          "country_raw": "EU",
+          "detected_in": "Feb/March\n2026"
+        },
+        {
+          "product_raw": "Honey",
+          "reason_raw": "Product tampering",
+          "country_raw": "Brazil",
+          "detected_in": "Feb/March\n2026"
+        },
+        {
+          "product_raw": "Milk",
+          "reason_raw": "Product tampering",
+          "country_raw": "Italy",
+          "detected_in": "Feb/March\n2026"
+        }
+      ],
+      "errors": [
+        "Text month March 2026 differs from filename April 2026 — keeping filename"
+      ],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_April_2026_EN.pdf",
+      "report_id": "ifs-2026-apr"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_May_2026_EN.pdf",
+      "publication_month": "May",
+      "publication_year": 2026,
+      "data_period": null,
+      "recalls": {
+        "England": 9,
+        "Iceland": 5,
+        "Denmark": 5,
+        "Finnland": 7,
+        "Ireland": 15,
+        "Scotland": 0,
+        "Netherlands": 10,
+        "Poland": 5,
+        "Hungary": 3,
+        "Canada": 21,
+        "Luxembourg": 8,
+        "Germany": 22,
+        "Czech Rep.": 22,
+        "Slovakia": 1,
+        "South Korea": 20,
+        "Japan": 20,
+        "USA (FDA)": 37,
+        "Belgium": 34,
+        "France": 160,
+        "Austria": 3,
+        "Croatia": 9,
+        "Romania": 4,
+        "Spain": 14,
+        "Italy": 27,
+        "Israel": 4,
+        "China": 1,
+        "Greece": 6,
+        "Türkiye": 0,
+        "Viet Nam": 0,
+        "Brazil": 13,
+        "Philippines": 70,
+        "Singapore": 2,
+        "Argentina": 0,
+        "Australia": 4,
+        "New Zealand": 8
+      },
+      "food_fraud": [],
+      "errors": [],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_May_2026_EN.pdf",
+      "report_id": "ifs-2026-may"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_June_2026.pdf",
+      "publication_month": "June",
+      "publication_year": 2026,
+      "data_period": null,
+      "recalls": {
+        "England": 13,
+        "Iceland": 3,
+        "Denmark": 6,
+        "Finnland": 7,
+        "Ireland": 15,
+        "Scotland": 0,
+        "Netherlands": 0,
+        "Poland": 5,
+        "Hungary": 2,
+        "Canada": 12,
+        "Luxembourg": 22,
+        "Germany": 22,
+        "Czech Rep.": 34,
+        "Slovakia": 2,
+        "South Korea": 23,
+        "Japan": 58,
+        "USA (FDA)": 24,
+        "Belgium": 28,
+        "France": 149,
+        "Austria": 4,
+        "Croatia": 8,
+        "Romania": 5,
+        "Spain": 16,
+        "Italy": 85,
+        "Israel": 4,
+        "China": 1,
+        "Greece": 117,
+        "Viet Nam": 0,
+        "Brazil": 12,
+        "Philippines": 17,
+        "Singapore": 1,
+        "Argentina": 0,
+        "Australia": 4,
+        "New Zealand": 7
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Olive oil",
+          "reason_raw": "Grey market",
+          "country_raw": "Türkiye",
+          "detected_in": "April 2026"
+        },
+        {
+          "product_raw": "Various foods",
+          "reason_raw": "Mislabelling",
+          "country_raw": "Chile",
+          "detected_in": "April 2026"
+        },
+        {
+          "product_raw": "Non-alcoholic\nbeverages",
+          "reason_raw": "Document forgery",
+          "country_raw": "Pakistan",
+          "detected_in": "April 2026"
+        },
+        {
+          "product_raw": "Natural\nmineral water",
+          "reason_raw": "Grey market",
+          "country_raw": "Italy",
+          "detected_in": "April 2026"
+        },
+        {
+          "product_raw": "Pork &\nchicken",
+          "reason_raw": "Document forgery",
+          "country_raw": "Malaysia",
+          "detected_in": "April 2026"
+        },
+        {
+          "product_raw": "Meats",
+          "reason_raw": "Grey market",
+          "country_raw": "UK",
+          "detected_in": "April 2026"
+        },
+        {
+          "product_raw": "Fish",
+          "reason_raw": "Misbranding",
+          "country_raw": "Italy",
+          "detected_in": "April 2026"
+        },
+        {
+          "product_raw": "Fish",
+          "reason_raw": "Adulteration",
+          "country_raw": "Kuwait",
+          "detected_in": "April 2026"
+        },
+        {
+          "product_raw": "Coffee",
+          "reason_raw": "Counterfeit",
+          "country_raw": "India",
+          "detected_in": "April 2026"
+        },
+        {
+          "product_raw": "Cheese",
+          "reason_raw": "Misbranding",
+          "country_raw": "Spain",
+          "detected_in": "April 2026"
+        }
+      ],
+      "errors": [
+        "Text month April 2026 differs from filename June 2026 — keeping filename"
+      ],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_June_2026.pdf",
+      "report_id": "ifs-2026-jun"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_July_2026_EN.pdf",
+      "publication_month": "July",
+      "publication_year": 2026,
+      "data_period": null,
+      "recalls": {
+        "England": 12,
+        "Iceland": 8,
+        "Denmark": 9,
+        "Finnland": 7,
+        "Ireland": 12,
+        "Scotland": 0,
+        "Netherlands": 13,
+        "Poland": 5,
+        "Hungary": 0,
+        "Canada": 19,
+        "Luxembourg": 31,
+        "Germany": 30,
+        "Czech Rep.": 36,
+        "Slovakia": 3,
+        "South Korea": 22,
+        "Japan": 53,
+        "USA (FDA)": 16,
+        "Belgium": 32,
+        "France": 253,
+        "Austria": 7,
+        "Croatia": 8,
+        "Romania": 7,
+        "Spain": 28,
+        "Italy": 44,
+        "Israel": 4,
+        "China": 2,
+        "Greece": 3,
+        "Türkiye": 154,
+        "Viet Nam": 0,
+        "Brazil": 9,
+        "Philippines": 66,
+        "Singapore": 2,
+        "Argentina": 1,
+        "Australia": 8,
+        "New Zealand": 4
+      },
+      "food_fraud": [],
+      "errors": [],
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_July_2026_EN.pdf",
+      "report_id": "ifs-2026-jul"
+    }
+  ]
+}

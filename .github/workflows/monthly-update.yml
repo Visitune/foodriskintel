@@ -1,0 +1,29 @@
+name: Monthly Food Risk Intelligence Update
+on:
+  schedule:
+    - cron: '0 8 15 * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: |
+          pip install requests pdfplumber
+          pip install -q -r scripts/requirements.txt 2>/dev/null || true
+      - name: Run monthly update
+        run: python scripts/update_monthly.py
+      - name: Commit datasets if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/inventory.json data/inventory_ffn.json data/raw_extractions.json data/raw_ffn_extractions.json data/dataset.json data/dataset_ffn.json data/dataset_cross.json app/public/dataset.json app/public/dataset_ffn.json app/public/dataset_cross.json
+          git diff --staged --quiet || git commit -m "chore(data): monthly update $(date -u +%Y-%m-%d) [skip ci]"
+          git push || echo "nothing to push"

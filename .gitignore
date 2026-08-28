@@ -1,0 +1,24 @@
+# Python (pipeline d'extraction)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Frontend
+node_modules/
+app/dist/
+
+# PDF sources (copyright IFS, re-telechargables par extract.py â€” ne JAMAIS pousser)
+pdfs/
+
+# Scratch local (scripts a chemins absolus)
+scripts/_dev/
+
+# OS / editeurs
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Prototype v1 single-file (histoire locale, non publié)
+food-risk-intelligence-mvp-real-v1.html

@@ -1,0 +1,22 @@
+Copyright (c) 2026 Food Risk Intelligence — Tous droits réservés / All rights reserved.
+
+This repository contains ORIGINAL CODE (frontend React/TypeScript, extraction Python
+scripts, documentation) which is proprietary. You may read and use it for personal,
+educational and non-commercial analysis purposes. You may NOT redistribute, relicense
+or commercialize the code without explicit permission.
+
+THIRD-PARTY DATA — NOT COVERED BY THIS NOTICE
+--------------------------------------------------------------------------
+All audit data shown by this tool is sourced from third parties and remains the
+property of its respective owners:
+
+- IFS Trend Risk Reports — © IFS Certification Association (https://www.ifs-certification.com/)
+  Data in this repository are factual extracts, not reproductions of the reports.
+  Each dataset entry links to the original PDF.
+- JRC Food Fraud Monthly — © European Commission, Joint Research Centre (DG JRC).
+- EU FFN Monthly (ACN: RASFF + AAC + FFN) — © European Commission, DG SANTE.
+
+This is an independent visualization tool with no affiliation with IFS, the JRC or
+the European Commission. It is not a substitute for the official reports.
+
+No warranty is provided; the tool is distributed "as is".
