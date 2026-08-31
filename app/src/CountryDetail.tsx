@@ -203,7 +203,7 @@ export default function CountryDetail({ data, ffn, lang }: { data: Dataset; ffn?
             <tr>
               <th>{lang==="fr"?"Rapport":"Report"}</th>
               <th>{lang==="fr"?"Rappels":"Recalls"}</th>
-              <th>Tendance</th>
+              <th>{lang==="fr"?"Tendance":"Trend"}</th>
             </tr>
           </thead>
           <tbody>

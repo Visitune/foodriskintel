@@ -218,7 +218,7 @@ export default function FfnExplorer({ data, lang }: { data: FfnDataset; lang: La
               }}><title>{reverseNormalize(name)} — {getValue(name)} {lang==="fr"?"cas":"cases"}</title></path>;
             })}
           </svg>
-          {hovered && <div className="map-tooltip" style={{left:tooltipPos.x+12, top:tooltipPos.y-40}}><strong>{reverseNormalize(hovered)}</strong>: {getValue(hovered)} cas ({mapMetric})</div>}
+          {hovered && <div className="map-tooltip" style={{left:tooltipPos.x+12, top:tooltipPos.y-40}}><strong>{reverseNormalize(hovered)}</strong>: {getValue(hovered)} {tr.ffn.casesWord} ({mapMetric==="origin" ? tr.cross.origin : tr.cross.notifiedBy})</div>}
         </div>
       )}
 

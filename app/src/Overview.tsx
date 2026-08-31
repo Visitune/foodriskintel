@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import type { Dataset, FfnDataset, CrossDataset } from "./types";
+import { t } from "./i18n";
+import type { Lang } from "./i18n";
 
-export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ffn: FfnDataset | null; cross: CrossDataset | null; lang: "fr"|"en" }) {
+export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ffn: FfnDataset | null; cross: CrossDataset | null; lang: Lang }) {
   const s = data.summary;
 
   // Top 10 countries by total recalls
@@ -30,26 +32,13 @@ export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ff
   });
 
   const maxRecalls = top10[0]?.[1] || 1;
-
-  const t = lang==="fr" ? {
-    title: "Vue d'ensemble",
-    sub: `IFS ${s.total_reports} rapports · FFN ${ffn?.summary.total_reports ?? "—"} rapports · Fenêtre ${cross?.window.start ?? data.date_range.start} → ${cross?.window.end ?? data.date_range.end}`,
-    srcIfs: "Source : IFS Trend Risk Reports",
-    srcFfn: "Source : EU FFN Monthly (DG SANTE)",
-    disc: "Outil de visualisation uniquement — toujours consulter les rapports officiels.",
-  } : {
-    title: "Dashboard Overview",
-    sub: `IFS ${s.total_reports} reports · FFN ${ffn?.summary.total_reports ?? "—"} reports · Window ${cross?.window.start ?? data.date_range.start} → ${cross?.window.end ?? data.date_range.end}`,
-    srcIfs: "Source: IFS Trend Risk Reports",
-    srcFfn: "Source: EU FFN Monthly (DG SANTE)",
-    disc: "Visualization tool only — always refer to official reports.",
-  };
+  const tr = t[lang];
 
   return (
     <div className="page">
       <div className="page-header">
-        <h2>{t.title}</h2>
-        <p className="subtitle">{t.sub}</p>
+        <h2>{tr.overview.title}</h2>
+        <p className="subtitle">{tr.overview.sub(s.total_reports, ffn?.summary.total_reports ?? "—", cross?.window.start ?? data.date_range.start, cross?.window.end ?? data.date_range.end)}</p>
       </div>
 
       <div className="source-banner">
@@ -57,7 +46,7 @@ export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ff
           <path d="M8 0a8 8 0 100 16A8 8 0 008 0zm1 12H7v-2h2v2zm0-4H7V4h2v4z" />
         </svg>
         <span>
-          <strong>{t.srcIfs}</strong> &amp; <strong>{t.srcFfn}</strong> — {t.disc}
+          <strong>{tr.overview.srcIfs}</strong> &amp; <strong>{tr.overview.srcFfn}</strong> — {tr.overview.disc}
           {" "}<a href="https://www.ifs-certification.com/" target="_blank" rel="noopener noreferrer">IFS</a> · <a href="https://food.ec.europa.eu/food-safety/acn/ffn-monthly_en" target="_blank" rel="noopener noreferrer">FFN</a>
         </span>
       </div>
@@ -65,40 +54,40 @@ export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ff
       <div className="stat-grid">
         <div className="stat-card accent">
           <div className="stat-value">{s.total_recall_values.toLocaleString()}</div>
-          <div className="stat-label">{lang==="fr"?"Rappels totaux (IFS)":"Total recalls (IFS)"}</div>
+          <div className="stat-label">{tr.overview.recalls}</div>
         </div>
         <div className="stat-card warn">
           <div className="stat-value">{ffn ? ffn.summary.total_suspicions.toLocaleString() : "—"}</div>
-          <div className="stat-label">{lang==="fr"?"Suspicions FFN":"FFN suspicions"}</div>
+          <div className="stat-label">{tr.overview.ffnSusp}</div>
         </div>
         <div className="stat-card">
           <div className="stat-value">{ffn ? ffn.summary.total_cases.toLocaleString() : s.total_food_fraud_cases}</div>
-          <div className="stat-label">{ffn ? (lang==="fr"?"Cas détaillés FFN":"FFN detailed cases") : (lang==="fr"?"Cas fraude":"Fraud cases")}</div>
+          <div className="stat-label">{ffn ? tr.overview.ffnCases : tr.overview.fraudCasesFallback}</div>
         </div>
         <div className="stat-card">
           <div className="stat-value">{s.total_reports} / {ffn?.summary.total_reports ?? "—"}</div>
-          <div className="stat-label">{lang==="fr"?"Rapports IFS / FFN":"Reports IFS / FFN"}</div>
+          <div className="stat-label">{tr.overview.reports}</div>
         </div>
       </div>
       {cross && (
         <div className="card">
-          <h3>{lang==="fr" ? "Fenêtre croisée" : "Cross window"}</h3>
+          <h3>{tr.overview.window}</h3>
           <div className="stat-grid" style={{marginTop:8}}>
-            <div className="stat-card"><div className="stat-value">{cross.window.start} → {cross.window.end}</div><div className="stat-label">{cross.summary.months_in_window} {lang==="fr"?"mois":"months"}</div></div>
-            <div className="stat-card"><div className="stat-value">{cross.summary.months_with_both_sources}/{cross.summary.months_in_window}</div><div className="stat-label">{lang==="fr"?"mois avec les deux":"months with both"}</div></div>
-            <div className="stat-card warn"><div className="stat-value">{cross.summary.ffn_total_in_window.toLocaleString()}</div><div className="stat-label">{lang==="fr"?"FFN dans fenêtre":"FFN in window"}</div></div>
-            <div className="stat-card accent"><div className="stat-value">{cross.summary.ifs_recalls_total_in_window.toLocaleString()}</div><div className="stat-label">{lang==="fr"?"IFS rappels dans fenêtre":"IFS recalls in window"}</div></div>
+            <div className="stat-card"><div className="stat-value">{cross.window.start} → {cross.window.end}</div><div className="stat-label">{cross.summary.months_in_window} {tr.overview.months}</div></div>
+            <div className="stat-card"><div className="stat-value">{cross.summary.months_with_both_sources}/{cross.summary.months_in_window}</div><div className="stat-label">{tr.overview.withBoth}</div></div>
+            <div className="stat-card warn"><div className="stat-value">{cross.summary.ffn_total_in_window.toLocaleString()}</div><div className="stat-label">{tr.cross.ffnInWindow}</div></div>
+            <div className="stat-card accent"><div className="stat-value">{cross.summary.ifs_recalls_total_in_window.toLocaleString()}</div><div className="stat-label">{tr.cross.ifsInWindow}</div></div>
           </div>
-          <div className="meta" style={{marginTop:8}}>{lang==="fr" ? "Échelles séparées — ne jamais sommer IFS et FFN (périmètres différents : monde vs UE cross-border)." : "Separate scales — never sum IFS and FFN (different scopes: world vs EU cross-border)."}</div>
+          <div className="meta" style={{marginTop:8}}>{tr.overview.separate}</div>
         </div>
       )}
 
       <div className="grid-2">
         <div className="card">
-          <h3>{lang==="fr"?"Top 10 pays par rappels":"Top 10 Countries by Recalls"}</h3>
+          <h3>{tr.overview.topCountries}</h3>
           <div className="bar-list">
             {top10.map(([country, total]) => (
-              <Link key={country} to={`/country/${encodeURIComponent(country)}`} className="bar-row" style={{ textDecoration:"none", color:"inherit" }} aria-label={lang==="fr"?`Fiche pays ${country}`:`Country sheet ${country}`}>
+              <Link key={country} to={`/country/${encodeURIComponent(country)}`} className="bar-row" style={{ textDecoration:"none", color:"inherit" }} aria-label={tr.overview.countrySheetAria(country)}>
                 <span className="bar-label">{country}</span>
                 <div className="bar-track">
                   <div
@@ -113,7 +102,7 @@ export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ff
         </div>
 
         <div className="card">
-          <h3>{lang==="fr"?"Cas fraude par type":"Fraud Cases by Type"}</h3>
+          <h3>{tr.overview.fraudByType}</h3>
           <div className="bar-list">
             {topReasons.map(([reason, count]) => (
               <div key={reason} className="bar-row">
@@ -134,7 +123,7 @@ export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ff
       </div>
 
       <div className="card">
-        <h3>{lang==="fr"?"Rapports par année":"Reports by Year"}</h3>
+        <h3>{tr.overview.reportsByYear}</h3>
         <div className="year-bars">
           {Object.entries(byYear)
             .sort()
@@ -152,13 +141,13 @@ export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ff
       </div>
 
       <div className="card">
-        <h3>{lang==="fr"?"Rapports récents":"Recent Reports"}</h3>
+        <h3>{tr.overview.recent}</h3>
         <table>
           <thead>
             <tr>
-              <th>{lang==="fr"?"Rapport":"Report"}</th>
-              <th>{lang==="fr"?"Pays":"Countries"}</th>
-              <th>{lang==="fr"?"Fraude":"Fraud"}</th>
+              <th>{tr.overview.colReport}</th>
+              <th>{tr.overview.colCountries}</th>
+              <th>{tr.overview.colFraud}</th>
             </tr>
           </thead>
           <tbody>

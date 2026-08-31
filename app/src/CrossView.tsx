@@ -164,8 +164,8 @@ export default function CrossView({ ifs, ffn, cross, lang }: { ifs: Dataset; ffn
       )}
 
       <div className="stat-grid">
-        <div className="stat-card"><div className="stat-value">{totals.ffn.toLocaleString()}</div><div className="stat-label">{tr.cross.colFfn}{country !== "all" ? ` — ${country}` : " (fenêtre)"}</div></div>
-        <div className="stat-card accent"><div className="stat-value">{totals.ifs.toLocaleString()}</div><div className="stat-label">{tr.cross.colIfs}{country !== "all" ? ` — ${country}` : " (fenêtre)"}</div></div>
+        <div className="stat-card"><div className="stat-value">{totals.ffn.toLocaleString()}</div><div className="stat-label">{tr.cross.colFfn}{country !== "all" ? ` — ${country}` : ` ${tr.cross.windowSuffix}`}</div></div>
+        <div className="stat-card accent"><div className="stat-value">{totals.ifs.toLocaleString()}</div><div className="stat-label">{tr.cross.colIfs}{country !== "all" ? ` — ${country}` : ` ${tr.cross.windowSuffix}`}</div></div>
         <div className="stat-card warn"><div className="stat-value">{overlapCountries.both.length}</div><div className="stat-label">{lang === "fr" ? "Pays dans les DEUX sources" : "Countries in BOTH sources"}</div></div>
         <div className="stat-card"><div className="stat-value">{rows.length}{totals.missing > 0 && <span className="badge-missing" title={tr.cross.missingNote}> · {totals.missing} {tr.cross.missing}</span>}</div><div className="stat-label">{lang === "fr" ? "mois affichés" : "months shown"}</div></div>
       </div>

@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { HashRouter, Routes, Route, NavLink } from "react-router-dom";
 import type { Dataset, FfnDataset, CrossDataset } from "./types";
 import { t } from "./i18n";
+import type { Lang } from "./i18n";
 import WorldMap from "./WorldMap";
 import CountryDetail from "./CountryDetail";
 import FraudExplorer from "./FraudExplorer";
@@ -9,6 +10,7 @@ import FfnExplorer from "./FfnExplorer";
 import CrossView from "./CrossView";
 import Sources from "./Sources";
 import Overview from "./Overview";
+import OnboardingModal from "./OnboardingModal";
 
 export default function App() {
   const [data, setData] = useState<Dataset | null>(null);
@@ -17,13 +19,26 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [navOpen, setNavOpen] = useState(false);
-  const [lang, setLang] = useState<"fr" | "en">("fr");
+  const [lang, setLang] = useState<Lang>(() => (localStorage.getItem("fri-lang") as Lang | null) || "fr");
   const [theme, setTheme] = useState<"dark"|"light">(() => {
     const saved = localStorage.getItem("fri-theme") as "dark"|"light"|null;
     if (saved) return saved;
     return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
   });
+  const [onboardingOpen, setOnboardingOpen] = useState(false);
+  const helpBtnRef = useRef<HTMLButtonElement>(null);
   useEffect(()=>{ document.documentElement.setAttribute("data-theme", theme); localStorage.setItem("fri-theme", theme); }, [theme]);
+  useEffect(() => { localStorage.setItem("fri-lang", lang); }, [lang]);
+  useEffect(() => {
+    if (!localStorage.getItem("fri-onboarding-seen")) {
+      setOnboardingOpen(true);
+      localStorage.setItem("fri-onboarding-seen", "1");
+    }
+  }, []);
+  const handleCloseOnboarding = () => {
+    setOnboardingOpen(false);
+    helpBtnRef.current?.focus();
+  };
 
   useEffect(() => {
     Promise.all([
@@ -43,10 +58,18 @@ export default function App() {
   const tr = t[lang];
   return (
     <HashRouter>
+      {onboardingOpen && <OnboardingModal lang={lang} onClose={handleCloseOnboarding} />}
       <div className="topbar">
         <div className="topbar-inner">
           <span className="topbar-title">Food Risk Intelligence</span>
           <div className="topbar-actions">
+            <button type="button" ref={helpBtnRef} className="icon-btn" aria-label={tr.onboarding.reopen} title={tr.onboarding.reopen} onClick={() => setOnboardingOpen(true)}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.6" />
+                <path d="M9.5 9a2.5 2.5 0 114.2 1.8c-.7.6-1.2 1-1.2 2.2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                <circle cx="12" cy="17" r="0.9" fill="currentColor" />
+              </svg>
+            </button>
             <button type="button" className="icon-btn" aria-label={theme==="dark" ? tr.theme.light : tr.theme.dark} title={theme==="dark" ? "Passer en clair" : "Switch to dark"} onClick={()=>setTheme(v=>v==="dark"?"light":"dark")}>
               {theme==="dark" ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="1.6"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.38 18.38l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.38 5.62l1.42-1.42" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg>
               : <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/></svg>}

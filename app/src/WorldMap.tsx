@@ -295,7 +295,7 @@ export default function WorldMap({ data, lang }: { data: Dataset; lang: Lang }) 
           <span className="legend-label">{maxVal}</span>
           {effMode !== "single" && (
             <span className="legend-info">
-              (cumulative — {reportsInSelection} reports)
+              {tr.worldMap.cumulativeInfo(reportsInSelection)}
             </span>
           )}
         </div>
@@ -306,7 +306,7 @@ export default function WorldMap({ data, lang }: { data: Dataset; lang: Lang }) 
           className="world-svg"
           onMouseMove={handleMouseMove}
           role="img"
-          aria-label="World map of recall counts by country"
+          aria-label={tr.worldMap.ariaLabel}
         >
           <rect width={SVG_W} height={SVG_H} rx={8} style={{ fill: "var(--map-bg)" }} />
           <path
@@ -349,23 +349,22 @@ export default function WorldMap({ data, lang }: { data: Dataset; lang: Lang }) 
             }}
           >
             <strong>{reverseNormalize(hovered)}</strong>:{" "}
-            {getValue(hovered)} recalls
+            {getValue(hovered)} {tr.worldMap.legend}
           </div>
         )}
       </div>
 
       <div className="card">
-        <h3>Selection modes</h3>
+        <h3>{tr.worldMap.modesTitle}</h3>
         <ul>
           <li>
-            <strong>Single month</strong> — recalls for one report period
+            <strong>{tr.worldMap.single}</strong> — {tr.worldMap.modeSingleDesc}
           </li>
           <li>
-            <strong>Custom range</strong> — cumulative sum from one month to
-            another (spec section 3.2)
+            <strong>{tr.worldMap.range}</strong> — {tr.worldMap.modeRangeDesc}
           </li>
           <li>
-            <strong>All reports</strong> — total recalls across all {data.reports.length} reports
+            <strong>{tr.worldMap.all}</strong> — {tr.worldMap.modeAllDesc(data.reports.length)}
           </li>
         </ul>
       </div>
