@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import type { Dataset, FfnDataset, CrossDataset } from "./types";
 import { t } from "./i18n";
 import type { Lang } from "./i18n";
+import SectionNav from "./SectionNav";
 
 const monthKey = (c: { year: number; month_num: number }) => `${c.year}-${String(c.month_num).padStart(2, "0")}`;
 const norm = (c: string) => c.trim().toLowerCase();
@@ -127,6 +128,12 @@ export default function CrossView({ ifs, ffn, cross, lang }: { ifs: Dataset; ffn
         <p className="subtitle">{tr.cross.sub(cross.window.start, cross.window.end, cross.summary.months_in_window, cross.summary.months_with_both_sources)}</p>
       </div>
 
+      <SectionNav sections={[
+        { id: "apercu", label: tr.cross.navOverview },
+        { id: "tendance", label: tr.cross.trend },
+        { id: "details", label: tr.cross.navDetails },
+      ]} />
+
       <div className="source-banner">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm1 12H7v-2h2v2zm0-4H7V4h2v4z" /></svg>
         <span>
@@ -163,14 +170,14 @@ export default function CrossView({ ifs, ffn, cross, lang }: { ifs: Dataset; ffn
         </div>
       )}
 
-      <div className="stat-grid">
+      <div id="apercu" className="stat-grid">
         <div className="stat-card"><div className="stat-value">{totals.ffn.toLocaleString()}</div><div className="stat-label">{tr.cross.colFfn}{country !== "all" ? ` — ${country}` : ` ${tr.cross.windowSuffix}`}</div></div>
         <div className="stat-card accent"><div className="stat-value">{totals.ifs.toLocaleString()}</div><div className="stat-label">{tr.cross.colIfs}{country !== "all" ? ` — ${country}` : ` ${tr.cross.windowSuffix}`}</div></div>
         <div className="stat-card warn"><div className="stat-value">{overlapCountries.both.length}</div><div className="stat-label">{lang === "fr" ? "Pays dans les DEUX sources" : "Countries in BOTH sources"}</div></div>
         <div className="stat-card"><div className="stat-value">{rows.length}{totals.missing > 0 && <span className="badge-missing" title={tr.cross.missingNote}> · {totals.missing} {tr.cross.missing}</span>}</div><div className="stat-label">{lang === "fr" ? "mois affichés" : "months shown"}</div></div>
       </div>
 
-      <div className="card">
+      <div id="tendance" className="card">
         <h3>{tr.cross.timeline}</h3>
         <div className="meta" style={{ marginBottom: 6 }}>{tr.cross.trendHint} · {tr.cross.clickMonth}</div>
         <div style={{ overflowX: "auto" }}>
@@ -237,7 +244,7 @@ export default function CrossView({ ifs, ffn, cross, lang }: { ifs: Dataset; ffn
         <div className="meta" style={{ marginTop: 8 }}>{tr.overview.separate} {totals.missing > 0 && <>· {totals.missing} {tr.cross.missingNote}</>}</div>
       </div>
 
-      <div className="grid-2">
+      <div id="details" className="grid-2">
         <div className="card">
           <h3>{tr.cross.topFfn}{country !== "all" ? ` — ${country}` : ""}</h3>
           <div className="bar-list">{byProductFfn.map(([p, c]) => (

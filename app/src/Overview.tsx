@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import type { Dataset, FfnDataset, CrossDataset } from "./types";
 import { t } from "./i18n";
 import type { Lang } from "./i18n";
+import SectionNav from "./SectionNav";
 
 export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ffn: FfnDataset | null; cross: CrossDataset | null; lang: Lang }) {
   const s = data.summary;
@@ -34,12 +35,21 @@ export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ff
   const maxRecalls = top10[0]?.[1] || 1;
   const tr = t[lang];
 
+  const sections = [
+    { id: "totaux", label: tr.overview.navTotals },
+    ...(cross ? [{ id: "fenetre", label: tr.overview.window }] : []),
+    { id: "analyses", label: tr.overview.navAnalysis },
+    { id: "recents", label: tr.overview.recent },
+  ];
+
   return (
     <div className="page">
       <div className="page-header">
         <h2>{tr.overview.title}</h2>
         <p className="subtitle">{tr.overview.sub(s.total_reports, ffn?.summary.total_reports ?? "—", cross?.window.start ?? data.date_range.start, cross?.window.end ?? data.date_range.end)}</p>
       </div>
+
+      <SectionNav sections={sections} />
 
       <div className="source-banner">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
@@ -51,7 +61,7 @@ export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ff
         </span>
       </div>
 
-      <div className="section-label">{tr.overview.allTimeLabel}</div>
+      <div id="totaux" className="section-label">{tr.overview.allTimeLabel}</div>
       <div className="stat-grid">
         <div className="stat-card accent">
           <div className="stat-value">{s.total_recall_values.toLocaleString()}</div>
@@ -75,7 +85,7 @@ export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ff
         </div>
       </div>
       {cross && (
-        <div className="card">
+        <div id="fenetre" className="card">
           <h3>{tr.overview.window}</h3>
           <div className="stat-grid" style={{marginTop:8}}>
             <div className="stat-card"><div className="stat-value stat-value-wrap">{cross.window.start}<br />→ {cross.window.end}</div><div className="stat-label">{cross.summary.months_in_window} {tr.overview.months}</div></div>
@@ -87,7 +97,7 @@ export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ff
         </div>
       )}
 
-      <div className="grid-2">
+      <div id="analyses" className="grid-2">
         <div className="card">
           <h3>{tr.overview.topCountries}</h3>
           <div className="bar-list">
@@ -145,7 +155,7 @@ export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ff
         </div>
       </div>
 
-      <div className="card">
+      <div id="recents" className="card">
         <h3>{tr.overview.recent}</h3>
         <table>
           <thead>

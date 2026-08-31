@@ -165,28 +165,30 @@ export default function FfnExplorer({ data, lang }: { data: FfnDataset; lang: La
         </span></details>
       </div>
 
-      <div className="controls">
-        <div className="mode-tabs">
-          <button className={effMode==="single"?"active":""} onClick={()=>{clearForced();setMode("single");}}>{t[lang].worldMap.single}</button>
-          <button className={effMode==="range"?"active":""} onClick={()=>{clearForced();setMode("range");}}>{t[lang].worldMap.range}</button>
-          <button className={effMode==="all"?"active":""} onClick={()=>{clearForced();setMode("all");}}>{t[lang].worldMap.all}</button>
+      <div className="filter-bar">
+        <div className="controls">
+          <div className="mode-tabs">
+            <button className={effMode==="single"?"active":""} onClick={()=>{clearForced();setMode("single");}}>{t[lang].worldMap.single}</button>
+            <button className={effMode==="range"?"active":""} onClick={()=>{clearForced();setMode("range");}}>{t[lang].worldMap.range}</button>
+            <button className={effMode==="all"?"active":""} onClick={()=>{clearForced();setMode("all");}}>{t[lang].worldMap.all}</button>
+          </div>
         </div>
-      </div>
 
-      {effMode==="single" && (
-        <div className="controls"><select value={selReport} onChange={e=>{clearForced();setSelectedReport(e.target.value);}}>{data.reports.map(r=><option key={r.id} value={r.id}>{r.month} {r.year} — {r.total_suspicions} susp.</option>)}</select>
-          {selectedReportObj && <a href={selectedReportObj.source_url} target="_blank" rel="noopener noreferrer" className="pdf-link" style={{marginLeft:8, display:'inline-flex', alignItems:'center', gap:6, padding:'6px 10px', border:'1px solid var(--border)', borderRadius:'var(--radius-sm)', background:'var(--bg-card)'}}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="1.6"/><path d="M14 2v6h6M10 13H8m8 4H8m8-8H8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg> {tr.common.pdf} {selectedReportObj.id}</a>}
+        {effMode==="single" && (
+          <div className="controls"><select value={selReport} onChange={e=>{clearForced();setSelectedReport(e.target.value);}}>{data.reports.map(r=><option key={r.id} value={r.id}>{r.month} {r.year} — {r.total_suspicions} susp.</option>)}</select>
+            {selectedReportObj && <a href={selectedReportObj.source_url} target="_blank" rel="noopener noreferrer" className="pdf-link" style={{display:'inline-flex', alignItems:'center', gap:6, padding:'8px 14px', minHeight:40, boxSizing:'border-box', border:'1px solid var(--border)', borderRadius:'var(--radius-sm)', background:'var(--bg-card)'}}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="1.6"/><path d="M14 2v6h6M10 13H8m8 4H8m8-8H8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg> {tr.common.pdf} {selectedReportObj.id}</a>}
+          </div>
+        )}
+        {effMode==="range" && (
+          <div className="controls range-controls"><span>{lang==="fr"?"De":"From"}</span><select value={rangeFrom} onChange={e=>setRangeFrom(e.target.value)}>{data.reports.map(r=><option key={r.id} value={r.id}>{r.month} {r.year}</option>)}</select><span>{lang==="fr"?"à":"to"}</span><select value={rangeTo} onChange={e=>setRangeTo(e.target.value)}>{data.reports.map(r=><option key={r.id} value={r.id}>{r.month} {r.year}</option>)}</select></div>
+        )}
+
+        <div className="controls">
+          <select value={classificationFilter} onChange={e=>setClassificationFilter(e.target.value)}><option value="all">{lang==="fr"?`Tous groupes (${classificationGroups.length})`:`All groups (${classificationGroups.length})`}</option>{classificationGroups.map(c=><option key={c} value={c}>{c}</option>)}</select>
+          <select value={productFilter} onChange={e=>setProductFilter(e.target.value)}><option value="all">{lang==="fr"?"Toutes catégories produit":"All product categories"}</option>{products.map(c=><option key={c} value={c}>{c}</option>)}</select>
+          <select value={originFilter} onChange={e=>setOriginFilter(e.target.value)}><option value="all">{lang==="fr"?"Toutes origines":"All origins"}</option>{origins.map(c=><option key={c} value={c}>{c}</option>)}</select>
+          <select value={mapMetric} onChange={e=>setMapMetric(e.target.value as any)}><option value="origin">{tr.ffn.mapOrigin}</option><option value="notified">{tr.ffn.mapNotified}</option></select>
         </div>
-      )}
-      {effMode==="range" && (
-        <div className="controls range-controls"><span>{lang==="fr"?"De":"From"}</span><select value={rangeFrom} onChange={e=>setRangeFrom(e.target.value)}>{data.reports.map(r=><option key={r.id} value={r.id}>{r.month} {r.year}</option>)}</select><span>{lang==="fr"?"à":"to"}</span><select value={rangeTo} onChange={e=>setRangeTo(e.target.value)}>{data.reports.map(r=><option key={r.id} value={r.id}>{r.month} {r.year}</option>)}</select></div>
-      )}
-
-      <div className="controls" style={{display:'flex',gap:8,flexWrap:'wrap'}}>
-        <select value={classificationFilter} onChange={e=>setClassificationFilter(e.target.value)}><option value="all">{lang==="fr"?`Tous groupes (${classificationGroups.length})`:`All groups (${classificationGroups.length})`}</option>{classificationGroups.map(c=><option key={c} value={c}>{c}</option>)}</select>
-        <select value={productFilter} onChange={e=>setProductFilter(e.target.value)}><option value="all">{lang==="fr"?"Toutes catégories produit":"All product categories"}</option>{products.map(c=><option key={c} value={c}>{c}</option>)}</select>
-        <select value={originFilter} onChange={e=>setOriginFilter(e.target.value)}><option value="all">{lang==="fr"?"Toutes origines":"All origins"}</option>{origins.map(c=><option key={c} value={c}>{c}</option>)}</select>
-        <select value={mapMetric} onChange={e=>setMapMetric(e.target.value as any)}><option value="origin">{tr.ffn.mapOrigin}</option><option value="notified">{tr.ffn.mapNotified}</option></select>
       </div>
 
       {(classificationFilter!=="all"||productFilter!=="all"||originFilter!=="all"||effMode!=="single") && (
@@ -246,9 +248,18 @@ export default function FfnExplorer({ data, lang }: { data: FfnDataset; lang: La
       <div className="card">
         <h3>{lang==="fr" ? `Cas détaillés (${filtered.length}) — liens PDF` : `Detailed cases (${filtered.length}) — PDF links`}</h3>
         <div className="table-scroll"><table><thead><tr>
-          {(["year","month_num","product_category","classification","origin_normalized","notified_by_normalized"] as (keyof FfnCase)[]).map(col=>(
-            <th key={col} className="sortable" aria-sort={sortCol===col ? (sortDir==="asc"?"ascending":"descending") : "none"}><button type="button" onClick={()=>toggleSort(col)}>{col} {sortCol===col? (sortDir==="asc"?"↑":"↓"):""}</button></th>
-          ))}<th>Commodity</th><th>Issue</th><th>PDF</th>
+          {(
+            [
+              ["year", tr.common.year],
+              ["month_num", tr.common.month],
+              ["product_category", tr.common.product],
+              ["classification", tr.common.classification],
+              ["origin_normalized", tr.common.origin],
+              ["notified_by_normalized", tr.common.notified],
+            ] as [keyof FfnCase, string][]
+          ).map(([col, label])=>(
+            <th key={col} className="sortable" aria-sort={sortCol===col ? (sortDir==="asc"?"ascending":"descending") : "none"}><button type="button" onClick={()=>toggleSort(col)}>{label} {sortCol===col? (sortDir==="asc"?"↑":"↓"):""}</button></th>
+          ))}<th>{tr.common.commodity}</th><th>{tr.common.issue}</th><th>PDF</th>
         </tr></thead><tbody>
           {filtered.slice(0,500).map((c,i)=>(
             <tr key={i}><td className="mono">{c.year}</td><td>{c.month}</td><td>{c.product_category}</td><td><span className="tag" title={c.classification}>{(c as any).group}</span></td><td title={caseOrigins(c).join(", ")+"\n"+(c.origin_raw||"")}>{c.origin_normalized}{caseOrigins(c).length>1 && <span style={{opacity:0.6}}> +{caseOrigins(c).length-1}</span>}</td><td>{c.notified_by_normalized}</td><td title={c.commodity}>{c.commodity.slice(0,42)}</td><td title={c.issue}>{c.issue.slice(0,50)}</td><td><a href={c.source_url} target="_blank" rel="noopener noreferrer" title={c.source_url} aria-label="PDF" style={{display:'inline-flex'}}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="1.6"/><path d="M14 2v6h6" stroke="currentColor" strokeWidth="1.4"/></svg></a></td></tr>

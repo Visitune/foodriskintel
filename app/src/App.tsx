@@ -11,6 +11,7 @@ import CrossView from "./CrossView";
 import Sources from "./Sources";
 import Overview from "./Overview";
 import OnboardingModal from "./OnboardingModal";
+import ScrollAssist from "./ScrollAssist";
 
 export default function App() {
   const [data, setData] = useState<Dataset | null>(null);
@@ -153,6 +154,7 @@ export default function App() {
           </Routes>
         </main>
       </div>
+      <ScrollAssist lang={lang} />
     </HashRouter>
   );
 }

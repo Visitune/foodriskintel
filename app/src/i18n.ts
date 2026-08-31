@@ -31,6 +31,8 @@ export const t = {
       colCountries: "Pays",
       colFraud: "Fraude",
       countrySheetAria: (c:string)=>`Fiche pays ${c}`,
+      navTotals: "Totaux",
+      navAnalysis: "Analyses",
     },
     worldMap: {
       title: "Carte mondiale — Rappels IFS",
@@ -88,6 +90,8 @@ export const t = {
       commonHint: "Pays présents dans les DEUX sources sur la période filtrée — cliquez pour la fiche détaillée.",
       colCommon: "Pays", colCommonIfs: "IFS rappels (fenêtre)", colCommonFfn: "FFN cas (fenêtre)",
       clickMonth: "Clic sur le mois → explorateur FFN filtré",
+      navOverview: "Aperçu",
+      navDetails: "Détails",
     },
     fraudIfs: {
       title: "Explorateur Fraude — IFS (dérivé JRC)",
@@ -95,8 +99,9 @@ export const t = {
       banner1: "Source : IFS Trend Risk — section Food Fraud reprise des JRC Food Fraud Monthly (KC-FFQ, DG JRC).",
       banner2: "Nature JRC : source officielle UE fondée sur veille presse / EMM — screening d'articles mondiaux classifiés par le JRC. Chaque cas IFS cite le lien presse source.",
     },
-    common: { pdf: "PDF officiel", all: "Tous", month: "Mois", product: "Produit", classification: "Classification", origin: "Origine", notified: "Notifié par", commodity: "Denrée", issue: "Problème",
-      reset: "Réinitialiser les filtres", active: "Filtres actifs :", remove: "Retirer ce filtre", mapClickHelp: "Clic carte = fiche pays · barres/cli = filtres sur la page", },
+    common: { pdf: "PDF officiel", all: "Tous", year: "Année", month: "Mois", product: "Produit", classification: "Classification", origin: "Origine", notified: "Notifié par", commodity: "Denrée", issue: "Problème",
+      reset: "Réinitialiser les filtres", active: "Filtres actifs :", remove: "Retirer ce filtre", mapClickHelp: "Clic carte = fiche pays · barres/cli = filtres sur la page",
+      scrollHint: "Plus de détails", },
     onboarding: {
       title: "Bienvenue sur Food Risk Intelligence",
       intro: "Cet outil visualise les données publiées par l'IFS (IFS Trend Risk Reports) croisées avec le FFN Mensuel de la DG SANTE (UE).",
@@ -141,6 +146,8 @@ export const t = {
       colCountries: "Countries",
       colFraud: "Fraud",
       countrySheetAria: (c:string)=>`Country sheet ${c}`,
+      navTotals: "Totals",
+      navAnalysis: "Analysis",
     },
     worldMap: {
       title: "World Map — IFS Recalls",
@@ -198,6 +205,8 @@ export const t = {
       commonHint: "Countries present in BOTH sources over the filtered period — click for the detail sheet.",
       colCommon: "Country", colCommonIfs: "IFS recalls (window)", colCommonFfn: "FFN cases (window)",
       clickMonth: "Click a month → FFN explorer filtered",
+      navOverview: "Overview",
+      navDetails: "Details",
     },
     fraudIfs: {
       title: "Fraud Explorer — IFS (JRC-derived)",
@@ -205,8 +214,9 @@ export const t = {
       banner1: "Source: IFS Trend Risk — Food Fraud section from JRC Food Fraud Monthly (KC-FFQ, DG JRC).",
       banner2: "JRC nature: official EU source based on press / EMM media monitoring — daily screening of world press classified by JRC. Each IFS case links to its press source.",
     },
-    common: { pdf: "Official PDF", all: "All", month: "Month", product: "Product", classification: "Classification", origin: "Origin", notified: "Notified by", commodity: "Commodity", issue: "Issue",
-      reset: "Reset filters", active: "Active filters:", remove: "Remove filter", mapClickHelp: "Click map = country sheet · bars/click = in-page filters", },
+    common: { pdf: "Official PDF", all: "All", year: "Year", month: "Month", product: "Product", classification: "Classification", origin: "Origin", notified: "Notified by", commodity: "Commodity", issue: "Issue",
+      reset: "Reset filters", active: "Active filters:", remove: "Remove filter", mapClickHelp: "Click map = country sheet · bars/click = in-page filters",
+      scrollHint: "More details", },
     onboarding: {
       title: "Welcome to Food Risk Intelligence",
       intro: "This tool visualizes data published in the IFS Trend Risk Reports, cross-referenced with the EU FFN Monthly report (DG SANTE).",

@@ -223,70 +223,72 @@ export default function WorldMap({ data, lang }: { data: Dataset; lang: Lang }) 
         <span style={{fontSize:12, opacity:0.9}}>{lang==="fr" ? "Chaque valeur = nombre affiché sur la carte IFS du mois. Aucune répartition de cumul." : "Each value = number shown on IFS map. No allocation of cumulative months."}</span>
       </div>
 
-      <div className="controls">
-        <div className="mode-tabs">
-          <button
-            className={effMode === "single" ? "active" : ""}
-            onClick={() => { clearForced(); setMode("single"); }}
-          >
-            {tr.worldMap.single}
-          </button>
-          <button
-            className={effMode === "range" ? "active" : ""}
-            onClick={() => { clearForced(); setMode("range"); }}
-          >
-            {tr.worldMap.range}
-          </button>
-          <button
-            className={effMode === "all" ? "active" : ""}
-            onClick={() => { clearForced(); setMode("all"); }}
-          >
-            {tr.worldMap.all}
-          </button>
-        </div>
-      </div>
-
-      {effMode === "single" && (
+      <div className="filter-bar">
         <div className="controls">
-          <select
-            value={selReport}
-            onChange={(e) => { clearForced(); setSelectedReport(e.target.value); }}
-          >
-            {data.reports.map((r) => (
-              <option key={r.id} value={r.id}>
-                {r.month} {r.year}
-              </option>
-            ))}
-          </select>
+          <div className="mode-tabs">
+            <button
+              className={effMode === "single" ? "active" : ""}
+              onClick={() => { clearForced(); setMode("single"); }}
+            >
+              {tr.worldMap.single}
+            </button>
+            <button
+              className={effMode === "range" ? "active" : ""}
+              onClick={() => { clearForced(); setMode("range"); }}
+            >
+              {tr.worldMap.range}
+            </button>
+            <button
+              className={effMode === "all" ? "active" : ""}
+              onClick={() => { clearForced(); setMode("all"); }}
+            >
+              {tr.worldMap.all}
+            </button>
+          </div>
         </div>
-      )}
 
-      {effMode === "range" && (
-        <div className="controls range-controls">
-          <span className="range-label">{lang === "fr" ? "De" : "From"}</span>
-          <select
-            value={rangeFrom}
-            onChange={(e) => setRangeFrom(e.target.value)}
-          >
-            {data.reports.map((r) => (
-              <option key={r.id} value={r.id}>
-                {r.month} {r.year}
-              </option>
-            ))}
-          </select>
-          <span className="range-label">{lang === "fr" ? "à" : "to"}</span>
-          <select
-            value={rangeTo}
-            onChange={(e) => setRangeTo(e.target.value)}
-          >
-            {data.reports.map((r) => (
-              <option key={r.id} value={r.id}>
-                {r.month} {r.year}
-              </option>
-            ))}
-          </select>
-        </div>
-      )}
+        {effMode === "single" && (
+          <div className="controls">
+            <select
+              value={selReport}
+              onChange={(e) => { clearForced(); setSelectedReport(e.target.value); }}
+            >
+              {data.reports.map((r) => (
+                <option key={r.id} value={r.id}>
+                  {r.month} {r.year}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+
+        {effMode === "range" && (
+          <div className="controls range-controls">
+            <span className="range-label">{lang === "fr" ? "De" : "From"}</span>
+            <select
+              value={rangeFrom}
+              onChange={(e) => setRangeFrom(e.target.value)}
+            >
+              {data.reports.map((r) => (
+                <option key={r.id} value={r.id}>
+                  {r.month} {r.year}
+                </option>
+              ))}
+            </select>
+            <span className="range-label">{lang === "fr" ? "à" : "to"}</span>
+            <select
+              value={rangeTo}
+              onChange={(e) => setRangeTo(e.target.value)}
+            >
+              {data.reports.map((r) => (
+                <option key={r.id} value={r.id}>
+                  {r.month} {r.year}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+      </div>
 
       <div className="map-container">
         <div className="map-legend">
