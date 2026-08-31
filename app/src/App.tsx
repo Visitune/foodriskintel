@@ -12,6 +12,7 @@ import Sources from "./Sources";
 import Overview from "./Overview";
 import OnboardingModal from "./OnboardingModal";
 import ScrollAssist from "./ScrollAssist";
+import PageTitle from "./PageTitle";
 
 export default function App() {
   const [data, setData] = useState<Dataset | null>(null);
@@ -80,7 +81,7 @@ export default function App() {
               </svg>
             )}
           </button>
-          <span className="topbar-title">Food Risk Intelligence</span>
+          <PageTitle lang={lang} />
           <div className="topbar-actions">
             <button type="button" ref={helpBtnRef} className="icon-btn" aria-label={tr.onboarding.reopen} title={tr.onboarding.reopen} onClick={() => setOnboardingOpen(true)}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -112,8 +113,9 @@ export default function App() {
         <nav id="sidebar" className={navOpen ? "sidebar open" : "sidebar"}>
           <div className="logo">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <circle cx="16" cy="16" r="14" stroke="var(--accent)" strokeWidth="2" />
-              <path d="M10 16 L14 20 L22 12" stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              <circle cx="13" cy="13" r="8" stroke="var(--accent)" strokeWidth="2" />
+              <path d="M18.7 18.7L26 26" stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round" />
+              <path d="M13 8.5L17.2 16H8.8L13 8.5Z" stroke="var(--accent)" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" />
             </svg>
             <h1>Food Risk<br /><span>Intelligence</span></h1>
           </div>
