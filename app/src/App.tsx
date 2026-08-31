@@ -61,6 +61,24 @@ export default function App() {
       {onboardingOpen && <OnboardingModal lang={lang} onClose={handleCloseOnboarding} />}
       <div className="topbar">
         <div className="topbar-inner">
+          <button
+            type="button"
+            className="icon-btn nav-toggle"
+            aria-label={navOpen ? tr.nav.menuClose : tr.nav.menuOpen}
+            aria-expanded={navOpen}
+            aria-controls="sidebar"
+            onClick={() => setNavOpen((v) => !v)}
+          >
+            {navOpen ? (
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+              </svg>
+            )}
+          </button>
           <span className="topbar-title">Food Risk Intelligence</span>
           <div className="topbar-actions">
             <button type="button" ref={helpBtnRef} className="icon-btn" aria-label={tr.onboarding.reopen} title={tr.onboarding.reopen} onClick={() => setOnboardingOpen(true)}>
@@ -86,19 +104,6 @@ export default function App() {
         </div>
       </div>
       <div className="app">
-        <button
-          type="button"
-          className="nav-toggle"
-          aria-label="Toggle navigation"
-          aria-expanded={navOpen}
-          aria-controls="sidebar"
-          onClick={() => setNavOpen((v) => !v)}
-        >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-          </svg>
-        </button>
-
         {navOpen && (
           <div className="nav-overlay" onClick={() => setNavOpen(false)} aria-hidden="true" />
         )}

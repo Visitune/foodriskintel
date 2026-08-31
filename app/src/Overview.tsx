@@ -51,6 +51,7 @@ export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ff
         </span>
       </div>
 
+      <div className="section-label">{tr.overview.allTimeLabel}</div>
       <div className="stat-grid">
         <div className="stat-card accent">
           <div className="stat-value">{s.total_recall_values.toLocaleString()}</div>
@@ -65,15 +66,19 @@ export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ff
           <div className="stat-label">{ffn ? tr.overview.ffnCases : tr.overview.fraudCasesFallback}</div>
         </div>
         <div className="stat-card">
-          <div className="stat-value">{s.total_reports} / {ffn?.summary.total_reports ?? "—"}</div>
-          <div className="stat-label">{tr.overview.reports}</div>
+          <div className="stat-value">{s.total_reports}</div>
+          <div className="stat-label">{tr.overview.reportsIfs}</div>
+        </div>
+        <div className="stat-card">
+          <div className="stat-value">{ffn?.summary.total_reports ?? "—"}</div>
+          <div className="stat-label">{tr.overview.reportsFfn}</div>
         </div>
       </div>
       {cross && (
         <div className="card">
           <h3>{tr.overview.window}</h3>
           <div className="stat-grid" style={{marginTop:8}}>
-            <div className="stat-card"><div className="stat-value">{cross.window.start} → {cross.window.end}</div><div className="stat-label">{cross.summary.months_in_window} {tr.overview.months}</div></div>
+            <div className="stat-card"><div className="stat-value stat-value-wrap">{cross.window.start}<br />→ {cross.window.end}</div><div className="stat-label">{cross.summary.months_in_window} {tr.overview.months}</div></div>
             <div className="stat-card"><div className="stat-value">{cross.summary.months_with_both_sources}/{cross.summary.months_in_window}</div><div className="stat-label">{tr.overview.withBoth}</div></div>
             <div className="stat-card warn"><div className="stat-value">{cross.summary.ffn_total_in_window.toLocaleString()}</div><div className="stat-label">{tr.cross.ffnInWindow}</div></div>
             <div className="stat-card accent"><div className="stat-value">{cross.summary.ifs_recalls_total_in_window.toLocaleString()}</div><div className="stat-label">{tr.cross.ifsInWindow}</div></div>
