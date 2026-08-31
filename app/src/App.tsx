@@ -95,10 +95,10 @@ export default function App() {
             </button>
             <div className="lang-switch" role="group" aria-label={lang==="fr" ? "Langue" : "Language"}>
               <button type="button" className={lang==="fr" ? "active" : ""} aria-pressed={lang==="fr"} aria-label="Français" onClick={()=>setLang("fr")}>
-                <svg width="18" height="13" viewBox="0 0 18 13" aria-hidden="true"><rect width="6" height="13" fill="#002395"/><rect x="6" width="6" height="13" fill="#fff"/><rect x="12" width="6" height="13" fill="#ED2939"/></svg> FR
+                <svg width="18" height="13" viewBox="0 0 18 13" aria-hidden="true"><rect width="6" height="13" fill="#002395"/><rect x="6" width="6" height="13" fill="#fff"/><rect x="12" width="6" height="13" fill="#ED2939"/></svg> <span className="lang-code">FR</span>
               </button>
               <button type="button" className={lang==="en" ? "active" : ""} aria-pressed={lang==="en"} aria-label="English" onClick={()=>setLang("en")}>
-                <svg width="18" height="13" viewBox="0 0 18 13" aria-hidden="true"><clipPath id="enClip"><rect width="18" height="13" rx="1"/></clipPath><g clipPath="url(#enClip)"><rect width="18" height="13" fill="#012169"/><path d="M0 0 L18 13 M18 0 L0 13" stroke="#fff" strokeWidth="2"/><path d="M0 0 L18 13 M18 0 L0 13" stroke="#C8102E" strokeWidth="1.1"/><rect x="7.5" width="3" height="13" fill="#fff"/><rect y="5" width="18" height="3" fill="#fff"/><rect x="8" width="2" height="13" fill="#C8102E"/><rect y="5.5" width="18" height="2" fill="#C8102E"/></g></svg> EN
+                <svg width="18" height="13" viewBox="0 0 18 13" aria-hidden="true"><clipPath id="enClip"><rect width="18" height="13" rx="1"/></clipPath><g clipPath="url(#enClip)"><rect width="18" height="13" fill="#012169"/><path d="M0 0 L18 13 M18 0 L0 13" stroke="#fff" strokeWidth="2"/><path d="M0 0 L18 13 M18 0 L0 13" stroke="#C8102E" strokeWidth="1.1"/><rect x="7.5" width="3" height="13" fill="#fff"/><rect y="5" width="18" height="3" fill="#fff"/><rect x="8" width="2" height="13" fill="#C8102E"/><rect y="5.5" width="18" height="2" fill="#C8102E"/></g></svg> <span className="lang-code">EN</span>
               </button>
             </div>
           </div>
