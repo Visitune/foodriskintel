@@ -245,10 +245,8 @@ export default function WorldMap({ data, lang }: { data: Dataset; lang: Lang }) 
               {tr.worldMap.all}
             </button>
           </div>
-        </div>
 
-        {effMode === "single" && (
-          <div className="controls">
+          {effMode === "single" && (
             <select
               value={selReport}
               onChange={(e) => { clearForced(); setSelectedReport(e.target.value); }}
@@ -259,35 +257,35 @@ export default function WorldMap({ data, lang }: { data: Dataset; lang: Lang }) 
                 </option>
               ))}
             </select>
-          </div>
-        )}
+          )}
 
-        {effMode === "range" && (
-          <div className="controls range-controls">
-            <span className="range-label">{lang === "fr" ? "De" : "From"}</span>
-            <select
-              value={rangeFrom}
-              onChange={(e) => setRangeFrom(e.target.value)}
-            >
-              {data.reports.map((r) => (
-                <option key={r.id} value={r.id}>
-                  {r.month} {r.year}
-                </option>
-              ))}
-            </select>
-            <span className="range-label">{lang === "fr" ? "à" : "to"}</span>
-            <select
-              value={rangeTo}
-              onChange={(e) => setRangeTo(e.target.value)}
-            >
-              {data.reports.map((r) => (
-                <option key={r.id} value={r.id}>
-                  {r.month} {r.year}
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
+          {effMode === "range" && (
+            <span className="range-controls">
+              <span className="range-label">{lang === "fr" ? "De" : "From"}</span>
+              <select
+                value={rangeFrom}
+                onChange={(e) => setRangeFrom(e.target.value)}
+              >
+                {data.reports.map((r) => (
+                  <option key={r.id} value={r.id}>
+                    {r.month} {r.year}
+                  </option>
+                ))}
+              </select>
+              <span className="range-label">{lang === "fr" ? "à" : "to"}</span>
+              <select
+                value={rangeTo}
+                onChange={(e) => setRangeTo(e.target.value)}
+              >
+                {data.reports.map((r) => (
+                  <option key={r.id} value={r.id}>
+                    {r.month} {r.year}
+                  </option>
+                ))}
+              </select>
+            </span>
+          )}
+        </div>
       </div>
 
       <div className="map-container">

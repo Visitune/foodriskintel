@@ -172,16 +172,17 @@ export default function FfnExplorer({ data, lang }: { data: FfnDataset; lang: La
             <button className={effMode==="range"?"active":""} onClick={()=>{clearForced();setMode("range");}}>{t[lang].worldMap.range}</button>
             <button className={effMode==="all"?"active":""} onClick={()=>{clearForced();setMode("all");}}>{t[lang].worldMap.all}</button>
           </div>
-        </div>
 
-        {effMode==="single" && (
-          <div className="controls"><select value={selReport} onChange={e=>{clearForced();setSelectedReport(e.target.value);}}>{data.reports.map(r=><option key={r.id} value={r.id}>{r.month} {r.year} — {r.total_suspicions} susp.</option>)}</select>
-            {selectedReportObj && <a href={selectedReportObj.source_url} target="_blank" rel="noopener noreferrer" className="pdf-link" style={{display:'inline-flex', alignItems:'center', gap:6, padding:'8px 14px', minHeight:40, boxSizing:'border-box', border:'1px solid var(--border)', borderRadius:'var(--radius-sm)', background:'var(--bg-card)'}}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="1.6"/><path d="M14 2v6h6M10 13H8m8 4H8m8-8H8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg> {tr.common.pdf} {selectedReportObj.id}</a>}
-          </div>
-        )}
-        {effMode==="range" && (
-          <div className="controls range-controls"><span>{lang==="fr"?"De":"From"}</span><select value={rangeFrom} onChange={e=>setRangeFrom(e.target.value)}>{data.reports.map(r=><option key={r.id} value={r.id}>{r.month} {r.year}</option>)}</select><span>{lang==="fr"?"à":"to"}</span><select value={rangeTo} onChange={e=>setRangeTo(e.target.value)}>{data.reports.map(r=><option key={r.id} value={r.id}>{r.month} {r.year}</option>)}</select></div>
-        )}
+          {effMode==="single" && (
+            <>
+              <select value={selReport} onChange={e=>{clearForced();setSelectedReport(e.target.value);}}>{data.reports.map(r=><option key={r.id} value={r.id}>{r.month} {r.year} — {r.total_suspicions} susp.</option>)}</select>
+              {selectedReportObj && <a href={selectedReportObj.source_url} target="_blank" rel="noopener noreferrer" className="pdf-link" style={{display:'inline-flex', alignItems:'center', gap:6, padding:'8px 14px', minHeight:40, boxSizing:'border-box', border:'1px solid var(--border)', borderRadius:'var(--radius-sm)', background:'var(--bg-card)'}}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="1.6"/><path d="M14 2v6h6M10 13H8m8 4H8m8-8H8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg> {tr.common.pdf} {selectedReportObj.id}</a>}
+            </>
+          )}
+          {effMode==="range" && (
+            <span className="range-controls"><span>{lang==="fr"?"De":"From"}</span><select value={rangeFrom} onChange={e=>setRangeFrom(e.target.value)}>{data.reports.map(r=><option key={r.id} value={r.id}>{r.month} {r.year}</option>)}</select><span>{lang==="fr"?"à":"to"}</span><select value={rangeTo} onChange={e=>setRangeTo(e.target.value)}>{data.reports.map(r=><option key={r.id} value={r.id}>{r.month} {r.year}</option>)}</select></span>
+          )}
+        </div>
 
         <div className="controls">
           <select value={classificationFilter} onChange={e=>setClassificationFilter(e.target.value)}><option value="all">{lang==="fr"?`Tous groupes (${classificationGroups.length})`:`All groups (${classificationGroups.length})`}</option>{classificationGroups.map(c=><option key={c} value={c}>{c}</option>)}</select>
