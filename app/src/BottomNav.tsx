@@ -1,9 +1,18 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { t } from "./i18n";
 import type { Lang } from "./i18n";
 
-export default function BottomNav({ lang }: { lang: Lang }) {
+export default function BottomNav({
+  lang,
+  moreOpen,
+  onToggleMore,
+}: {
+  lang: Lang;
+  moreOpen: boolean;
+  onToggleMore: () => void;
+}) {
   const tr = t[lang];
+  const { pathname } = useLocation();
 
   const items = [
     {
@@ -52,18 +61,11 @@ export default function BottomNav({ lang }: { lang: Lang }) {
         </svg>
       ),
     },
-    {
-      to: "/sources",
-      end: false,
-      label: tr.nav.sources,
-      icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" strokeWidth="1.6" />
-          <path d="M15 3v4h4" stroke="currentColor" strokeWidth="1.6" />
-        </svg>
-      ),
-    },
   ];
+
+  const knownPrefixes = ["/", "/cross", "/map", "/ffn"];
+  const onKnownTab = knownPrefixes.some((p) => (p === "/" ? pathname === "/" : pathname.startsWith(p)));
+  const moreIsActive = moreOpen || !onKnownTab;
 
   return (
     <nav className="bottom-nav" aria-label={lang === "fr" ? "Navigation principale" : "Main navigation"}>
@@ -73,6 +75,21 @@ export default function BottomNav({ lang }: { lang: Lang }) {
           <span>{item.label}</span>
         </NavLink>
       ))}
+      <button
+        type="button"
+        className={moreIsActive ? "active" : ""}
+        aria-expanded={moreOpen}
+        aria-controls="sidebar"
+        aria-label={moreOpen ? tr.nav.menuClose : tr.nav.menuOpen}
+        onClick={onToggleMore}
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="5" cy="12" r="1.6" fill="currentColor" />
+          <circle cx="12" cy="12" r="1.6" fill="currentColor" />
+          <circle cx="19" cy="12" r="1.6" fill="currentColor" />
+        </svg>
+        <span>{lang === "fr" ? "Plus" : "More"}</span>
+      </button>
     </nav>
   );
 }

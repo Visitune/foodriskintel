@@ -105,6 +105,11 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   font-family: var(--font-ui);
   background: var(--bg);
@@ -409,8 +414,10 @@ thead th.sortable button:focus-visible,
 /* ─── Content ──────────────────────────────────────────────────── */
 .content {
   flex: 1;
+  min-width: 0;
   padding: var(--space-8) var(--space-10);
-  max-width: 1200px;
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
 .page {
@@ -1328,7 +1335,8 @@ tbody tr:hover {
     padding-bottom: env(safe-area-inset-bottom, 0);
     box-shadow: var(--shadow-lg);
   }
-  .bottom-nav a {
+  .bottom-nav a,
+  .bottom-nav button {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -1342,17 +1350,24 @@ tbody tr:hover {
     font-size: 10px;
     font-weight: 600;
     text-align: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
   }
-  .bottom-nav a span {
+  .bottom-nav a span,
+  .bottom-nav button span {
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .bottom-nav a.active {
+  .bottom-nav a.active,
+  .bottom-nav button.active {
     color: var(--accent-hover);
   }
-  .bottom-nav a:focus-visible {
+  .bottom-nav a:focus-visible,
+  .bottom-nav button:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: -2px;
   }

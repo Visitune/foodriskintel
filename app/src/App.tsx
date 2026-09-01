@@ -64,24 +64,6 @@ export default function App() {
       {onboardingOpen && <OnboardingModal lang={lang} onClose={handleCloseOnboarding} />}
       <div className="topbar">
         <div className="topbar-inner">
-          <button
-            type="button"
-            className="icon-btn nav-toggle"
-            aria-label={navOpen ? tr.nav.menuClose : tr.nav.menuOpen}
-            aria-expanded={navOpen}
-            aria-controls="sidebar"
-            onClick={() => setNavOpen((v) => !v)}
-          >
-            {navOpen ? (
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-              </svg>
-            ) : (
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-              </svg>
-            )}
-          </button>
           <div className="topbar-brand">
             <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
               <circle cx="13" cy="13" r="8" stroke="var(--accent)" strokeWidth="2" />
@@ -158,7 +140,7 @@ export default function App() {
         </main>
       </div>
       <ScrollAssist lang={lang} />
-      <BottomNav lang={lang} />
+      <BottomNav lang={lang} moreOpen={navOpen} onToggleMore={() => setNavOpen((v) => !v)} />
     </HashRouter>
   );
 }
