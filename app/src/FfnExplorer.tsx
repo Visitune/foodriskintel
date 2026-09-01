@@ -248,7 +248,7 @@ export default function FfnExplorer({ data, lang }: { data: FfnDataset; lang: La
 
       <div className="card">
         <h3>{lang==="fr" ? `Cas détaillés (${filtered.length}) — liens PDF` : `Detailed cases (${filtered.length}) — PDF links`}</h3>
-        <div className="table-scroll"><table><thead><tr>
+        <div className="table-scroll hide-mobile"><table><thead><tr>
           {(
             [
               ["year", tr.common.year],
@@ -265,7 +265,28 @@ export default function FfnExplorer({ data, lang }: { data: FfnDataset; lang: La
           {filtered.slice(0,500).map((c,i)=>(
             <tr key={i}><td className="mono">{c.year}</td><td>{c.month}</td><td>{c.product_category}</td><td><span className="tag" title={c.classification}>{(c as any).group}</span></td><td title={caseOrigins(c).join(", ")+"\n"+(c.origin_raw||"")}>{c.origin_normalized}{caseOrigins(c).length>1 && <span style={{opacity:0.6}}> +{caseOrigins(c).length-1}</span>}</td><td>{c.notified_by_normalized}</td><td title={c.commodity}>{c.commodity.slice(0,42)}</td><td title={c.issue}>{c.issue.slice(0,50)}</td><td><a href={c.source_url} target="_blank" rel="noopener noreferrer" title={c.source_url} aria-label="PDF" style={{display:'inline-flex'}}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="1.6"/><path d="M14 2v6h6" stroke="currentColor" strokeWidth="1.4"/></svg></a></td></tr>
           ))}
-        </tbody></table>{filtered.length>500 && <div className="meta">{lang==="fr" ? `Affichage 500/${filtered.length} — affinez les filtres` : `Showing 500/${filtered.length} — refine filters`}</div>}</div>
+        </tbody></table></div>
+
+        <div className="mobile-cards show-mobile-only" style={{flexDirection:"column", gap:10}}>
+          {filtered.slice(0,500).map((c,i)=>(
+            <div key={i} className="case-card">
+              <div className="case-card-top">
+                <span className="mono">{c.month} {c.year}</span>
+                <a href={c.source_url} target="_blank" rel="noopener noreferrer" title={c.source_url} aria-label="PDF">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="1.6"/><path d="M14 2v6h6" stroke="currentColor" strokeWidth="1.4"/></svg>
+                </a>
+              </div>
+              <div className="case-card-product">{c.product_category}</div>
+              <div><span className="tag" title={c.classification}>{(c as any).group}</span></div>
+              <div className="case-card-row"><span className="case-card-label">{tr.common.origin}</span>{c.origin_normalized}{caseOrigins(c).length>1 && ` +${caseOrigins(c).length-1}`}</div>
+              <div className="case-card-row"><span className="case-card-label">{tr.common.notified}</span>{c.notified_by_normalized}</div>
+              <div className="case-card-row"><span className="case-card-label">{tr.common.commodity}</span>{c.commodity}</div>
+              <div className="case-card-row"><span className="case-card-label">{tr.common.issue}</span>{c.issue}</div>
+            </div>
+          ))}
+        </div>
+
+        {filtered.length>500 && <div className="meta">{lang==="fr" ? `Affichage 500/${filtered.length} — affinez les filtres` : `Showing 500/${filtered.length} — refine filters`}</div>}
       </div>
     </div>
   );

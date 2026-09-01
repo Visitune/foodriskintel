@@ -13,6 +13,7 @@ import Overview from "./Overview";
 import OnboardingModal from "./OnboardingModal";
 import ScrollAssist from "./ScrollAssist";
 import PageTitle from "./PageTitle";
+import BottomNav from "./BottomNav";
 
 export default function App() {
   const [data, setData] = useState<Dataset | null>(null);
@@ -157,6 +158,7 @@ export default function App() {
         </main>
       </div>
       <ScrollAssist lang={lang} />
+      <BottomNav lang={lang} />
     </HashRouter>
   );
 }

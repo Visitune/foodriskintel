@@ -180,7 +180,7 @@ export default function CrossView({ ifs, ffn, cross, lang }: { ifs: Dataset; ffn
       <div id="tendance" className="card">
         <h3>{tr.cross.timeline}</h3>
         <div className="meta" style={{ marginBottom: 6 }}>{tr.cross.trendHint} · {tr.cross.clickMonth}</div>
-        <div style={{ overflowX: "auto" }}>
+        <div className="hide-mobile" style={{ overflowX: "auto" }}>
           <table>
             <thead><tr><th>{tr.cross.colIfs ? (lang === "fr" ? "Mois" : "Month") : ""}</th><th>{tr.cross.colFfn}</th><th>Δ</th><th>{tr.cross.colIfs}</th><th>Δ</th><th>{lang === "fr" ? "Top produit FFN" : "FFN top product"}</th><th>{lang === "fr" ? "Sources" : "Sources"}</th></tr></thead>
             <tbody>
@@ -213,6 +213,36 @@ export default function CrossView({ ifs, ffn, cross, lang }: { ifs: Dataset; ffn
               ))}
             </tbody>
           </table>
+        </div>
+
+        <div className="mobile-cards show-mobile-only" style={{ flexDirection: "column", gap: 10 }}>
+          {rows.map((c, i) => (
+            <div
+              key={c.month}
+              className={"case-card" + (drill === c.month ? " active" : "")}
+              style={{ opacity: c.ifs_v === null ? 0.6 : 1, cursor: "pointer" }}
+              onClick={() => setDrill(drill === c.month ? null : c.month)}
+              aria-expanded={drill === c.month}
+            >
+              <div className="case-card-top">
+                <span className="mono">{c.month}</span>
+                <span style={{ opacity: 0.6 }}>{drill === c.month ? "▾" : "▸"}</span>
+              </div>
+              <div className="case-card-row"><span className="case-card-label">{tr.cross.colFfn}</span>{c.ffn_v} <span className={trendClass(trendOf(i, "ffn_v"))}>{trendOf(i, "ffn_v")}</span></div>
+              <div className="case-card-row">
+                <span className="case-card-label">{tr.cross.colIfs}</span>
+                {c.ifs_v !== null ? <>{c.ifs_v} <span className={trendClass(trendOf(i, "ifs_v"))}>{trendOf(i, "ifs_v")}</span></> : <span className="badge-missing" title={tr.cross.missingNote}>{tr.cross.missing}</span>}
+              </div>
+              {country === "all" && c.ffn_top_product && (
+                <div className="case-card-row"><span className="case-card-label">{lang === "fr" ? "Top produit FFN" : "FFN top product"}</span>{c.ffn_top_product.slice(0, 34)}</div>
+              )}
+              <div className="case-card-row" onClick={e => e.stopPropagation()}>
+                <Link to={`/ffn?report=${c.month}`} aria-label={`${tr.cross.openFfn} ${c.month}`}>FFN</Link>
+                {" · "}<a href={c.ffn_url} target="_blank" rel="noopener noreferrer" aria-label="FFN PDF">PDF</a>
+                {c.ifs_url && <>{" · "}{lang === "fr" ? "Carte" : "Map"} <a href={c.ifs_url} target="_blank" rel="noopener noreferrer" aria-label={`${tr.cross.openIfs} ${c.month}`}>PDF</a></>}
+              </div>
+            </div>
+          ))}
         </div>
         {drill && drillData && (
           <div className="drill-panel" style={{ marginTop: 8, padding: "12px 14px", border: "1px solid var(--border)", borderRadius: "var(--radius-md)", background: "var(--bg-elevated)" }}>
