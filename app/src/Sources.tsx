@@ -100,6 +100,7 @@ export default function Sources({ data, lang }: { data: Dataset; lang: Lang }) {
 
       <div className="card">
         <h3>{lang==="fr"?"Couverture":"Coverage"}</h3>
+        <div className="table-scroll">
         <table>
           <thead>
             <tr>
@@ -118,6 +119,7 @@ export default function Sources({ data, lang }: { data: Dataset; lang: Lang }) {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
 
       <div className="card">

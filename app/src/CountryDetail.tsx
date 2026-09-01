@@ -127,22 +127,23 @@ export default function CountryDetail({ data, ffn, lang }: { data: Dataset; ffn?
         {ffnOrigin.length > 0 && (
           <div className="card">
             <h3>{lang==="fr"?"FFN — comme origine":"FFN — as origin"} ({ffnOrigin.length})<span className="src-tag ffn">FFN·ACN UE</span></h3>
-            <table><thead><tr><th>{lang==="fr"?"Mois":"Month"}</th><th>{lang==="fr"?"Produit":"Product"}</th><th>Classification</th><th>PDF</th></tr></thead><tbody>
+            <div className="table-scroll"><table><thead><tr><th>{lang==="fr"?"Mois":"Month"}</th><th>{lang==="fr"?"Produit":"Product"}</th><th>Classification</th><th>PDF</th></tr></thead><tbody>
               {ffnOrigin.slice(0,30).map((c,i)=><tr key={i}><td>{c.month.slice(0,3)} {String(c.year).slice(2)}</td><td>{c.product_category}</td><td><span className="tag">{c.classification.slice(0,30)}</span></td><td><a href={c.source_url} target="_blank" rel="noopener noreferrer" aria-label="PDF"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="1.6"/><path d="M14 2v6h6" stroke="currentColor" strokeWidth="1.4"/></svg></a></td></tr>)}
-            </tbody></table>
+            </tbody></table></div>
           </div>
         )}
         {ffnNotified.length > 0 && (
           <div className="card">
             <h3>{lang==="fr"?"FFN — comme notifiant":"FFN — as notifier"} ({ffnNotified.length})<span className="src-tag ffn">FFN·ACN UE</span></h3>
-            <table><thead><tr><th>{lang==="fr"?"Mois":"Month"}</th><th>{lang==="fr"?"Produit":"Product"}</th><th>{lang==="fr"?"Origine":"Origin"}</th><th>PDF</th></tr></thead><tbody>
+            <div className="table-scroll"><table><thead><tr><th>{lang==="fr"?"Mois":"Month"}</th><th>{lang==="fr"?"Produit":"Product"}</th><th>{lang==="fr"?"Origine":"Origin"}</th><th>PDF</th></tr></thead><tbody>
               {ffnNotified.slice(0,30).map((c,i)=><tr key={i}><td>{c.month.slice(0,3)} {String(c.year).slice(2)}</td><td>{c.product_category}</td><td title={c.origin_raw}>{c.origins_list && c.origins_list.length>1 ? c.origins_list.join(", ") : c.origin_normalized}</td><td><a href={c.source_url} target="_blank" rel="noopener noreferrer" aria-label="PDF"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="1.6"/><path d="M14 2v6h6" stroke="currentColor" strokeWidth="1.4"/></svg></a></td></tr>)}
-            </tbody></table>
+            </tbody></table></div>
           </div>
         )}
         {fraudSource.length > 0 && (
           <div className="card">
             <h3>{lang==="fr"?"Cas fraude — pays source":"Fraud Cases — Source Country"}<span className="src-tag jrc">IFS · JRC presse</span></h3>
+            <div className="table-scroll">
             <table>
               <thead>
                 <tr>
@@ -163,12 +164,14 @@ export default function CountryDetail({ data, ffn, lang }: { data: Dataset; ffn?
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
         )}
 
         {fraudDetected.length > 0 && (
           <div className="card">
             <h3>{lang==="fr"?"Cas fraude — détecté dans":"Fraud Cases — Detected In"}<span className="src-tag jrc">IFS · JRC presse</span></h3>
+            <div className="table-scroll">
             <table>
               <thead>
                 <tr>
@@ -191,6 +194,7 @@ export default function CountryDetail({ data, ffn, lang }: { data: Dataset; ffn?
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
         )}
       </div>
@@ -198,6 +202,7 @@ export default function CountryDetail({ data, ffn, lang }: { data: Dataset; ffn?
       {recalls.length > 0 && (
       <div className="card">
         <h3>{lang==="fr"?"Rapports par période":"Reports by Period"}<span className="src-tag ifs">IFS</span></h3>
+        <div className="table-scroll">
         <table>
           <thead>
             <tr>
@@ -224,6 +229,7 @@ export default function CountryDetail({ data, ffn, lang }: { data: Dataset; ffn?
             })}
           </tbody>
         </table>
+        </div>
       </div>
       )}
     </div>

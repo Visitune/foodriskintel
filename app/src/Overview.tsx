@@ -157,6 +157,7 @@ export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ff
 
       <div id="recents" className="card">
         <h3>{tr.overview.recent}</h3>
+        <div className="table-scroll">
         <table>
           <thead>
             <tr>
@@ -181,6 +182,7 @@ export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ff
               ))}
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   );
