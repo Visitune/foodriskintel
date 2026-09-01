@@ -121,21 +121,25 @@ body {
   backdrop-filter: blur(8px);
 }
 .topbar-inner {
-  max-width: 1200px; margin:0 auto; padding: 8px 16px;
+  padding: 10px 20px;
   display:flex; align-items:center; justify-content:space-between; gap:8px 12px;
   flex-wrap: wrap;
 }
 .topbar-brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   min-width: 0;
+  margin-right: auto;
 }
 .topbar-title {
-  font-size:14px; font-weight:700; letter-spacing:-0.2px; color:var(--text);
+  font-size:17px; font-weight:800; letter-spacing:-0.3px; color:var(--text);
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .sidebar-page-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
   margin-bottom: var(--space-6);
   padding: 0 var(--space-1);
 }

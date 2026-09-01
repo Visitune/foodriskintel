@@ -82,7 +82,7 @@ export default function App() {
             )}
           </button>
           <div className="topbar-brand">
-            <svg width="22" height="22" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
               <circle cx="13" cy="13" r="8" stroke="var(--accent)" strokeWidth="2" />
               <path d="M18.7 18.7L26 26" stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round" />
               <path d="M13 8.5L17.2 16H8.8L13 8.5Z" stroke="var(--accent)" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" />
@@ -118,7 +118,7 @@ export default function App() {
         )}
 
         <nav id="sidebar" className={navOpen ? "sidebar open" : "sidebar"}>
-          <PageTitle lang={lang} className="section-label sidebar-page-label" />
+          <PageTitle lang={lang} className="sidebar-page-label" />
 
           <div className="nav-links">
             <div className="nav-group-label">{tr.nav.groupAnalyze}</div>
