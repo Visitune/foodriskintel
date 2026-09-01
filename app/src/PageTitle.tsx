@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import { t } from "./i18n";
 import type { Lang } from "./i18n";
 
-export default function PageTitle({ lang }: { lang: Lang }) {
+export default function PageTitle({ lang, className = "topbar-title" }: { lang: Lang; className?: string }) {
   const tr = t[lang];
   const { pathname } = useLocation();
 
@@ -18,5 +18,5 @@ export default function PageTitle({ lang }: { lang: Lang }) {
     try { label = decodeURIComponent(raw); } catch { label = raw; }
   }
 
-  return <span className="topbar-title">{label}</span>;
+  return <span className={className}>{label}</span>;
 }

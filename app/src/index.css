@@ -125,9 +125,19 @@ body {
   display:flex; align-items:center; justify-content:space-between; gap:8px 12px;
   flex-wrap: wrap;
 }
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
 .topbar-title {
-  font-size:13px; font-weight:700; letter-spacing:-0.2px; color:var(--text-dim);
+  font-size:14px; font-weight:700; letter-spacing:-0.2px; color:var(--text);
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.sidebar-page-label {
+  margin-bottom: var(--space-6);
+  padding: 0 var(--space-1);
 }
 .topbar-actions { display:flex; align-items:center; gap:8px; flex-shrink: 0; }
 .icon-btn {
