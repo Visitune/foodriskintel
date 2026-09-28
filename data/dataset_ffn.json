@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-28T18:05:48.118107",
+  "generated_at": "2026-09-28T16:42:39.385208",
   "date_range": {
     "start": "2024-01",
-    "end": "2026-07"
+    "end": "2026-08"
   },
   "summary": {
-    "total_reports": 31,
-    "total_suspicions": 6947,
-    "total_cases": 6698,
+    "total_reports": 32,
+    "total_suspicions": 7112,
+    "total_cases": 6860,
     "countries_origin": 125,
     "countries_notified": 31,
     "coverage_note": "FFN covers cross-border ACN suspicions only"
@@ -1731,6 +1731,58 @@
         "Market control": 126
       },
       "cases_count": 205
+    },
+    {
+      "id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "filename": "ff_ffn_monthly-report_202608.pdf",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf",
+      "uuid": "8aabb837-85fa-412e-a4aa-acbcf475e6bc",
+      "in_cross_window": true,
+      "total_suspicions": 165,
+      "by_product_category": {
+        "Alcoholic beverages": 1,
+        "Bivalve molluscs and products thereof": 1,
+        "Water for human consumption (other)": 1,
+        "Prepared dishes and snacks": 1,
+        "Herbs and spices": 2,
+        "Soups, broths, sauces and condiments": 2,
+        "Milk and milk products": 2,
+        "Live animals": 2,
+        "Feed materials": 3,
+        "Honey and royal jelly": 3,
+        "Wine": 3,
+        "Fats and oils": 4,
+        "Crustaceans and products thereof": 5,
+        "Fish and fish products": 5,
+        "Other food product / mixed": 7,
+        "Nuts, nut products and seeds": 8,
+        "Confectionery": 8,
+        "Cocoa and cocoa preparations, coffee and tea": 8,
+        "Poultry meat and poultry meat products": 8,
+        "Meat and meat products (other than poultry)": 9,
+        "Cereals and bakery products": 10,
+        "Non-alcoholic beverages": 13,
+        "Fruits and vegetables": 14,
+        "Dietetic foods, food supplements and fortified foods": 45
+      },
+      "by_fraud_category": {
+        "Record tampering": 35,
+        "Product tampering": 43,
+        "Other non-compliances (implicit claim violations)": 87
+      },
+      "by_detection_source": {
+        "Company's own check": 4,
+        "Whistleblower information": 4,
+        "Monitoring of media": 18,
+        "Consumer complaint": 19,
+        "Border control": 25,
+        "Market control": 92
+      },
+      "cases_count": 162
     }
   ],
   "cases": [
@@ -129058,37 +129110,3116 @@
       "notified_by_raw": "Belgium",
       "notified_by_normalized": "Belgium",
       "source_url": "https://food.ec.europa.eu/document/download/68fa7bc0-ea86-4c4b-9bf9-972bc7d9bb32_en?filename=ff_ffn_monthly-report_202607.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Additives not compliant with EU MLsi",
+      "product_category": "Crustaceans and products thereof",
+      "commodity": "langoustines (chilled)",
+      "issue": "sulphur dioxide (E 220) (277.7 mg/kg)*",
+      "origin_raw": "United Kingdom",
+      "origin_normalized": "United Kingdom",
+      "origins_list": [
+        "United Kingdom"
+      ],
+      "notified_by_raw": "France",
+      "notified_by_normalized": "France",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Additives not compliant with EU MLsi",
+      "product_category": "Crustaceans and products thereof",
+      "commodity": "shrimps",
+      "issue": "sulphur dioxide (E 220) (815.4 mg/kg)*",
+      "origin_raw": "Ecuador",
+      "origin_normalized": "Ecuador",
+      "origins_list": [
+        "Ecuador"
+      ],
+      "notified_by_raw": "Italy",
+      "notified_by_normalized": "Italy",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Additives not compliant with EU MLsi",
+      "product_category": "Fruits and vegetables",
+      "commodity": "coconut (flakes)",
+      "issue": "sulphur dioxide (E 220) (317 mg/kg)*",
+      "origin_raw": "Vietnam",
+      "origin_normalized": "Vietnam",
+      "origins_list": [
+        "Vietnam"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Additives not compliant with EU MLsi",
+      "product_category": "Fruits and vegetables",
+      "commodity": "Non-alcoholic",
+      "issue": "soft drinks benzoic acid (E 210) (360 mg/l)",
+      "origin_raw": "Netherlands",
+      "origin_normalized": "Netherlands",
+      "origins_list": [
+        "Netherlands"
+      ],
+      "notified_by_raw": "Denmark",
+      "notified_by_normalized": "Denmark",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Adulteration (ingredient dilution)",
+      "product_category": "Honey and royal jelly",
+      "commodity": "honey",
+      "issue": "foreign amylases (Aspergillus oryzae)",
+      "origin_raw": "Bulgaria",
+      "origin_normalized": "Bulgaria",
+      "origins_list": [
+        "Bulgaria"
+      ],
+      "notified_by_raw": "European Commission",
+      "notified_by_normalized": "Unknown",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Adulteration (ingredient dilution)",
+      "product_category": "Honey and royal jelly",
+      "commodity": "honey",
+      "issue": "foreign amylases (Aspergillus oryzae,",
+      "origin_raw": "Bulgaria",
+      "origin_normalized": "Bulgaria",
+      "origins_list": [
+        "Bulgaria"
+      ],
+      "notified_by_raw": "European",
+      "notified_by_normalized": "Unknown",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Adulteration (ingredient dilution)",
+      "product_category": "Honey and royal jelly",
+      "commodity": "honey (Manuka) (organic)",
+      "issue": "no measurable thixotropic behaviour detected",
+      "origin_raw": "New Zealand",
+      "origin_normalized": "New Zealand",
+      "origins_list": [
+        "New Zealand"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Adulteration (ingredient substitution)",
+      "product_category": "Honey and royal jelly",
+      "commodity": "Cereals and bakery",
+      "issue": "egg pasta misdeclared egg content (11.3% instead of",
+      "origin_raw": "Italy",
+      "origin_normalized": "Italy",
+      "origins_list": [
+        "Italy"
+      ],
+      "notified_by_raw": "Czechia",
+      "notified_by_normalized": "Czechia",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Adulteration (ingredient substitution)",
+      "product_category": "Crustaceans and products thereof",
+      "commodity": "shrimps (Litopenaeus vannamei) (frozen)",
+      "issue": "water addition (W/P ratio: of 5.7)",
+      "origin_raw": "Germany",
+      "origin_normalized": "Germany",
+      "origins_list": [
+        "Germany"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Adulteration (ingredient substitution)",
+      "product_category": "Meat and meat products (other than poultry)",
+      "commodity": "meat (beef, pork)",
+      "issue": "misdeclared fat content (26% instead of",
+      "origin_raw": "Austria",
+      "origin_normalized": "Austria",
+      "origins_list": [
+        "Austria"
+      ],
+      "notified_by_raw": "Austria",
+      "notified_by_normalized": "Austria",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Adulteration (ingredient substitution)",
+      "product_category": "Meat and meat products (other than poultry)",
+      "commodity": "sausage (pork)",
+      "issue": "misdeclared fat content (42.4 g/100 g instead of 23.1 g/100 g)",
+      "origin_raw": "Spain",
+      "origin_normalized": "Spain",
+      "origins_list": [
+        "Spain"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Adulteration (ingredient substitution)",
+      "product_category": "Meat and meat products (other than poultry)",
+      "commodity": "sausages (dried)",
+      "issue": "misdeclared fat content (41.8 g/100 g instead",
+      "origin_raw": "Spain",
+      "origin_normalized": "Spain",
+      "origins_list": [
+        "Spain"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Adulteration (ingredient substitution)",
+      "product_category": "Meat and meat products (other than poultry)",
+      "commodity": "veal meat",
+      "issue": "misdeclared fat content (10.5 g/100 g instead of 7.8 g/100 g)",
+      "origin_raw": "Netherlands",
+      "origin_normalized": "Netherlands",
+      "origins_list": [
+        "Netherlands"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Adulteration (ingredient substitution)",
+      "product_category": "Poultry meat and poultry meat products",
+      "commodity": "chicken meat",
+      "issue": "water addition (W/P ratio:3.61)",
+      "origin_raw": "Poland",
+      "origin_normalized": "Poland",
+      "origins_list": [
+        "Poland"
+      ],
+      "notified_by_raw": "France",
+      "notified_by_normalized": "France",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Adulteration (ingredient substitution)",
+      "product_category": "Poultry meat and poultry meat products",
+      "commodity": "chicken meat (chilled)",
+      "issue": "water addition (W/P ratio: 3.68)",
+      "origin_raw": "Belgium",
+      "origin_normalized": "Belgium",
+      "origins_list": [
+        "Belgium"
+      ],
+      "notified_by_raw": "France",
+      "notified_by_normalized": "France",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Adulteration (ingredient substitution)",
+      "product_category": "Poultry meat and poultry meat products",
+      "commodity": "chicken meat",
+      "issue": "water addition (W/P ratio: 4.48)",
+      "origin_raw": "Poland",
+      "origin_normalized": "Poland",
+      "origins_list": [
+        "Poland"
+      ],
+      "notified_by_raw": "Latvia",
+      "notified_by_normalized": "Latvia",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Adulteration (ingredient substitution)",
+      "product_category": "Poultry meat and poultry meat products",
+      "commodity": "chicken meat (frozen)",
+      "issue": "water addition (W/P ratio: 3.88)",
+      "origin_raw": "Poland",
+      "origin_normalized": "Poland",
+      "origins_list": [
+        "Poland"
+      ],
+      "notified_by_raw": "France",
+      "notified_by_normalized": "France",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Adulteration (ingredient substitution)",
+      "product_category": "Poultry meat and poultry meat products",
+      "commodity": "sausages (chicken)",
+      "issue": "misdeclared meat content (75.4; 78.4%",
+      "origin_raw": "Poland",
+      "origin_normalized": "Poland",
+      "origins_list": [
+        "Poland"
+      ],
+      "notified_by_raw": "Czechia",
+      "notified_by_normalized": "Czechia",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Adulteration (species substitution)",
+      "product_category": "Meat and meat products (other than poultry)",
+      "commodity": "sausage (pork)",
+      "issue": "turkey meat and mechanically separated meat (MSM) (undeclared)",
+      "origin_raw": "Greece",
+      "origin_normalized": "Greece",
+      "origins_list": [
+        "Greece"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Meat and meat products (other than poultry)",
+      "commodity": "Cereals and bakery",
+      "issue": "snacks brilliant blue FCF (E 133) (280 mg/kg)*",
+      "origin_raw": "Germany",
+      "origin_normalized": "Germany",
+      "origins_list": [
+        "Germany"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Confectionery",
+      "commodity": "sweets",
+      "issue": "carrageenan (E 407)*",
+      "origin_raw": "South Korea",
+      "origin_normalized": "South Korea",
+      "origins_list": [
+        "South Korea"
+      ],
+      "notified_by_raw": "Sweden",
+      "notified_by_normalized": "Sweden",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Confectionery",
+      "commodity": "sweets",
+      "issue": "glycerol (E 422) (54950 mg/l)*",
+      "origin_raw": "Spain",
+      "origin_normalized": "Spain",
+      "origins_list": [
+        "Spain"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Confectionery",
+      "commodity": "sweets",
+      "issue": "konjac powder",
+      "origin_raw": "China",
+      "origin_normalized": "China",
+      "origins_list": [
+        "China"
+      ],
+      "notified_by_raw": "Sweden",
+      "notified_by_normalized": "Sweden",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Confectionery",
+      "commodity": "Dietetic foods, food",
+      "issue": "food supplements irradiation (undeclared)*",
+      "origin_raw": "United States",
+      "origin_normalized": "United States",
+      "origins_list": [
+        "United States"
+      ],
+      "notified_by_raw": "Latvia",
+      "notified_by_normalized": "Latvia",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Confectionery",
+      "commodity": "supplements and",
+      "issue": "food supplements titanium dioxide (E 171)*",
+      "origin_raw": "India",
+      "origin_normalized": "India",
+      "origins_list": [
+        "India"
+      ],
+      "notified_by_raw": "Slovenia",
+      "notified_by_normalized": "Slovenia",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Confectionery",
+      "commodity": "fortified foods",
+      "issue": "food supplements titanium dioxide (E 171)*",
+      "origin_raw": "Portugal",
+      "origin_normalized": "Portugal",
+      "origins_list": [
+        "Portugal"
+      ],
+      "notified_by_raw": "Spain",
+      "notified_by_normalized": "Spain",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Fish and fish products",
+      "commodity": "anchovy fillets with stuffed olives in brine (chilled)",
+      "issue": "potassium metabisulfite (E 224)*",
+      "origin_raw": "Morocco",
+      "origin_normalized": "Morocco",
+      "origins_list": [
+        "Morocco"
+      ],
+      "notified_by_raw": "France",
+      "notified_by_normalized": "France",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Fish and fish products",
+      "commodity": "pangasius fillets",
+      "issue": "irradiation (undeclared)*",
+      "origin_raw": "Vietnam",
+      "origin_normalized": "Vietnam",
+      "origins_list": [
+        "Vietnam"
+      ],
+      "notified_by_raw": "Italy",
+      "notified_by_normalized": "Italy",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Fish and fish products",
+      "commodity": "tuna (frozen)",
+      "issue": "carbon monoxide (420 μg/kg) (undecl are",
+      "origin_raw": "d) Vietnam",
+      "origin_normalized": "Unknown",
+      "origins_list": [
+        "Unknown"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Fish and fish products",
+      "commodity": "yellowfin tuna",
+      "issue": "nitrites (E 249 - E 250) (4.8 mg/kg)*",
+      "origin_raw": "Vietnam",
+      "origin_normalized": "Vietnam",
+      "origins_list": [
+        "Vietnam"
+      ],
+      "notified_by_raw": "Belgium",
+      "notified_by_normalized": "Belgium",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Fruits and vegetables",
+      "commodity": "mandarin peel (dried)",
+      "issue": "sweeteners (cyclamate (E 952), saccharin (E 954), aspartame (E 951), neotame (E 961), steviol glycosides (E 960), sucralose (E 955))",
+      "origin_raw": "Netherlands",
+      "origin_normalized": "Netherlands",
+      "origins_list": [
+        "Netherlands"
+      ],
+      "notified_by_raw": "Denmark",
+      "notified_by_normalized": "Denmark",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Fruits and vegetables",
+      "commodity": "raspberries",
+      "issue": "ethylene oxide (0.03 mg/kg)",
+      "origin_raw": "Portugal",
+      "origin_normalized": "Portugal",
+      "origins_list": [
+        "Portugal"
+      ],
+      "notified_by_raw": "Spain",
+      "notified_by_normalized": "Spain",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Fruits and vegetables",
+      "commodity": "raspberries",
+      "issue": "ethylene oxide (0.05 mg/kg)*",
+      "origin_raw": "Portugal",
+      "origin_normalized": "Portugal",
+      "origins_list": [
+        "Portugal"
+      ],
+      "notified_by_raw": "Spain",
+      "notified_by_normalized": "Spain",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Fruits and vegetables",
+      "commodity": "tomatoes (sun-",
+      "issue": "chlorate (8.13 mg/kg)",
+      "origin_raw": "Türkiye",
+      "origin_normalized": "Turkey",
+      "origins_list": [
+        "Turkey"
+      ],
+      "notified_by_raw": "Netherlands",
+      "notified_by_normalized": "Netherlands",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Herbs and spices",
+      "commodity": "hot pepper (ground)",
+      "issue": "chlorate (6.3 mg/kg)*",
+      "origin_raw": "China",
+      "origin_normalized": "China",
+      "origins_list": [
+        "China"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Herbs and spices",
+      "commodity": "Meat and meat",
+      "issue": "kebab meat (frozen) glutamic acid (1175 mg/kg) (undeclared)",
+      "origin_raw": "Greece",
+      "origin_normalized": "Greece",
+      "origins_list": [
+        "Greece"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Nuts, nut products and seeds",
+      "commodity": "pistachio cream",
+      "issue": "copper complexes of chlorophylls and chlorophyllins (E 141), curcumin (E 100)",
+      "origin_raw": "Italy",
+      "origin_normalized": "Italy",
+      "origins_list": [
+        "Italy"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Nuts, nut products and seeds",
+      "commodity": "sesame seeds",
+      "issue": "2-chloroethanol (sum of 2-CE and EO",
+      "origin_raw": "India",
+      "origin_normalized": "India",
+      "origins_list": [
+        "India"
+      ],
+      "notified_by_raw": "Italy",
+      "notified_by_normalized": "Italy",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "Wine",
+      "commodity": "wine",
+      "issue": "3-Methoxy-1,2-propandiol (3-MPD) (0.33 mg/l)",
+      "origin_raw": "Georgia",
+      "origin_normalized": "Georgia",
+      "origins_list": [
+        "Georgia"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unapproved process (concealment, enhancement)",
+      "product_category": "wine",
+      "commodity": "tartrazine (E 102), sunset yellow FCF (E 110)",
+      "issue": "",
+      "origin_raw": "Portugal",
+      "origin_normalized": "Portugal",
+      "origins_list": [
+        "Portugal"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Undeclared process (concealment, enhancement)",
+      "product_category": "Fruits and vegetables",
+      "commodity": "vine leaves (canned)",
+      "issue": "sulphites (E 220 - E 228) (18 mg/kg)*",
+      "origin_raw": "Germany",
+      "origin_normalized": "Germany",
+      "origins_list": [
+        "Germany"
+      ],
+      "notified_by_raw": "Spain",
+      "notified_by_normalized": "Spain",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Undeclared process (concealment, enhancement)",
+      "product_category": "Fruits and vegetables",
+      "commodity": "juice (apple)",
+      "issue": "ascorbic acid (22.6 mg/l)",
+      "origin_raw": "Hungary",
+      "origin_normalized": "Hungary",
+      "origins_list": [
+        "Hungary"
+      ],
+      "notified_by_raw": "Austria",
+      "notified_by_normalized": "Austria",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "EU protected designation",
+      "product_category": "Nuts, nut products and seeds",
+      "commodity": "pistachio cream",
+      "issue": "misleading denomination “Pistachio di Bro (e-marketed)",
+      "origin_raw": "nte” Germany",
+      "origin_normalized": "Unknown",
+      "origins_list": [
+        "Unknown"
+      ],
+      "notified_by_raw": "Italy",
+      "notified_by_normalized": "Italy",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "EU protected designation",
+      "product_category": "Wine",
+      "commodity": "wine-making ingredient kit",
+      "issue": "evocation of \"Amarone della Valpolicella\" (e- marketed)",
+      "origin_raw": "Sweden",
+      "origin_normalized": "Sweden",
+      "origins_list": [
+        "Sweden"
+      ],
+      "notified_by_raw": "Denmark",
+      "notified_by_normalized": "Denmark",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "EU protected designation",
+      "product_category": "Wine",
+      "commodity": "Method of capture",
+      "issue": "Alcoholic beverages spirit drinks claim \"aged in wooden barrels\", caramels",
+      "origin_raw": "Austria",
+      "origin_normalized": "Austria",
+      "origins_list": [
+        "Austria"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Cereals and bakery products",
+      "commodity": "porridge",
+      "issue": "nutrition claim",
+      "origin_raw": "Germany",
+      "origin_normalized": "Germany",
+      "origins_list": [
+        "Germany"
+      ],
+      "notified_by_raw": "Austria",
+      "notified_by_normalized": "Austria",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Cereals and bakery products",
+      "commodity": "snacks",
+      "issue": "nutrition claim",
+      "origin_raw": "Germany",
+      "origin_normalized": "Germany",
+      "origins_list": [
+        "Germany"
+      ],
+      "notified_by_raw": "Austria",
+      "notified_by_normalized": "Austria",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Cocoa and cocoa preparations, coffee and tea",
+      "commodity": "herbal tea",
+      "issue": "health claims",
+      "origin_raw": "Poland",
+      "origin_normalized": "Poland",
+      "origins_list": [
+        "Poland"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Cocoa and cocoa preparations, coffee and tea",
+      "commodity": "matcha rooibos",
+      "issue": "health claims (e-marketed)",
+      "origin_raw": "Spain",
+      "origin_normalized": "Spain",
+      "origins_list": [
+        "Spain"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "health claims",
+      "origin_raw": "Italy",
+      "origin_normalized": "Italy",
+      "origins_list": [
+        "Italy"
+      ],
+      "notified_by_raw": "Slovenia",
+      "notified_by_normalized": "Slovenia",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "health claims",
+      "origin_raw": "Netherlands",
+      "origin_normalized": "Netherlands",
+      "origins_list": [
+        "Netherlands"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "health claims (e-marketed)",
+      "origin_raw": "Austria",
+      "origin_normalized": "Austria",
+      "origins_list": [
+        "Austria"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "health claims (e-marketed)",
+      "origin_raw": "France",
+      "origin_normalized": "France",
+      "origins_list": [
+        "France"
+      ],
+      "notified_by_raw": "Luxembourg",
+      "notified_by_normalized": "Luxembourg",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "health claims (e-marketed)",
+      "origin_raw": "Germany",
+      "origin_normalized": "Germany",
+      "origins_list": [
+        "Germany"
+      ],
+      "notified_by_raw": "Switzerland",
+      "notified_by_normalized": "Switzerland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Non-alcoholic beverages",
+      "commodity": "soft drinks",
+      "issue": "health claims",
+      "origin_raw": "Bulgaria",
+      "origin_normalized": "Bulgaria",
+      "origins_list": [
+        "Bulgaria"
+      ],
+      "notified_by_raw": "Greece",
+      "notified_by_normalized": "Greece",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Non-alcoholic beverages",
+      "commodity": "soft drinks (carbonated)",
+      "issue": "health claims",
+      "origin_raw": "Netherlands",
+      "origin_normalized": "Netherlands",
+      "origins_list": [
+        "Netherlands"
+      ],
+      "notified_by_raw": "Belgium",
+      "notified_by_normalized": "Belgium",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Non-alcoholic beverages",
+      "commodity": "soft drinks",
+      "issue": "health claims",
+      "origin_raw": "France",
+      "origin_normalized": "France",
+      "origins_list": [
+        "France"
+      ],
+      "notified_by_raw": "Belgium",
+      "notified_by_normalized": "Belgium",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Nuts, nut products and seeds",
+      "commodity": "bitter apricot kernels",
+      "issue": "health claims (e-marketed)",
+      "origin_raw": "Poland",
+      "origin_normalized": "Poland",
+      "origins_list": [
+        "Poland"
+      ],
+      "notified_by_raw": "Finland",
+      "notified_by_normalized": "Finland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Nuts, nut products and seeds",
+      "commodity": "bitter apricot",
+      "issue": "health claims (e-marketed)",
+      "origin_raw": "Estonia",
+      "origin_normalized": "Estonia",
+      "origins_list": [
+        "Estonia"
+      ],
+      "notified_by_raw": "Finland",
+      "notified_by_normalized": "Finland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Cocoa and cocoa preparations, coffee and tea",
+      "commodity": "herbal infusion",
+      "issue": "claim \"no added sugars\", sweeteners (declared)",
+      "origin_raw": "Luxembourg",
+      "origin_normalized": "Luxembourg",
+      "origins_list": [
+        "Luxembourg"
+      ],
+      "notified_by_raw": "Belgium",
+      "notified_by_normalized": "Belgium",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Confectionery",
+      "commodity": "sweets",
+      "issue": "misdeclared sugar content (55.2% instead of",
+      "origin_raw": "Netherlands",
+      "origin_normalized": "Netherlands",
+      "origins_list": [
+        "Netherlands"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Crustaceans and products thereof",
+      "commodity": "crab preparation",
+      "issue": "GMOs (MON87427, MON810) (>0.9%)",
+      "origin_raw": "Thailand",
+      "origin_normalized": "Thailand",
+      "origins_list": [
+        "Thailand"
+      ],
+      "notified_by_raw": "Cyprus",
+      "notified_by_normalized": "Cyprus",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Crustaceans and products thereof",
+      "commodity": "Dietetic foods, food",
+      "issue": "food supplements misdeclared vitamin B2 content (10 mg/dose instead of 17mg/dose)",
+      "origin_raw": "Slovakia",
+      "origin_normalized": "Slovakia",
+      "origins_list": [
+        "Slovakia"
+      ],
+      "notified_by_raw": "Slovenia",
+      "notified_by_normalized": "Slovenia",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Fats and oils",
+      "commodity": "extra virgin olive oil",
+      "issue": "virgin olive oil",
+      "origin_raw": "Italy",
+      "origin_normalized": "Italy",
+      "origins_list": [
+        "Italy"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Fats and oils",
+      "commodity": "olive oil",
+      "issue": "quality classification",
+      "origin_raw": "Greece",
+      "origin_normalized": "Greece",
+      "origins_list": [
+        "Greece"
+      ],
+      "notified_by_raw": "Sweden",
+      "notified_by_normalized": "Sweden",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Meat and meat products (other than poultry)",
+      "commodity": "ham (smoked)",
+      "issue": "smoke aroma only",
+      "origin_raw": "Poland",
+      "origin_normalized": "Poland",
+      "origins_list": [
+        "Poland"
+      ],
+      "notified_by_raw": "Austria",
+      "notified_by_normalized": "Austria",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Non-alcoholic beverages",
+      "commodity": "drink (oat)",
+      "issue": "misdeclared calcium content (77.5 mg/100 ml",
+      "origin_raw": "Sweden",
+      "origin_normalized": "Sweden",
+      "origins_list": [
+        "Sweden"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Non-alcoholic beverages",
+      "commodity": "orange, apricot and apple nectar",
+      "issue": "misleading product denomination, fruit content mismatch between language labels",
+      "origin_raw": "Greece",
+      "origin_normalized": "Greece",
+      "origins_list": [
+        "Greece"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Non-alcoholic beverages",
+      "commodity": "soft drinks",
+      "issue": "misdeclared sugar content (>9 g/100 ml",
+      "origin_raw": "Austria",
+      "origin_normalized": "Austria",
+      "origins_list": [
+        "Austria"
+      ],
+      "notified_by_raw": "Austria",
+      "notified_by_normalized": "Austria",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Non-alcoholic beverages",
+      "commodity": "soft drinks",
+      "issue": "misleading information: aromas instead of grape and goji berries",
+      "origin_raw": "Netherlands",
+      "origin_normalized": "Netherlands",
+      "origins_list": [
+        "Netherlands"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Non-alcoholic beverages",
+      "commodity": "Nuts, nut products and",
+      "issue": "apricot kernels misleading limits regarding safe daily intake",
+      "origin_raw": "Spain",
+      "origin_normalized": "Spain",
+      "origins_list": [
+        "Spain"
+      ],
+      "notified_by_raw": "Finland",
+      "notified_by_normalized": "Finland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Other food product / mixed",
+      "commodity": "ice cream preparation",
+      "issue": "misdeclared fat content (7.48 g/100 g instead of 5 g/100 g)",
+      "origin_raw": "Italy",
+      "origin_normalized": "Italy",
+      "origins_list": [
+        "Italy"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Nutrition and health claims",
+      "product_category": "Other food product / mixed",
+      "commodity": "Soups, broths, sauces",
+      "issue": "lentil soup misleading claims \"high fibre content\"",
+      "origin_raw": "Czechia",
+      "origin_normalized": "Czechia",
+      "origins_list": [
+        "Czechia"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Others (record tampering)",
+      "product_category": "Feed materials",
+      "commodity": "feed (dough)",
+      "issue": "document forgery (changed delivery notes)",
+      "origin_raw": "Sweden",
+      "origin_normalized": "Sweden",
+      "origins_list": [
+        "Sweden"
+      ],
+      "notified_by_raw": "Denmark",
+      "notified_by_normalized": "Denmark",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Others (record tampering)",
+      "product_category": "Fish and fish products",
+      "commodity": "squids (Loligo",
+      "issue": "approval number mismatch between label and health certificate*",
+      "origin_raw": "United States",
+      "origin_normalized": "United States",
+      "origins_list": [
+        "United States"
+      ],
+      "notified_by_raw": "Portugal",
+      "notified_by_normalized": "Portugal",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Cereals and bakery products",
+      "commodity": "biscuits (CBD)",
+      "issue": "terpene oil, advertised as containing",
+      "origin_raw": "Netherlands",
+      "origin_normalized": "Netherlands",
+      "origins_list": [
+        "Netherlands"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Cereals and bakery products",
+      "commodity": "snacks",
+      "issue": "GMO (p35S)*",
+      "origin_raw": "China",
+      "origin_normalized": "China",
+      "origins_list": [
+        "China"
+      ],
+      "notified_by_raw": "Italy",
+      "notified_by_normalized": "Italy",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Cereals and bakery products",
+      "commodity": "snacks",
+      "issue": "GMO (tNOS)*",
+      "origin_raw": "China",
+      "origin_normalized": "China",
+      "origins_list": [
+        "China"
+      ],
+      "notified_by_raw": "Italy",
+      "notified_by_normalized": "Italy",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Cocoa and cocoa preparations, coffee and tea",
+      "commodity": "herbal coffee",
+      "issue": "Artemisia annua L. (e-marketed)",
+      "origin_raw": "Italy",
+      "origin_normalized": "Italy",
+      "origins_list": [
+        "Italy"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Confectionery",
+      "commodity": "sweets",
+      "issue": "Senna alexandrina Mill*",
+      "origin_raw": "Türkiye",
+      "origin_normalized": "Turkey",
+      "origins_list": [
+        "Turkey"
+      ],
+      "notified_by_raw": "Austria",
+      "notified_by_normalized": "Austria",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Confectionery",
+      "commodity": "sweets (CBD)",
+      "issue": "cannabidiol (CBD)*",
+      "origin_raw": "Czechia",
+      "origin_normalized": "Czechia",
+      "origins_list": [
+        "Czechia"
+      ],
+      "notified_by_raw": "France",
+      "notified_by_normalized": "France",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Confectionery",
+      "commodity": "sweets (CBD)",
+      "issue": "cannabidiol (CBD) (10000 mg/kg)*",
+      "origin_raw": "United",
+      "origin_normalized": "Unknown",
+      "origins_list": [
+        "Unknown"
+      ],
+      "notified_by_raw": "Ireland",
+      "notified_by_normalized": "Ireland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Confectionery",
+      "commodity": "sweets (CBD)",
+      "issue": "9(R)-hexahydrocannabinol (6.1 mg/kg), 9(S)- hexahydrocannabinol) (3.1 mg/kg), cannabidiol (4220 mg/kg), (6aR, 9S)-delta-10-tetrahydrocannabinol (1.8 mg/kg), cis-delta-9-tetrahydrocannabinol (32 mg/kg), trans-delta-9- tetrahydrocannabinol (61 mg/kg)*",
+      "origin_raw": "Netherlands",
+      "origin_normalized": "Netherlands",
+      "origins_list": [
+        "Netherlands"
+      ],
+      "notified_by_raw": "Czechia",
+      "notified_by_normalized": "Czechia",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "3,3'-diindolylmethane (DIM), Mucuna pruriens,",
+      "origin_raw": "United Kingdom",
+      "origin_normalized": "United Kingdom",
+      "origins_list": [
+        "United Kingdom"
+      ],
+      "notified_by_raw": "Slovenia",
+      "notified_by_normalized": "Slovenia",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "aloe-emodin (6273 µg/kg), emodin (1729 µg/kg)*",
+      "origin_raw": "India",
+      "origin_normalized": "India",
+      "origins_list": [
+        "India"
+      ],
+      "notified_by_raw": "Latvia",
+      "notified_by_normalized": "Latvia",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "aloin (339; 315 µg/kg), aloe-emodin",
+      "origin_raw": "Ukraine",
+      "origin_normalized": "Ukraine",
+      "origins_list": [
+        "Ukraine"
+      ],
+      "notified_by_raw": "Latvia",
+      "notified_by_normalized": "Latvia",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "alpha-yohimbine (Rauvolfia canescens), alpha-glycerylphosphorylcholine (alpha-GPC), placing on the market without registration (e- marketed)",
+      "origin_raw": "Netherlands",
+      "origin_normalized": "Netherlands",
+      "origins_list": [
+        "Netherlands"
+      ],
+      "notified_by_raw": "Belgium",
+      "notified_by_normalized": "Belgium",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "cannabidiol (CBD) /cannabigerol (CBG) blend",
+      "origin_raw": "United States",
+      "origin_normalized": "United States",
+      "origins_list": [
+        "United States"
+      ],
+      "notified_by_raw": "Austria",
+      "notified_by_normalized": "Austria",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "coltsfoot flowers (Tussilago farfara L.), comfrey (Symphytum officinale L.), Artemisia annua (e-marketed)*",
+      "origin_raw": "Poland",
+      "origin_normalized": "Poland",
+      "origins_list": [
+        "Poland"
+      ],
+      "notified_by_raw": "Hungary",
+      "notified_by_normalized": "Hungary",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "Coriolus versicolor*",
+      "origin_raw": "China",
+      "origin_normalized": "China",
+      "origins_list": [
+        "China"
+      ],
+      "notified_by_raw": "Luxembourg",
+      "notified_by_normalized": "Luxembourg",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "creatine malate (e-marketed)*",
+      "origin_raw": "Poland, United States",
+      "origin_normalized": "Poland",
+      "origins_list": [
+        "Poland",
+        "United States"
+      ],
+      "notified_by_raw": "Estonia",
+      "notified_by_normalized": "Estonia",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "creatine malate (e-marketed)*",
+      "origin_raw": "Poland,",
+      "origin_normalized": "Poland",
+      "origins_list": [
+        "Poland"
+      ],
+      "notified_by_raw": "Estonia",
+      "notified_by_normalized": "Estonia",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "creatine malate*",
+      "origin_raw": "Poland",
+      "origin_normalized": "Poland",
+      "origins_list": [
+        "Poland"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "diindolylmethane (DIM),",
+      "origin_raw": "Netherlands",
+      "origin_normalized": "Netherlands",
+      "origins_list": [
+        "Netherlands"
+      ],
+      "notified_by_raw": "Lithuania",
+      "notified_by_normalized": "Lithuania",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "evodiamine (e-marketed)*",
+      "origin_raw": "United States",
+      "origin_normalized": "United States",
+      "origins_list": [
+        "United States"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "evodiamine, hordenine, yohimbine, yohimbine",
+      "origin_raw": "United",
+      "origin_normalized": "Unknown",
+      "origins_list": [
+        "Unknown"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "greater celandine (Chelidonium majus L.), pancreatin, Mucuna pruriens (e-marketed)*",
+      "origin_raw": "Netherlands",
+      "origin_normalized": "Netherlands",
+      "origins_list": [
+        "Netherlands"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "hemp extract*",
+      "origin_raw": "Netherlands",
+      "origin_normalized": "Netherlands",
+      "origins_list": [
+        "Netherlands"
+      ],
+      "notified_by_raw": "Ireland",
+      "notified_by_normalized": "Ireland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "Huperzia serrata*",
+      "origin_raw": "Slovakia",
+      "origin_normalized": "Slovakia",
+      "origins_list": [
+        "Slovakia"
+      ],
+      "notified_by_raw": "Austria",
+      "notified_by_normalized": "Austria",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "Isatis tinctoria (root) (e-marketed)*",
+      "origin_raw": "China",
+      "origin_normalized": "China",
+      "origins_list": [
+        "China"
+      ],
+      "notified_by_raw": "Luxembourg",
+      "notified_by_normalized": "Luxembourg",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "l-3,4-dihydroxyphenylalanine (L-DOPA) (e- marketed)*",
+      "origin_raw": "Czechia",
+      "origin_normalized": "Czechia",
+      "origins_list": [
+        "Czechia"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "methylsulphonylmethane (MSM), melatonin,",
+      "origin_raw": "Netherlands",
+      "origin_normalized": "Netherlands",
+      "origins_list": [
+        "Netherlands"
+      ],
+      "notified_by_raw": "Denmark",
+      "notified_by_normalized": "Denmark",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "Mucuna pruriens (e-marketed)*",
+      "origin_raw": "Slovakia",
+      "origin_normalized": "Slovakia",
+      "origins_list": [
+        "Slovakia"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "Mucuna pruriens (e-marketed)*",
+      "origin_raw": "Hungary",
+      "origin_normalized": "Hungary",
+      "origins_list": [
+        "Hungary"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "Mucuna pruriens (e-marketed)*",
+      "origin_raw": "Slovakia",
+      "origin_normalized": "Slovakia",
+      "origins_list": [
+        "Slovakia"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "pancreatin (e-marketed)*",
+      "origin_raw": "United States",
+      "origin_normalized": "United States",
+      "origins_list": [
+        "United States"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "pancreatin*",
+      "origin_raw": "Slovakia",
+      "origin_normalized": "Slovakia",
+      "origins_list": [
+        "Slovakia"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "sildenafil (222 g/kg)*",
+      "origin_raw": "United",
+      "origin_normalized": "Unknown",
+      "origins_list": [
+        "Unknown"
+      ],
+      "notified_by_raw": "Czechia",
+      "notified_by_normalized": "Czechia",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "tetrahydrocannabinol (THC) (86.1 mg/kg), cannabidiol (CBD) (51; 60.5 g/kg), cannabigerol (CBG) (3060; 5800 mg/kg), cannabichromene (CBC) (842; 1090 mg/kg), cannabinol (CBN) (200; 214 g/kg)*",
+      "origin_raw": "Czechia",
+      "origin_normalized": "Czechia",
+      "origins_list": [
+        "Czechia"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "tri-creatine malate (e-marketed)*",
+      "origin_raw": "Poland",
+      "origin_normalized": "Poland",
+      "origins_list": [
+        "Poland"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "yohimbe bark (e-marketed)*",
+      "origin_raw": "Germany",
+      "origin_normalized": "Germany",
+      "origins_list": [
+        "Germany"
+      ],
+      "notified_by_raw": "Belgium",
+      "notified_by_normalized": "Belgium",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "yohimbine (e-marketed)*",
+      "origin_raw": "United States",
+      "origin_normalized": "United States",
+      "origins_list": [
+        "United States"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "yohimbine (e-marketed)*",
+      "origin_raw": "United States",
+      "origin_normalized": "United States",
+      "origins_list": [
+        "United States"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "yohimbine, Mucuna pruriens*",
+      "origin_raw": "United States",
+      "origin_normalized": "United States",
+      "origins_list": [
+        "United States"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "zeolite clinoptilolite, health claim (e- marketed)*",
+      "origin_raw": "Portugal",
+      "origin_normalized": "Portugal",
+      "origins_list": [
+        "Portugal"
+      ],
+      "notified_by_raw": "Austria",
+      "notified_by_normalized": "Austria",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "pancreatin (e-marketed)*",
+      "origin_raw": "United States",
+      "origin_normalized": "United States",
+      "origins_list": [
+        "United States"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "tongkat ali (Eurycoma longifolia) (e- marketed)*",
+      "origin_raw": "Estonia",
+      "origin_normalized": "Estonia",
+      "origins_list": [
+        "Estonia"
+      ],
+      "notified_by_raw": "Belgium",
+      "notified_by_normalized": "Belgium",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "oil (CBD)",
+      "issue": "cannabidiol (CBD) (244140; 296804 mg/kg)*",
+      "origin_raw": "France",
+      "origin_normalized": "France",
+      "origins_list": [
+        "France"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Fruits and vegetables",
+      "commodity": "plums (fermented)",
+      "issue": "Cassia fistula, health claims (e-marketed)",
+      "origin_raw": "Luxembourg",
+      "origin_normalized": "Luxembourg",
+      "origins_list": [
+        "Luxembourg"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Non-alcoholic beverages",
+      "commodity": "energy drinks",
+      "issue": "cannabidiol (CBD) (151.2 mg/l)*",
+      "origin_raw": "Czechia",
+      "origin_normalized": "Czechia",
+      "origins_list": [
+        "Czechia"
+      ],
+      "notified_by_raw": "Ireland",
+      "notified_by_normalized": "Ireland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Non-alcoholic beverages",
+      "commodity": "herbal drink",
+      "issue": "Lonicera japonica, Platostoma pallustre*",
+      "origin_raw": "China",
+      "origin_normalized": "China",
+      "origins_list": [
+        "China"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Non-alcoholic beverages",
+      "commodity": "soft drinks",
+      "issue": "Platostoma palustre, Lonicera japonica",
+      "origin_raw": "China",
+      "origin_normalized": "China",
+      "origins_list": [
+        "China"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Non-alcoholic beverages",
+      "commodity": "soft drinks (carbonated)",
+      "issue": "Bacilius subtilis, Bacillus coagulans, health claims",
+      "origin_raw": "United Kingdom",
+      "origin_normalized": "United Kingdom",
+      "origins_list": [
+        "United Kingdom"
+      ],
+      "notified_by_raw": "Belgium",
+      "notified_by_normalized": "Belgium",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Non-alcoholic beverages",
+      "commodity": "soft drinks",
+      "issue": "Bacilius subtilis, Bacillus coagulans, health",
+      "origin_raw": "Portugal",
+      "origin_normalized": "Portugal",
+      "origins_list": [
+        "Portugal"
+      ],
+      "notified_by_raw": "Belgium",
+      "notified_by_normalized": "Belgium",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Food, ingredient not authorised in the EU",
+      "product_category": "Soups, broths, sauces and condiments",
+      "commodity": "plums (marinated)",
+      "issue": "Perilla frutescens, succinic acid (E 363) (above ML)*",
+      "origin_raw": "Japan",
+      "origin_normalized": "Japan",
+      "origins_list": [
+        "Japan"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residue of pesticide(s) not approved for use in the EU",
+      "product_category": "Cocoa and cocoa preparations, coffee and tea",
+      "commodity": "cacao powder (organic)",
+      "issue": "chlorpyrifos (0.052 mg/kg)*",
+      "origin_raw": "Peru",
+      "origin_normalized": "Peru",
+      "origins_list": [
+        "Peru"
+      ],
+      "notified_by_raw": "Netherlands",
+      "notified_by_normalized": "Netherlands",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residue of pesticide(s) not approved for use in the EU",
+      "product_category": "Cocoa and cocoa preparations, coffee and tea",
+      "commodity": "cocoa powder",
+      "issue": "chlorpyrifos (0.031 mg/kg)*",
+      "origin_raw": "Peru",
+      "origin_normalized": "Peru",
+      "origins_list": [
+        "Peru"
+      ],
+      "notified_by_raw": "Netherlands",
+      "notified_by_normalized": "Netherlands",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residue of pesticide(s) not approved for use in the EU",
+      "product_category": "Cocoa and cocoa preparations, coffee and tea",
+      "commodity": "matcha powder (organic)",
+      "issue": "lufenuron (0.16 mg/kg)*",
+      "origin_raw": "Japan",
+      "origin_normalized": "Japan",
+      "origins_list": [
+        "Japan"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residue of pesticide(s) not approved for use in the EU",
+      "product_category": "Fruits and vegetables",
+      "commodity": "zucchinis",
+      "issue": "heptachlor (0.048 mg/kg)*",
+      "origin_raw": "Belgium",
+      "origin_normalized": "Belgium",
+      "origins_list": [
+        "Belgium"
+      ],
+      "notified_by_raw": "Belgium",
+      "notified_by_normalized": "Belgium",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residue of pesticide(s) not approved for use in the EU",
+      "product_category": "Fruits and vegetables",
+      "commodity": "parsley",
+      "issue": "prometryn (0.086 mg/kg)",
+      "origin_raw": "Italy",
+      "origin_normalized": "Italy",
+      "origins_list": [
+        "Italy"
+      ],
+      "notified_by_raw": "Slovenia",
+      "notified_by_normalized": "Slovenia",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residue of pesticide(s) not approved for use in the EU",
+      "product_category": "Fruits and vegetables",
+      "commodity": "peppers",
+      "issue": "pymetrozine (0.45 mg/kg)*",
+      "origin_raw": "Spain",
+      "origin_normalized": "Spain",
+      "origins_list": [
+        "Spain"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residue of pesticide(s) not approved for use in the EU",
+      "product_category": "Fruits and vegetables",
+      "commodity": "tomatoes",
+      "issue": "chlorfenapyr (0.022 mg/kg)",
+      "origin_raw": "Italy",
+      "origin_normalized": "Italy",
+      "origins_list": [
+        "Italy"
+      ],
+      "notified_by_raw": "Denmark",
+      "notified_by_normalized": "Denmark",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residue of pesticide(s) not approved for use in the EU",
+      "product_category": "Herbs and spices",
+      "commodity": "cumin",
+      "issue": "chlorpyrifos (0.14 mg/kg)*",
+      "origin_raw": "Netherlands",
+      "origin_normalized": "Netherlands",
+      "origins_list": [
+        "Netherlands"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Live animals",
+      "commodity": "pig (1)",
+      "issue": "withdrawal period not respected",
+      "origin_raw": "Denmark",
+      "origin_normalized": "Denmark",
+      "origins_list": [
+        "Denmark"
+      ],
+      "notified_by_raw": "Denmark",
+      "notified_by_normalized": "Denmark",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Live animals",
+      "commodity": "Other food product /",
+      "issue": "propolis chloramphenicol (0.67 µg/kg)*",
+      "origin_raw": "Czechia",
+      "origin_normalized": "Czechia",
+      "origins_list": [
+        "Czechia"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Poultry meat and poultry meat products",
+      "commodity": "chicken meat products (chilled)",
+      "issue": "doxycycline (207.75 µg/kg)*",
+      "origin_raw": "Poland",
+      "origin_normalized": "Poland",
+      "origins_list": [
+        "Poland"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Poultry meat and poultry meat products",
+      "commodity": "Smuggling",
+      "issue": "Cereals and bakery bakery products attempt to illegally import*",
+      "origin_raw": "China",
+      "origin_normalized": "China",
+      "origins_list": [
+        "China"
+      ],
+      "notified_by_raw": "Netherlands",
+      "notified_by_normalized": "Netherlands",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Live animals",
+      "commodity": "cattle (1)",
+      "issue": "traceability defects (absence of documents)",
+      "origin_raw": "Belgium",
+      "origin_normalized": "Belgium",
+      "origins_list": [
+        "Belgium"
+      ],
+      "notified_by_raw": "Italy",
+      "notified_by_normalized": "Italy",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Meat and meat products (other than poultry)",
+      "commodity": "food products",
+      "issue": "attempt to illegally import, transport temperature*",
+      "origin_raw": "Moldova",
+      "origin_normalized": "Moldova",
+      "origins_list": [
+        "Moldova"
+      ],
+      "notified_by_raw": "European",
+      "notified_by_normalized": "Unknown",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Meat and meat products (other than poultry)",
+      "commodity": "meat",
+      "issue": "unauthorised operators, traceability defects",
+      "origin_raw": "Latvia",
+      "origin_normalized": "Latvia",
+      "origins_list": [
+        "Latvia"
+      ],
+      "notified_by_raw": "Finland",
+      "notified_by_normalized": "Finland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Milk and milk products",
+      "commodity": "milk powder with",
+      "issue": "misleading import declaration to elude",
+      "origin_raw": "Belgium",
+      "origin_normalized": "Belgium",
+      "origins_list": [
+        "Belgium"
+      ],
+      "notified_by_raw": "Belgium",
+      "notified_by_normalized": "Belgium",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Nuts, nut products and seeds",
+      "commodity": "macadamia nuts (coffee-flavored)",
+      "issue": "milk ingredient, attempt to illegally import*",
+      "origin_raw": "China",
+      "origin_normalized": "China",
+      "origins_list": [
+        "China"
+      ],
+      "notified_by_raw": "Italy",
+      "notified_by_normalized": "Italy",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Nuts, nut products and seeds",
+      "commodity": "pistachio kernels",
+      "issue": "illegal import",
+      "origin_raw": "Türkiye",
+      "origin_normalized": "Turkey",
+      "origins_list": [
+        "Turkey"
+      ],
+      "notified_by_raw": "Denmark",
+      "notified_by_normalized": "Denmark",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Other food product / mixed",
+      "commodity": "composite products",
+      "issue": "milk ingredients, illegal import",
+      "origin_raw": "Türkiye",
+      "origin_normalized": "Turkey",
+      "origins_list": [
+        "Turkey"
+      ],
+      "notified_by_raw": "Sweden",
+      "notified_by_normalized": "Sweden",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Other food product / mixed",
+      "commodity": "food products",
+      "issue": "attempt to illegally import*",
+      "origin_raw": "Moldova",
+      "origin_normalized": "Moldova",
+      "origins_list": [
+        "Moldova"
+      ],
+      "notified_by_raw": "European",
+      "notified_by_normalized": "Unknown",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Other food product / mixed",
+      "commodity": "food products",
+      "issue": "meat, egg and dairy ingredients, illegal import*",
+      "origin_raw": "Iran",
+      "origin_normalized": "Iran",
+      "origins_list": [
+        "Iran"
+      ],
+      "notified_by_raw": "Norway",
+      "notified_by_normalized": "Norway",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Other food product / mixed",
+      "commodity": "food products",
+      "issue": "meat ingredients, illegal import*",
+      "origin_raw": "China",
+      "origin_normalized": "China",
+      "origins_list": [
+        "China"
+      ],
+      "notified_by_raw": "Netherlands",
+      "notified_by_normalized": "Netherlands",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Poultry meat and poultry meat products",
+      "commodity": "chicken meat",
+      "issue": "traceability defects (false destination)",
+      "origin_raw": "Ukraine",
+      "origin_normalized": "Ukraine",
+      "origins_list": [
+        "Ukraine"
+      ],
+      "notified_by_raw": "Czechia",
+      "notified_by_normalized": "Czechia",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Poultry meat and poultry meat products",
+      "commodity": "Prepared dishes and",
+      "issue": "snacks dairy ingredients, attempt to illegally import*",
+      "origin_raw": "India",
+      "origin_normalized": "India",
+      "origins_list": [
+        "India"
+      ],
+      "notified_by_raw": "Portugal",
+      "notified_by_normalized": "Portugal",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Poultry meat and poultry meat products",
+      "commodity": "Theft, resale and over run",
+      "issue": "Feed materials wheat and maize flour continued production despite an official ban imposed by the authorities",
+      "origin_raw": "Belgium",
+      "origin_normalized": "Belgium",
+      "origins_list": [
+        "Belgium"
+      ],
+      "notified_by_raw": "Belgium",
+      "notified_by_normalized": "Belgium",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Poultry meat and poultry meat products",
+      "commodity": "Other food product /",
+      "issue": "food products food safety violations, unlawful production,",
+      "origin_raw": "Belgium",
+      "origin_normalized": "Belgium",
+      "origins_list": [
+        "Belgium"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+      "product_category": "Poultry meat and poultry meat products",
+      "commodity": "mixed",
+      "issue": "",
+      "origin_raw": "(frozen)",
+      "origin_normalized": "Unknown",
+      "origins_list": [
+        "Unknown"
+      ],
+      "notified_by_raw": "tax-law violations",
+      "notified_by_normalized": "Unknown",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unauthorised origin (country, operators, establishments… )",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "food supplements",
+      "issue": "unauthorised operator, nutrition and health claims (e-marketed)",
+      "origin_raw": "Latvia",
+      "origin_normalized": "Latvia",
+      "origins_list": [
+        "Latvia"
+      ],
+      "notified_by_raw": "Lithuania",
+      "notified_by_normalized": "Lithuania",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unauthorised origin (country, operators, establishments… )",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "Water for human",
+      "issue": "mineral water not recognized by any Member State",
+      "origin_raw": "Hungary",
+      "origin_normalized": "Hungary",
+      "origins_list": [
+        "Hungary"
+      ],
+      "notified_by_raw": "Austria",
+      "notified_by_normalized": "Austria",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unauthorised origin (country, operators, establishments… )",
+      "product_category": "Dietetic foods, food supplements and fortified foods",
+      "commodity": "Others (implicit claim violations)",
+      "issue": "Bivalve molluscs and products thereof carpet shells (live) traceability defects (lack of registration documents, unclear origin)*",
+      "origin_raw": "Netherlands",
+      "origin_normalized": "Netherlands",
+      "origins_list": [
+        "Netherlands"
+      ],
+      "notified_by_raw": "Netherlands",
+      "notified_by_normalized": "Netherlands",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unauthorised origin (country, operators, establishments… )",
+      "product_category": "Crustaceans and products thereof",
+      "commodity": "blue swimming",
+      "issue": "traceability defects (mismatch between",
+      "origin_raw": "Italy",
+      "origin_normalized": "Italy",
+      "origins_list": [
+        "Italy"
+      ],
+      "notified_by_raw": "Belgium",
+      "notified_by_normalized": "Belgium",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unauthorised origin (country, operators, establishments… )",
+      "product_category": "Fats and oils",
+      "commodity": "fish oil",
+      "issue": "unsuitable means of transport for bulk products*",
+      "origin_raw": "Türkiye",
+      "origin_normalized": "Turkey",
+      "origins_list": [
+        "Turkey"
+      ],
+      "notified_by_raw": "Norway",
+      "notified_by_normalized": "Norway",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unauthorised origin (country, operators, establishments… )",
+      "product_category": "Fats and oils",
+      "commodity": "fish oil",
+      "issue": "unsuitable means of transport for bulk",
+      "origin_raw": "Türkiye",
+      "origin_normalized": "Turkey",
+      "origins_list": [
+        "Turkey"
+      ],
+      "notified_by_raw": "Norway",
+      "notified_by_normalized": "Norway",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unauthorised origin (country, operators, establishments… )",
+      "product_category": "Feed materials",
+      "commodity": "silage additive",
+      "issue": "traceability defects (absence of labelling), incorrect product classification",
+      "origin_raw": "Norway",
+      "origin_normalized": "Norway",
+      "origins_list": [
+        "Norway"
+      ],
+      "notified_by_raw": "Germany",
+      "notified_by_normalized": "Germany",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unauthorised origin (country, operators, establishments… )",
+      "product_category": "Fruits and vegetables",
+      "commodity": "blueberries",
+      "issue": "health certificate signed by a person other",
+      "origin_raw": "Ukraine",
+      "origin_normalized": "Ukraine",
+      "origins_list": [
+        "Ukraine"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unauthorised origin (country, operators, establishments… )",
+      "product_category": "Fruits and vegetables",
+      "commodity": "blueberries (frozen)",
+      "issue": "health certificate signed by a person not authorized to act as the certifying official*",
+      "origin_raw": "Ukraine",
+      "origin_normalized": "Ukraine",
+      "origins_list": [
+        "Ukraine"
+      ],
+      "notified_by_raw": "Poland",
+      "notified_by_normalized": "Poland",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
+    },
+    {
+      "report_id": "2026-08",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "classification": "Unauthorised origin (country, operators, establishments… )",
+      "product_category": "Milk and milk products",
+      "commodity": "butter",
+      "issue": "traceability defects (unclear origin)",
+      "origin_raw": "Denmark",
+      "origin_normalized": "Denmark",
+      "origins_list": [
+        "Denmark"
+      ],
+      "notified_by_raw": "Bulgaria",
+      "notified_by_normalized": "Bulgaria",
+      "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf"
     }
   ],
   "by_product_all": {
     "Natural mineral water": 3,
-    "Milk and milk products": 129,
+    "Milk and milk products": 131,
     "Food contact materials": 57,
     "Food additives and flavourings": 50,
     "Ices and desserts": 35,
-    "Feed materials": 150,
-    "Fats and oils": 154,
+    "Feed materials": 153,
+    "Fats and oils": 158,
     "Cephalopods and products thereof": 20,
     "Animal by-products": 9,
-    "Soups, broths, sauces and condiments": 105,
-    "Alcoholic beverages": 58,
-    "Wine": 69,
-    "Honey and royal jelly": 86,
+    "Soups, broths, sauces and condiments": 107,
+    "Alcoholic beverages": 59,
+    "Wine": 72,
+    "Honey and royal jelly": 89,
     "Eggs and egg products": 34,
-    "Cocoa and cocoa preparations, coffee and tea": 269,
-    "Meat and meat products (other than poultry)": 314,
-    "Crustaceans and products thereof": 137,
-    "Prepared dishes and snacks": 147,
-    "Poultry meat and poultry meat products": 128,
-    "Other food product / mixed": 316,
-    "Nuts, nut products and seeds": 128,
-    "Non-alcoholic beverages": 202,
-    "Fish and fish products": 227,
-    "Herbs and spices": 301,
-    "Confectionery": 359,
-    "Cereals and bakery products": 420,
-    "Dietetic foods, food supplements and fortified foods": 1114,
-    "Fruits and vegetables": 1546,
+    "Cocoa and cocoa preparations, coffee and tea": 277,
+    "Meat and meat products (other than poultry)": 323,
+    "Crustaceans and products thereof": 142,
+    "Prepared dishes and snacks": 148,
+    "Poultry meat and poultry meat products": 136,
+    "Other food product / mixed": 323,
+    "Nuts, nut products and seeds": 136,
+    "Non-alcoholic beverages": 215,
+    "Fish and fish products": 232,
+    "Herbs and spices": 303,
+    "Confectionery": 367,
+    "Cereals and bakery products": 430,
+    "Dietetic foods, food supplements and fortified foods": 1159,
+    "Fruits and vegetables": 1560,
     "Poultry Meat And Poultry Meat Products": 3,
     "Cephalopods And Products Thereof": 3,
     "Fish and products thereof": 1,
@@ -129100,16 +132231,16 @@
     "Herbs And Spices": 21,
     "Water for human consumption (Other)": 1,
     "Feed premixtures": 9,
-    "Bivalve molluscs and products thereof": 20,
+    "Bivalve molluscs and products thereof": 21,
     "Natural mineral waters": 3,
-    "Live animals": 78,
+    "Live animals": 80,
     "Water for human comsumption": 1,
     "Pet food": 1,
     "Feed additives": 13,
     "Plant protection products": 2,
     "Compound Feeds": 3,
     "Dietetic foods, food supplements, fortified foods": 151,
-    "Water for human consumption (other)": 8,
+    "Water for human consumption (other)": 9,
     "Meat and meat products/ poultry meat": 1,
     "Gastropods": 3,
     "Feed Premixtures": 1,

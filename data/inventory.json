@@ -1,8 +1,8 @@
 {
   "summary": {
-    "total_candidates": 280,
+    "total_candidates": 285,
     "accessible": 27,
-    "not_found": 29,
+    "not_found": 30,
     "years_covered": [
       2024,
       2025,
@@ -66,9 +66,10 @@
       "2024-03",
       "2024-05",
       "2024-08",
-      "2026-08"
+      "2026-08",
+      "2026-09"
     ],
-    "generated_at": "2026-08-28T18:02:28.055933"
+    "generated_at": "2026-09-28T16:38:47.695883"
   },
   "reports": [
     {
@@ -80,7 +81,7 @@
       "content_length_bytes": 655830,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055809"
+      "discovered_at": "2026-09-28T16:38:47.695768"
     },
     {
       "year": 2024,
@@ -91,7 +92,7 @@
       "content_length_bytes": 672357,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055827"
+      "discovered_at": "2026-09-28T16:38:47.695783"
     },
     {
       "year": 2024,
@@ -102,7 +103,7 @@
       "content_length_bytes": 1174769,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055830"
+      "discovered_at": "2026-09-28T16:38:47.695785"
     },
     {
       "year": 2024,
@@ -113,7 +114,7 @@
       "content_length_bytes": 1211145,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055831"
+      "discovered_at": "2026-09-28T16:38:47.695787"
     },
     {
       "year": 2024,
@@ -124,7 +125,7 @@
       "content_length_bytes": 1251102,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055833"
+      "discovered_at": "2026-09-28T16:38:47.695790"
     },
     {
       "year": 2024,
@@ -135,7 +136,7 @@
       "content_length_bytes": 1137937,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055835"
+      "discovered_at": "2026-09-28T16:38:47.695792"
     },
     {
       "year": 2024,
@@ -146,7 +147,7 @@
       "content_length_bytes": 1306550,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055837"
+      "discovered_at": "2026-09-28T16:38:47.695793"
     },
     {
       "year": 2024,
@@ -157,7 +158,7 @@
       "content_length_bytes": 1150293,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055838"
+      "discovered_at": "2026-09-28T16:38:47.695795"
     },
     {
       "year": 2025,
@@ -168,7 +169,7 @@
       "content_length_bytes": 1145802,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055840"
+      "discovered_at": "2026-09-28T16:38:47.695797"
     },
     {
       "year": 2025,
@@ -179,7 +180,7 @@
       "content_length_bytes": 1261429,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055842"
+      "discovered_at": "2026-09-28T16:38:47.695799"
     },
     {
       "year": 2025,
@@ -190,7 +191,7 @@
       "content_length_bytes": 1176328,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055844"
+      "discovered_at": "2026-09-28T16:38:47.695801"
     },
     {
       "year": 2025,
@@ -201,7 +202,7 @@
       "content_length_bytes": 1167981,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055845"
+      "discovered_at": "2026-09-28T16:38:47.695803"
     },
     {
       "year": 2025,
@@ -212,7 +213,7 @@
       "content_length_bytes": 1240219,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055847"
+      "discovered_at": "2026-09-28T16:38:47.695805"
     },
     {
       "year": 2025,
@@ -223,7 +224,7 @@
       "content_length_bytes": 1226652,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055848"
+      "discovered_at": "2026-09-28T16:38:47.695807"
     },
     {
       "year": 2025,
@@ -234,7 +235,7 @@
       "content_length_bytes": 1247023,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055850"
+      "discovered_at": "2026-09-28T16:38:47.695808"
     },
     {
       "year": 2025,
@@ -245,7 +246,7 @@
       "content_length_bytes": 1256466,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055851"
+      "discovered_at": "2026-09-28T16:38:47.695810"
     },
     {
       "year": 2025,
@@ -256,7 +257,7 @@
       "content_length_bytes": 1336902,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055853"
+      "discovered_at": "2026-09-28T16:38:47.695812"
     },
     {
       "year": 2025,
@@ -267,7 +268,7 @@
       "content_length_bytes": 1389218,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055854"
+      "discovered_at": "2026-09-28T16:38:47.695814"
     },
     {
       "year": 2025,
@@ -278,7 +279,7 @@
       "content_length_bytes": 1282920,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055856"
+      "discovered_at": "2026-09-28T16:38:47.695816"
     },
     {
       "year": 2025,
@@ -289,7 +290,7 @@
       "content_length_bytes": 1310788,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055858"
+      "discovered_at": "2026-09-28T16:38:47.695822"
     },
     {
       "year": 2026,
@@ -300,7 +301,7 @@
       "content_length_bytes": 1310927,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055859"
+      "discovered_at": "2026-09-28T16:38:47.695824"
     },
     {
       "year": 2026,
@@ -311,7 +312,7 @@
       "content_length_bytes": 1465673,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055861"
+      "discovered_at": "2026-09-28T16:38:47.695825"
     },
     {
       "year": 2026,
@@ -322,7 +323,7 @@
       "content_length_bytes": 1266676,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055862"
+      "discovered_at": "2026-09-28T16:38:47.695827"
     },
     {
       "year": 2026,
@@ -333,7 +334,7 @@
       "content_length_bytes": 1186470,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055864"
+      "discovered_at": "2026-09-28T16:38:47.695829"
     },
     {
       "year": 2026,
@@ -344,7 +345,7 @@
       "content_length_bytes": 1465749,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055865"
+      "discovered_at": "2026-09-28T16:38:47.695830"
     },
     {
       "year": 2026,
@@ -355,7 +356,7 @@
       "content_length_bytes": 1470481,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055882"
+      "discovered_at": "2026-09-28T16:38:47.695832"
     },
     {
       "year": 2026,
@@ -366,7 +367,7 @@
       "content_length_bytes": 1275313,
       "content_type": "application/pdf",
       "status": "verified",
-      "discovered_at": "2026-08-28T18:02:28.055884"
+      "discovered_at": "2026-09-28T16:38:47.695834"
     }
   ]
 }
