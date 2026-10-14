@@ -1,8 +1,8 @@
 {
   "summary": {
-    "total_candidates": 285,
-    "accessible": 27,
-    "not_found": 30,
+    "total_candidates_checked": 288,
+    "accessible": 28,
+    "not_found": 6,
     "years_covered": [
       2024,
       2025,
@@ -35,41 +35,20 @@
       "2026-04",
       "2026-05",
       "2026-06",
-      "2026-07"
+      "2026-07",
+      "2026-08"
     ],
     "months_missing": [
-      "2022-01",
-      "2022-02",
-      "2022-03",
-      "2022-04",
-      "2022-05",
-      "2022-06",
-      "2022-07",
-      "2022-08",
-      "2022-09",
-      "2022-10",
-      "2022-11",
-      "2022-12",
-      "2023-01",
-      "2023-02",
-      "2023-03",
-      "2023-04",
-      "2023-05",
-      "2023-06",
-      "2023-07",
-      "2023-08",
-      "2023-09",
-      "2023-10",
-      "2023-11",
-      "2023-12",
       "2024-01",
       "2024-03",
       "2024-05",
       "2024-08",
-      "2026-08",
-      "2026-09"
+      "2026-09",
+      "2026-10"
     ],
-    "generated_at": "2026-09-28T16:38:47.695883"
+    "latest_month": "2026-08",
+    "manual_sources": 0,
+    "generated_at": "2026-10-14T21:55:58.931432"
   },
   "reports": [
     {
@@ -368,6 +347,17 @@
       "content_type": "application/pdf",
       "status": "verified",
       "discovered_at": "2026-09-28T16:38:47.695834"
+    },
+    {
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf",
+      "variant": "official",
+      "content_length_bytes": 1334154,
+      "content_type": "application/pdf",
+      "status": "verified",
+      "discovered_at": "2026-10-14T21:45:43.416586"
     }
   ]
 }

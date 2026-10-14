@@ -252,7 +252,7 @@ export default function CrossView({ ifs, ffn, cross, lang }: { ifs: Dataset; ffn
                 <h4 style={{ margin: "0 0 6px", fontSize: 13 }}>{lang === "fr" ? "IFS — rappels par pays (top 8)" : "IFS — recalls by country (top 8)"}</h4>
                 {drillData.ifsRecalls.length ? drillData.ifsRecalls.map(r => (
                   <div key={r.country_normalized} className="bar-row">
-                    <span className="bar-label"><Link to={`/country/${encodeURIComponent(r.country_normalized)}`}>{r.country_normalized}</Link></span>
+                    <span className="bar-label"><Link to={`/origine/${encodeURIComponent(r.country_normalized)}`}>{r.country_normalized}</Link></span>
                     <div className="bar-track"><div className="bar-fill" style={{ width: `${(r.value / (drillData.ifsRecalls[0]?.value || 1)) * 100}%` }} /></div>
                     <span className="bar-value">{r.value}</span>
                   </div>
@@ -262,7 +262,7 @@ export default function CrossView({ ifs, ffn, cross, lang }: { ifs: Dataset; ffn
                 <h4 style={{ margin: "0 0 6px", fontSize: 13 }}>{lang === "fr" ? `FFN — ${drillData.ffnCasesCount} cas (top origines)` : `FFN — ${drillData.ffnCasesCount} cases (top origins)`}</h4>
                 {drillData.ffnTopOrigins.length ? drillData.ffnTopOrigins.map(([o, n]) => (
                   <div key={o} className="bar-row">
-                    <span className="bar-label"><Link to={`/country/${encodeURIComponent(o)}`}>{o}</Link></span>
+                    <span className="bar-label"><Link to={`/origine/${encodeURIComponent(o)}`}>{o}</Link></span>
                     <div className="bar-track"><div className="bar-fill warn" style={{ width: `${(n / (drillData.ffnTopOrigins[0]?.[1] || 1)) * 100}%` }} /></div>
                     <span className="bar-value">{n}</span>
                   </div>
@@ -286,7 +286,7 @@ export default function CrossView({ ifs, ffn, cross, lang }: { ifs: Dataset; ffn
           <div className="meta" style={{ marginBottom: 8 }}>{tr.cross.commonHint}</div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
             {overlapCountries.both.map(c => (
-              <Link key={c} to={`/country/${encodeURIComponent(c)}`} className="chip" style={{ textDecoration: "none" }}
+              <Link key={c} to={`/origine/${encodeURIComponent(c)}`} className="chip" style={{ textDecoration: "none" }}
                 onClick={() => { setCountry(c); setPeriodFrom(allMonths[0]); setPeriodTo(allMonths[allMonths.length - 1]); }}>
                 <b>{c}</b>
               </Link>

@@ -1,0 +1,281 @@
+{
+  "summary": {
+    "reports": 24,
+    "with_pdf": 24,
+    "first_month": "2024-01",
+    "latest_month": "2026-06",
+    "generated_at": "2026-10-14T21:57:08.227097"
+  },
+  "reports": [
+    {
+      "id": "january-2024",
+      "year": 2024,
+      "months": [
+        "2024-01"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/publication/food-fraud-summary-january-2024_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/food_fraud_newsletter_01-2024_0.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:48:58.204374"
+    },
+    {
+      "id": "february-2024",
+      "year": 2024,
+      "months": [
+        "2024-02"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/publication/food-fraud-summary-february-2024_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/food_fraud_newsletter_02-2024.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:48:58.601397"
+    },
+    {
+      "id": "march-2024",
+      "year": 2024,
+      "months": [
+        "2024-03"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/publication/food-fraud-summary-march-2024_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/food_fraud_newsletter_03-2024.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:48:59.019132"
+    },
+    {
+      "id": "april-2024",
+      "year": 2024,
+      "months": [
+        "2024-04"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/publication/food-fraud-summary-april-2024_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/food_fraud_newsletter_04-2024.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:48:59.702269"
+    },
+    {
+      "id": "may-2024",
+      "year": 2024,
+      "months": [
+        "2024-05"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/publication/food-fraud-summary-may-2024_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/food_fraud_newsletter_05-2024.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:49:00.122076"
+    },
+    {
+      "id": "june-2024",
+      "year": 2024,
+      "months": [
+        "2024-06"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/food-fraud-quality/monthly-food-fraud-summary-reports/publication/food-fraud-summary-june-2024_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/June%202024.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:49:00.484789"
+    },
+    {
+      "id": "july-august-2024",
+      "year": 2024,
+      "months": [
+        "2024-07",
+        "2024-08"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/food-fraud-quality/monthly-food-fraud-summary-reports/publication/food-fraud-summary-july-august-2024_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/July_August%202024_0.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:49:00.854547"
+    },
+    {
+      "id": "september-2024",
+      "year": 2024,
+      "months": [
+        "2024-09"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/food-fraud-quality/monthly-food-fraud-summary-reports/publication/food-fraud-summary-september-2024_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/September%202024.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:49:01.215260"
+    },
+    {
+      "id": "october-2024",
+      "year": 2024,
+      "months": [
+        "2024-10"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/publication/food-fraud-summary-october-2024_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202410_1.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:49:01.615223"
+    },
+    {
+      "id": "november-december-2024",
+      "year": 2024,
+      "months": [
+        "2024-11",
+        "2024-12"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/publication/food-fraud-summary-november-december-2024_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202411-12_2.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:49:02.033364"
+    },
+    {
+      "id": "january-2025",
+      "year": 2025,
+      "months": [
+        "2025-01"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/food-fraud-quality/monthly-food-fraud-summary-reports/publication/food-fraud-summary-january-2025_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202501_1.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:49:02.410632"
+    },
+    {
+      "id": "february-2025",
+      "year": 2025,
+      "months": [
+        "2025-02"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/food-fraud-quality/monthly-food-fraud-summary-reports/publication/food-fraud-summary-february-2025",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202502_1.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:49:02.800295"
+    },
+    {
+      "id": "march-2025",
+      "year": 2025,
+      "months": [
+        "2025-03"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/food-fraud-quality/monthly-food-fraud-summary-reports/publication/food-fraud-summary-march-2025",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202503.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:49:03.204394"
+    },
+    {
+      "id": "april-2025",
+      "year": 2025,
+      "months": [
+        "2025-04"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/food-fraud-quality/monthly-food-fraud-summary-reports/publication/food-fraud-summary-april-2025_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202504.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:49:03.549261"
+    },
+    {
+      "id": "may-june-2025",
+      "year": 2025,
+      "months": [
+        "2025-05",
+        "2025-06"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/food-fraud-quality/monthly-food-fraud-summary-reports/publication/food-fraud-summary-may-june-2025_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/20250506.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:49:03.911186"
+    },
+    {
+      "id": "july-2025",
+      "year": 2025,
+      "months": [
+        "2025-07"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/publication/food-fraud-summary-july-2025_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202507.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:49:04.267682"
+    },
+    {
+      "id": "august-2025",
+      "year": 2025,
+      "months": [
+        "2025-08"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/publication/food-fraud-summary-august-2025_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202508b.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:49:04.634351"
+    },
+    {
+      "id": "september-2025",
+      "year": 2025,
+      "months": [
+        "2025-09"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/publication/food-fraud-summary-september-2025_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202509.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:49:04.997580"
+    },
+    {
+      "id": "october-november-2025",
+      "year": 2025,
+      "months": [
+        "2025-10",
+        "2025-11"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/publication/food-fraud-summary-october-november-2025_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202510-11.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:49:05.619740"
+    },
+    {
+      "id": "december-2025",
+      "year": 2025,
+      "months": [
+        "2025-12"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/publication/food-fraud-summary-december-2025_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202601b.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:49:05.977897"
+    },
+    {
+      "id": "january-2026",
+      "year": 2026,
+      "months": [
+        "2026-01"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/publication/food-fraud-summary-january-2026_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202601.pdf",
+      "pdf_fr_url": null,
+      "discovered_at": "2026-10-14T21:49:06.345945"
+    },
+    {
+      "id": "february-march-2026",
+      "year": 2026,
+      "months": [
+        "2026-02",
+        "2026-03"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/publication/food-fraud-summary-february-march-2026_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202602_EN_1.pdf",
+      "pdf_fr_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202602_FR_0.pdf",
+      "discovered_at": "2026-10-14T21:49:06.717100"
+    },
+    {
+      "id": "april-2026",
+      "year": 2026,
+      "months": [
+        "2026-04"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/publication/food-fraud-summary-april-2026_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202604.pdf",
+      "pdf_fr_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202604_FR.pdf",
+      "discovered_at": "2026-10-14T21:49:07.093489"
+    },
+    {
+      "id": "may-june-2026",
+      "year": 2026,
+      "months": [
+        "2026-05",
+        "2026-06"
+      ],
+      "publication_url": "https://knowledge-for-policy.ec.europa.eu/publication/food-fraud-summary-may-june-2026_en",
+      "pdf_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202605_0.pdf",
+      "pdf_fr_url": "https://knowledge-for-policy.ec.europa.eu/sites/default/files/202605_FR.pdf",
+      "discovered_at": "2026-10-14T21:49:07.446595"
+    }
+  ]
+}

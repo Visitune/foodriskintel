@@ -1,10 +1,18 @@
 """
 Build normalized FFN dataset + cross window with IFS
 """
-import json
+import json, sys
 from pathlib import Path
 from datetime import datetime
 import re
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from taxonomy import canonical_ffn_category, classification_group, material_family, substances  # noqa: E402
+
+
+def _strip_marks(text):
+    """Remove PDF footnote markers (*, **) and collapse whitespace."""
+    return re.sub(r"\s+", " ", re.sub(r"\*+", "", text or "")).strip()
 
 RAW_FFN = Path(__file__).resolve().parent.parent / "data" / "raw_ffn_extractions.json"
 RAW_IFS = Path(__file__).resolve().parent.parent / "data" / "raw_extractions.json"
@@ -106,6 +114,13 @@ def clean_country(raw):
 def normalize_country(c):
     return clean_country(c)[0]
 
+def _canon_counts(counts):
+    out = {}
+    for k, v in counts.items():
+        ck = canonical_ffn_category(k)
+        out[ck] = out.get(ck, 0) + v
+    return out
+
 def build_ffn():
     raw = json.loads(RAW_FFN.read_text(encoding="utf-8"))
     extractions = raw["extractions"]
@@ -128,13 +143,16 @@ def build_ffn():
             "uuid": e["uuid"],
             "in_cross_window": e.get("in_cross_window", False),
             "total_suspicions": total,
-            "by_product_category": figures.get("by_product_category",{}),
+            "by_product_category": _canon_counts(figures.get("by_product_category",{})),
             "by_fraud_category": figures.get("by_fraud_category",{}),
             "by_detection_source": figures.get("by_detection_source",{}),
             "cases_count": len(e["cases"]),
         })
         for c in e["cases"]:
             prim, lst = clean_country(c["origin"])
+            category = canonical_ffn_category(c["product_category"])
+            commodity = _strip_marks(c["commodity"])
+            issue = _strip_marks(c["issue"])
             all_cases.append({
                 "report_id": report_id,
                 "year": year,
@@ -142,9 +160,12 @@ def build_ffn():
                 "month_num": month_num,
                 "publication_date": f"{year}-{month_num:02d}",
                 "classification": c["classification"],
-                "product_category": c["product_category"],
-                "commodity": c["commodity"],
-                "issue": c["issue"],
+                "classification_group": classification_group(c["classification"]),
+                "product_category": category,
+                "material_family": material_family(category, commodity),
+                "commodity": commodity,
+                "issue": issue,
+                "substances": substances(issue),
                 "origin_raw": c["origin"],
                 "origin_normalized": prim,
                 "origins_list": lst,
@@ -193,7 +214,7 @@ def build_cross():
         key = f"{r['year']}-{r['month_num']:02d}"
         ifs_map[key]=r
     ffn_map = {r["id"]: r for r in ffn["reports"]}
-    # cross window 2024-06 -> 2026-07
+    # cross window: computed from the months flagged in_cross_window
     # generate all months in that window that exist in both
     cross=[]
     for fid, fr in sorted(ffn_map.items()):
@@ -219,7 +240,7 @@ def build_cross():
     ifs_totals = [c["ifs_recalls_total"] for c in cross if c["ifs_recalls_total"] is not None]
     return {
         "generated_at": datetime.now().isoformat(),
-        "window": {"start":"2024-06","end":"2026-07","months":len(cross)},
+        "window": {"start": cross[0]["month"] if cross else None, "end": cross[-1]["month"] if cross else None, "months": len(cross)},
         "summary": {
             "months_in_window": len(cross),
             "months_with_both_sources": len([c for c in cross if c["ifs_present"]]),

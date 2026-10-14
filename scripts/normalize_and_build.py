@@ -12,6 +12,10 @@ import json, sys, os, re, argparse
 from pathlib import Path
 from datetime import datetime
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from taxonomy import material_family, split_reasons, FRAUD_REASONS, IFS_COUNTRY_FIXES  # noqa: E402
+from build_ffn_dataset import clean_country  # noqa: E402
+
 # ─── Country Normalization ──────────────────────────────────────────────────────
 COUNTRY_NORMALIZE = {
     "USA (FDA)": "United States",
@@ -97,21 +101,49 @@ def normalize_country(name: str) -> str:
     return name
 
 
+PRODUCT_TYPOS = {"beed jerky": "Beef jerky", "mozarella": "Mozzarella", "mozeralla": "Mozzarella",
+                 "fish and sea food": "Fish and seafood", "various foods": "Various foods", "various": "Various foods"}
+
+
+def _collapse(text: str) -> str:
+    """Join PDF line breaks / hyphenations and normalise quotes and spaces."""
+    t = re.sub(r"(\w)- (\w)", r"\1\2", re.sub(r"\s+", " ", text or ""))
+    t = re.sub("[‘’´`]", "'", t)
+    return re.sub("[“”„�]", "", t).strip()
+
+
 def normalize_fraud_reason(reason: str) -> str:
-    """Normalize fraud reason."""
-    reason = reason.strip().lower()
-    if reason in FRAUD_REASON_NORMALIZE:
-        return FRAUD_REASON_NORMALIZE[reason]
-    return reason.title()
+    """Primary reason, English label (kept for backwards compatibility)."""
+    keys = split_reasons(reason)
+    return FRAUD_REASONS[keys[0]][1] if keys else (_collapse(reason).title() or "Unspecified")
 
 
 def normalize_product(product: str) -> str:
-    """Normalize product name."""
-    product = product.strip()
-    product_lower = product.lower()
-    if product_lower in PRODUCT_NORMALIZE:
-        return PRODUCT_NORMALIZE[product_lower]
-    return product
+    """Clean product label: line breaks, typos, consistent capitalisation."""
+    p = _collapse(product)
+    low = re.sub(r"[^a-z ]", " ", p.lower())
+    low = re.sub(r"\s+", " ", low).strip()
+    if low in PRODUCT_TYPOS:
+        return PRODUCT_TYPOS[low]
+    if p.lower() in PRODUCT_NORMALIZE:
+        return PRODUCT_NORMALIZE[p.lower()]
+    return p[:1].upper() + p[1:].lower() if p else "Unspecified"
+
+
+def normalize_fraud_countries(raw: str) -> list:
+    """'China / Italy' → ['China', 'Italy']; fixes IFS spellings; keeps 'European Union'."""
+    text = _collapse(raw)
+    if not text:
+        return []
+    fixed = IFS_COUNTRY_FIXES.get(text.lower())
+    if fixed:
+        return fixed if isinstance(fixed, list) else [fixed]
+    _, countries = clean_country(text)
+    countries = [c for c in countries if c != "Unknown"]
+    if countries:
+        return countries
+    parts = [IFS_COUNTRY_FIXES.get(x.strip().lower(), x.strip()) for x in re.split(r"[/,]", text) if x.strip()]
+    return parts or [text]
 
 
 def deduplicate_extractions(extractions: list) -> list:
@@ -178,11 +210,17 @@ def build_dataset(extractions: list) -> dict:
             "source_url": ext.get("source_url", ""),
             "recalls": {},
             "food_fraud_count": len(ext.get("food_fraud", [])),
+            "food_fraud_status": ext.get("food_fraud_status", "published" if ext.get("food_fraud") else "not_found"),
+            "data_period": ext.get("data_period"),
+            "recalls_not_reported": [],
             "period_type": detect_period_type(ext, extractions),
         }
         
         # Normalize recalls
         for country_raw, value in ext.get("recalls", {}).items():
+            if value is None:  # "-" on the map: not reported, never a zero
+                report["recalls_not_reported"].append(country_raw)
+                continue
             country_norm = normalize_country(country_raw)
             report["recalls"][country_raw] = value
             
@@ -198,13 +236,20 @@ def build_dataset(extractions: list) -> dict:
                 "source_url": ext.get("source_url", ""),
             })
         
-        # Normalize food fraud
+        # Normalize food fraud (exact duplicates inside a report are dropped)
+        seen_cases = set()
         for case in ext.get("food_fraud", []):
+            key = (case.get("product_raw"), case.get("reason_raw"), case.get("country_raw"), case.get("detected_in"))
+            if key in seen_cases:
+                continue
+            seen_cases.add(key)
             product_raw = case.get("product_raw", "")
             reason_raw = case.get("reason_raw", "")
             country_raw = case.get("country_raw", "")
             detected_in = case.get("detected_in", "")
             
+            countries = normalize_fraud_countries(country_raw)
+            product_norm = normalize_product(product_raw)
             all_fraud.append({
                 "report_id": report_id,
                 "year": year,
@@ -212,13 +257,18 @@ def build_dataset(extractions: list) -> dict:
                 "month_num": month_num,
                 "publication_date": f"{year}-{month_num:02d}",
                 "product_raw": product_raw,
-                "product_normalized": normalize_product(product_raw),
+                "product_normalized": product_norm,
+                "material_family": material_family("", product_norm),
                 "reason_raw": reason_raw,
                 "reason_normalized": normalize_fraud_reason(reason_raw),
+                "reasons": split_reasons(reason_raw),
                 "country_raw": country_raw,
-                "country_normalized": normalize_country(country_raw),
-                "detected_in": detected_in,
+                "country_normalized": countries[0] if countries else "Unspecified",
+                "countries": countries,
+                "detected_in": _collapse(detected_in),
                 "source_url": ext.get("source_url", ""),
+                "press_url": case.get("press_url", ""),
+                "needs_review": bool(case.get("needs_review")),
             })
         
         reports.append(report)

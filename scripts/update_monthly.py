@@ -1,5 +1,5 @@
 """
-Monthly updater — IFS + FFN
+Monthly updater — IFS + FFN + JRC
 Downloads new PDFs, extracts, rebuilds datasets, writes cross table.
 Designed for local cron or GitHub Actions.
 
@@ -29,10 +29,15 @@ def main():
     steps = [
         [sys.executable, "scripts/discover_ifs_pdfs.py", "--output", "data/inventory.json"],
         [sys.executable, "scripts/discover_ffn_pdfs.py", "--output", "data/inventory_ffn.json"],
+        [sys.executable, "scripts/discover_jrc_pdfs.py", "--output", "data/inventory_jrc.json"],
         [sys.executable, "scripts/extract.py", "--inventory", "data/inventory.json", "--output", "data/raw_extractions.json"],
         [sys.executable, "scripts/extract_ffn.py", "--inventory", "data/inventory_ffn.json", "--output", "data/raw_ffn_extractions.json"],
         [sys.executable, "scripts/normalize_and_build.py", "--input", "data/raw_extractions.json", "--output", "data/dataset.json"],
         [sys.executable, "scripts/build_ffn_dataset.py"],
+        [sys.executable, "scripts/extract_jrc.py"],
+        [sys.executable, "scripts/build_jrc_dataset.py"],
+        [sys.executable, "scripts/build_index.py"],
+        [sys.executable, "scripts/check_dataset.py"],
     ]
     ok_all=True
     for cmd in steps:
@@ -43,7 +48,7 @@ def main():
             break
     # Summary + propagate datasets to app/public (served copy)
     if not args.dry_run and ok_all:
-        for name in ("dataset.json", "dataset_ffn.json", "dataset_cross.json"):
+        for name in ("dataset.json", "dataset_ffn.json", "dataset_cross.json", "dataset_jrc.json", "index.json"):
             src = ROOT / "data" / name
             dst = ROOT / "app" / "public" / name
             if src.exists():
