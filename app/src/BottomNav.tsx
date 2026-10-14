@@ -18,7 +18,7 @@ export default function BottomNav({
     {
       to: "/",
       end: true,
-      label: tr.nav.overview,
+      label: tr.nav.home,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <rect x="3" y="3" width="8" height="8" rx="1.5" stroke="currentColor" strokeWidth="1.6" />
@@ -29,9 +29,9 @@ export default function BottomNav({
       ),
     },
     {
-      to: "/cross",
+      to: "/matieres",
       end: false,
-      label: tr.nav.cross,
+      label: lang === "fr" ? "Matières" : "Materials",
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <circle cx="9" cy="12" r="6.5" stroke="currentColor" strokeWidth="1.6" />
@@ -40,9 +40,9 @@ export default function BottomNav({
       ),
     },
     {
-      to: "/map",
+      to: "/origines",
       end: false,
-      label: tr.nav.worldMap,
+      label: lang === "fr" ? "Origines" : "Origins",
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
@@ -51,9 +51,9 @@ export default function BottomNav({
       ),
     },
     {
-      to: "/ffn",
+      to: "/comprendre",
       end: false,
-      label: tr.nav.ffn,
+      label: lang === "fr" ? "Comprendre" : "Guide",
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <circle cx="10" cy="10" r="6" stroke="currentColor" strokeWidth="1.6" />
@@ -63,7 +63,7 @@ export default function BottomNav({
     },
   ];
 
-  const knownPrefixes = ["/", "/cross", "/map", "/ffn"];
+  const knownPrefixes = ["/", "/matiere", "/origine", "/comprendre"];
   const onKnownTab = knownPrefixes.some((p) => (p === "/" ? pathname === "/" : pathname.startsWith(p)));
   const moreIsActive = moreOpen || !onKnownTab;
 
@@ -88,7 +88,7 @@ export default function BottomNav({
           <circle cx="12" cy="12" r="1.6" fill="currentColor" />
           <circle cx="19" cy="12" r="1.6" fill="currentColor" />
         </svg>
-        <span>{lang === "fr" ? "Plus" : "More"}</span>
+        <span>{tr.nav.more}</span>
       </button>
     </nav>
   );

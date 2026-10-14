@@ -18,12 +18,14 @@ FR · Interface et documentation en français ; données en anglais.
 
 ## ✨ Ce que fait l'app
 
-- **Carte mondiale** des rappels IFS (mois unique, période, tous rapports — avec garde-fou « cumul non redistribué »)
-- **Fraud Explorer** — cas de fraude IFS/JRC (document forgery, mislabelling, adulteration…)
-- **FFN Explorer** — suspicions officielles UE cross-border : 70 classifications sources regroupées en 12 familles, carte par origine/notifiant, filtres combinés, deep-links PDF
-- **Croisement IFS × FFN** — timeline comparée à échelles séparées, tendances ↑↓, croisement réel par pays commun, drill-down par mois, filtres pays/période avec chips
-- **Fiches pays** — historique rappels, fraude, FFN, avec badges par source (IFS · JRC presse / FFN·ACN UE)
-- Bilingue FR/EN · thème sombre/clair · 100 % SVG natif (React + d3-geo, zéro chart lib) · statique (fonctionne sur GitHub Pages ou en `file://`)
+Pensée pour les **entreprises certifiées IFS** (responsables qualité) : *« que signale-t-on sur mes matières premières et mes origines ? »*
+
+- **Ma veille (accueil)** — recherche par matière, produit, pays d'origine ou substance ; nouveautés du mois ; matières et origines les plus signalées avec tendance
+- **Fiche matière** — ce qui est signalé (types de non-conformité, substances), d'où, depuis quand ; cas détaillés avec lien vers chaque PDF officiel ou article de presse ; **export CSV** ; encadré « pour votre évaluation de vulnérabilité à la fraude »
+- **Fiche pays d'origine** — matières concernées, problèmes, notifiants ; rappels publiés par le pays présentés à part (nature différente)
+- **Explorer les sources** — suspicions UE (FFN), fraude presse (IFS/JRC), carte des rappels IFS, croisement des sources
+- **Comprendre les données** — les 3 sources comparées, ce qu'elles ne sont pas, glossaire (termes soulignés = définition au survol)
+- Bilingue FR/EN · thème clair (défaut) / sombre · palette de carte lisible par les daltoniens · 100 % SVG natif · statique (GitHub Pages)
 
 ## 🚀 Démarrer
 

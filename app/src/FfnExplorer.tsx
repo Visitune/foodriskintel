@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { geoNaturalEarth1, geoPath, geoGraticule } from "d3-geo";
 import * as topojson from "topojson-client";
 import type { FeatureCollection, GeoJsonProperties } from "geojson";
-import type { FfnDataset, FfnCase } from "./types";
+import type { FfnDataset, FfnCase, RiskIndex } from "./types";
 import { t } from "./i18n";
 import type { Lang } from "./i18n";
 
@@ -13,27 +13,9 @@ type Mode = "single" | "all" | "range";
 function reverseNormalize(g: string){ const m:Record<string,string>={"United States of America":"United States","Czech Republic":"Czechia"}; return m[g]||g; }
 const caseOrigins = (c: FfnCase) => c.origins_list && c.origins_list.length ? c.origins_list : [c.origin_normalized];
 
-function groupClassification(raw: string): string {
-  const s = raw.toLowerCase().replace(/[^a-z ]/g," ").replace(/\s+/g," ").trim();
-  if(s.includes("food ingredient not authorised") || s.includes("not authorised in the eu")) return "Food / ingredient not authorised (EU)";
-  if(s.includes("residues of pesticides") || s.includes("residue of pesticide") || s.includes("mrl")) {
-    if(s.includes("veterinary")) return "Residues — veterinary medicines (MRL)";
-    return "Residues — pesticides (MRL)";
-  }
-  if(s.includes("unauthorised origin") || s.includes("unauthorised operator") || s.includes("illegal trade") || s.includes("illegal import")) return "Unauthorised origin / operator / illegal import";
-  if(s.includes("adulteration") || s.includes("ingredient substitution") || s.includes("species substitution") || s.includes("ingredient dilution")) return "Adulteration / substitution / dilution";
-  if(s.includes("unapproved process") || s.includes("undeclared process") || s.includes("concealment") || s.includes("enhancement")) return "Unapproved / undeclared process";
-  if(s.includes("additives not compliant") || s.includes("food additives") || s.includes("mls") || s.includes("flavourings") || s.includes("mix of food additives")) return "Additives / flavourings non-compliant";
-  if(s.includes("fcm") || s.includes("food contact")) return "Food contact materials";
-  if(s.includes("feed additives")) return "Feed additives";
-  if(s.includes("eu protected designation") || s.includes("protected designation")) return "EU protected designation";
-  if(s.includes("nutrition and health") || s.includes("dietary claims") || s.includes("organic claims") || s.includes("product attribute") || s.includes("claim violation") || s.includes("other non")) return "Labelling / claims violations";
-  if(s.includes("record tampering") || s.includes("others") || s.includes("counterfeit")) return "Record tampering / other";
-  if(s.trim()==="unknown" || s==="") return "Unknown / to verify";
-  return raw.slice(0,60); // fallback keeps original but truncated
-}
-
-export default function FfnExplorer({ data, lang }: { data: FfnDataset; lang: Lang }) {
+export default function FfnExplorer({ data, index, lang }: { data: FfnDataset; index: RiskIndex; lang: Lang }) {
+  // Non-compliance families are computed by the pipeline (scripts/taxonomy.py)
+  const groupClassification = useCallback((c: FfnCase) => index.labels.groups[c.classification_group || "unknown"]?.[lang] ?? c.classification, [index, lang]);
   const tr = t[lang];
   const navigate = useNavigate();
   const [mode, setMode] = useState<Mode>("single");
@@ -62,7 +44,7 @@ export default function FfnExplorer({ data, lang }: { data: FfnDataset; lang: La
 
   useEffect(()=>{ fetch(`${import.meta.env.BASE_URL}countries-110m.json`).then(r=>r.json()).then(t=> setGeoJSON(topojson.feature(t, t.objects.countries) as unknown as FeatureCollection)); },[]);
 
-  const grouped = useMemo(()=> data.cases.map(c=> ({...c, group: groupClassification(c.classification)})), [data.cases]);
+  const grouped = useMemo(()=> data.cases.map(c=> ({...c, group: groupClassification(c)})), [data.cases, groupClassification]);
   const classificationGroups = useMemo(()=> Array.from(new Set(grouped.map(c=>c.group))).sort(), [grouped]);
   const classifications = useMemo(()=> Array.from(new Set(data.cases.map(c => c.classification))).sort(), [data]);
   const origins = useMemo(()=>{ const s=new Set<string>(); data.cases.forEach(c=>caseOrigins(c).forEach(o=>s.add(o))); return [...s].sort(); }, [data]);
@@ -139,11 +121,11 @@ export default function FfnExplorer({ data, lang }: { data: FfnDataset; lang: La
   const getColor=useCallback((v:number)=>{
     if(v===0) return "var(--fill-empty)";
     const t=v/maxMap;
-    if(t<0.15) return "#1e4d2b";
-    if(t<0.35) return "#2d7a3e";
-    if(t<0.55) return "#6fa832";
-    if(t<0.75) return "#d4a017";
-    return "#cc3311";
+    if(t<0.15) return "var(--map-1)";
+    if(t<0.35) return "var(--map-2)";
+    if(t<0.55) return "var(--map-3)";
+    if(t<0.75) return "var(--map-4)";
+    return "var(--map-5)";
   }, [maxMap]);
 
   const selectedReportObj = data.reports.find(r=>r.id===selReport);
@@ -203,8 +185,8 @@ export default function FfnExplorer({ data, lang }: { data: FfnDataset; lang: La
         </div>
       )}
       <div className="meta" style={{marginBottom:8}}>{lang==="fr"
-        ? `70 classifications sources regroupées en ${classificationGroups.length} groupes lisibles — cliquez une barre ou utilisez le menu pour filtrer.`
-        : `70 source classifications grouped into ${classificationGroups.length} readable groups — click a bar or use the menu to filter.`} <span title={classifications.join(" • ")}>{lang==="fr"?"Voir détail brut au survol":"Hover for raw detail"}</span></div>
+        ? `${classifications.length} libellés sources regroupés en ${classificationGroups.length} familles lisibles — cliquez une barre ou utilisez le menu pour filtrer.`
+        : `${classifications.length} source labels grouped into ${classificationGroups.length} readable families — click a bar or use the menu to filter.`} <span title={classifications.join(" • ")}>{lang==="fr"?"Voir détail brut au survol":"Hover for raw detail"}</span></div>
 
       {geoJSON && (
         <div className="map-container">
@@ -217,7 +199,7 @@ export default function FfnExplorer({ data, lang }: { data: FfnDataset; lang: La
               return <path key={i} d={d||""} style={{cursor: v? "pointer":"default", fill:getColor(v), stroke: hov? "var(--map-stroke-hover)":"var(--map-stroke)", strokeWidth: hov?1.5:0.4}} onMouseEnter={()=>setHovered(name)} onMouseLeave={()=>setHovered(null)} onClick={()=>{
                 if(!v) return;
                 const norm=reverseNormalize(name);
-                navigate(`/country/${encodeURIComponent(norm)}`);
+                navigate(`/origine/${encodeURIComponent(norm)}`);
               }}><title>{reverseNormalize(name)} — {getValue(name)} {lang==="fr"?"cas":"cases"}</title></path>;
             })}
           </svg>
@@ -231,7 +213,7 @@ export default function FfnExplorer({ data, lang }: { data: FfnDataset; lang: La
         ))}</div><div className="meta" style={{marginTop:6}}>{tr.ffn.clickBarFilter} {lang==="fr"?`${byProduct.length} principales catégories affichées`:`${byProduct.length} top categories shown`}</div></div>
         <div className="card"><h3>{tr.ffn.byClassif} ({lang==="fr"?"groupés":"grouped"})</h3><div className="bar-list">{byClassification.map(([k,c])=>(
           <div key={k} className="bar-row" style={{cursor:"pointer"}} onClick={()=>setClassificationFilter(classificationFilter===k?"all":k)}><span className="bar-label" title={k}>{k}</span><div className="bar-track"><div className="bar-fill" style={{width:`${(c/(byClassification[0]?.[1]||1))*100}%`, opacity: classificationFilter===k?1:0.85}}/></div><span className="bar-value">{c}</span></div>
-        ))}</div><div className="meta" style={{marginTop:6}}>{tr.ffn.clickBarFilter} 70 {lang==="fr"?"libellés bruts →":"raw labels →"} {classificationGroups.length} {tr.ffn.groupsLabel}</div></div>
+        ))}</div><div className="meta" style={{marginTop:6}}>{tr.ffn.clickBarFilter} {classifications.length} {lang==="fr"?"libellés bruts →":"raw labels →"} {classificationGroups.length} {tr.ffn.groupsLabel}</div></div>
       </div>
 
       <div className="card">

@@ -56,6 +56,13 @@ def trend(by_month, months):
     return {"last6": a, "prev6": b, "ratio": round(ratio, 2), "direction": direction}
 
 
+def is_fragment(text):
+    """Commodity cells cut by the PDF table layout ("(ingredient", "cephalopods and")."""
+    t = text.strip()
+    return (len(t) < 3 or t[0] in "(,;-" or t.endswith((" and", " or", ",", "(", "-", " of"))
+            or t.count("(") != t.count(")"))
+
+
 def top(counter, n=TOP):
     return dict(counter.most_common(n))
 
@@ -84,7 +91,7 @@ def main():
         F["ffn_month"][m] += 1
         F["ffn_group"][c["classification_group"]] += 1
         com = c["commodity"].strip().lower()
-        if com:
+        if com and not is_fragment(com):
             F["ffn_commodity"][com] += 1
             commodity_family[com][f] += 1
         for s in c["substances"]:

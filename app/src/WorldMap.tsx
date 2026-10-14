@@ -143,11 +143,11 @@ export default function WorldMap({ data, lang }: { data: Dataset; lang: Lang }) 
     (val: number): string => {
       if (val === 0) return "var(--fill-empty)";
       const t = val / maxVal;
-      if (t < 0.15) return "#1e4d2b";
-      if (t < 0.35) return "#2d7a3e";
-      if (t < 0.55) return "#6fa832";
-      if (t < 0.75) return "#d4a017";
-      return "#cc3311";
+      if (t < 0.15) return "var(--map-1)";
+      if (t < 0.35) return "var(--map-2)";
+      if (t < 0.55) return "var(--map-3)";
+      if (t < 0.75) return "var(--map-4)";
+      return "var(--map-5)";
     },
     [maxVal]
   );
@@ -330,7 +330,7 @@ export default function WorldMap({ data, lang }: { data: Dataset; lang: Lang }) 
                 onMouseLeave={() => setHovered(null)}
                 onClick={() =>
                   navigate(
-                    `/country/${encodeURIComponent(reverseNormalize(geoName))}`
+                    `/origine/${encodeURIComponent(reverseNormalize(geoName))}`
                   )
                 }
               >

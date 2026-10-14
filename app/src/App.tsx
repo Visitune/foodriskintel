@@ -1,10 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import { HashRouter, Routes, Route, NavLink } from "react-router-dom";
-import type { Dataset, FfnDataset, CrossDataset } from "./types";
+import { HashRouter, Routes, Route, NavLink, Navigate, useParams } from "react-router-dom";
+import type { Dataset, RiskIndex } from "./types";
 import { t } from "./i18n";
 import type { Lang } from "./i18n";
 import WorldMap from "./WorldMap";
-import CountryDetail from "./CountryDetail";
 import FraudExplorer from "./FraudExplorer";
 import FfnExplorer from "./FfnExplorer";
 import CrossView from "./CrossView";
@@ -14,24 +13,53 @@ import OnboardingModal from "./OnboardingModal";
 import ScrollAssist from "./ScrollAssist";
 import PageTitle from "./PageTitle";
 import BottomNav from "./BottomNav";
+import Watch from "./pages/Watch";
+import Material from "./pages/Material";
+import Origin from "./pages/Origin";
+import Guide from "./pages/Guide";
+import { Materials, Origins } from "./pages/Lists";
+import { loadJson, useCross, useFfn } from "./data";
+import { fmtMonth } from "./format";
+import { Loading } from "./components/ui";
+
+function CountryRedirect() {
+  const { country = "" } = useParams();
+  return <Navigate to={`/origine/${country}`} replace />;
+}
+
+// Source explorers need the large FFN / cross datasets: loaded on demand.
+function WithFfn({ lang, render }: { lang: Lang; render: (ffn: NonNullable<ReturnType<typeof useFfn>["data"]>) => React.ReactNode }) {
+  const { data, error } = useFfn();
+  if (error) return <div className="error">{lang === "fr" ? "Données FFN indisponibles." : "FFN data unavailable."}</div>;
+  return data ? <>{render(data)}</> : <Loading lang={lang} />;
+}
+function WithCross({ lang, render }: { lang: Lang; render: (c: NonNullable<ReturnType<typeof useCross>["data"]>) => React.ReactNode }) {
+  const { data, error } = useCross();
+  if (error) return <div className="error">{lang === "fr" ? "Données croisées indisponibles." : "Cross data unavailable."}</div>;
+  return data ? <>{render(data)}</> : <Loading lang={lang} />;
+}
 
 export default function App() {
   const [data, setData] = useState<Dataset | null>(null);
-  const [ffn, setFfn] = useState<FfnDataset | null>(null);
-  const [cross, setCross] = useState<CrossDataset | null>(null);
+  const [index, setIndex] = useState<RiskIndex | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [navOpen, setNavOpen] = useState(false);
   const [lang, setLang] = useState<Lang>(() => (localStorage.getItem("fri-lang") as Lang | null) || "fr");
   const [theme, setTheme] = useState<"dark"|"light">(() => {
-    const saved = localStorage.getItem("fri-theme") as "dark"|"light"|null;
-    if (saved) return saved;
-    return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    let saved: "dark"|"light"|null = null;
+    try { saved = localStorage.getItem("fri-theme") as "dark"|"light"|null; } catch { /* storage blocked */ }
+    // Light by default: a working tool used in offices, printed and screenshotted
+    return saved ?? "light";
   });
   const [onboardingOpen, setOnboardingOpen] = useState(false);
   const helpBtnRef = useRef<HTMLButtonElement>(null);
   useEffect(()=>{ document.documentElement.setAttribute("data-theme", theme); localStorage.setItem("fri-theme", theme); }, [theme]);
-  useEffect(() => { localStorage.setItem("fri-lang", lang); }, [lang]);
+  useEffect(() => {
+    localStorage.setItem("fri-lang", lang);
+    document.documentElement.lang = lang;
+    document.title = lang === "fr" ? "Food Risk Intelligence — veille matières premières" : "Food Risk Intelligence — raw material watch";
+  }, [lang]);
   useEffect(() => {
     if (!localStorage.getItem("fri-onboarding-seen")) {
       setOnboardingOpen(true);
@@ -44,19 +72,14 @@ export default function App() {
   };
 
   useEffect(() => {
-    Promise.all([
-      fetch(`${import.meta.env.BASE_URL}dataset.json`).then(r=>{ if(!r.ok) throw new Error("IFS dataset"); return r.json(); }),
-      fetch(`${import.meta.env.BASE_URL}dataset_ffn.json`).then(r=>{ if(!r.ok) throw new Error("FFN dataset"); return r.json(); }).catch(()=>null),
-      fetch(`${import.meta.env.BASE_URL}dataset_cross.json`).then(r=>{ if(!r.ok) throw new Error("Cross dataset"); return r.json(); }).catch(()=>null),
-    ])
-      .then(([d, f, c]) => { setData(d); if(f) setFfn(f); if(c) setCross(c); })
+    Promise.all([loadJson<Dataset>("dataset.json"), loadJson<RiskIndex>("index.json")])
+      .then(([d, i]) => { setData(d); setIndex(i); })
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <div className="loading">Loading dataset...</div>;
-  if (error) return <div className="error">Error: {error}</div>;
-  if (!data) return <div className="error">No data available</div>;
+  if (loading) return <Loading lang={lang} />;
+  if (error || !data || !index) return <div className="error">{lang === "fr" ? "Impossible de charger les données" : "Could not load data"} ({error})</div>;
 
   const tr = t[lang];
   return (
@@ -80,7 +103,7 @@ export default function App() {
                 <circle cx="12" cy="17" r="0.9" fill="currentColor" />
               </svg>
             </button>
-            <button type="button" className="icon-btn" aria-label={theme==="dark" ? tr.theme.light : tr.theme.dark} title={theme==="dark" ? "Passer en clair" : "Switch to dark"} onClick={()=>setTheme(v=>v==="dark"?"light":"dark")}>
+            <button type="button" className="icon-btn" aria-label={theme==="dark" ? tr.theme.light : tr.theme.dark} title={theme==="dark" ? tr.theme.light : tr.theme.dark} onClick={()=>setTheme(v=>v==="dark"?"light":"dark")}>
               {theme==="dark" ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="1.6"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.38 18.38l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.38 5.62l1.42-1.42" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg>
               : <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/></svg>}
             </button>
@@ -104,38 +127,44 @@ export default function App() {
           <PageTitle lang={lang} className="sidebar-page-label" />
 
           <div className="nav-links">
-            <div className="nav-group-label">{tr.nav.groupAnalyze}</div>
-            <NavLink to="/" end onClick={() => setNavOpen(false)}>{tr.nav.overview}</NavLink>
-            <NavLink to="/cross" onClick={() => setNavOpen(false)}>{tr.nav.cross}</NavLink>
+            <div className="nav-group-label">{tr.nav.groupWatch}</div>
+            <NavLink to="/" end onClick={() => setNavOpen(false)}>{tr.nav.home}</NavLink>
+            <NavLink to="/matieres" onClick={() => setNavOpen(false)}>{tr.nav.materials}</NavLink>
+            <NavLink to="/origines" onClick={() => setNavOpen(false)}>{tr.nav.origins}</NavLink>
             <div className="nav-group-label">{tr.nav.groupExplore}</div>
-            <NavLink to="/map" onClick={() => setNavOpen(false)}>{tr.nav.worldMap}</NavLink>
-            <NavLink to="/fraud" onClick={() => setNavOpen(false)}>{tr.nav.ifsFraud}</NavLink>
             <NavLink to="/ffn" onClick={() => setNavOpen(false)}>{tr.nav.ffn}</NavLink>
+            <NavLink to="/fraud" onClick={() => setNavOpen(false)}>{tr.nav.ifsFraud}</NavLink>
+            <NavLink to="/map" onClick={() => setNavOpen(false)}>{tr.nav.worldMap}</NavLink>
+            <NavLink to="/cross" onClick={() => setNavOpen(false)}>{tr.nav.cross}</NavLink>
+            <NavLink to="/overview" onClick={() => setNavOpen(false)}>{tr.nav.overview}</NavLink>
             <div className="nav-group-label">{tr.nav.groupUnderstand}</div>
+            <NavLink to="/comprendre" onClick={() => setNavOpen(false)}>{tr.nav.guide}</NavLink>
             <NavLink to="/sources" onClick={() => setNavOpen(false)}>{tr.nav.sources}</NavLink>
           </div>
 
           <div className="sidebar-footer">
-            <div className="meta">IFS {data.summary.total_reports} · FFN {ffn?.summary.total_reports ?? "—"} reports</div>
-            <div className="meta">{data.date_range.start} → {cross?.window.end ?? data.date_range.end}</div>
-            <div className="source-disclaimer">
-              {tr.overview.disc}
-            </div>
-            <a href="https://www.ifs-certification.com/" target="_blank" rel="noopener noreferrer">Source: IFS</a>
-            <span style={{margin:"0 6px"}}>·</span>
-            <a href="https://food.ec.europa.eu/food-safety/acn/ffn-monthly_en" target="_blank" rel="noopener noreferrer">FFN</a>
+            <div className="meta">{lang === "fr" ? "Données à jour :" : "Data up to:"}</div>
+            <div className="meta">FFN {fmtMonth(index.sources.ffn.latest, lang, "short")} · IFS {fmtMonth(index.sources.ifs.latest, lang, "short")}</div>
+            <div className="source-disclaimer">{tr.overview.disc}</div>
           </div>
         </nav>
 
         <main className="content">
           <Routes>
-            <Route path="/" element={<Overview data={data} ffn={ffn} cross={cross} lang={lang} />} />
-            <Route path="/cross" element={ffn && cross ? <CrossView ifs={data} ffn={ffn} cross={cross} lang={lang}/> : <div className="loading">Loading cross data…</div>} />
+            <Route path="/" element={<Watch ifs={data} index={index} lang={lang} />} />
+            <Route path="/matieres" element={<Materials index={index} lang={lang} />} />
+            <Route path="/matiere/:id" element={<Material ifs={data} index={index} lang={lang} />} />
+            <Route path="/origines" element={<Origins index={index} lang={lang} />} />
+            <Route path="/origine/:country" element={<Origin ifs={data} index={index} lang={lang} />} />
+            <Route path="/country/:country" element={<CountryRedirect />} />
+            <Route path="/comprendre" element={<Guide index={index} lang={lang} />} />
+            <Route path="/overview" element={<WithFfn lang={lang} render={(ffn) => <WithCross lang={lang} render={(cross) => <Overview data={data} ffn={ffn} cross={cross} lang={lang} />} />} />} />
+            <Route path="/cross" element={<WithFfn lang={lang} render={(ffn) => <WithCross lang={lang} render={(cross) => <CrossView ifs={data} ffn={ffn} cross={cross} lang={lang} />} />} />} />
             <Route path="/map" element={<WorldMap data={data} lang={lang} />} />
-            <Route path="/country/:country" element={<CountryDetail data={data} ffn={ffn} lang={lang} />} />
-            <Route path="/fraud" element={<FraudExplorer data={data} lang={lang} />} />
-            <Route path="/ffn" element={ffn ? <FfnExplorer data={ffn} lang={lang}/> : <div className="loading">Loading FFN…</div>} />
+            <Route path="/fraud" element={<FraudExplorer data={data} index={index} lang={lang} />} />
+            <Route path="/ffn" element={<WithFfn lang={lang} render={(ffn) => <FfnExplorer data={ffn} index={index} lang={lang} />} />} />
             <Route path="/sources" element={<Sources data={data} lang={lang} />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
       </div>

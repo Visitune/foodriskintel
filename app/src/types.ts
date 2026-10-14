@@ -7,6 +7,12 @@ export interface Report {
   source_url: string;
   recalls: Record<string, number>;
   food_fraud_count: number;
+  /** "not_published": IFS announced no fraud table that month (never read as 0) */
+  food_fraud_status?: "published" | "not_published" | "not_found";
+  /** Month the data refers to, read from the PDF text (often publication month − 1) */
+  data_period?: string | null;
+  /** Countries shown with "-" on the map (not reported) */
+  recalls_not_reported?: string[];
   period_type: "monthly" | "two_month_cumulative" | "point_in_time" | "unknown";
   period_note?: string;
 }
@@ -37,6 +43,11 @@ export interface FoodFraudEntry {
   country_normalized: string;
   detected_in: string;
   source_url: string;
+  material_family?: string;
+  reasons?: string[];
+  countries?: string[];
+  press_url?: string;
+  needs_review?: boolean;
 }
 
 export interface Dataset {
@@ -83,6 +94,9 @@ export interface FfnCase {
   month_num: number;
   publication_date: string;
   classification: string;
+  classification_group?: string;
+  material_family?: string;
+  substances?: string[];
   product_category: string;
   commodity: string;
   issue: string;
@@ -138,4 +152,59 @@ export interface CrossDataset {
     ifs_recalls_total_in_window: number;
   };
   cross: CrossEntry[];
+}
+
+// ─── Material / origin index (data/index.json) ─────────────────────────────────
+export type Label = { fr: string; en: string };
+export type Trend = { last6: number; prev6: number; ratio?: number; direction: "up" | "down" | "stable" | "new" | "insufficient" };
+
+export interface FamilyIndex {
+  label: Label;
+  ffn_cases: number;
+  ffn_by_month: Record<string, number>;
+  ffn_trend: Trend;
+  ffn_top_origins: Record<string, number>;
+  ffn_by_group: Record<string, number>;
+  ffn_top_substances: Record<string, number>;
+  ffn_top_commodities: Record<string, number>;
+  fraud_cases: number;
+  fraud_by_month: Record<string, number>;
+  fraud_trend: Trend;
+  fraud_top_countries: Record<string, number>;
+  fraud_by_reason: Record<string, number>;
+  fraud_top_products: Record<string, number>;
+}
+
+export interface OriginIndex {
+  ffn_cases: number;
+  ffn_by_month: Record<string, number>;
+  ffn_trend: Trend;
+  ffn_by_family: Record<string, number>;
+  ffn_by_group: Record<string, number>;
+  ffn_top_substances: Record<string, number>;
+  ffn_top_notifiers: Record<string, number>;
+  fraud_cases: number;
+  fraud_by_family: Record<string, number>;
+  fraud_by_reason: Record<string, number>;
+}
+
+export interface SearchTerm { t: "family" | "origin" | "substance" | "commodity"; id: string; n: number; f?: string; fr?: string; en?: string }
+
+export interface RiskIndex {
+  generated_at: string;
+  sources: {
+    ifs: { first: string; latest: string; reports: number; fraud_latest: string; fraud_not_published: string[]; fraud_cases: number };
+    ffn: { first: string; latest: string; reports: number; cases: number };
+  };
+  labels: { families: Record<string, Label>; groups: Record<string, Label>; reasons: Record<string, Label>; substances: string[] };
+  highlights: {
+    ffn_month: string;
+    ffn_rising_families: { family: string; count: number; avg12: number }[];
+    ffn_month_total: number;
+    fraud_month: string;
+    fraud_month_cases: { product_normalized: string; material_family: string; reasons: string[]; countries: string[]; press_url: string }[];
+  };
+  families: Record<string, FamilyIndex>;
+  origins: Record<string, OriginIndex>;
+  search: SearchTerm[];
 }

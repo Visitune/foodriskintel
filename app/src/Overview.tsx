@@ -102,7 +102,7 @@ export default function Overview({ data, ffn, cross, lang }: { data: Dataset; ff
           <h3>{tr.overview.topCountries}</h3>
           <div className="bar-list">
             {top10.map(([country, total]) => (
-              <Link key={country} to={`/country/${encodeURIComponent(country)}`} className="bar-row" style={{ textDecoration:"none", color:"inherit" }} aria-label={tr.overview.countrySheetAria(country)}>
+              <Link key={country} to={`/origine/${encodeURIComponent(country)}`} className="bar-row" style={{ textDecoration:"none", color:"inherit" }} aria-label={tr.overview.countrySheetAria(country)}>
                 <span className="bar-label">{country}</span>
                 <div className="bar-track">
                   <div

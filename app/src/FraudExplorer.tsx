@@ -1,210 +1,88 @@
-import { useState, useMemo } from "react";
-import type { Dataset, FoodFraudEntry } from "./types";
-import { t } from "./i18n";
+import { useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
+import type { Dataset, RiskIndex } from "./types";
 import type { Lang } from "./i18n";
+import { t } from "./i18n";
+import { fmtMonth } from "./format";
+import { BarList, SourceTag, Sparkline, Term } from "./components/ui";
+import { Card, FraudCaseTable, countBy } from "./pages/shared";
 
-export default function FraudExplorer({ data, lang }: { data: Dataset; lang: Lang }) {
+/** IFS/JRC press fraud cases. Filters live in the URL so a view can be shared. */
+export default function FraudExplorer({ data, index, lang }: { data: Dataset; index: RiskIndex; lang: Lang }) {
   const tr = t[lang];
-  const [reasonFilter, setReasonFilter] = useState<string>("all");
-  const [countryFilter, setCountryFilter] = useState<string>("all");
-  const [sortCol, setSortCol] = useState<keyof FoodFraudEntry>("month_num");
-  const [sortDir, setSortDir] = useState<"asc" | "desc">("desc");
-
-  const reasons = useMemo(
-    () =>
-      Array.from(new Set(data.food_fraud.map((f) => f.reason_normalized))).sort(),
-    [data]
-  );
-
-  const countries = useMemo(
-    () =>
-      Array.from(
-        new Set(data.food_fraud.map((f) => f.country_normalized))
-      ).sort(),
-    [data]
-  );
-
-  const filtered = useMemo(() => {
-    let result = data.food_fraud;
-    if (reasonFilter !== "all") {
-      result = result.filter((f) => f.reason_normalized === reasonFilter);
-    }
-    if (countryFilter !== "all") {
-      result = result.filter((f) => f.country_normalized === countryFilter);
-    }
-    result = [...result].sort((a, b) => {
-      const va = a[sortCol];
-      const vb = b[sortCol];
-      if (typeof va === "string" && typeof vb === "string") {
-        return sortDir === "asc" ? va.localeCompare(vb) : vb.localeCompare(va);
-      }
-      const na = Number(va) || 0;
-      const nb = Number(vb) || 0;
-      return sortDir === "asc" ? na - nb : nb - na;
-    });
-    return result;
-  }, [data, reasonFilter, countryFilter, sortCol, sortDir]);
-
-  const toggleSort = (col: keyof FoodFraudEntry) => {
-    if (sortCol === col) {
-      setSortDir((d) => (d === "asc" ? "desc" : "asc"));
-    } else {
-      setSortCol(col);
-      setSortDir("desc");
-    }
+  const fr = lang === "fr";
+  const [params, setParams] = useSearchParams();
+  const family = params.get("famille") || "";
+  const reason = params.get("type") || "";
+  const country = params.get("pays") || "";
+  const set = (k: string, v: string) => {
+    const p = new URLSearchParams(params);
+    if (v) p.set(k, v); else p.delete(k);
+    setParams(p, { replace: true });
   };
 
-  // Aggregate by product
-  const byProduct = useMemo(() => {
-    const map: Record<string, number> = {};
-    filtered.forEach((f) => {
-      map[f.product_normalized] = (map[f.product_normalized] || 0) + 1;
-    });
-    return Object.entries(map)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 15);
-  }, [filtered]);
+  const filtered = useMemo(() => data.food_fraud.filter((c) =>
+    (!family || c.material_family === family) &&
+    (!reason || (c.reasons || []).includes(reason)) &&
+    (!country || (c.countries || [c.country_normalized]).includes(country))), [data, family, reason, country]);
 
-  // Aggregate by month
-  const byMonth = useMemo(() => {
-    const map: Record<string, number> = {};
-    filtered.forEach((f) => {
-      const key = `${f.month.slice(0, 3)} ${f.year}`;
-      map[key] = (map[key] || 0) + 1;
-    });
-    return Object.entries(map);
-  }, [filtered]);
+  const months = data.reports.map((r) => r.publication_date);
+  const notPublished = data.reports.filter((r) => r.food_fraud_status === "not_published").map((r) => r.publication_date);
+  const byFamily = countBy(filtered, (c) => c.material_family || "other");
+  const byReason = countBy(filtered, (c) => c.reasons || []);
+  const byCountry = countBy(filtered, (c) => c.countries || [c.country_normalized]);
+  const allFamilies = countBy(data.food_fraud, (c) => c.material_family || "other");
+  const allReasons = countBy(data.food_fraud, (c) => c.reasons || []);
+  const allCountries = countBy(data.food_fraud, (c) => c.countries || [c.country_normalized]);
 
   return (
     <div className="page">
-      <div className="page-header">
-        <h2>{tr.fraudIfs.title}</h2>
-        <p className="subtitle">
-          {tr.fraudIfs.sub(filtered.length, reasons.length, countries.length)}
-        </p>
-      </div>
-      <div className="source-banner" style={{flexDirection:'column', alignItems:'flex-start', gap:6}}>
-        <span><strong>{lang==="fr" ? "Source : IFS Trend Risk Reports — section Food Fraud" : "Source: IFS Trend Risk Reports — Food Fraud section"}</strong> {lang==="fr" ? "reprise des" : "from the"} <strong>JRC Food Fraud Monthly Reports</strong> (KC-FFQ, DG JRC). <a href="https://knowledge4policy.ec.europa.eu/jrc-food-fraud-monthly-report_en" target="_blank" rel="noopener noreferrer">JRC Monthly Report</a> (ex : <a href="https://knowledge4policy.ec.europa.eu/sites/default/files/202604.pdf" target="_blank" rel="noopener noreferrer">202604.pdf</a>).</span>
-        <span style={{fontSize:12, opacity:0.9}}>
-          {lang==="fr" ? "Nature JRC : source officielle UE fondée sur veille presse / EMM — screening quotidien d'articles mondiaux classifiés par le JRC. Chaque cas IFS cite son lien presse. Pour le réseau officiel UE (RASFF/AAC/FFN), voir FFN Explorer." : "JRC nature: official EU source based on press / EMM media monitoring — daily screening of world press classified by JRC. Each IFS case links to its press source. For the official EU network (RASFF/AAC/FFN), see FFN Explorer."}
-        </span>
-      </div>
+      <header className="page-header">
+        <h2>{tr.nav.ifsFraud}</h2>
+        <p className="subtitle">{fr
+          ? <>Cas de fraude parus dans la presse mondiale, sélectionnés par le <Term id="jrc" lang={lang}>JRC</Term> et repris chaque mois dans le <Term id="trendRisk" lang={lang}>rapport IFS Trend Risk</Term>. Chaque cas renvoie à l'article d'origine.</>
+          : <>Fraud cases reported in the world press, selected by the <Term id="jrc" lang={lang}>JRC</Term> and republished monthly in the <Term id="trendRisk" lang={lang}>IFS Trend Risk Report</Term>. Each case links to the original article.</>}</p>
+        <SourceTag src="jrc" lang={lang} />
+      </header>
 
       <div className="controls">
-        <select value={reasonFilter} onChange={(e) => setReasonFilter(e.target.value)}>
-          <option value="all">{lang==="fr"?"Tous types de fraude":"All fraud types"}</option>
-          {reasons.map((r) => (
-            <option key={r} value={r}>{r}</option>
-          ))}
+        <select value={family} onChange={(e) => set("famille", e.target.value)} aria-label={fr ? "Matière" : "Material"}>
+          <option value="">{fr ? "Toutes les matières" : "All materials"}</option>
+          {allFamilies.map(([f, n]) => <option key={f} value={f}>{index.labels.families[f]?.[lang] ?? f} ({n})</option>)}
         </select>
-        <select value={countryFilter} onChange={(e) => setCountryFilter(e.target.value)}>
-          <option value="all">{lang==="fr"?"Tous pays":"All countries"}</option>
-          {countries.map((c) => (
-            <option key={c} value={c}>{c}</option>
-          ))}
+        <select value={reason} onChange={(e) => set("type", e.target.value)} aria-label={fr ? "Type de fraude" : "Fraud type"}>
+          <option value="">{fr ? "Tous types de fraude" : "All fraud types"}</option>
+          {allReasons.map(([r, n]) => <option key={r} value={r}>{index.labels.reasons[r]?.[lang] ?? r} ({n})</option>)}
         </select>
+        <select value={country} onChange={(e) => set("pays", e.target.value)} aria-label={fr ? "Pays" : "Country"}>
+          <option value="">{fr ? "Tous pays" : "All countries"}</option>
+          {allCountries.map(([c, n]) => <option key={c} value={c}>{c} ({n})</option>)}
+        </select>
+        {(family || reason || country) && <button type="button" className="btn" onClick={() => setParams({}, { replace: true })}>{tr.common.reset}</button>}
       </div>
 
-      {(reasonFilter!=="all"||countryFilter!=="all") && (
-        <div className="chip-row">
-          <span className="meta">{lang==="fr"?"Filtres actifs :":"Active filters:"}</span>
-          {reasonFilter!=="all" && <span className="chip"><b>{reasonFilter}</b><button className="chip-x" aria-label={lang==="fr"?"Retirer le filtre type":"Remove type filter"} onClick={()=>setReasonFilter("all")}>✕</button></span>}
-          {countryFilter!=="all" && <span className="chip"><b>{countryFilter}</b><button className="chip-x" aria-label={lang==="fr"?"Retirer le filtre pays":"Remove country filter"} onClick={()=>setCountryFilter("all")}>✕</button></span>}
-          <button className="btn-mini" onClick={()=>{setReasonFilter("all");setCountryFilter("all");}}>{lang==="fr"?"✕ Réinitialiser les filtres":"✕ Reset filters"}</button>
-        </div>
-      )}
+      <Card title={fr ? "Cas par rapport mensuel" : "Cases per monthly report"}>
+        <Sparkline months={months} values={Object.fromEntries(countBy(filtered, (c) => c.publication_date))} lang={lang} tone="jrc" missing={notPublished} />
+        <p className="meta">{fr
+          ? `Trait gris : l'IFS n'a pas publié de tableau de fraude (${notPublished.map((m) => fmtMonth(m, lang, "short")).join(", ")}). Ce n'est pas « zéro cas ».`
+          : `Grey dash: IFS published no fraud table (${notPublished.map((m) => fmtMonth(m, lang, "short")).join(", ")}). It does not mean "zero cases".`}</p>
+      </Card>
 
-      <div className="grid-2">
-        <div className="card">
-          <h3>{lang==="fr"?"Par type de produit":"By Product Type"}</h3>
-          <div className="bar-list">
-            {byProduct.map(([product, count]) => (
-              <div key={product} className="bar-row">
-                <span className="bar-label">{product}</span>
-                <div className="bar-track">
-                  <div
-                    className="bar-fill warn"
-                    style={{ width: `${(count / byProduct[0][1]) * 100}%` }}
-                  />
-                </div>
-                <span className="bar-value">{count}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="card">
-          <h3>{lang==="fr"?"Par période":"By Period"}</h3>
-          <div className="mini-timeline">
-            {byMonth.map(([month, count]) => (
-              <div key={month} className="mini-bar-wrapper">
-                <div className="mini-bar-container">
-                  <div
-                    className="mini-bar"
-                    style={{
-                      height: `${(count / Math.max(...byMonth.map((m) => m[1]))) * 100}%`,
-                    }}
-                  />
-                </div>
-                <span className="mini-label">{month}</span>
-                <span className="mini-count">{count}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+      <div className="grid-3">
+        <Card title={fr ? "Matières" : "Materials"}>
+          <BarList lang={lang} tone="jrc" rows={byFamily.slice(0, 10).map(([f, n]) => [f, n, index.labels.families[f]?.[lang] ?? f])} onPick={(f) => set("famille", family === f ? "" : f)} active={family} />
+        </Card>
+        <Card title={fr ? "Types de fraude" : "Fraud types"}>
+          <BarList lang={lang} tone="jrc" rows={byReason.slice(0, 10).map(([r, n]) => [r, n, index.labels.reasons[r]?.[lang] ?? r])} onPick={(r) => set("type", reason === r ? "" : r)} active={reason} />
+        </Card>
+        <Card title={fr ? "Pays" : "Countries"}>
+          <BarList lang={lang} tone="jrc" rows={byCountry.slice(0, 10)} onPick={(c) => set("pays", country === c ? "" : c)} active={country} />
+        </Card>
       </div>
 
-      <div className="card">
-        <h3>{lang==="fr"?"Détail des cas":"Cases Detail"}</h3>
-        <div className="table-scroll">
-          <table>
-            <thead>
-              <tr>
-                {(
-                  [
-                    ["year", lang==="fr"?"Année":"Year"],
-                    ["month_num", lang==="fr"?"Mois":"Month"],
-                    ["product_normalized", lang==="fr"?"Produit":"Product"],
-                    ["reason_normalized", lang==="fr"?"Motif":"Reason"],
-                    ["country_normalized", lang==="fr"?"Pays":"Country"],
-                  ] as [keyof FoodFraudEntry, string][]
-                ).map(([col, label]) => (
-                  <th
-                    key={col}
-                    className="sortable"
-                    aria-sort={
-                      sortCol === col
-                        ? sortDir === "asc"
-                          ? "ascending"
-                          : "descending"
-                        : "none"
-                    }
-                  >
-                    <button type="button" onClick={() => toggleSort(col)}>
-                      {label} {sortCol === col ? (sortDir === "asc" ? "↑" : "↓") : ""}
-                    </button>
-                  </th>
-                ))}
-                <th>{lang==="fr"?"Détecté en":"Detected in"}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filtered.map((f, i) => (
-                <tr key={i}>
-                  <td className="mono">{f.year}</td>
-                  <td>{f.month}</td>
-                  <td>{f.product_normalized}</td>
-                  <td>
-                    <span className="tag">{f.reason_normalized}</span>
-                  </td>
-                  <td>{f.country_normalized}</td>
-                  <td>{f.detected_in || "—"}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <Card title={fr ? "Détail des cas" : "Case detail"}>
+        <FraudCaseTable cases={filtered} index={index} lang={lang} filename="fraude-presse-ifs-jrc.csv" />
+      </Card>
     </div>
   );
 }
