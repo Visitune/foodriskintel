@@ -33,6 +33,8 @@ def main():
         [sys.executable, "scripts/extract_ffn.py", "--inventory", "data/inventory_ffn.json", "--output", "data/raw_ffn_extractions.json"],
         [sys.executable, "scripts/normalize_and_build.py", "--input", "data/raw_extractions.json", "--output", "data/dataset.json"],
         [sys.executable, "scripts/build_ffn_dataset.py"],
+        [sys.executable, "scripts/build_index.py"],
+        [sys.executable, "scripts/check_dataset.py"],
     ]
     ok_all=True
     for cmd in steps:
@@ -43,7 +45,7 @@ def main():
             break
     # Summary + propagate datasets to app/public (served copy)
     if not args.dry_run and ok_all:
-        for name in ("dataset.json", "dataset_ffn.json", "dataset_cross.json"):
+        for name in ("dataset.json", "dataset_ffn.json", "dataset_cross.json", "index.json"):
             src = ROOT / "data" / name
             dst = ROOT / "app" / "public" / name
             if src.exists():
