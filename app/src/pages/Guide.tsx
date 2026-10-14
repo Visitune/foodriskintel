@@ -3,7 +3,6 @@ import type { Lang } from "../i18n";
 import type { RiskIndex } from "../types";
 import { GLOSSARY } from "../glossary";
 import { fmtMonth, fmtNum } from "../format";
-import { SourceTag } from "../components/ui";
 import { Card } from "./shared";
 
 export default function Guide({ index, lang }: { index: RiskIndex; lang: Lang }) {
@@ -11,7 +10,7 @@ export default function Guide({ index, lang }: { index: RiskIndex; lang: Lang })
   const s = index.sources;
   const rows = [
     {
-      tag: <SourceTag src="ffn" lang={lang} />,
+      tag: <span className="src-name ffn">{fr ? "Suspicions UE" : "EU suspicions"}<small>FFN — DG SANTE</small></span>,
       what: fr ? "Suspicions de fraude ou de non-conformité échangées entre États membres via le réseau européen (FFN/ACN)." : "Suspected fraud or non-compliance exchanged between Member States through the EU network (FFN/ACN).",
       who: fr ? "Commission européenne, DG SANTE — rapport mensuel" : "European Commission, DG SANTE — monthly report",
       scope: fr ? "UE, cas impliquant au moins 2 États membres" : "EU, cases involving at least 2 Member States",
@@ -20,7 +19,7 @@ export default function Guide({ index, lang }: { index: RiskIndex; lang: Lang })
       link: "https://food.ec.europa.eu/food-safety/acn/ffn-monthly_en",
     },
     {
-      tag: <SourceTag src="jrc" lang={lang} />,
+      tag: <span className="src-name jrc">{fr ? "Fraude presse" : "Press fraud"}<small>JRC Food Fraud Monthly</small></span>,
       what: fr ? "Incidents de fraude parus dans la presse mondiale, recensés chaque mois par le JRC (l'IFS en reprend une sélection dans son rapport)." : "Fraud incidents reported in the world press, compiled monthly by the JRC (IFS republishes a selection in its report).",
       who: fr ? "JRC — Centre commun de recherche, Commission européenne" : "JRC — Joint Research Centre, European Commission",
       scope: fr ? "Monde, 30 à 160 incidents par rapport, mensuel ou bimestriel" : "World, 30 to 160 incidents per report, monthly or bimonthly",
@@ -29,7 +28,7 @@ export default function Guide({ index, lang }: { index: RiskIndex; lang: Lang })
       link: "https://knowledge4policy.ec.europa.eu/jrc-food-fraud-monthly-report_en",
     },
     {
-      tag: <SourceTag src="ifs" lang={lang} />,
+      tag: <span className="src-name ifs">{fr ? "Rappels" : "Recalls"}<small>IFS Trend Risk Report</small></span>,
       what: fr ? "Nombre de rappels produits publiés chaque mois par les autorités de ~35 pays, relevé sur la carte du rapport IFS Trend Risk." : "Number of product recalls published each month by authorities of ~35 countries, read on the IFS Trend Risk Report map.",
       who: fr ? "IFS Management GmbH — rapport mensuel" : "IFS Management GmbH — monthly report",
       scope: fr ? "Monde, par autorité qui publie" : "World, by publishing authority",
@@ -56,7 +55,7 @@ export default function Guide({ index, lang }: { index: RiskIndex; lang: Lang })
             <tbody>
               {rows.map((r, i) => (
                 <tr key={i}>
-                  <td>{r.tag}<div><a href={r.link} target="_blank" rel="noopener noreferrer">{fr ? "Site officiel" : "Official site"}</a></div></td>
+                  <td>{r.tag}<a className="src-link" href={r.link} target="_blank" rel="noopener noreferrer">{fr ? "Site officiel" : "Official site"} ↗</a></td>
                   <td>{r.what}</td><td>{r.who}</td><td>{r.scope}</td><td>{r.not}</td><td className="nowrap">{r.cover}</td>
                 </tr>
               ))}
