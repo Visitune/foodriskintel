@@ -4,7 +4,8 @@ import type { Lang } from "../i18n";
 import type { RiskIndex } from "../types";
 import { useFfn, useJrc } from "../data";
 import { fmtMonth, fmtNum, lastMonths } from "../format";
-import { BarList, Loading, SourceTag, Sparkline, Term, TrendBadge } from "../components/ui";
+import { BarList, Loading, SourceTag, Sparkline, Term, TrendBadge, countryRows } from "../components/ui";
+import { FamilyIcon } from "../components/icons";
 import { Card, FfnCaseTable, FraudCaseTable, caseOrigins, countBy } from "./shared";
 
 const norm = (s: string) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
@@ -83,7 +84,7 @@ export default function Material({ index, lang }: { index: RiskIndex; lang: Lang
         <Link to="/">{fr ? "Ma veille" : "My watch"}</Link> › <Link to="/matieres">{fr ? "Matières" : "Materials"}</Link> › <span>{famLabel}</span>
       </nav>
       <header className="page-header">
-        <h2>{q ? <>{q} <span className="h-sub">— {famLabel}</span></> : famLabel}</h2>
+        <h2 className="title-with-icon"><FamilyIcon id={id} size={30} />{q ? <>{q} <span className="h-sub">— {famLabel}</span></> : famLabel}</h2>
         <div className="tag-row">
           <SourceTag src="ffn" lang={lang} /> <SourceTag src="jrc" lang={lang} />
         </div>
@@ -127,7 +128,7 @@ export default function Material({ index, lang }: { index: RiskIndex; lang: Lang
               </>}
             </Card>
             <Card title={fr ? "D'où viennent les produits signalés" : "Where flagged products come from"} aside={<Term id="origin" lang={lang}>?</Term>}>
-              <BarList lang={lang} rows={origins.slice(0, 10)} onPick={(o) => setParam("origine", origin === o ? "" : o)} active={origin} />
+              <BarList lang={lang} rows={countryRows(origins.slice(0, 10))} onPick={(o) => setParam("origine", origin === o ? "" : o)} active={origin} />
               <p className="meta">{fr ? "Cliquer filtre cette page ; " : "Click filters this page; "}<Link to={origins[0] ? `/origine/${encodeURIComponent(origins[0][0])}` : "/origines"}>{fr ? "voir la fiche pays" : "see the country page"}</Link>.</p>
             </Card>
           </div>
@@ -158,7 +159,7 @@ export default function Material({ index, lang }: { index: RiskIndex; lang: Lang
                 <BarList lang={lang} tone="jrc" rows={reasons.slice(0, 8).map(([r, n]) => [r, n, index.labels.reasons[r]?.[lang] ?? r])} />
               </Card>
               <Card title={fr ? "Pays des cas de fraude" : "Fraud case countries"} aside={<SourceTag src="jrc" lang={lang} />}>
-                <BarList lang={lang} tone="jrc" rows={fraudCountries.slice(0, 8)} onPick={(o) => navigate(`/origine/${encodeURIComponent(o)}`)} />
+                <BarList lang={lang} tone="jrc" rows={countryRows(fraudCountries.slice(0, 8))} onPick={(o) => navigate(`/origine/${encodeURIComponent(o)}`)} />
               </Card>
             </div>
           )}

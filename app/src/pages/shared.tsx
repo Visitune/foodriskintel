@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import type { Lang } from "../i18n";
 import type { FfnCase, JrcIncident, RiskIndex } from "../types";
 import { downloadCsv, fmtMonth, fmtNum } from "../format";
+import { Flag } from "../flags";
 
 export const caseOrigins = (c: FfnCase) =>
   (c.origins_list && c.origins_list.length ? c.origins_list : [c.origin_normalized]).filter((o) => o !== "Unknown");
@@ -52,7 +53,7 @@ export function FfnCaseTable({ cases, index, lang, filename }: { cases: FfnCase[
                 <td className="nowrap">{fmtMonth(c.report_id, lang, "short")}</td>
                 <td>{c.commodity || "—"}<div className="cell-sub">{c.product_category}</div></td>
                 <td><span className="tag">{index.labels.groups[c.classification_group || "unknown"]?.[lang]}</span><div className="cell-sub">{c.issue}</div></td>
-                <td>{caseOrigins(c).map((o, j) => <span key={o}>{j > 0 && " / "}<Link to={`/origine/${encodeURIComponent(o)}`}>{o}</Link></span>)}{!caseOrigins(c).length && "—"}</td>
+                <td>{caseOrigins(c).map((o, j) => <span key={o} className="with-flag">{j > 0 && " / "}<Flag country={o} /><Link to={`/origine/${encodeURIComponent(o)}`}>{o}</Link></span>)}{!caseOrigins(c).length && "—"}</td>
                 <td>{c.notified_by_normalized}</td>
                 <td><a href={c.source_url} target="_blank" rel="noopener noreferrer">PDF</a></td>
               </tr>
@@ -105,7 +106,7 @@ export function FraudCaseTable({ cases, index, lang, filename }: { cases: JrcInc
                 <td className="nowrap">{c.date ? new Date(c.date).toLocaleDateString(fr ? "fr-FR" : "en-GB") : fmtMonth(c.month, lang, "short")}</td>
                 <td>{c.description || "—"}{c.categories.length > 0 && <div className="cell-sub">{c.categories.join(" · ")}</div>}</td>
                 <td>{reasons(c)}</td>
-                <td>{c.countries.map((o, j) => <span key={o}>{j > 0 && " / "}<Link to={`/origine/${encodeURIComponent(o)}`}>{o}</Link></span>)}{!c.countries.length && "—"}</td>
+                <td>{c.countries.map((o, j) => <span key={o} className="with-flag">{j > 0 && " / "}<Flag country={o} /><Link to={`/origine/${encodeURIComponent(o)}`}>{o}</Link></span>)}{!c.countries.length && "—"}</td>
                 <td>
                   {c.urls.slice(0, 3).map((u) => <div key={u}><a href={u} target="_blank" rel="noopener noreferrer">{host(u)}</a></div>)}
                   <div><a href={c.pdf_url} target="_blank" rel="noopener noreferrer">{fr ? "Rapport JRC" : "JRC report"}</a></div>

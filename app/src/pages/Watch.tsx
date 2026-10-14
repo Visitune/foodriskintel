@@ -3,6 +3,8 @@ import type { Lang } from "../i18n";
 import type { RiskIndex } from "../types";
 import { fmtMonth, fmtNum, lastMonths } from "../format";
 import { SearchBox, SourceTag, Term, TrendBadge, termPath } from "../components/ui";
+import { FamilyIcon, IconCalendar } from "../components/icons";
+import { Flag } from "../flags";
 import { Card } from "./shared";
 
 const EXAMPLES: { fr: string; en: string; t: "family" | "origin" | "substance" | "commodity"; id: string; f?: string }[] = [
@@ -47,6 +49,7 @@ export default function Watch({ index, lang }: { index: RiskIndex; lang: Lang })
       </section>
 
       <section className="freshness" aria-label={fr ? "Fraîcheur des données" : "Data freshness"}>
+        <span className="fresh-title"><IconCalendar size={16} />{fr ? "Dernières données" : "Latest data"}</span>
         <div><SourceTag src="ffn" lang={lang} /> <span>{fr ? "jusqu'à" : "up to"} <strong>{fmtMonth(sources.ffn.latest, lang)}</strong></span></div>
         <div><SourceTag src="jrc" lang={lang} /> <span>{fr ? "jusqu'à" : "up to"} <strong>{fmtMonth(sources.jrc.latest, lang)}</strong></span></div>
         <div><SourceTag src="ifs" lang={lang} /> <span>{fr ? "jusqu'à" : "up to"} <strong>{fmtMonth(sources.ifs.latest, lang)}</strong></span></div>
@@ -80,7 +83,7 @@ export default function Watch({ index, lang }: { index: RiskIndex; lang: Lang })
           <ul className="case-list">
             {[...highlights.fraud_month_cases].reverse().map((c, i) => (
               <li key={i}>
-                <Link to={`/matiere/${c.material_family}`}>{index.labels.families[c.material_family]?.[lang]}</Link>
+                <span className="with-flag"><FamilyIcon id={c.material_family} size={16} /><Link to={`/matiere/${c.material_family}`}>{index.labels.families[c.material_family]?.[lang]}</Link></span>
                 <span className="meta"> — {c.countries.join(" / ") || "?"}{c.reasons.length > 0 && ` · ${c.reasons.map((r) => index.labels.reasons[r]?.[lang] ?? r).join(", ")}`}</span>
                 <div className="cell-sub">{c.text}{c.text.length >= 180 && "…"}{c.url && <> <a href={c.url} target="_blank" rel="noopener noreferrer">{fr ? "article" : "article"}</a></>}</div>
               </li>
@@ -94,7 +97,7 @@ export default function Watch({ index, lang }: { index: RiskIndex; lang: Lang })
           <ul className="rank-list">
             {topFamilies.map(({ id, f, n }) => (
               <li key={id}>
-                <Link to={`/matiere/${id}`}>{f.label[lang]}</Link>
+                <span className="with-flag"><FamilyIcon id={id} size={16} /><Link to={`/matiere/${id}`}>{f.label[lang]}</Link></span>
                 <span className="rank-n">{fmtNum(n, lang)}</span>
                 <TrendBadge trend={f.ffn_trend} lang={lang} />
               </li>
@@ -106,7 +109,7 @@ export default function Watch({ index, lang }: { index: RiskIndex; lang: Lang })
           <ul className="rank-list">
             {topOrigins.map(({ id, o, n }) => (
               <li key={id}>
-                <Link to={`/origine/${encodeURIComponent(id)}`}>{id}</Link>
+                <span className="with-flag"><Flag country={id} /><Link to={`/origine/${encodeURIComponent(id)}`}>{id}</Link></span>
                 <span className="rank-n">{fmtNum(n, lang)}</span>
                 <TrendBadge trend={o.ffn_trend} lang={lang} />
               </li>

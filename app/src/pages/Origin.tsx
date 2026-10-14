@@ -4,7 +4,9 @@ import type { Lang } from "../i18n";
 import type { Dataset, RiskIndex } from "../types";
 import { useFfn, useJrc } from "../data";
 import { fmtMonth, fmtNum, lastMonths } from "../format";
-import { BarList, Loading, SourceTag, Sparkline, Term, TrendBadge } from "../components/ui";
+import { BarList, Loading, SourceTag, Sparkline, Term, TrendBadge, countryRows, familyRows } from "../components/ui";
+import { SourceIcon } from "../components/icons";
+import { Flag } from "../flags";
 import { Card, FfnCaseTable, FraudCaseTable, caseOrigins, countBy } from "./shared";
 
 export default function Origin({ ifs, index, lang }: { ifs: Dataset; index: RiskIndex; lang: Lang }) {
@@ -50,7 +52,7 @@ export default function Origin({ ifs, index, lang }: { ifs: Dataset; index: Risk
         <Link to="/">{fr ? "Ma veille" : "My watch"}</Link> › <Link to="/origines">{fr ? "Origines" : "Origins"}</Link> › <span>{country}</span>
       </nav>
       <header className="page-header">
-        <h2>{country}</h2>
+        <h2 className="title-with-icon"><span className="big-flag"><Flag country={country} /></span>{country}</h2>
         <p className="subtitle">{fr ? "Ce que les sources signalent sur les produits originaires de ce pays." : "What the sources report about products originating from this country."}</p>
       </header>
 
@@ -58,10 +60,10 @@ export default function Origin({ ifs, index, lang }: { ifs: Dataset; index: Risk
       {(!ffn || !jrc) && !error ? <Loading lang={lang} /> : (
         <>
           <div className="stat-row">
-            <div className="stat"><span className="stat-n">{fmtNum(asOrigin.length, lang)}</span><span className="stat-l">{fr ? "suspicions UE sur des produits de cette " : "EU suspicions on products of this "}<Term id="origin" lang={lang}>{fr ? "origine" : "origin"}</Term></span><SourceTag src="ffn" lang={lang} /></div>
-            <div className="stat"><span className="stat-n">{fmtNum(fraud.length, lang)}</span><span className="stat-l">{fr ? "incidents de fraude rapportés par la presse dans ce pays" : "press-reported fraud incidents in this country"}</span><SourceTag src="jrc" lang={lang} /></div>
-            <div className="stat"><span className="stat-n">{fmtNum(asNotifier.length, lang)}</span><span className="stat-l">{fr ? "cas signalés par ce pays au réseau UE (" : "cases reported by this country to the EU network ("}<Term id="notifier" lang={lang}>{fr ? "notifiant" : "notifier"}</Term>)</span><SourceTag src="ffn" lang={lang} /></div>
-            {recallTotal > 0 && <div className="stat"><span className="stat-n">{fmtNum(recallTotal, lang)}</span><span className="stat-l">{fr ? "rappels publiés par les autorités de ce pays (tous produits, toutes origines)" : "recalls published by this country's authorities (all products, all origins)"}</span><SourceTag src="ifs" lang={lang} /></div>}
+            <div className="stat ffn"><span className="stat-icon"><SourceIcon src="ffn" size={20} /></span><span className="stat-n">{fmtNum(asOrigin.length, lang)}</span><span className="stat-l">{fr ? "suspicions UE sur des produits de cette " : "EU suspicions on products of this "}<Term id="origin" lang={lang}>{fr ? "origine" : "origin"}</Term></span><SourceTag src="ffn" lang={lang} /></div>
+            <div className="stat jrc"><span className="stat-icon"><SourceIcon src="jrc" size={20} /></span><span className="stat-n">{fmtNum(fraud.length, lang)}</span><span className="stat-l">{fr ? "incidents de fraude rapportés par la presse dans ce pays" : "press-reported fraud incidents in this country"}</span><SourceTag src="jrc" lang={lang} /></div>
+            <div className="stat ffn"><span className="stat-icon"><SourceIcon src="ffn" size={20} /></span><span className="stat-n">{fmtNum(asNotifier.length, lang)}</span><span className="stat-l">{fr ? "cas signalés par ce pays au réseau UE (" : "cases reported by this country to the EU network ("}<Term id="notifier" lang={lang}>{fr ? "notifiant" : "notifier"}</Term>)</span><SourceTag src="ffn" lang={lang} /></div>
+            {recallTotal > 0 && <div className="stat ifs"><span className="stat-icon"><SourceIcon src="ifs" size={20} /></span><span className="stat-n">{fmtNum(recallTotal, lang)}</span><span className="stat-l">{fr ? "rappels publiés par les autorités de ce pays (tous produits, toutes origines)" : "recalls published by this country's authorities (all products, all origins)"}</span><SourceTag src="ifs" lang={lang} /></div>}
           </div>
 
           {idx && (
@@ -72,7 +74,7 @@ export default function Origin({ ifs, index, lang }: { ifs: Dataset; index: Risk
 
           <div className="grid-2">
             <Card title={fr ? "Matières concernées" : "Materials concerned"} aside={<SourceTag src="ffn" lang={lang} />}>
-              <BarList lang={lang} rows={families.slice(0, 10).map(([f, n]) => [f, n, index.labels.families[f]?.[lang] ?? f])}
+              <BarList lang={lang} rows={familyRows(families.slice(0, 10), index.labels.families, lang)}
                 onPick={(f) => navigate(`/matiere/${f}?origine=${encodeURIComponent(country)}`)} />
               <p className="meta">{fr ? "Cliquer ouvre la matière filtrée sur cette origine." : "Click opens the material filtered on this origin."}</p>
             </Card>
@@ -87,13 +89,13 @@ export default function Origin({ ifs, index, lang }: { ifs: Dataset; index: Risk
               <Sparkline months={months} values={Object.fromEntries(countBy(asOrigin, (c) => c.report_id))} lang={lang} />
             </Card>
             <Card title={fr ? "Qui signale ces produits ?" : "Who reports these products?"} aside={<SourceTag src="ffn" lang={lang} />}>
-              <BarList lang={lang} rows={notifiers.slice(0, 6)} />
+              <BarList lang={lang} rows={countryRows(notifiers.slice(0, 6))} />
             </Card>
           </div>
 
           {fraud.length > 0 && (
             <Card title={fr ? "Fraude rapportée par la presse — matières" : "Press-reported fraud — materials"} aside={<SourceTag src="jrc" lang={lang} />}>
-              <BarList lang={lang} tone="jrc" rows={fraudFamilies.map(([f, n]) => [f, n, index.labels.families[f]?.[lang] ?? f])}
+              <BarList lang={lang} tone="jrc" rows={familyRows(fraudFamilies, index.labels.families, lang)}
                 onPick={(f) => navigate(`/matiere/${f}?origine=${encodeURIComponent(country)}`)} />
             </Card>
           )}

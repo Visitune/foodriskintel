@@ -97,6 +97,7 @@ export default function Guide({ index, lang }: { index: RiskIndex; lang: Lang })
         <p>{fr
           ? "Données : IFS Trend Risk Reports (IFS Management GmbH), JRC Food Fraud Monthly (Commission européenne), FFN Monthly (DG SANTE). Outil de visualisation indépendant, sans lien avec ces organismes. Il ne remplace pas les rapports officiels."
           : "Data: IFS Trend Risk Reports (IFS Management GmbH), JRC Food Fraud Monthly (European Commission), FFN Monthly (DG SANTE). Independent visualisation tool, not affiliated with these bodies. It does not replace the official reports."}</p>
+        <p className="meta">{fr ? "Application conçue par " : "App designed by "}<a href="https://visipilot.com" target="_blank" rel="noopener noreferrer">VisiPilot</a>.</p>
       </Card>
     </div>
   );

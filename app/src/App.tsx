@@ -146,6 +146,11 @@ export default function App() {
             <div className="meta">{lang === "fr" ? "Données à jour :" : "Data up to:"}</div>
             <div className="meta">FFN {fmtMonth(index.sources.ffn.latest, lang, "short")} · IFS {fmtMonth(index.sources.ifs.latest, lang, "short")}</div>
             <div className="source-disclaimer">{tr.overview.disc}</div>
+            <a className="made-by" href="https://visipilot.com" target="_blank" rel="noopener noreferrer"
+              aria-label={lang === "fr" ? "Conçu par VisiPilot — visipilot.com (nouvel onglet)" : "Designed by VisiPilot — visipilot.com (new tab)"}>
+              <span className="made-by-label">{lang === "fr" ? "Conçu par" : "Designed by"}</span>
+              <span className="made-by-logo"><img src={`${import.meta.env.BASE_URL}visipilot-logo.png`} alt="VisiPilot" width={96} height={26} /></span>
+            </a>
           </div>
         </nav>
 

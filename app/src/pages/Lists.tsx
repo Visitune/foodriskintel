@@ -4,6 +4,8 @@ import type { Lang } from "../i18n";
 import type { RiskIndex } from "../types";
 import { fmtNum, lastMonths } from "../format";
 import { SearchBox, Sparkline, TrendBadge } from "../components/ui";
+import { FamilyIcon } from "../components/icons";
+import { Flag } from "../flags";
 
 export function Materials({ index, lang }: { index: RiskIndex; lang: Lang }) {
   const fr = lang === "fr";
@@ -19,7 +21,7 @@ export function Materials({ index, lang }: { index: RiskIndex; lang: Lang }) {
       <div className="tile-grid">
         {fams.map(([id, f]) => (
           <Link key={id} to={`/matiere/${id}`} className="tile">
-            <span className="tile-title">{f.label[lang]}</span>
+            <span className="tile-title"><FamilyIcon id={id} size={22} />{f.label[lang]}</span>
             <span className="tile-figures">
               <span><strong>{fmtNum(f.ffn_cases, lang)}</strong> {fr ? "suspicions UE" : "EU suspicions"}</span>
               <span><strong>{fmtNum(f.fraud_cases, lang)}</strong> {fr ? "cas presse" : "press cases"}</span>
@@ -57,11 +59,11 @@ export function Origins({ index, lang }: { index: RiskIndex; lang: Lang }) {
               const topFam = Object.entries(o.ffn_by_family)[0]?.[0];
               return (
                 <tr key={c}>
-                  <td><Link to={`/origine/${encodeURIComponent(c)}`}>{c}</Link></td>
+                  <td><span className="with-flag"><Flag country={c} /><Link to={`/origine/${encodeURIComponent(c)}`}>{c}</Link></span></td>
                   <td className="num">{fmtNum(o.ffn_cases, lang)}</td>
                   <td><TrendBadge trend={o.ffn_trend} lang={lang} /></td>
                   <td className="num">{fmtNum(o.fraud_cases, lang)}</td>
-                  <td>{topFam ? <Link to={`/matiere/${topFam}?origine=${encodeURIComponent(c)}`}>{index.labels.families[topFam]?.[lang]}</Link> : "—"}</td>
+                  <td>{topFam ? <span className="with-flag"><FamilyIcon id={topFam} size={14} /><Link to={`/matiere/${topFam}?origine=${encodeURIComponent(c)}`}>{index.labels.families[topFam]?.[lang]}</Link></span> : "—"}</td>
                 </tr>
               );
             })}

@@ -4,6 +4,8 @@ import type { Lang } from "../i18n";
 import type { RiskIndex, SearchTerm, Trend } from "../types";
 import { GLOSSARY } from "../glossary";
 import { fmtMonth, fmtNum } from "../format";
+import { FamilyIcon, SourceIcon } from "./icons";
+import { Flag } from "../flags";
 
 /** Inline glossary term: dotted underline, definition on hover / focus / tap. */
 export function Term({ id, lang, children }: { id: keyof typeof GLOSSARY; lang: Lang; children?: React.ReactNode }) {
@@ -30,7 +32,7 @@ export function SourceTag({ src, lang }: { src: "ifs" | "jrc" | "ffn"; lang: Lan
     jrc: lang === "fr" ? "Fraude presse (JRC)" : "Press fraud (JRC)",
     ffn: lang === "fr" ? "Suspicions UE (FFN)" : "EU suspicions (FFN)",
   }[src];
-  return <span className={`src-tag ${src}`}>{txt}</span>;
+  return <span className={`src-tag ${src}`}><SourceIcon src={src} size={13} />{txt}</span>;
 }
 
 export function TrendBadge({ trend, lang }: { trend: Trend; lang: Lang }) {
@@ -75,7 +77,7 @@ export function Sparkline({ months, values, lang, missing = [], height = 64, ton
 
 /** Horizontal bars; rows are buttons when `onPick` is given. */
 export function BarList({ rows, onPick, tone = "ffn", lang, active }: {
-  rows: [string, number, string?][]; onPick?: (key: string) => void; tone?: "ffn" | "jrc" | "ifs"; lang: Lang; active?: string;
+  rows: [string, number, React.ReactNode?][]; onPick?: (key: string) => void; tone?: "ffn" | "jrc" | "ifs"; lang: Lang; active?: string;
 }) {
   const max = Math.max(1, ...rows.map((r) => r[1]));
   if (!rows.length) return <p className="empty">{lang === "fr" ? "Aucun cas." : "No case."}</p>;
@@ -166,7 +168,7 @@ export function SearchBox({ index, lang, autoFocus = false, big = false }: { ind
           {results.map((t, i) => (
             <li key={`${t.t}-${t.id}`} id={`${listId}-${i}`} role="option" aria-selected={i === cursor}
               className={i === cursor ? "active" : ""} onMouseDown={(e) => { e.preventDefault(); go(t); }} onMouseEnter={() => setCursor(i)}>
-              <span className="sr-name">{display(t)}</span>
+              <span className="sr-name">{t.t === "family" ? <FamilyIcon id={t.id} size={16} /> : t.t === "origin" ? <Flag country={t.id} /> : t.f ? <FamilyIcon id={t.f} size={16} badge={false} /> : null}{display(t)}</span>
               <span className="sr-meta">
                 {TYPE_LABEL[t.t][lang]}
                 {t.f && t.t !== "family" ? ` · ${index.labels.families[t.f]?.[lang] ?? ""}` : ""}
@@ -182,6 +184,14 @@ export function SearchBox({ index, lang, autoFocus = false, big = false }: { ind
     </div>
   );
 }
+
+/** Bar rows with a flag before each country name. */
+export const countryRows = (rows: [string, number][]): [string, number, React.ReactNode][] =>
+  rows.map(([c, n]) => [c, n, <span key={c} className="with-flag"><Flag country={c} />{c}</span>]);
+
+/** Bar rows with the family icon before each family label. */
+export const familyRows = (rows: [string, number][], labels: Record<string, { fr: string; en: string }>, lang: Lang): [string, number, React.ReactNode][] =>
+  rows.map(([f, n]) => [f, n, <span key={f} className="with-flag"><FamilyIcon id={f} size={14} />{labels[f]?.[lang] ?? f}</span>]);
 
 export function Loading({ lang }: { lang: Lang }) {
   return <div className="loading" role="status">{lang === "fr" ? "Chargement des données…" : "Loading data…"}</div>;
