@@ -1719,3 +1719,13 @@ dl.glossary dd { margin: 2px 0 0; color: var(--text-dim); max-width: 80ch; }
 .sidebar-footer a.made-by { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: var(--space-4); text-decoration: none; }
 .sidebar-footer a.made-by:hover { text-decoration: none; }
 .made-by-logo img { height: 26px; width: auto; max-width: none; }
+
+/* Home highlight cards */
+.card-more { margin-top: var(--space-3); font-size: 13px; font-weight: 600; }
+button.chip.hazard { background: var(--ffn-bg); border-color: transparent; color: var(--ffn-fg); font-weight: 600; }
+button.chip.hazard:hover { border-color: var(--ffn-fg); }
+.case-list .with-flag { gap: 6px; }
+.cell-sub .with-flag { gap: 4px; margin-right: 6px; }
+
+/* Wider labels: family names are long ("Compléments & aliments diététiques") */
+.bars-row { grid-template-columns: minmax(0, 1.8fr) minmax(50px, 1fr) auto; }

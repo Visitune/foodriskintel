@@ -202,6 +202,9 @@ export interface RiskIndex {
     ffn_month: string;
     ffn_rising_families: { family: string; count: number; avg12: number }[];
     ffn_month_total: number;
+    ffn_month_families: [string, number][];
+    ffn_month_substances: [string, number, string][];
+    ffn_month_cases: { commodity: string; issue: string; family: string; group: string; origins: string[]; url: string }[];
     fraud_report_months: string[];
     fraud_report_total: number;
     fraud_month_cases: { text: string; material_family: string; reasons: string[]; countries: string[]; url: string; date: string | null }[];

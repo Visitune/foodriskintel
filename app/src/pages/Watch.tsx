@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import type { Lang } from "../i18n";
 import type { RiskIndex } from "../types";
 import { fmtMonth, fmtNum, lastMonths } from "../format";
-import { SearchBox, SourceTag, Term, TrendBadge, termPath } from "../components/ui";
+import { BarList, SearchBox, SourceTag, Term, TrendBadge, familyRows, termPath } from "../components/ui";
 import { FamilyIcon, IconCalendar } from "../components/icons";
 import { Flag } from "../flags";
 import { Card } from "./shared";
@@ -74,6 +74,36 @@ export default function Watch({ index, lang }: { index: RiskIndex; lang: Lang })
               </ul>
             </>
           ) : <p className="meta">{fr ? "Aucune matière nettement au-dessus de sa moyenne ce mois-ci." : "No material well above its average this month."}</p>}
+
+          <h4 className="sub-h">{fr ? "Matières les plus signalées ce mois-ci" : "Most reported materials this month"}</h4>
+          <BarList lang={lang} rows={familyRows(highlights.ffn_month_families, index.labels.families, lang)}
+            onPick={(f) => navigate(`/matiere/${f}`)} />
+
+          {highlights.ffn_month_substances.length > 0 && <>
+            <h4 className="sub-h">{fr ? "Dangers les plus cités" : "Most cited hazards"}</h4>
+            <div className="chip-row">
+              {highlights.ffn_month_substances.map(([s, n, f]) => (
+                <button type="button" key={s} className="chip hazard" onClick={() => navigate(termPath({ t: "substance", id: s, n, f }))}>
+                  {s} <span className="chip-n">{n}</span>
+                </button>
+              ))}
+            </div>
+          </>}
+
+          <h4 className="sub-h">{fr ? "Exemples" : "Examples"}</h4>
+          <ul className="case-list">
+            {highlights.ffn_month_cases.map((c, i) => (
+              <li key={i}>
+                <span className="with-flag"><FamilyIcon id={c.family} size={16} /><Link to={`/matiere/${c.family}?q=${encodeURIComponent(c.commodity)}`}>{c.commodity}</Link></span>
+                <span className="meta"> — {index.labels.groups[c.group]?.[lang]}</span>
+                <div className="cell-sub">
+                  {c.issue}{c.origins.length > 0 && <> · {c.origins.map((o) => <span key={o} className="with-flag"><Flag country={o} />{o}</span>)}</>}
+                  {" "}<a href={c.url} target="_blank" rel="noopener noreferrer">PDF</a>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <p className="card-more"><Link to="/ffn">{fr ? "Toutes les suspicions UE →" : "All EU suspicions →"}</Link></p>
         </Card>
 
         <Card title={fr ? `Nouveau — fraude presse (${jrcPeriod})` : `New — press fraud (${jrcPeriod})`} aside={<SourceTag src="jrc" lang={lang} />}>
@@ -81,7 +111,7 @@ export default function Watch({ index, lang }: { index: RiskIndex; lang: Lang })
             ? <><strong>{fmtNum(highlights.fraud_report_total, lang)}</strong> incidents dans le dernier rapport <Term id="jrc" lang={lang}>JRC</Term>. Les plus récents :</>
             : <><strong>{fmtNum(highlights.fraud_report_total, lang)}</strong> incidents in the latest <Term id="jrc" lang={lang}>JRC</Term> report. Most recent:</>}</p>
           <ul className="case-list">
-            {[...highlights.fraud_month_cases].reverse().map((c, i) => (
+            {[...highlights.fraud_month_cases].reverse().slice(0, 5).map((c, i) => (
               <li key={i}>
                 <span className="with-flag"><FamilyIcon id={c.material_family} size={16} /><Link to={`/matiere/${c.material_family}`}>{index.labels.families[c.material_family]?.[lang]}</Link></span>
                 <span className="meta"> — {c.countries.join(" / ") || "?"}{c.reasons.length > 0 && ` · ${c.reasons.map((r) => index.labels.reasons[r]?.[lang] ?? r).join(", ")}`}</span>
@@ -89,6 +119,7 @@ export default function Watch({ index, lang }: { index: RiskIndex; lang: Lang })
               </li>
             ))}
           </ul>
+          <p className="card-more"><Link to="/fraud">{fr ? "Tous les incidents de fraude →" : "All fraud incidents →"}</Link></p>
         </Card>
       </div>
 

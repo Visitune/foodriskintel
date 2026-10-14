@@ -69,6 +69,35 @@ def top(counter, n=TOP):
     return dict(counter.most_common(n))
 
 
+def ffn_month_highlights(cases):
+    """Latest FFN month: top families, top named hazards and a few concrete
+    cases (one per leading family, preferring cases naming a substance)."""
+    families = Counter(c["material_family"] for c in cases if c["material_family"] != "other")
+    subs = Counter(s for c in cases for s in c["substances"]
+                   if s not in ("Health / nutrition claims", "Traceability / skipped controls"))
+    sub_family = {}
+    for c in cases:
+        for s in c["substances"]:
+            sub_family.setdefault(s, Counter())[c["material_family"]] += 1
+    examples, used = [], set()
+    for fam, _ in families.most_common():
+        pool = [c for c in cases if c["material_family"] == fam and c["commodity"] and not is_fragment(c["commodity"])]
+        pool.sort(key=lambda c: (not c["substances"], len(c["issue"])))
+        if pool and fam not in used:
+            c = pool[0]
+            origins = [o for o in (c.get("origins_list") or [c["origin_normalized"]]) if o != "Unknown"]
+            examples.append({"commodity": c["commodity"], "issue": c["issue"][:110], "family": fam,
+                             "group": c["classification_group"], "origins": origins, "url": c["source_url"]})
+            used.add(fam)
+        if len(examples) == 3:
+            break
+    return {
+        "ffn_month_families": families.most_common(5),
+        "ffn_month_substances": [[s, n, sub_family[s].most_common(1)[0][0]] for s, n in subs.most_common(4)],
+        "ffn_month_cases": examples,
+    }
+
+
 def main():
     ifs = json.loads(IFS.read_text(encoding="utf-8"))
     ffn = json.loads(FFN.read_text(encoding="utf-8"))
@@ -219,6 +248,7 @@ def main():
             "ffn_month": latest_ffn,
             "ffn_rising_families": new_ffn[:6],
             "ffn_month_total": sum(1 for c in ffn["cases"] if c["report_id"] == latest_ffn),
+            **ffn_month_highlights([c for c in ffn["cases"] if c["report_id"] == latest_ffn]),
             "fraud_report_months": latest_jrc["months"] if latest_jrc else [],
             "fraud_report_total": latest_jrc["incidents"] if latest_jrc else 0,
             "fraud_month_cases": [
