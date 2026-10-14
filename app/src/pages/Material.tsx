@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import type { Lang } from "../i18n";
-import type { Dataset, RiskIndex } from "../types";
-import { useFfn } from "../data";
+import type { RiskIndex } from "../types";
+import { useFfn, useJrc } from "../data";
 import { fmtMonth, fmtNum, lastMonths } from "../format";
 import { BarList, Loading, SourceTag, Sparkline, Term, TrendBadge } from "../components/ui";
 import { Card, FfnCaseTable, FraudCaseTable, caseOrigins, countBy } from "./shared";
@@ -15,7 +15,7 @@ const isFragment = (s: string) => {
   return t.length < 3 || "(,;-".includes(t[0]) || /( and| or|,|\(|-| of)$/.test(t) || (t.match(/\(/g) || []).length !== (t.match(/\)/g) || []).length;
 };
 
-export default function Material({ ifs, index, lang }: { ifs: Dataset; index: RiskIndex; lang: Lang }) {
+export default function Material({ index, lang }: { index: RiskIndex; lang: Lang }) {
   const fr = lang === "fr";
   const { id = "" } = useParams();
   const [params, setParams] = useSearchParams();
@@ -24,6 +24,7 @@ export default function Material({ ifs, index, lang }: { ifs: Dataset; index: Ri
   const danger = params.get("danger") || "";
   const origin = params.get("origine") || "";
   const { data: ffn, error } = useFfn();
+  const { data: jrc } = useJrc();
   const fam = index.families[id];
   const famLabel = index.labels.families[id]?.[lang] ?? id;
 
@@ -46,11 +47,11 @@ export default function Material({ ifs, index, lang }: { ifs: Dataset; index: Ri
   const fraudCases = useMemo(() => {
     const nq = norm(q);
     if (danger) return [];  // substances only exist in FFN
-    return ifs.food_fraud.filter((c) =>
+    return (jrc?.incidents ?? []).filter((c) =>
       c.material_family === id &&
-      (!nq || norm(c.product_normalized).includes(nq) || norm(c.product_raw).includes(nq)) &&
-      (!origin || (c.countries || [c.country_normalized]).includes(origin)));
-  }, [ifs, id, q, danger, origin]);
+      (!nq || norm(c.description).includes(nq) || c.categories.some((x) => norm(x).includes(nq))) &&
+      (!origin || c.countries.includes(origin)));
+  }, [jrc, id, q, danger, origin]);
 
   if (!fam) {
     return (
@@ -63,14 +64,15 @@ export default function Material({ ifs, index, lang }: { ifs: Dataset; index: Ri
 
   const months = lastMonths(index.sources.ffn.latest, 24);
   const ffnByMonth = Object.fromEntries(countBy(ffnCases, (c) => c.report_id));
-  const fraudMonths = lastMonths(index.sources.ifs.latest, 24);
-  const fraudByMonth = Object.fromEntries(countBy(fraudCases, (c) => c.publication_date));
+  const fraudMonths = lastMonths(index.sources.jrc.latest, 24);
+  const fraudByMonth = Object.fromEntries(countBy(fraudCases, (c) => c.month));
+  const fraudGaps = fraudMonths.filter((m) => !index.sources.jrc.months_covered.includes(m));
   const groups = countBy(ffnCases, (c) => c.classification_group || "unknown");
   const subs = countBy(ffnCases, (c) => c.substances || []);
   const origins = countBy(ffnCases, caseOrigins);
   const commodities = countBy(ffnCases, (c) => (isFragment(c.commodity) ? undefined : c.commodity.toLowerCase()));
-  const reasons = countBy(fraudCases, (c) => c.reasons || []);
-  const fraudCountries = countBy(fraudCases, (c) => c.countries || [c.country_normalized]);
+  const reasons = countBy(fraudCases, (c) => c.reasons);
+  const fraudCountries = countBy(fraudCases, (c) => c.countries);
   const filtered = Boolean(q || danger || origin);
   const topGroup = groups[0] ? index.labels.groups[groups[0][0]]?.[lang] : null;
   const subject = q ? `« ${q} »` : famLabel.toLowerCase();
@@ -97,14 +99,14 @@ export default function Material({ ifs, index, lang }: { ifs: Dataset; index: Ri
       )}
 
       {error && <p className="notice warn">{fr ? "Les suspicions UE n'ont pas pu être chargées." : "EU suspicions could not be loaded."}</p>}
-      {!ffn && !error ? <Loading lang={lang} /> : (
+      {(!ffn || !jrc) && !error ? <Loading lang={lang} /> : (
         <>
           <section className="summary" aria-live="polite">
             <h3 className="visually-hidden">{fr ? "En bref" : "In short"}</h3>
             <p>
               {fr ? <>Sur la période couverte ({fmtMonth(index.sources.ffn.first, lang)} → {fmtMonth(index.sources.ffn.latest, lang)}), </> : <>Over the covered period ({fmtMonth(index.sources.ffn.first, lang)} → {fmtMonth(index.sources.ffn.latest, lang)}), </>}
               <strong>{fmtNum(ffnCases.length, lang)}</strong> {fr ? <><Term id="ffn" lang={lang}>suspicions officielles UE</Term> et </> : <><Term id="ffn" lang={lang}>official EU suspicions</Term> and </>}
-              <strong>{fmtNum(fraudCases.length, lang)}</strong> {fr ? <><Term id="jrc" lang={lang}>cas de fraude rapportés par la presse</Term> concernent {subject}.</> : <><Term id="jrc" lang={lang}>press-reported fraud cases</Term> concern {subject}.</>}
+              <strong>{fmtNum(fraudCases.length, lang)}</strong> {fr ? <><Term id="jrc" lang={lang}>incidents de fraude rapportés par la presse</Term> concernent {subject}.</> : <><Term id="jrc" lang={lang}>press-reported fraud incidents</Term> concern {subject}.</>}
               {topGroup && (fr ? <> Le problème le plus fréquent est <strong>{topGroup.toLowerCase()}</strong>.</> : <> The most frequent issue is <strong>{topGroup.toLowerCase()}</strong>.</>)}
               {origins[0] && (fr ? <> Origines les plus citées : {origins.slice(0, 3).map(([o]) => o).join(", ")}.</> : <> Most cited origins: {origins.slice(0, 3).map(([o]) => o).join(", ")}.</>)}
             </p>
@@ -135,8 +137,8 @@ export default function Material({ ifs, index, lang }: { ifs: Dataset; index: Ri
               <Sparkline months={months} values={ffnByMonth} lang={lang} tone="ffn" />
             </Card>
             <Card title={fr ? "Évolution — fraude presse (24 mois)" : "Trend — press fraud (24 months)"} aside={<SourceTag src="jrc" lang={lang} />}>
-              <Sparkline months={fraudMonths} values={fraudByMonth} lang={lang} tone="jrc" missing={[...index.sources.ifs.fraud_not_published, ...fraudMonths.filter((m) => !ifs.reports.some((r) => r.publication_date === m))]} />
-              <p className="meta">{fr ? "Trait gris = mois sans tableau de fraude publié par l'IFS (absence de données, pas zéro)." : "Grey dash = month with no fraud table published by IFS (no data, not zero)."}</p>
+              <Sparkline months={fraudMonths} values={fraudByMonth} lang={lang} tone="jrc" missing={fraudGaps} />
+              <p className="meta">{fr ? "Trait gris = mois sans rapport JRC lisible (rapport publié en image ou pas encore paru) : absence de données, pas zéro." : "Grey dash = month without a readable JRC report (image-only or not yet published): no data, not zero."}</p>
             </Card>
           </div>
 
@@ -182,7 +184,7 @@ export default function Material({ ifs, index, lang }: { ifs: Dataset; index: Ri
             <FfnCaseTable cases={ffnCases} index={index} lang={lang} filename={`suspicions-UE-${id}${q ? "-" + q : ""}.csv`} />
           </Card>
           {!danger && (
-            <Card title={fr ? "Cas de fraude rapportés par la presse — détail" : "Press-reported fraud cases — detail"} aside={<SourceTag src="jrc" lang={lang} />}>
+            <Card title={fr ? "Fraude rapportée par la presse (JRC) — détail" : "Press-reported fraud (JRC) — detail"} aside={<SourceTag src="jrc" lang={lang} />}>
               <FraudCaseTable cases={fraudCases} index={index} lang={lang} filename={`fraude-presse-${id}${q ? "-" + q : ""}.csv`} />
             </Card>
           )}

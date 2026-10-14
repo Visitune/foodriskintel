@@ -193,18 +193,54 @@ export interface SearchTerm { t: "family" | "origin" | "substance" | "commodity"
 export interface RiskIndex {
   generated_at: string;
   sources: {
-    ifs: { first: string; latest: string; reports: number; fraud_latest: string; fraud_not_published: string[]; fraud_cases: number };
+    ifs: { first: string; latest: string; reports: number };
     ffn: { first: string; latest: string; reports: number; cases: number };
+    jrc: { first: string; latest: string; reports: number; incidents: number; months_no_text: string[]; months_covered: string[] };
   };
   labels: { families: Record<string, Label>; groups: Record<string, Label>; reasons: Record<string, Label>; substances: string[] };
   highlights: {
     ffn_month: string;
     ffn_rising_families: { family: string; count: number; avg12: number }[];
     ffn_month_total: number;
-    fraud_month: string;
-    fraud_month_cases: { product_normalized: string; material_family: string; reasons: string[]; countries: string[]; press_url: string }[];
+    fraud_report_months: string[];
+    fraud_report_total: number;
+    fraud_month_cases: { text: string; material_family: string; reasons: string[]; countries: string[]; url: string; date: string | null }[];
   };
   families: Record<string, FamilyIndex>;
   origins: Record<string, OriginIndex>;
   search: SearchTerm[];
+}
+
+// ─── JRC Food Fraud Monthly (data/dataset_jrc.json) ────────────────────────────
+export interface JrcIncident {
+  id: string;
+  report_id: string;
+  /** YYYY-MM of the article date (or of the report when undated) */
+  month: string;
+  date: string | null;
+  description: string;
+  countries: string[];
+  categories: string[];
+  material_family: string;
+  reasons: string[];
+  urls: string[];
+  pdf_url: string;
+}
+
+export interface JrcReport {
+  id: string;
+  months: string[];
+  status: "ok" | "no_text" | "error";
+  incidents: number;
+  pdf_url: string;
+  pdf_fr_url: string | null;
+  publication_url: string;
+}
+
+export interface JrcDataset {
+  generated_at: string;
+  date_range: { start: string; end: string };
+  summary: { reports: number; incidents: number; months_covered: string[]; months_no_text: string[]; countries: number };
+  reports: JrcReport[];
+  incidents: JrcIncident[];
 }

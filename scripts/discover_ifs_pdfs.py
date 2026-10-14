@@ -65,14 +65,22 @@ def months_to_check(now: datetime):
 
 
 def filename_variants(month_name: str, year: int):
-    abbr = month_name[:3]
-    return [
+    """IFS changes separators from one month to the next (July 2026: '_EN',
+    August 2026: '-EN'), so every plausible combination is generated —
+    the formats already observed first."""
+    observed = [
+        f"IFS_Trend_Risk_Report_{month_name}_{year}-EN.pdf",
         f"IFS_Trend_Risk_Report_{month_name}_{year}_EN.pdf",
         f"IFS_Trend_Risk_Report_{month_name}_{year}.pdf",
-        f"IFS_Trend_Risk_Report_{abbr}_{year}_EN.pdf",
-        f"IFS_Trend_Risk_Report_{month_name}{year}_EN.pdf",
-        f"IFS_Trend-Risk-Report_{month_name}_{year}_EN.pdf",
     ]
+    combos = []
+    for s1 in ("_", "-"):                     # inside "IFS_Trend_Risk_Report"
+        for s2 in ("_", "-"):                 # before month
+            for s3 in ("_", "-", ""):         # between month and year
+                for suffix in ("-EN", "_EN", "", "-en", "_en"):
+                    for month in (month_name, month_name[:3]):
+                        combos.append(f"IFS{s1}Trend{s1}Risk{s1}Report{s2}{month}{s3}{year}{suffix}.pdf")
+    return list(dict.fromkeys(observed + combos))
 
 
 def parse_month_from_url(url: str):
@@ -199,15 +207,21 @@ def main():
             continue
         if (y, m) in scraped:
             candidates.append(("scraped", scraped[(y, m)]))
+        # Recent months (where a new report is expected): every filename
+        # variant on the official host. Older gaps: observed formats only,
+        # to keep the weekly run short (a manual source still works for them).
+        recent = (now.year * 12 + now.month) - (y * 12 + m) <= 6
+        variants = filename_variants(month_name, y)
         for variant, host in HOSTS:
-            for fname in filename_variants(month_name, y):
+            names = variants if (recent and variant == "official") else variants[:3]
+            for fname in names:
                 candidates.append((variant, f"{host}/{fname}"))
 
         hit = None
         for variant, url in candidates:
             checked += 1
             resp = check_url(url, session)
-            time.sleep(DELAY)
+            time.sleep(DELAY if resp["status"] != 404 else 0.05)
             if resp["accessible"]:
                 hit = (variant, url, resp)
                 break

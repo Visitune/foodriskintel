@@ -27,7 +27,7 @@ export function Term({ id, lang, children }: { id: keyof typeof GLOSSARY; lang: 
 export function SourceTag({ src, lang }: { src: "ifs" | "jrc" | "ffn"; lang: Lang }) {
   const txt = {
     ifs: lang === "fr" ? "Rappels IFS" : "IFS recalls",
-    jrc: lang === "fr" ? "Fraude presse (IFS/JRC)" : "Press fraud (IFS/JRC)",
+    jrc: lang === "fr" ? "Fraude presse (JRC)" : "Press fraud (JRC)",
     ffn: lang === "fr" ? "Suspicions UE (FFN)" : "EU suspicions (FFN)",
   }[src];
   return <span className={`src-tag ${src}`}>{txt}</span>;

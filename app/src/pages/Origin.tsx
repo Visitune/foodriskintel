@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import type { Lang } from "../i18n";
 import type { Dataset, RiskIndex } from "../types";
-import { useFfn } from "../data";
+import { useFfn, useJrc } from "../data";
 import { fmtMonth, fmtNum, lastMonths } from "../format";
 import { BarList, Loading, SourceTag, Sparkline, Term, TrendBadge } from "../components/ui";
 import { Card, FfnCaseTable, FraudCaseTable, caseOrigins, countBy } from "./shared";
@@ -13,11 +13,12 @@ export default function Origin({ ifs, index, lang }: { ifs: Dataset; index: Risk
   const country = decodeURIComponent(raw);
   const navigate = useNavigate();
   const { data: ffn, error } = useFfn();
+  const { data: jrc } = useJrc();
   const idx = index.origins[country];
 
   const asOrigin = useMemo(() => (ffn ? ffn.cases.filter((c) => caseOrigins(c).includes(country)) : []), [ffn, country]);
   const asNotifier = useMemo(() => (ffn ? ffn.cases.filter((c) => c.notified_by_normalized === country) : []), [ffn, country]);
-  const fraud = useMemo(() => ifs.food_fraud.filter((c) => (c.countries || [c.country_normalized]).includes(country)), [ifs, country]);
+  const fraud = useMemo(() => (jrc?.incidents ?? []).filter((c) => c.countries.includes(country)), [jrc, country]);
   // IFS recall maps: one value per publishing authority; England + Scotland are summed for the UK
   const recallByMonth = useMemo(() => {
     const m: Record<string, number> = {};
@@ -54,11 +55,11 @@ export default function Origin({ ifs, index, lang }: { ifs: Dataset; index: Risk
       </header>
 
       {error && <p className="notice warn">{fr ? "Les suspicions UE n'ont pas pu être chargées." : "EU suspicions could not be loaded."}</p>}
-      {!ffn && !error ? <Loading lang={lang} /> : (
+      {(!ffn || !jrc) && !error ? <Loading lang={lang} /> : (
         <>
           <div className="stat-row">
             <div className="stat"><span className="stat-n">{fmtNum(asOrigin.length, lang)}</span><span className="stat-l">{fr ? "suspicions UE sur des produits de cette " : "EU suspicions on products of this "}<Term id="origin" lang={lang}>{fr ? "origine" : "origin"}</Term></span><SourceTag src="ffn" lang={lang} /></div>
-            <div className="stat"><span className="stat-n">{fmtNum(fraud.length, lang)}</span><span className="stat-l">{fr ? "cas de fraude rapportés par la presse dans ce pays" : "press-reported fraud cases in this country"}</span><SourceTag src="jrc" lang={lang} /></div>
+            <div className="stat"><span className="stat-n">{fmtNum(fraud.length, lang)}</span><span className="stat-l">{fr ? "incidents de fraude rapportés par la presse dans ce pays" : "press-reported fraud incidents in this country"}</span><SourceTag src="jrc" lang={lang} /></div>
             <div className="stat"><span className="stat-n">{fmtNum(asNotifier.length, lang)}</span><span className="stat-l">{fr ? "cas signalés par ce pays au réseau UE (" : "cases reported by this country to the EU network ("}<Term id="notifier" lang={lang}>{fr ? "notifiant" : "notifier"}</Term>)</span><SourceTag src="ffn" lang={lang} /></div>
             {recallTotal > 0 && <div className="stat"><span className="stat-n">{fmtNum(recallTotal, lang)}</span><span className="stat-l">{fr ? "rappels publiés par les autorités de ce pays (tous produits, toutes origines)" : "recalls published by this country's authorities (all products, all origins)"}</span><SourceTag src="ifs" lang={lang} /></div>}
           </div>
@@ -108,7 +109,7 @@ export default function Origin({ ifs, index, lang }: { ifs: Dataset; index: Risk
           )}
 
           {fraud.length > 0 && (
-            <Card title={fr ? "Cas de fraude rapportés par la presse — détail" : "Press-reported fraud cases — detail"} aside={<SourceTag src="jrc" lang={lang} />}>
+            <Card title={fr ? "Fraude rapportée par la presse (JRC) — détail" : "Press-reported fraud (JRC) — detail"} aside={<SourceTag src="jrc" lang={lang} />}>
               <FraudCaseTable cases={fraud} index={index} lang={lang} filename={`fraude-presse-${country}.csv`} />
             </Card>
           )}

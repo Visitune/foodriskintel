@@ -42,6 +42,13 @@ def latest(inventory_path: Path) -> str | None:
     return f"{r['year']}-{r['month_num']:02d}"
 
 
+def latest_jrc(inventory_path: Path) -> str | None:
+    if not inventory_path.exists():
+        return None
+    reps = json.loads(inventory_path.read_text(encoding="utf-8")).get("reports", [])
+    return max((r["months"][-1] for r in reps if r.get("pdf_url")), default=None)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--markdown", help="Write a GitHub issue body here when late")
@@ -54,8 +61,16 @@ def main():
     ifs = latest(ROOT / "data" / "inventory.json")
     ffn = latest(ROOT / "data" / "inventory_ffn.json")
     late = {name: got for name, got in (("IFS", ifs), ("FFN", ffn)) if got is None or got < exp}
+    # JRC publishes later and sometimes covers two months: 2 extra months of tolerance
+    jrc = latest_jrc(ROOT / "data" / "inventory_jrc.json")
+    y, m = map(int, exp.split("-"))
+    m -= 2
+    if m <= 0:
+        y, m = y - 1, m + 12
+    if jrc is None or jrc < f"{y}-{m:02d}":
+        late["JRC"] = jrc
 
-    print(f"Expected latest month: {exp} | IFS: {ifs} | FFN: {ffn}")
+    print(f"Expected latest month: {exp} | IFS: {ifs} | FFN: {ffn} | JRC: {jrc}")
     if not late:
         print("Up to date.")
         return 0
@@ -83,6 +98,12 @@ def main():
             "",
             "### Rapport FFN non publié",
             "Vérifier https://food.ec.europa.eu/food-safety/acn/ffn-monthly_en — le format des liens a peut-être changé.",
+        ]
+    if "JRC" in late:
+        lines += [
+            "",
+            "### Rapport JRC Food Fraud Monthly en retard",
+            "Vérifier https://knowledge-for-policy.ec.europa.eu/jrc-food-fraud-monthly-report_en — la page de liste ou le nom des PDF a peut-être changé.",
         ]
     lines += ["", "_Issue ouverte automatiquement ; elle sera fermée dès que les données seront à jour._"]
     if args.markdown:

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { FfnDataset, CrossDataset } from "./types";
+import type { FfnDataset, CrossDataset, JrcDataset } from "./types";
 
 const base = import.meta.env.BASE_URL;
 
@@ -13,6 +13,7 @@ function loadJson<T>(name: string): Promise<T> {
 // Large datasets are loaded on demand and shared between pages.
 let ffnPromise: Promise<FfnDataset> | null = null;
 let crossPromise: Promise<CrossDataset> | null = null;
+let jrcPromise: Promise<JrcDataset> | null = null;
 
 function useLazy<T>(get: () => Promise<T>): { data: T | null; error: boolean } {
   const [state, setState] = useState<{ data: T | null; error: boolean }>({ data: null, error: false });
@@ -26,7 +27,9 @@ function useLazy<T>(get: () => Promise<T>): { data: T | null; error: boolean } {
 
 const getFfn = () => (ffnPromise ??= loadJson<FfnDataset>("dataset_ffn.json"));
 const getCross = () => (crossPromise ??= loadJson<CrossDataset>("dataset_cross.json"));
+const getJrc = () => (jrcPromise ??= loadJson<JrcDataset>("dataset_jrc.json"));
 
 export const useFfn = () => useLazy(getFfn);
 export const useCross = () => useLazy(getCross);
+export const useJrc = () => useLazy(getJrc);
 export { loadJson };

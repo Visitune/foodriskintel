@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-10-14T21:10:58.482540",
+  "generated_at": "2026-10-14T22:01:54.572178",
   "date_range": {
     "start": "2024-02",
-    "end": "2026-07",
+    "end": "2026-08",
     "start_year": 2024,
     "end_year": 2026
   },
   "summary": {
-    "total_reports": 27,
-    "total_recall_values": 19204,
-    "total_food_fraud_cases": 275,
+    "total_reports": 28,
+    "total_recall_values": 19779,
+    "total_food_fraud_cases": 286,
     "countries_with_data": 34
   },
   "reports": [
@@ -1401,6 +1401,57 @@
       },
       "food_fraud_count": 0,
       "food_fraud_status": "not_published",
+      "data_period": null,
+      "recalls_not_reported": [],
+      "period_type": "monthly"
+    },
+    {
+      "id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf",
+      "recalls": {
+        "Denmark": 3,
+        "Türkiye": 56,
+        "South Korea": 21,
+        "Greece": 1,
+        "Romania": 1,
+        "Argentina": 0,
+        "Israel": 4,
+        "Brazil": 6,
+        "Czech Rep.": 26,
+        "Singapore": 1,
+        "Luxembourg": 16,
+        "Italy": 31,
+        "Iceland": 6,
+        "Belgium": 16,
+        "China": 6,
+        "Japan": 54,
+        "Australia": 4,
+        "Finnland": 4,
+        "Poland": 8,
+        "Scotland": 0,
+        "Germany": 14,
+        "Hungary": 1,
+        "Viet Nam": 0,
+        "USA (FDA)": 29,
+        "England": 5,
+        "Spain": 6,
+        "Austria": 7,
+        "France": 173,
+        "New Zealand": 1,
+        "Slovakia": 0,
+        "Croatia": 4,
+        "Philippines": 22,
+        "USA (USDA)": 7,
+        "Netherlands": 7,
+        "Ireland": 9,
+        "Canada": 26
+      },
+      "food_fraud_count": 11,
+      "food_fraud_status": "published",
       "data_period": null,
       "recalls_not_reported": [],
       "period_type": "monthly"
@@ -11782,6 +11833,402 @@
       "country_normalized": "Canada",
       "value": 19,
       "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_July_2026_EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Denmark",
+      "country_normalized": "Denmark",
+      "value": 3,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Türkiye",
+      "country_normalized": "Turkey",
+      "value": 56,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "South Korea",
+      "country_normalized": "South Korea",
+      "value": 21,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Greece",
+      "country_normalized": "Greece",
+      "value": 1,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Romania",
+      "country_normalized": "Romania",
+      "value": 1,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Argentina",
+      "country_normalized": "Argentina",
+      "value": 0,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Israel",
+      "country_normalized": "Israel",
+      "value": 4,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Brazil",
+      "country_normalized": "Brazil",
+      "value": 6,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Czech Rep.",
+      "country_normalized": "Czechia",
+      "value": 26,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Singapore",
+      "country_normalized": "Singapore",
+      "value": 1,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Luxembourg",
+      "country_normalized": "Luxembourg",
+      "value": 16,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Italy",
+      "country_normalized": "Italy",
+      "value": 31,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Iceland",
+      "country_normalized": "Iceland",
+      "value": 6,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Belgium",
+      "country_normalized": "Belgium",
+      "value": 16,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "China",
+      "country_normalized": "China",
+      "value": 6,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Japan",
+      "country_normalized": "Japan",
+      "value": 54,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Australia",
+      "country_normalized": "Australia",
+      "value": 4,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Finnland",
+      "country_normalized": "Finland",
+      "value": 4,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Poland",
+      "country_normalized": "Poland",
+      "value": 8,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Scotland",
+      "country_normalized": "United Kingdom",
+      "value": 0,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Germany",
+      "country_normalized": "Germany",
+      "value": 14,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Hungary",
+      "country_normalized": "Hungary",
+      "value": 1,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Viet Nam",
+      "country_normalized": "Vietnam",
+      "value": 0,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "USA (FDA)",
+      "country_normalized": "United States",
+      "value": 29,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "England",
+      "country_normalized": "United Kingdom",
+      "value": 5,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Spain",
+      "country_normalized": "Spain",
+      "value": 6,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Austria",
+      "country_normalized": "Austria",
+      "value": 7,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "France",
+      "country_normalized": "France",
+      "value": 173,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "New Zealand",
+      "country_normalized": "New Zealand",
+      "value": 1,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Slovakia",
+      "country_normalized": "Slovakia",
+      "value": 0,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Croatia",
+      "country_normalized": "Croatia",
+      "value": 4,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Philippines",
+      "country_normalized": "Philippines",
+      "value": 22,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "USA (USDA)",
+      "country_normalized": "United States",
+      "value": 7,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Netherlands",
+      "country_normalized": "Netherlands",
+      "value": 7,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Ireland",
+      "country_normalized": "Ireland",
+      "value": 9,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "country_raw": "Canada",
+      "country_normalized": "Canada",
+      "value": 26,
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf"
     }
   ],
   "food_fraud": [
@@ -18392,6 +18839,268 @@
       "detected_in": "April 2026",
       "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_June_2026.pdf",
       "press_url": "https://www.zamora24horas.com/sucesos/destapado-zamora-fraude-quesos-artesanales",
+      "needs_review": false
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "product_raw": "Olive oil",
+      "product_normalized": "Olive oil",
+      "material_family": "oils",
+      "reason_raw": "Adulteration",
+      "reason_normalized": "Adulteration",
+      "reasons": [
+        "adulteration"
+      ],
+      "country_raw": "Italy",
+      "country_normalized": "Italy",
+      "countries": [
+        "Italy"
+      ],
+      "detected_in": "May / June",
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf",
+      "press_url": "https://www.teatronaturale.it/tracce/italia/48339-nuova-frode-sull-olio-di-oliva-scoperta-nel-salento-300-tonnellate.htm",
+      "needs_review": false
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "product_raw": "Olive oil, dried figs, honey,",
+      "product_normalized": "Olive oil, dried figs, honey,",
+      "material_family": "oils",
+      "reason_raw": "Adulteration",
+      "reason_normalized": "Adulteration",
+      "reasons": [
+        "adulteration"
+      ],
+      "country_raw": "Türkiye",
+      "country_normalized": "Turkey",
+      "countries": [
+        "Turkey"
+      ],
+      "detected_in": "May / June",
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf",
+      "press_url": "https://en.haberler.com/counterfeit-food-operation-in-aydin-3-5-million-2271766/",
+      "needs_review": false
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "product_raw": "Mangoes",
+      "product_normalized": "Mangoes",
+      "material_family": "other",
+      "reason_raw": "Product tampering",
+      "reason_normalized": "Product tampering",
+      "reasons": [
+        "product tampering"
+      ],
+      "country_raw": "India",
+      "country_normalized": "India",
+      "countries": [
+        "India"
+      ],
+      "detected_in": "May / June",
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf",
+      "press_url": "https://www.hindustantimes.com/cities/mumbai-news/fda-seizes-3-4-tonnes-of-suspect-chemically-ripened-mangoes-at-apmc-101780427156417.html",
+      "needs_review": false
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "product_raw": "Eggs",
+      "product_normalized": "Eggs",
+      "material_family": "eggs",
+      "reason_raw": "Document forgery",
+      "reason_normalized": "Document forgery",
+      "reasons": [
+        "document forgery"
+      ],
+      "country_raw": "Argentina",
+      "country_normalized": "Argentina",
+      "countries": [
+        "Argentina"
+      ],
+      "detected_in": "May / June",
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf",
+      "press_url": "https://www.agritotal.com/nota/incautan-4-860-docenas-de-huevos-por-incumplimientos-que-comprometian-su-trazabilidad-2466/",
+      "needs_review": false
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "product_raw": "Eggs",
+      "product_normalized": "Eggs",
+      "material_family": "eggs",
+      "reason_raw": "Grey market",
+      "reason_normalized": "Grey market",
+      "reasons": [
+        "grey market"
+      ],
+      "country_raw": "Austria",
+      "country_normalized": "Austria",
+      "countries": [
+        "Austria"
+      ],
+      "detected_in": "May / June",
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf",
+      "press_url": "https://www.krone.at/4142282",
+      "needs_review": false
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "product_raw": "Eggs",
+      "product_normalized": "Eggs",
+      "material_family": "eggs",
+      "reason_raw": "Mislabelling",
+      "reason_normalized": "Mislabelling",
+      "reasons": [
+        "mislabelling"
+      ],
+      "country_raw": "North Macedonia",
+      "country_normalized": "North Macedonia",
+      "countries": [
+        "North Macedonia"
+      ],
+      "detected_in": "May / June",
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf",
+      "press_url": "https://www.slobodenpecat.mk/en/firmata-shto-uveze-40-toni-jajca-pred-veligden-za-da-gi-obelezhi-kako-makedonski-kazneta-so-1-400-evra/",
+      "needs_review": false
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "product_raw": "Wine",
+      "product_normalized": "Wine",
+      "material_family": "alcohol",
+      "reason_raw": "Grey market",
+      "reason_normalized": "Grey market",
+      "reasons": [
+        "grey market"
+      ],
+      "country_raw": "Italy",
+      "country_normalized": "Italy",
+      "countries": [
+        "Italy"
+      ],
+      "detected_in": "May / June",
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf",
+      "press_url": "https://askanews.it/2026/05/13/guardia-di-finanza-sequestra-11-mila-litri-di-vino-nel-trevigiano/",
+      "needs_review": false
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "product_raw": "Lamb",
+      "product_normalized": "Meat",
+      "material_family": "meat",
+      "reason_raw": "Illegal slaughter",
+      "reason_normalized": "Illegal Slaughter",
+      "reasons": [],
+      "country_raw": "Spain",
+      "country_normalized": "Spain",
+      "countries": [
+        "Spain"
+      ],
+      "detected_in": "May / June",
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf",
+      "press_url": "https://www.surinenglish.com/spain/more-than-sheep-20260619103553-nt.html",
+      "needs_review": false
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "product_raw": "Kebab meat",
+      "product_normalized": "Kebab meat",
+      "material_family": "meat",
+      "reason_raw": "Adulteration",
+      "reason_normalized": "Adulteration",
+      "reasons": [
+        "adulteration"
+      ],
+      "country_raw": "UK",
+      "country_normalized": "United Kingdom",
+      "countries": [
+        "United Kingdom"
+      ],
+      "detected_in": "May / June",
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf",
+      "press_url": "https://www.farminguk.com/news/kebab-firm-fined-500-000-over-fake-lamb-labelling_68634.html",
+      "needs_review": false
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "product_raw": "Dried spices",
+      "product_normalized": "Dried spices",
+      "material_family": "spices",
+      "reason_raw": "Adulteration",
+      "reason_normalized": "Adulteration",
+      "reasons": [
+        "adulteration"
+      ],
+      "country_raw": "Pakistan",
+      "country_normalized": "Pakistan",
+      "countries": [
+        "Pakistan"
+      ],
+      "detected_in": "May / June",
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf",
+      "press_url": "https://www.app.com.pk/punjab/pfa-seals-3-food-units-discards-substandard-food-items/",
+      "needs_review": false
+    },
+    {
+      "report_id": "2026-aug",
+      "year": 2026,
+      "month": "August",
+      "month_num": 8,
+      "publication_date": "2026-08",
+      "product_raw": "",
+      "product_normalized": "Unspecified",
+      "material_family": "other",
+      "reason_raw": "Counterfeit",
+      "reason_normalized": "Counterfeit",
+      "reasons": [
+        "counterfeit"
+      ],
+      "country_raw": "Philippines",
+      "country_normalized": "Philippines",
+      "countries": [
+        "Philippines"
+      ],
+      "detected_in": "May / June",
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf",
+      "press_url": "https://tribune.net.ph/2026/06/12/p38m-counterfeit-magic-sarap-seized-in-pagadian-guagua",
       "needs_review": false
     }
   ]

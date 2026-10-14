@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import type { Lang } from "../i18n";
-import type { FfnCase, FoodFraudEntry, RiskIndex } from "../types";
+import type { FfnCase, JrcIncident, RiskIndex } from "../types";
 import { downloadCsv, fmtMonth, fmtNum } from "../format";
 
 export const caseOrigins = (c: FfnCase) =>
@@ -69,50 +69,57 @@ export function FfnCaseTable({ cases, index, lang, filename }: { cases: FfnCase[
   );
 }
 
-/** IFS/JRC press fraud cases with press + IFS PDF links. */
-export function FraudCaseTable({ cases, index, lang, filename }: { cases: FoodFraudEntry[]; index: RiskIndex; lang: Lang; filename: string }) {
+const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } };
+
+/** JRC press fraud incidents, with links to the articles and to the JRC report. */
+export function FraudCaseTable({ cases, index, lang, filename }: { cases: JrcIncident[]; index: RiskIndex; lang: Lang; filename: string }) {
   const fr = lang === "fr";
-  const sorted = useMemo(() => [...cases].sort((a, b) => b.publication_date.localeCompare(a.publication_date)), [cases]);
-  const reasons = (c: FoodFraudEntry) => (c.reasons?.length ? c.reasons.map((r) => index.labels.reasons[r]?.[lang] ?? r).join(", ") : c.reason_normalized);
+  const [shown, setShown] = useState(PAGE);
+  const sorted = useMemo(() => [...cases].sort((a, b) => (b.date || b.month).localeCompare(a.date || a.month)), [cases]);
+  const reasons = (c: JrcIncident) => c.reasons.map((r) => index.labels.reasons[r]?.[lang] ?? r).join(", ") || "—";
   const exportCsv = () => downloadCsv(filename, sorted.map((c) => ({
-    [fr ? "Rapport IFS" : "IFS report"]: c.publication_date,
-    [fr ? "Détecté" : "Detected"]: c.detected_in,
-    [fr ? "Produit" : "Product"]: c.product_normalized,
+    [fr ? "Date" : "Date"]: c.date || c.month,
+    [fr ? "Description" : "Description"]: c.description,
+    [fr ? "Catégories" : "Categories"]: c.categories.join(" / "),
     [fr ? "Type de fraude" : "Fraud type"]: reasons(c),
-    [fr ? "Pays" : "Country"]: (c.countries || [c.country_normalized]).join(" / "),
-    [fr ? "Article de presse" : "Press article"]: c.press_url || "",
-    [fr ? "Rapport IFS (PDF)" : "IFS report (PDF)"]: c.source_url,
+    [fr ? "Pays" : "Country"]: c.countries.join(" / "),
+    [fr ? "Articles de presse" : "Press articles"]: c.urls.join(" "),
+    [fr ? "Rapport JRC (PDF)" : "JRC report (PDF)"]: c.pdf_url,
   })), lang);
 
   return (
     <div>
       <div className="table-head">
-        <span className="meta">{fmtNum(cases.length, lang)} {fr ? "cas de fraude rapportés par la presse" : "press-reported fraud cases"}</span>
+        <span className="meta">{fmtNum(cases.length, lang)} {fr ? "incidents de fraude rapportés par la presse" : "press-reported fraud incidents"}</span>
         <button type="button" className="btn" onClick={exportCsv} disabled={!cases.length}>{fr ? "Exporter CSV" : "Export CSV"}</button>
       </div>
       <div className="table-scroll">
         <table className="data-table">
           <thead><tr>
-            <th>{fr ? "Rapport IFS" : "IFS report"}</th><th>{fr ? "Produit" : "Product"}</th><th>{fr ? "Type de fraude" : "Fraud type"}</th>
+            <th>{fr ? "Date" : "Date"}</th><th>{fr ? "Ce qui s'est passé" : "What happened"}</th><th>{fr ? "Type de fraude" : "Fraud type"}</th>
             <th>{fr ? "Pays" : "Country"}</th><th>{fr ? "Sources" : "Sources"}</th>
           </tr></thead>
           <tbody>
-            {sorted.map((c, i) => (
-              <tr key={i}>
-                <td className="nowrap">{fmtMonth(c.publication_date, lang, "short")}{c.detected_in && <div className="cell-sub">{fr ? "détecté" : "detected"} {c.detected_in}</div>}</td>
-                <td>{c.product_normalized}</td>
-                <td>{reasons(c)}{c.needs_review && <div className="cell-sub warn-text">{fr ? "ligne incomplète dans le PDF" : "incomplete row in the PDF"}</div>}</td>
-                <td>{(c.countries?.length ? c.countries : [c.country_normalized]).map((o, j) => <span key={o}>{j > 0 && " / "}<Link to={`/origine/${encodeURIComponent(o)}`}>{o}</Link></span>)}</td>
-                <td className="nowrap">
-                  {c.press_url && <a href={c.press_url} target="_blank" rel="noopener noreferrer">{fr ? "Article" : "Article"}</a>}
-                  {c.press_url && " · "}
-                  <a href={c.source_url} target="_blank" rel="noopener noreferrer">{fr ? "Rapport IFS" : "IFS report"}</a>
+            {sorted.slice(0, shown).map((c) => (
+              <tr key={c.id}>
+                <td className="nowrap">{c.date ? new Date(c.date).toLocaleDateString(fr ? "fr-FR" : "en-GB") : fmtMonth(c.month, lang, "short")}</td>
+                <td>{c.description || "—"}{c.categories.length > 0 && <div className="cell-sub">{c.categories.join(" · ")}</div>}</td>
+                <td>{reasons(c)}</td>
+                <td>{c.countries.map((o, j) => <span key={o}>{j > 0 && " / "}<Link to={`/origine/${encodeURIComponent(o)}`}>{o}</Link></span>)}{!c.countries.length && "—"}</td>
+                <td>
+                  {c.urls.slice(0, 3).map((u) => <div key={u}><a href={u} target="_blank" rel="noopener noreferrer">{host(u)}</a></div>)}
+                  <div><a href={c.pdf_url} target="_blank" rel="noopener noreferrer">{fr ? "Rapport JRC" : "JRC report"}</a></div>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      {shown < sorted.length && (
+        <button type="button" className="btn more" onClick={() => setShown((x) => x + PAGE)}>
+          {fr ? `Afficher ${Math.min(PAGE, sorted.length - shown)} de plus` : `Show ${Math.min(PAGE, sorted.length - shown)} more`} ({fmtNum(sorted.length - shown, lang)})
+        </button>
+      )}
     </div>
   );
 }

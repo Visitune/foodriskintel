@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import type { Lang } from "../i18n";
-import type { Dataset, RiskIndex } from "../types";
+import type { RiskIndex } from "../types";
 import { fmtMonth, fmtNum, lastMonths } from "../format";
 import { SearchBox, SourceTag, Term, TrendBadge, termPath } from "../components/ui";
 import { Card } from "./shared";
@@ -14,7 +14,7 @@ const EXAMPLES: { fr: string; en: string; t: "family" | "origin" | "substance" |
   { fr: "Oxyde d'éthylène", en: "Ethylene oxide", t: "substance", id: "Ethylene oxide", f: "spices" },
 ];
 
-export default function Watch({ ifs, index, lang }: { ifs: Dataset; index: RiskIndex; lang: Lang }) {
+export default function Watch({ index, lang }: { index: RiskIndex; lang: Lang }) {
   const fr = lang === "fr";
   const navigate = useNavigate();
   const { sources, highlights } = index;
@@ -28,8 +28,7 @@ export default function Watch({ ifs, index, lang }: { ifs: Dataset; index: RiskI
   const topOrigins = Object.entries(index.origins)
     .map(([id, o]) => ({ id, o, n: sum12(o.ffn_by_month) }))
     .sort((a, b) => b.n - a.n).slice(0, 8);
-  const fraudSkippedLatest = sources.ifs.fraud_not_published.includes(sources.ifs.latest);
-  const latestIfs = ifs.reports[ifs.reports.length - 1];
+  const jrcPeriod = highlights.fraud_report_months.map((m) => fmtMonth(m, lang)).join(fr ? " et " : " and ");
 
   return (
     <div className="page watch">
@@ -49,7 +48,7 @@ export default function Watch({ ifs, index, lang }: { ifs: Dataset; index: RiskI
 
       <section className="freshness" aria-label={fr ? "Fraîcheur des données" : "Data freshness"}>
         <div><SourceTag src="ffn" lang={lang} /> <span>{fr ? "jusqu'à" : "up to"} <strong>{fmtMonth(sources.ffn.latest, lang)}</strong></span></div>
-        <div><SourceTag src="jrc" lang={lang} /> <span>{fr ? "jusqu'à" : "up to"} <strong>{fmtMonth(sources.ifs.fraud_latest, lang)}</strong>{fraudSkippedLatest && (fr ? " (pas de tableau dans le dernier rapport)" : " (no table in the latest report)")}</span></div>
+        <div><SourceTag src="jrc" lang={lang} /> <span>{fr ? "jusqu'à" : "up to"} <strong>{fmtMonth(sources.jrc.latest, lang)}</strong></span></div>
         <div><SourceTag src="ifs" lang={lang} /> <span>{fr ? "jusqu'à" : "up to"} <strong>{fmtMonth(sources.ifs.latest, lang)}</strong></span></div>
         <Link to="/comprendre">{fr ? "D'où viennent ces données ?" : "Where does this data come from?"}</Link>
       </section>
@@ -74,18 +73,16 @@ export default function Watch({ ifs, index, lang }: { ifs: Dataset; index: RiskI
           ) : <p className="meta">{fr ? "Aucune matière nettement au-dessus de sa moyenne ce mois-ci." : "No material well above its average this month."}</p>}
         </Card>
 
-        <Card title={fr ? `Nouveau — fraude presse (${fmtMonth(highlights.fraud_month, lang)})` : `New — press fraud (${fmtMonth(highlights.fraud_month, lang)})`} aside={<SourceTag src="jrc" lang={lang} />}>
-          {latestIfs && latestIfs.food_fraud_status === "not_published" && (
-            <p className="notice">{fr
-              ? `Le rapport IFS de ${fmtMonth(latestIfs.publication_date, lang)} ne contient pas de tableau de fraude : derniers cas disponibles ci-dessous.`
-              : `The IFS report of ${fmtMonth(latestIfs.publication_date, lang)} has no fraud table: latest available cases below.`}</p>
-          )}
+        <Card title={fr ? `Nouveau — fraude presse (${jrcPeriod})` : `New — press fraud (${jrcPeriod})`} aside={<SourceTag src="jrc" lang={lang} />}>
+          <p>{fr
+            ? <><strong>{fmtNum(highlights.fraud_report_total, lang)}</strong> incidents dans le dernier rapport <Term id="jrc" lang={lang}>JRC</Term>. Les plus récents :</>
+            : <><strong>{fmtNum(highlights.fraud_report_total, lang)}</strong> incidents in the latest <Term id="jrc" lang={lang}>JRC</Term> report. Most recent:</>}</p>
           <ul className="case-list">
-            {highlights.fraud_month_cases.slice(0, 8).map((c, i) => (
+            {[...highlights.fraud_month_cases].reverse().map((c, i) => (
               <li key={i}>
-                <Link to={`/matiere/${c.material_family}`}>{c.product_normalized}</Link>
-                <span className="meta"> — {c.reasons.map((r) => index.labels.reasons[r]?.[lang] ?? r).join(", ")} · {c.countries.join(" / ")}</span>
-                {c.press_url && <> · <a href={c.press_url} target="_blank" rel="noopener noreferrer">{fr ? "article" : "article"}</a></>}
+                <Link to={`/matiere/${c.material_family}`}>{index.labels.families[c.material_family]?.[lang]}</Link>
+                <span className="meta"> — {c.countries.join(" / ") || "?"}{c.reasons.length > 0 && ` · ${c.reasons.map((r) => index.labels.reasons[r]?.[lang] ?? r).join(", ")}`}</span>
+                <div className="cell-sub">{c.text}{c.text.length >= 180 && "…"}{c.url && <> <a href={c.url} target="_blank" rel="noopener noreferrer">{fr ? "article" : "article"}</a></>}</div>
               </li>
             ))}
           </ul>

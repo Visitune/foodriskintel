@@ -151,9 +151,9 @@ export default function App() {
 
         <main className="content">
           <Routes>
-            <Route path="/" element={<Watch ifs={data} index={index} lang={lang} />} />
+            <Route path="/" element={<Watch index={index} lang={lang} />} />
             <Route path="/matieres" element={<Materials index={index} lang={lang} />} />
-            <Route path="/matiere/:id" element={<Material ifs={data} index={index} lang={lang} />} />
+            <Route path="/matiere/:id" element={<Material index={index} lang={lang} />} />
             <Route path="/origines" element={<Origins index={index} lang={lang} />} />
             <Route path="/origine/:country" element={<Origin ifs={data} index={index} lang={lang} />} />
             <Route path="/country/:country" element={<CountryRedirect />} />
@@ -161,7 +161,7 @@ export default function App() {
             <Route path="/overview" element={<WithFfn lang={lang} render={(ffn) => <WithCross lang={lang} render={(cross) => <Overview data={data} ffn={ffn} cross={cross} lang={lang} />} />} />} />
             <Route path="/cross" element={<WithFfn lang={lang} render={(ffn) => <WithCross lang={lang} render={(cross) => <CrossView ifs={data} ffn={ffn} cross={cross} lang={lang} />} />} />} />
             <Route path="/map" element={<WorldMap data={data} lang={lang} />} />
-            <Route path="/fraud" element={<FraudExplorer data={data} index={index} lang={lang} />} />
+            <Route path="/fraud" element={<FraudExplorer index={index} lang={lang} />} />
             <Route path="/ffn" element={<WithFfn lang={lang} render={(ffn) => <FfnExplorer data={ffn} index={index} lang={lang} />} />} />
             <Route path="/sources" element={<Sources data={data} lang={lang} />} />
             <Route path="*" element={<Navigate to="/" replace />} />

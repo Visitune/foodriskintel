@@ -2,7 +2,7 @@ export type Lang = "fr" | "en";
 
 export const t = {
   fr: {
-    nav: { home: "Accueil", materials: "Matières premières", origins: "Pays d'origine", guide: "Comprendre les données", overview: "Vue d'ensemble des sources", cross: "Croisement des sources", worldMap: "Carte des rappels (IFS)", ifsFraud: "Fraude presse (IFS/JRC)", ffn: "Suspicions UE (FFN)", sources: "Couverture & méthode", groupWatch: "Ma veille", groupAnalyze: "Analyser", groupExplore: "Explorer les sources", groupUnderstand: "Comprendre", menuOpen: "Ouvrir le menu", menuClose: "Fermer le menu", more: "Plus" },
+    nav: { home: "Accueil", materials: "Matières premières", origins: "Pays d'origine", guide: "Comprendre les données", overview: "Vue d'ensemble des sources", cross: "Croisement des sources", worldMap: "Carte des rappels (IFS)", ifsFraud: "Fraude presse (JRC)", ffn: "Suspicions UE (FFN)", sources: "Couverture & méthode", groupWatch: "Ma veille", groupAnalyze: "Analyser", groupExplore: "Explorer les sources", groupUnderstand: "Comprendre", menuOpen: "Ouvrir le menu", menuClose: "Fermer le menu", more: "Plus" },
     header: { subtitle: "Intelligence risque alimentaire" },
     langNote: "Interface bilingue — données EN",
     theme: { light: "Clair", dark: "Sombre" },
@@ -108,7 +108,7 @@ export const t = {
       feature1: "Tapez une matière (miel, cumin, huile d'olive…) ou un pays d'origine dans la recherche de l'accueil.",
       feature2: "La fiche matière montre ce qui est signalé, d'où, depuis quand — avec le lien vers chaque document officiel ou article.",
       feature3: "Exportez les cas en CSV pour nourrir votre évaluation de vulnérabilité à la fraude.",
-      feature4: "Trois sources publiques, jamais additionnées : suspicions UE (FFN), fraude presse (IFS/JRC), rappels (IFS).",
+      feature4: "Trois sources publiques, jamais additionnées : suspicions UE (FFN), fraude presse (JRC), rappels (IFS).",
       feature5: "Les termes soulignés en pointillé ont une définition : survolez-les ou touchez-les.",
       disclaimer: "Outil de visualisation indépendant, sans lien avec IFS, la JRC ou la DG SANTE — toujours consulter les rapports officiels.",
       dismiss: "Commencer",
@@ -117,7 +117,7 @@ export const t = {
     },
   },
   en: {
-    nav: { home: "Home", materials: "Raw materials", origins: "Origin countries", guide: "Understanding the data", overview: "Sources overview", cross: "Cross-source view", worldMap: "Recall map (IFS)", ifsFraud: "Press fraud (IFS/JRC)", ffn: "EU suspicions (FFN)", sources: "Coverage & method", groupWatch: "My watch", groupAnalyze: "Analyze", groupExplore: "Explore the sources", groupUnderstand: "Understand", menuOpen: "Open menu", menuClose: "Close menu", more: "More" },
+    nav: { home: "Home", materials: "Raw materials", origins: "Origin countries", guide: "Understanding the data", overview: "Sources overview", cross: "Cross-source view", worldMap: "Recall map (IFS)", ifsFraud: "Press fraud (JRC)", ffn: "EU suspicions (FFN)", sources: "Coverage & method", groupWatch: "My watch", groupAnalyze: "Analyze", groupExplore: "Explore the sources", groupUnderstand: "Understand", menuOpen: "Open menu", menuClose: "Close menu", more: "More" },
     header: { subtitle: "Food Risk Intelligence" },
     langNote: "Bilingual UI — data remains EN",
     theme: { light: "Light", dark: "Dark" },
@@ -223,7 +223,7 @@ export const t = {
       feature1: "Type a material (honey, cumin, olive oil…) or an origin country in the home search.",
       feature2: "The material page shows what is reported, from where, since when — with a link to each official document or article.",
       feature3: "Export cases as CSV to feed your food fraud vulnerability assessment.",
-      feature4: "Three public sources, never added up: EU suspicions (FFN), press fraud (IFS/JRC), recalls (IFS).",
+      feature4: "Three public sources, never added up: EU suspicions (FFN), press fraud (JRC), recalls (IFS).",
       feature5: "Terms with a dotted underline have a definition: hover or tap them.",
       disclaimer: "Independent visualization tool, not affiliated with IFS, JRC or DG SANTE — always refer to the official reports.",
       dismiss: "Get started",

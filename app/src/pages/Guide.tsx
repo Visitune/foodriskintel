@@ -21,11 +21,11 @@ export default function Guide({ index, lang }: { index: RiskIndex; lang: Lang })
     },
     {
       tag: <SourceTag src="jrc" lang={lang} />,
-      what: fr ? "Cas de fraude parus dans la presse mondiale, sélectionnés par le JRC puis repris dans le rapport IFS Trend Risk." : "Fraud cases reported in the world press, selected by the JRC and republished in the IFS Trend Risk Report.",
-      who: fr ? "JRC (Commission européenne), via IFS" : "JRC (European Commission), via IFS",
-      scope: fr ? "Monde, sélection d'une dizaine de cas par mois" : "World, about ten selected cases per month",
-      not: fr ? "Pas exhaustif ; certains mois l'IFS ne publie pas de tableau (affiché comme absence, jamais comme zéro)." : "Not exhaustive; some months IFS publishes no table (shown as missing, never as zero).",
-      cover: `${fmtMonth(s.ifs.first, lang)} → ${fmtMonth(s.ifs.fraud_latest, lang)} · ${fmtNum(s.ifs.fraud_cases, lang)} ${fr ? "cas" : "cases"}`,
+      what: fr ? "Incidents de fraude parus dans la presse mondiale, recensés chaque mois par le JRC (l'IFS en reprend une sélection dans son rapport)." : "Fraud incidents reported in the world press, compiled monthly by the JRC (IFS republishes a selection in its report).",
+      who: fr ? "JRC — Centre commun de recherche, Commission européenne" : "JRC — Joint Research Centre, European Commission",
+      scope: fr ? "Monde, 30 à 160 incidents par rapport, mensuel ou bimestriel" : "World, 30 to 160 incidents per report, monthly or bimonthly",
+      not: fr ? "Pas exhaustif ni officiel : faits rapportés par la presse. Rapports publiés en image (non lisibles) affichés comme absence, jamais comme zéro." : "Neither exhaustive nor official: press-reported facts. Image-only reports are shown as missing, never as zero.",
+      cover: `${fmtMonth(s.jrc.first, lang)} → ${fmtMonth(s.jrc.latest, lang)} · ${fmtNum(s.jrc.incidents, lang)} incidents`,
       link: "https://knowledge4policy.ec.europa.eu/jrc-food-fraud-monthly-report_en",
     },
     {
@@ -74,7 +74,7 @@ export default function Guide({ index, lang }: { index: RiskIndex; lang: Lang })
           <li>{fr ? "Les rapports sont publiés avec un décalage : le rapport d'un mois décrit souvent les cas du mois précédent." : "Reports are published with a lag: one month's report often describes the previous month's cases."}</li>
           <li>{fr ? "Les tendances comparent les 6 derniers mois publiés aux 6 précédents ; en dessous de 5 cas, aucune tendance n'est affichée." : "Trends compare the last 6 published months with the 6 before; below 5 cases no trend is shown."}</li>
           <li>{fr ? "Aucun score de risque n'est calculé : l'outil montre des faits publiés, l'évaluation reste la vôtre." : "No risk score is computed: the tool shows published facts, the assessment remains yours."}</li>
-          <li>{fr ? `Mois sans tableau de fraude publié par l'IFS : ${s.ifs.fraud_not_published.map((m) => fmtMonth(m, lang, "short")).join(", ")}.` : `Months with no fraud table published by IFS: ${s.ifs.fraud_not_published.map((m) => fmtMonth(m, lang, "short")).join(", ")}.`}</li>
+          <li>{fr ? `Rapports JRC publiés uniquement en image (non exploitables) : ${s.jrc.months_no_text.map((m) => fmtMonth(m, lang, "short")).join(", ")}.` : `JRC reports published as images only (not readable): ${s.jrc.months_no_text.map((m) => fmtMonth(m, lang, "short")).join(", ")}.`}</li>
         </ul>
       </Card>
 

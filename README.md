@@ -53,8 +53,9 @@ Copy-Item data\dataset.json, data\dataset_ffn.json, data\dataset_cross.json app\
 
 La GitHub Action *Monthly Food Risk Intelligence Update* tourne **chaque lundi** (l'IFS publie le rapport du mois M entre le ~20 et le ~27 de M+1, la DG SANTE dans le courant de M+1) :
 
-1. **Découverte IFS** (`discover_ifs_pdfs.py`) : liens saisis à la main (`data/manual_sources.json`) → mois déjà connus (inventaire **cumulatif**, un mois n'est jamais perdu) → liens trouvés sur les pages IFS → variantes de noms de fichier sur le site IFS, son CDN et les miroirs connus.
+1. **Découverte IFS** (`discover_ifs_pdfs.py`) : liens saisis à la main (`data/manual_sources.json`) → mois déjà connus (inventaire **cumulatif**, un mois n'est jamais perdu) → liens trouvés sur les pages IFS → toutes les combinaisons de séparateurs du nom de fichier (l'IFS alterne `_EN` / `-EN` d'un mois à l'autre) sur le site IFS, son CDN et les miroirs connus.
 2. **Découverte FFN** : lecture de la page officielle DG SANTE.
+   **Découverte JRC** (`discover_jrc_pdfs.py`) : lecture de la [page JRC Food Fraud Monthly](https://knowledge-for-policy.ec.europa.eu/jrc-food-fraud-monthly-report_en) puis de chaque publication pour trouver le PDF anglais (noms non prévisibles : `202601.pdf`, `202605_0.pdf`, `202602_EN_1.pdf`…). Les incidents sont extraits par `extract_jrc.py` (coordonnées des mots, stable malgré les changements de mise en page) ; les rapports publiés en image seule sont signalés comme lacune.
 3. Extraction, normalisation, contrôles qualité ; si un PDF n'est plus téléchargeable, l'extraction précédente est conservée.
 4. Commit des données **puis déploiement du site** (le déploiement est appelé explicitement : un push du bot ne déclenche pas les autres workflows).
 5. **Contrôle de fraîcheur** (`check_freshness.py`) : si le dernier rapport attendu manque, une issue *« Rapport mensuel manquant — action requise »* est ouverte (et fermée automatiquement une fois les données à jour).

@@ -88,10 +88,32 @@ def check_ffn():
         warnings.append(f"FFN: {unknown} cases with unknown classification")
 
 
+def check_jrc():
+    jrc = json.loads((ROOT / "data" / "dataset_jrc.json").read_text(encoding="utf-8"))
+    by_report = {}
+    for i in jrc["incidents"]:
+        by_report[i["report_id"]] = by_report.get(i["report_id"], 0) + 1
+    for r in jrc["reports"]:
+        n = by_report.get(r["id"], 0)
+        if r["status"] == "no_text":
+            warnings.append(f"JRC {r['id']}: image-only PDF, no incident extracted (shown as a gap)")
+        elif n < 10:
+            errors.append(f"JRC {r['id']}: only {n} incidents extracted (layout changed?)")
+    inc = jrc["incidents"]
+    for label, n in (("without category", sum(1 for i in inc if not i["categories"])),
+                     ("without fraud type", sum(1 for i in inc if not i["reasons"])),
+                     ("without country", sum(1 for i in inc if not i["countries"]))):
+        if n > 0.15 * len(inc):
+            errors.append(f"JRC: {n}/{len(inc)} incidents {label}")
+        elif n:
+            warnings.append(f"JRC: {n}/{len(inc)} incidents {label}")
+
+
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     check_ifs()
     check_ffn()
+    check_jrc()
     for w in warnings:
         print(f"WARN  {w}")
     for e in errors:

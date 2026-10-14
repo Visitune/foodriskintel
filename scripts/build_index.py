@@ -2,11 +2,12 @@
 Build the lightweight material / origin index consumed by the app home page,
 search and material / origin pages (data/index.json → app/public/index.json).
 
-Inputs : data/dataset.json (IFS recalls + IFS/JRC fraud), data/dataset_ffn.json
+Inputs : data/dataset.json (IFS recalls), data/dataset_ffn.json (EU suspicions),
+         data/dataset_jrc.json (JRC press fraud incidents)
 Output : data/index.json
 
 Nothing here is a risk score: only counts of published cases, per source,
-kept separate (IFS/JRC fraud cases are press monitoring; FFN cases are EU
+kept separate (JRC fraud incidents are press monitoring; FFN cases are EU
 official suspicions). Trends compare the last 6 months with the 6 before.
 """
 import json, sys
@@ -21,6 +22,7 @@ from taxonomy import (MATERIAL_FAMILIES, FAMILY_LABELS, CLASSIFICATION_GROUPS,  
 ROOT = Path(__file__).resolve().parent.parent
 IFS = ROOT / "data" / "dataset.json"
 FFN = ROOT / "data" / "dataset_ffn.json"
+JRC = ROOT / "data" / "dataset_jrc.json"
 OUT = ROOT / "data" / "index.json"
 
 TOP = 12
@@ -70,9 +72,11 @@ def top(counter, n=TOP):
 def main():
     ifs = json.loads(IFS.read_text(encoding="utf-8"))
     ffn = json.loads(FFN.read_text(encoding="utf-8"))
+    jrc = json.loads(JRC.read_text(encoding="utf-8"))
     ffn_months = [r["id"] for r in ffn["reports"]]
     ifs_months = [r["publication_date"] for r in ifs["reports"]]
-    fraud_published = [r["publication_date"] for r in ifs["reports"] if r.get("food_fraud_status") == "published"]
+    # Months with readable JRC data (image-only reports are gaps, not zeros)
+    fraud_published = sorted(set(jrc["summary"]["months_covered"]))
 
     fam = defaultdict(lambda: {"ffn": Counter(), "ffn_month": Counter(), "ffn_origin": Counter(),
                                "ffn_group": Counter(), "ffn_sub": Counter(), "ffn_commodity": Counter(),
@@ -109,12 +113,13 @@ def main():
             if c["notified_by_normalized"] != "Unknown":
                 O["notified"][c["notified_by_normalized"]] += 1
 
-    for c in ifs["food_fraud"]:
-        f, m = c["material_family"], c["publication_date"]
+    for c in jrc["incidents"]:
+        f, m = c["material_family"], c["month"]
         F = fam[f]
         F["fraud"]["cases"] += 1
         F["fraud_month"][m] += 1
-        F["fraud_product"][c["product_normalized"]] += 1
+        for cat in c["categories"]:
+            F["fraud_product"][cat] += 1
         for r in c.get("reasons") or []:
             F["fraud_reason"][r] += 1
         for country in c.get("countries") or []:
@@ -177,10 +182,6 @@ def main():
         n = sum(fams.values())
         if n >= 2 and 2 < len(com) <= 60:
             search.append({"t": "commodity", "id": com, "n": n, "f": fams.most_common(1)[0][0]})
-    for c in ifs["food_fraud"]:
-        p = c["product_normalized"].lower()
-        if not any(x["t"] == "commodity" and x["id"] == p for x in search):
-            search.append({"t": "commodity", "id": p, "n": 1, "f": c["material_family"]})
     search.sort(key=lambda x: -x["n"])
 
     # "What's new": latest month of each source vs its 12-month average
@@ -194,16 +195,17 @@ def main():
             new_ffn.append({"family": fid, "count": cur, "avg12": round(avg, 1)})
     new_ffn.sort(key=lambda x: -x["count"] / max(x["avg12"], 1))
     latest_ifs = ifs_months[-1] if ifs_months else None
-    latest_fraud_month = fraud_published[-1] if fraud_published else None
+    latest_jrc = jrc["reports"][-1] if jrc["reports"] else None
 
     index = {
         "generated_at": datetime.now().isoformat(),
         "sources": {
             "ifs": {"first": ifs_months[0] if ifs_months else None, "latest": latest_ifs,
-                    "reports": len(ifs_months), "fraud_latest": latest_fraud_month,
-                    "fraud_not_published": [r["publication_date"] for r in ifs["reports"]
-                                            if r.get("food_fraud_status") == "not_published"],
-                    "fraud_cases": len(ifs["food_fraud"])},
+                    "reports": len(ifs_months)},
+            "jrc": {"first": jrc["date_range"].get("start"), "latest": jrc["date_range"].get("end"),
+                    "reports": len(jrc["reports"]), "incidents": len(jrc["incidents"]),
+                    "months_no_text": jrc["summary"]["months_no_text"],
+                    "months_covered": fraud_published},
             "ffn": {"first": ffn_months[0], "latest": latest_ffn, "reports": len(ffn_months),
                     "cases": len(ffn["cases"])},
         },
@@ -217,10 +219,12 @@ def main():
             "ffn_month": latest_ffn,
             "ffn_rising_families": new_ffn[:6],
             "ffn_month_total": sum(1 for c in ffn["cases"] if c["report_id"] == latest_ffn),
-            "fraud_month": latest_fraud_month,
+            "fraud_report_months": latest_jrc["months"] if latest_jrc else [],
+            "fraud_report_total": latest_jrc["incidents"] if latest_jrc else 0,
             "fraud_month_cases": [
-                {k: c[k] for k in ("product_normalized", "material_family", "reasons", "countries", "press_url")}
-                for c in ifs["food_fraud"] if c["publication_date"] == latest_fraud_month],
+                {"text": c["description"][:180], "material_family": c["material_family"], "reasons": c["reasons"],
+                 "countries": c["countries"], "url": (c["urls"] or [""])[0], "date": c["date"]}
+                for c in jrc["incidents"] if latest_jrc and c["report_id"] == latest_jrc["id"]][-8:],
         },
         "families": families,
         "origins": dict(sorted(origins.items(), key=lambda kv: -(kv[1]["ffn_cases"] + kv[1]["fraud_cases"]))),

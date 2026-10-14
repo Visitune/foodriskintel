@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-14T21:07:58.003241",
-  "total_reports": 27,
+  "generated_at": "2026-10-14T21:58:39.661851",
+  "total_reports": 28,
   "reused_previous": [],
   "extractions": [
     {
@@ -3582,6 +3582,146 @@
       "food_fraud_status": "not_published",
       "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_July_2026_EN.pdf",
       "report_id": "ifs-2026-jul"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_August_2026.pdf",
+      "publication_month": "August",
+      "publication_year": 2026,
+      "data_period": null,
+      "recalls": {
+        "Denmark": 3,
+        "Türkiye": 56,
+        "South Korea": 21,
+        "Greece": 1,
+        "Romania": 1,
+        "Argentina": 0,
+        "Israel": 4,
+        "Brazil": 6,
+        "Czech Rep.": 26,
+        "Singapore": 1,
+        "Luxembourg": 16,
+        "Italy": 31,
+        "Iceland": 6,
+        "Belgium": 16,
+        "China": 6,
+        "Japan": 54,
+        "Australia": 4,
+        "Finnland": 4,
+        "Poland": 8,
+        "Scotland": 0,
+        "Germany": 14,
+        "Hungary": 1,
+        "Viet Nam": 0,
+        "USA (FDA)": 29,
+        "England": 5,
+        "Spain": 6,
+        "Austria": 7,
+        "France": 173,
+        "New Zealand": 1,
+        "Slovakia": 0,
+        "Croatia": 4,
+        "Philippines": 22,
+        "USA (USDA)": 7,
+        "Netherlands": 7,
+        "Ireland": 9,
+        "Canada": 26
+      },
+      "food_fraud": [
+        {
+          "product_raw": "Olive oil",
+          "reason_raw": "Adulteration",
+          "country_raw": "Italy",
+          "detected_in": "May / June",
+          "press_url": "https://www.teatronaturale.it/tracce/italia/48339-nuova-frode-sull-olio-di-oliva-scoperta-nel-salento-300-tonnellate.htm",
+          "needs_review": false
+        },
+        {
+          "product_raw": "Olive oil, dried figs, honey,",
+          "reason_raw": "Adulteration",
+          "country_raw": "Türkiye",
+          "detected_in": "May / June",
+          "press_url": "https://en.haberler.com/counterfeit-food-operation-in-aydin-3-5-million-2271766/",
+          "needs_review": false
+        },
+        {
+          "product_raw": "Mangoes",
+          "reason_raw": "Product tampering",
+          "country_raw": "India",
+          "detected_in": "May / June",
+          "press_url": "https://www.hindustantimes.com/cities/mumbai-news/fda-seizes-3-4-tonnes-of-suspect-chemically-ripened-mangoes-at-apmc-101780427156417.html",
+          "needs_review": false
+        },
+        {
+          "product_raw": "Eggs",
+          "reason_raw": "Document forgery",
+          "country_raw": "Argentina",
+          "detected_in": "May / June",
+          "press_url": "https://www.agritotal.com/nota/incautan-4-860-docenas-de-huevos-por-incumplimientos-que-comprometian-su-trazabilidad-2466/",
+          "needs_review": false
+        },
+        {
+          "product_raw": "Eggs",
+          "reason_raw": "Grey market",
+          "country_raw": "Austria",
+          "detected_in": "May / June",
+          "press_url": "https://www.krone.at/4142282",
+          "needs_review": false
+        },
+        {
+          "product_raw": "Eggs",
+          "reason_raw": "Mislabelling",
+          "country_raw": "North Macedonia",
+          "detected_in": "May / June",
+          "press_url": "https://www.slobodenpecat.mk/en/firmata-shto-uveze-40-toni-jajca-pred-veligden-za-da-gi-obelezhi-kako-makedonski-kazneta-so-1-400-evra/",
+          "needs_review": false
+        },
+        {
+          "product_raw": "Wine",
+          "reason_raw": "Grey market",
+          "country_raw": "Italy",
+          "detected_in": "May / June",
+          "press_url": "https://askanews.it/2026/05/13/guardia-di-finanza-sequestra-11-mila-litri-di-vino-nel-trevigiano/",
+          "needs_review": false
+        },
+        {
+          "product_raw": "Lamb",
+          "reason_raw": "Illegal slaughter",
+          "country_raw": "Spain",
+          "detected_in": "May / June",
+          "press_url": "https://www.surinenglish.com/spain/more-than-sheep-20260619103553-nt.html",
+          "needs_review": false
+        },
+        {
+          "product_raw": "Kebab meat",
+          "reason_raw": "Adulteration",
+          "country_raw": "UK",
+          "detected_in": "May / June",
+          "press_url": "https://www.farminguk.com/news/kebab-firm-fined-500-000-over-fake-lamb-labelling_68634.html",
+          "needs_review": false
+        },
+        {
+          "product_raw": "Dried spices",
+          "reason_raw": "Adulteration",
+          "country_raw": "Pakistan",
+          "detected_in": "May / June",
+          "press_url": "https://www.app.com.pk/punjab/pfa-seals-3-food-units-discards-substandard-food-items/",
+          "needs_review": false
+        },
+        {
+          "product_raw": "",
+          "reason_raw": "Counterfeit",
+          "country_raw": "Philippines",
+          "detected_in": "May / June",
+          "press_url": "https://tribune.net.ph/2026/06/12/p38m-counterfeit-magic-sarap-seized-in-pagadian-guagua",
+          "needs_review": false
+        }
+      ],
+      "errors": [
+        "Text month June 2026 differs from filename August 2026 — keeping filename"
+      ],
+      "food_fraud_status": "published",
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf",
+      "report_id": "ifs-2026-aug"
     }
   ]
 }

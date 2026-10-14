@@ -1,51 +1,66 @@
 import { useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
-import type { Dataset, RiskIndex } from "./types";
+import type { RiskIndex } from "./types";
 import type { Lang } from "./i18n";
 import { t } from "./i18n";
-import { fmtMonth } from "./format";
-import { BarList, SourceTag, Sparkline, Term } from "./components/ui";
+import { useJrc } from "./data";
+import { fmtMonth, lastMonths } from "./format";
+import { BarList, Loading, SourceTag, Sparkline, Term } from "./components/ui";
 import { Card, FraudCaseTable, countBy } from "./pages/shared";
 
-/** IFS/JRC press fraud cases. Filters live in the URL so a view can be shared. */
-export default function FraudExplorer({ data, index, lang }: { data: Dataset; index: RiskIndex; lang: Lang }) {
+const norm = (s: string) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+
+/** JRC Food Fraud Monthly incidents. Filters live in the URL so a view can be shared. */
+export default function FraudExplorer({ index, lang }: { index: RiskIndex; lang: Lang }) {
   const tr = t[lang];
   const fr = lang === "fr";
+  const { data: jrc, error } = useJrc();
   const [params, setParams] = useSearchParams();
   const family = params.get("famille") || "";
   const reason = params.get("type") || "";
   const country = params.get("pays") || "";
+  const q = params.get("q") || "";
   const set = (k: string, v: string) => {
     const p = new URLSearchParams(params);
     if (v) p.set(k, v); else p.delete(k);
     setParams(p, { replace: true });
   };
 
-  const filtered = useMemo(() => data.food_fraud.filter((c) =>
-    (!family || c.material_family === family) &&
-    (!reason || (c.reasons || []).includes(reason)) &&
-    (!country || (c.countries || [c.country_normalized]).includes(country))), [data, family, reason, country]);
+  const all = useMemo(() => jrc?.incidents ?? [], [jrc]);
+  const filtered = useMemo(() => {
+    const nq = norm(q);
+    return all.filter((c) =>
+      (!family || c.material_family === family) &&
+      (!reason || c.reasons.includes(reason)) &&
+      (!country || c.countries.includes(country)) &&
+      (!nq || norm(c.description).includes(nq)));
+  }, [all, family, reason, country, q]);
 
-  const months = data.reports.map((r) => r.publication_date);
-  const notPublished = data.reports.filter((r) => r.food_fraud_status === "not_published").map((r) => r.publication_date);
-  const byFamily = countBy(filtered, (c) => c.material_family || "other");
-  const byReason = countBy(filtered, (c) => c.reasons || []);
-  const byCountry = countBy(filtered, (c) => c.countries || [c.country_normalized]);
-  const allFamilies = countBy(data.food_fraud, (c) => c.material_family || "other");
-  const allReasons = countBy(data.food_fraud, (c) => c.reasons || []);
-  const allCountries = countBy(data.food_fraud, (c) => c.countries || [c.country_normalized]);
+  if (error) return <div className="error">{fr ? "Données JRC indisponibles." : "JRC data unavailable."}</div>;
+  if (!jrc) return <Loading lang={lang} />;
+
+  const months = lastMonths(jrc.date_range.end, 30).filter((m) => m >= jrc.date_range.start);
+  const gaps = months.filter((m) => !jrc.summary.months_covered.includes(m));
+  const byFamily = countBy(filtered, (c) => c.material_family);
+  const byReason = countBy(filtered, (c) => c.reasons);
+  const byCountry = countBy(filtered, (c) => c.countries);
+  const allFamilies = countBy(all, (c) => c.material_family);
+  const allReasons = countBy(all, (c) => c.reasons);
+  const allCountries = countBy(all, (c) => c.countries);
 
   return (
     <div className="page">
       <header className="page-header">
         <h2>{tr.nav.ifsFraud}</h2>
         <p className="subtitle">{fr
-          ? <>Cas de fraude parus dans la presse mondiale, sélectionnés par le <Term id="jrc" lang={lang}>JRC</Term> et repris chaque mois dans le <Term id="trendRisk" lang={lang}>rapport IFS Trend Risk</Term>. Chaque cas renvoie à l'article d'origine.</>
-          : <>Fraud cases reported in the world press, selected by the <Term id="jrc" lang={lang}>JRC</Term> and republished monthly in the <Term id="trendRisk" lang={lang}>IFS Trend Risk Report</Term>. Each case links to the original article.</>}</p>
+          ? <>Incidents de fraude parus dans la presse mondiale, recensés chaque mois par le <Term id="jrc" lang={lang}>JRC</Term> (Commission européenne). Chaque incident renvoie aux articles d'origine et au rapport JRC.</>
+          : <>Fraud incidents reported in the world press, compiled monthly by the <Term id="jrc" lang={lang}>JRC</Term> (European Commission). Each incident links to the original articles and the JRC report.</>}</p>
         <SourceTag src="jrc" lang={lang} />
       </header>
 
       <div className="controls">
+        <input className="input" type="search" value={q} onChange={(e) => set("q", e.target.value)}
+          placeholder={fr ? "Mot-clé (ex. olive, saffron, honey)…" : "Keyword (e.g. olive, saffron, honey)…"} aria-label={fr ? "Mot-clé" : "Keyword"} />
         <select value={family} onChange={(e) => set("famille", e.target.value)} aria-label={fr ? "Matière" : "Material"}>
           <option value="">{fr ? "Toutes les matières" : "All materials"}</option>
           {allFamilies.map(([f, n]) => <option key={f} value={f}>{index.labels.families[f]?.[lang] ?? f} ({n})</option>)}
@@ -58,14 +73,14 @@ export default function FraudExplorer({ data, index, lang }: { data: Dataset; in
           <option value="">{fr ? "Tous pays" : "All countries"}</option>
           {allCountries.map(([c, n]) => <option key={c} value={c}>{c} ({n})</option>)}
         </select>
-        {(family || reason || country) && <button type="button" className="btn" onClick={() => setParams({}, { replace: true })}>{tr.common.reset}</button>}
+        {(family || reason || country || q) && <button type="button" className="btn" onClick={() => setParams({}, { replace: true })}>{tr.common.reset}</button>}
       </div>
 
-      <Card title={fr ? "Cas par rapport mensuel" : "Cases per monthly report"}>
-        <Sparkline months={months} values={Object.fromEntries(countBy(filtered, (c) => c.publication_date))} lang={lang} tone="jrc" missing={notPublished} />
+      <Card title={fr ? "Incidents par mois" : "Incidents per month"}>
+        <Sparkline months={months} values={Object.fromEntries(countBy(filtered, (c) => c.month))} lang={lang} tone="jrc" missing={gaps} />
         <p className="meta">{fr
-          ? `Trait gris : l'IFS n'a pas publié de tableau de fraude (${notPublished.map((m) => fmtMonth(m, lang, "short")).join(", ")}). Ce n'est pas « zéro cas ».`
-          : `Grey dash: IFS published no fraud table (${notPublished.map((m) => fmtMonth(m, lang, "short")).join(", ")}). It does not mean "zero cases".`}</p>
+          ? `Trait gris : rapport JRC publié uniquement en image, non lisible (${jrc.summary.months_no_text.map((m) => fmtMonth(m, lang, "short")).join(", ")}). Ce n'est pas « zéro incident ».`
+          : `Grey dash: JRC report published as an image only, not readable (${jrc.summary.months_no_text.map((m) => fmtMonth(m, lang, "short")).join(", ")}). It does not mean "zero incidents".`}</p>
       </Card>
 
       <div className="grid-3">
@@ -80,8 +95,8 @@ export default function FraudExplorer({ data, index, lang }: { data: Dataset; in
         </Card>
       </div>
 
-      <Card title={fr ? "Détail des cas" : "Case detail"}>
-        <FraudCaseTable cases={filtered} index={index} lang={lang} filename="fraude-presse-ifs-jrc.csv" />
+      <Card title={fr ? "Détail des incidents" : "Incident detail"}>
+        <FraudCaseTable cases={filtered} index={index} lang={lang} filename="fraude-presse-jrc.csv" />
       </Card>
     </div>
   );
