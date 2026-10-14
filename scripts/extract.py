@@ -374,23 +374,38 @@ def main():
     
     session = requests.Session()
     session.headers.update({"User-Agent": "IFS-Extractor/1.0 (research)"})
-    
+
+    # Previous extractions: reused when a PDF can no longer be downloaded,
+    # so a transient outage never removes an already-published month.
+    previous = {}
+    if os.path.exists(args.output):
+        with open(args.output, "r", encoding="utf-8") as f:
+            for ex in json.load(f).get("extractions", []):
+                previous[ex.get("report_id")] = ex
+
     extractions = []
-    
+    reused = []
+
     for i, report in enumerate(reports, 1):
         year = report["year"]
         month = report["month"]
         url = report["url"]
+        # Local name is built from the inventory (not the URL) so that manual
+        # sources with arbitrary filenames still carry the right month.
         fname = f"IFS_Trend_Risk_Report_{month}_{year}.pdf"
-        if report.get("variant", "").endswith("EN2"):
-            fname = f"IFS_Trend_Risk_Report_{month}_{year}_EN.pdf"
-        
+        report_id = f"ifs-{year}-{month[:3].lower()}"
+
         pdf_path = PDF_DIR / fname
         print(f"\n[{i}/{len(reports)}] {year}-{month:07s} ({report.get('variant', 'official')})")
-        
+
         # Download
         if not download_pdf(url, pdf_path, session):
-            print(f"  SKIP: Could not download")
+            if report_id in previous:
+                print(f"  Download failed - reusing previous extraction")
+                extractions.append(previous[report_id])
+                reused.append(report_id)
+            else:
+                print(f"  FAILED: could not download and no previous extraction")
             continue
         
         print(f"  Downloaded: {pdf_path.name} ({pdf_path.stat().st_size // 1024}KB)")
@@ -398,7 +413,9 @@ def main():
         # Extract
         result = extract_from_pdf(pdf_path)
         result["source_url"] = url
-        result["report_id"] = f"ifs-{year}-{month[:3].lower()}"
+        result["report_id"] = report_id
+        result["publication_month"] = month
+        result["publication_year"] = year
         
         recalls_count = len(result["recalls"])
         fraud_count = len(result["food_fraud"])
@@ -415,6 +432,7 @@ def main():
     output = {
         "generated_at": datetime.now().isoformat(),
         "total_reports": len(extractions),
+        "reused_previous": reused,
         "extractions": extractions,
     }
     

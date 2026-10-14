@@ -45,7 +45,26 @@ python scripts/build_ffn_dataset.py     # → data/dataset_ffn.json + dataset_cr
 Copy-Item data\dataset.json, data\dataset_ffn.json, data\dataset_cross.json app\public\
 ```
 
-`python scripts/update_monthly.py` rejoue toute la chaîne. La GitHub Action est planifiée **le 28 de chaque mois** : l'IFS et la DG SANTE publient le rapport du mois M entre le ~20 et le ~27 du mois M+1, donc le run du 28 récupère le nouveau mois dès sa sortie. Chaque run qui modifie les datasets déclenche automatiquement le re-déploiement Pages.
+`python scripts/update_monthly.py` rejoue toute la chaîne.
+
+### 🔄 Mise à jour automatique
+
+La GitHub Action *Monthly Food Risk Intelligence Update* tourne **chaque lundi** (l'IFS publie le rapport du mois M entre le ~20 et le ~27 de M+1, la DG SANTE dans le courant de M+1) :
+
+1. **Découverte IFS** (`discover_ifs_pdfs.py`) : liens saisis à la main (`data/manual_sources.json`) → mois déjà connus (inventaire **cumulatif**, un mois n'est jamais perdu) → liens trouvés sur les pages IFS → variantes de noms de fichier sur le site IFS, son CDN et les miroirs connus.
+2. **Découverte FFN** : lecture de la page officielle DG SANTE.
+3. Extraction, normalisation, contrôles qualité ; si un PDF n'est plus téléchargeable, l'extraction précédente est conservée.
+4. Commit des données **puis déploiement du site** (le déploiement est appelé explicitement : un push du bot ne déclenche pas les autres workflows).
+5. **Contrôle de fraîcheur** (`check_freshness.py`) : si le dernier rapport attendu manque, une issue *« Rapport mensuel manquant — action requise »* est ouverte (et fermée automatiquement une fois les données à jour).
+
+### ✋ Ajouter un rapport IFS à la main (2 clics)
+
+L'IFS diffuse le Trend Risk Report par newsletter ; son URL publique ne suit pas toujours le même nom de fichier. Quand une issue « rapport manquant » s'ouvre :
+
+1. **Actions** → *Monthly Food Risk Intelligence Update* → **Run workflow**
+2. `ifs_month` = `2026-08`, `ifs_url` = lien du PDF → **Run workflow**
+
+En local : `python scripts/discover_ifs_pdfs.py --register 2026-08 https://…/report.pdf` puis `python scripts/update_monthly.py`.
 
 ## 📁 Structure
 
@@ -55,12 +74,12 @@ app/                  Frontend React + Vite + TypeScript
   src/                Pages + i18n + CSS tokens (dark/light)
 scripts/              Pipeline Python (pdfplumber) — requirements.txt fourni
 data/                 Inventaires PDF + extractions brutes + datasets finaux
-.github/workflows/    MAJ mensuelle (cron 15 du mois) + Pages optionnel
+.github/workflows/    MAJ hebdo (lundi) + déploiement Pages + alerte rapport manquant
 ```
 
 ## 🗺️ Limites connues
 
-- Fenêtre croisée IFS↔FFN : **26 mois (2024-06 → 2026-07)**, 25 avec les deux sources — **2024-08 = IFS non publié** (lacune de collecte, jamais un zéro)
+- Fenêtre croisée IFS↔FFN : calculée depuis les données (à partir de 2024-06) — un mois sans rapport IFS (ex. **2024-08**) est une lacune de collecte, jamais un zéro
 - Les pays FFN-only (Vietnam, Chine, Turquie…) n'apparaissent pas sur la carte IFS (rappels) mais bien dans FFN — les fiches pays affichent les deux natures séparément
 - Les rapports IFS avant juin 2024 sont derrière login IFS Database : l'extraction complète n'est possible que depuis juin 2024
 - IFS = monde, FFN = UE cross-border uniquement (biais géographique opposé)

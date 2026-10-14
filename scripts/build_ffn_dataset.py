@@ -193,7 +193,7 @@ def build_cross():
         key = f"{r['year']}-{r['month_num']:02d}"
         ifs_map[key]=r
     ffn_map = {r["id"]: r for r in ffn["reports"]}
-    # cross window 2024-06 -> 2026-07
+    # cross window: computed from the months flagged in_cross_window
     # generate all months in that window that exist in both
     cross=[]
     for fid, fr in sorted(ffn_map.items()):
@@ -219,7 +219,7 @@ def build_cross():
     ifs_totals = [c["ifs_recalls_total"] for c in cross if c["ifs_recalls_total"] is not None]
     return {
         "generated_at": datetime.now().isoformat(),
-        "window": {"start":"2024-06","end":"2026-07","months":len(cross)},
+        "window": {"start": cross[0]["month"] if cross else None, "end": cross[-1]["month"] if cross else None, "months": len(cross)},
         "summary": {
             "months_in_window": len(cross),
             "months_with_both_sources": len([c for c in cross if c["ifs_present"]]),

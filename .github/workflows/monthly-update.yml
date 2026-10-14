@@ -1,29 +1,86 @@
 name: Monthly Food Risk Intelligence Update
 on:
   schedule:
-    - cron: '0 8 28 * *'
+    # Every Monday 07:00 UTC — reports are published irregularly (IFS ~20-27 of M+1)
+    - cron: '0 7 * * 1'
   workflow_dispatch:
+    inputs:
+      ifs_month:
+        description: "Mois du rapport IFS à ajouter à la main (YYYY-MM), facultatif"
+        required: false
+        default: ""
+      ifs_url:
+        description: "Lien du PDF IFS Trend Risk Report (newsletter / site IFS), facultatif"
+        required: false
+        default: ""
+
+concurrency:
+  group: data-update
+  cancel-in-progress: false
 
 jobs:
   update:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      issues: write
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Install deps
-        run: |
-          pip install requests pdfplumber
-          pip install -q -r scripts/requirements.txt 2>/dev/null || true
-      - name: Run monthly update
+        run: pip install -r scripts/requirements.txt
+
+      - name: Register manual IFS source
+        if: ${{ inputs.ifs_month != '' && inputs.ifs_url != '' }}
+        env:
+          IFS_MONTH: ${{ inputs.ifs_month }}
+          IFS_URL: ${{ inputs.ifs_url }}
+        run: python scripts/discover_ifs_pdfs.py --register "$IFS_MONTH" "$IFS_URL" --register-only
+
+      - name: Run update pipeline
         run: python scripts/update_monthly.py
+
       - name: Commit datasets if changed
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/inventory.json data/inventory_ffn.json data/raw_extractions.json data/raw_ffn_extractions.json data/dataset.json data/dataset_ffn.json data/dataset_cross.json app/public/dataset.json app/public/dataset_ffn.json app/public/dataset_cross.json
-          git diff --staged --quiet || git commit -m "chore(data): monthly update $(date -u +%Y-%m-%d)"
-          git push || echo "nothing to push"
+          git add data app/public
+          if git diff --staged --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "chore(data): update $(date -u +%Y-%m-%d)"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open or close "report missing" issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="Rapport mensuel manquant — action requise"
+          EXISTING=$(gh issue list --state open --search "\"$TITLE\" in:title" --json number --jq '.[0].number')
+          if python scripts/check_freshness.py --markdown freshness.md; then
+            if [ -n "$EXISTING" ]; then gh issue close "$EXISTING" --comment "Données à jour, fermeture automatique."; fi
+          else
+            if [ -n "$EXISTING" ]; then
+              gh issue edit "$EXISTING" --body-file freshness.md
+            else
+              gh issue create --title "$TITLE" --body-file freshness.md
+            fi
+          fi
+
+  # Pushes made with GITHUB_TOKEN do not trigger other workflows,
+  # so the site is deployed explicitly from here.
+  deploy:
+    needs: update
+    if: ${{ needs.update.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy-pages.yml
