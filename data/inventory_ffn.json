@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_candidates": 32,
-    "accessible": 32,
+    "total_candidates": 33,
+    "accessible": 33,
     "not_found": 0,
     "years_covered": [
       2024,
@@ -40,7 +40,8 @@
       "2026-05",
       "2026-06",
       "2026-07",
-      "2026-08"
+      "2026-08",
+      "2026-09"
     ],
     "months_in_cross_window": [
       "2024-06",
@@ -69,9 +70,10 @@
       "2026-05",
       "2026-06",
       "2026-07",
-      "2026-08"
+      "2026-08",
+      "2026-09"
     ],
-    "generated_at": "2026-10-19T14:14:58.393601",
+    "generated_at": "2026-10-26T13:47:16.958445",
     "source_page": "https://food.ec.europa.eu/food-safety/acn/ffn-monthly_en"
   },
   "reports": [
@@ -89,7 +91,7 @@
       "content_type": "application/pdf",
       "in_cross_window": false,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393623"
+      "discovered_at": "2026-10-26T13:47:16.958469"
     },
     {
       "year": 2024,
@@ -105,7 +107,7 @@
       "content_type": "application/pdf",
       "in_cross_window": false,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393627"
+      "discovered_at": "2026-10-26T13:47:16.958473"
     },
     {
       "year": 2024,
@@ -121,7 +123,7 @@
       "content_type": "application/pdf",
       "in_cross_window": false,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393629"
+      "discovered_at": "2026-10-26T13:47:16.958476"
     },
     {
       "year": 2024,
@@ -137,7 +139,7 @@
       "content_type": "application/pdf",
       "in_cross_window": false,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393631"
+      "discovered_at": "2026-10-26T13:47:16.958478"
     },
     {
       "year": 2024,
@@ -153,7 +155,7 @@
       "content_type": "application/pdf",
       "in_cross_window": false,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393633"
+      "discovered_at": "2026-10-26T13:47:16.958481"
     },
     {
       "year": 2024,
@@ -169,7 +171,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393634"
+      "discovered_at": "2026-10-26T13:47:16.958483"
     },
     {
       "year": 2024,
@@ -185,7 +187,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393636"
+      "discovered_at": "2026-10-26T13:47:16.958486"
     },
     {
       "year": 2024,
@@ -201,7 +203,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393638"
+      "discovered_at": "2026-10-26T13:47:16.958491"
     },
     {
       "year": 2024,
@@ -217,7 +219,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393654"
+      "discovered_at": "2026-10-26T13:47:16.958493"
     },
     {
       "year": 2024,
@@ -233,7 +235,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393656"
+      "discovered_at": "2026-10-26T13:47:16.958495"
     },
     {
       "year": 2024,
@@ -249,7 +251,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393657"
+      "discovered_at": "2026-10-26T13:47:16.958497"
     },
     {
       "year": 2024,
@@ -265,7 +267,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393659"
+      "discovered_at": "2026-10-26T13:47:16.958499"
     },
     {
       "year": 2025,
@@ -281,7 +283,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393661"
+      "discovered_at": "2026-10-26T13:47:16.958501"
     },
     {
       "year": 2025,
@@ -297,7 +299,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393662"
+      "discovered_at": "2026-10-26T13:47:16.958504"
     },
     {
       "year": 2025,
@@ -313,7 +315,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393664"
+      "discovered_at": "2026-10-26T13:47:16.958506"
     },
     {
       "year": 2025,
@@ -329,7 +331,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393665"
+      "discovered_at": "2026-10-26T13:47:16.958508"
     },
     {
       "year": 2025,
@@ -345,7 +347,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393667"
+      "discovered_at": "2026-10-26T13:47:16.958510"
     },
     {
       "year": 2025,
@@ -361,7 +363,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393668"
+      "discovered_at": "2026-10-26T13:47:16.958515"
     },
     {
       "year": 2025,
@@ -377,7 +379,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393673"
+      "discovered_at": "2026-10-26T13:47:16.958518"
     },
     {
       "year": 2025,
@@ -393,7 +395,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393675"
+      "discovered_at": "2026-10-26T13:47:16.958520"
     },
     {
       "year": 2025,
@@ -409,7 +411,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393677"
+      "discovered_at": "2026-10-26T13:47:16.958522"
     },
     {
       "year": 2025,
@@ -425,7 +427,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393678"
+      "discovered_at": "2026-10-26T13:47:16.958524"
     },
     {
       "year": 2025,
@@ -441,7 +443,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393680"
+      "discovered_at": "2026-10-26T13:47:16.958526"
     },
     {
       "year": 2025,
@@ -457,7 +459,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393681"
+      "discovered_at": "2026-10-26T13:47:16.958528"
     },
     {
       "year": 2026,
@@ -473,7 +475,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393682"
+      "discovered_at": "2026-10-26T13:47:16.958530"
     },
     {
       "year": 2026,
@@ -489,7 +491,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393686"
+      "discovered_at": "2026-10-26T13:47:16.958532"
     },
     {
       "year": 2026,
@@ -505,7 +507,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393688"
+      "discovered_at": "2026-10-26T13:47:16.958534"
     },
     {
       "year": 2026,
@@ -521,7 +523,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393689"
+      "discovered_at": "2026-10-26T13:47:16.958538"
     },
     {
       "year": 2026,
@@ -537,7 +539,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393712"
+      "discovered_at": "2026-10-26T13:47:16.958540"
     },
     {
       "year": 2026,
@@ -553,7 +555,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393714"
+      "discovered_at": "2026-10-26T13:47:16.958542"
     },
     {
       "year": 2026,
@@ -569,7 +571,7 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393715"
+      "discovered_at": "2026-10-26T13:47:16.958544"
     },
     {
       "year": 2026,
@@ -585,7 +587,23 @@
       "content_type": "application/pdf",
       "in_cross_window": true,
       "status": "verified",
-      "discovered_at": "2026-10-19T14:14:58.393717"
+      "discovered_at": "2026-10-26T13:47:16.958546"
+    },
+    {
+      "year": 2026,
+      "month": "September",
+      "month_num": 9,
+      "filename": "ff_ffn_monthly-report_202609.pdf",
+      "uuid": "12810acc-99a7-4cb1-b63b-6ba75d01fb52",
+      "url": "https://food.ec.europa.eu/document/download/12810acc-99a7-4cb1-b63b-6ba75d01fb52_en?filename=ff_ffn_monthly-report_202609.pdf",
+      "clean_url": "https://food.ec.europa.eu/document/download/12810acc-99a7-4cb1-b63b-6ba75d01fb52_en",
+      "final_url": "https://food.ec.europa.eu/document/download/12810acc-99a7-4cb1-b63b-6ba75d01fb52_en?filename=ff_ffn_monthly-report_202609.pdf",
+      "variant": "official_ffn",
+      "content_length_bytes": 0,
+      "content_type": "application/pdf",
+      "in_cross_window": true,
+      "status": "verified",
+      "discovered_at": "2026-10-26T13:47:16.958548"
     }
   ],
   "all_links": [
@@ -601,7 +619,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:42.672581",
+      "checked_at": "2026-10-26T13:47:02.149753",
       "final_url": "https://food.ec.europa.eu/document/download/70e6460b-0a7c-4200-9757-77839407d903_en?filename=ff_ffn_monthly-report_202401.pdf",
       "in_cross_window": false,
       "variant": "official_ffn"
@@ -618,7 +636,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:43.319627",
+      "checked_at": "2026-10-26T13:47:02.746235",
       "final_url": "https://food.ec.europa.eu/document/download/3b295c17-3760-44a7-97f8-aa53ea5dab7f_en?filename=ff_ffn_monthly-report_202402.pdf",
       "in_cross_window": false,
       "variant": "official_ffn"
@@ -635,7 +653,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:43.771597",
+      "checked_at": "2026-10-26T13:47:03.328297",
       "final_url": "https://food.ec.europa.eu/document/download/0065adf6-9a58-452a-beec-09aaa95d9e8a_en?filename=ff_ffn_monthly-report_202403.pdf",
       "in_cross_window": false,
       "variant": "official_ffn"
@@ -652,7 +670,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:44.236185",
+      "checked_at": "2026-10-26T13:47:03.795322",
       "final_url": "https://food.ec.europa.eu/document/download/d47cf966-5886-4e25-bc65-3f989fba2b60_en?filename=ff_ffn_monthly-report_202404.pdf",
       "in_cross_window": false,
       "variant": "official_ffn"
@@ -669,7 +687,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:44.721987",
+      "checked_at": "2026-10-26T13:47:04.214495",
       "final_url": "https://food.ec.europa.eu/document/download/1e5bac5c-e9d1-438a-9e85-35ad711d0164_en?filename=ff_ffn_monthly-report_202405.pdf",
       "in_cross_window": false,
       "variant": "official_ffn"
@@ -686,7 +704,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:45.185886",
+      "checked_at": "2026-10-26T13:47:04.653497",
       "final_url": "https://food.ec.europa.eu/document/download/1572521d-f24e-46da-9ca0-4d656c9070e8_en?filename=ff_ffn_monthly-report_202406.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -703,7 +721,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:45.679670",
+      "checked_at": "2026-10-26T13:47:05.050609",
       "final_url": "https://food.ec.europa.eu/document/download/a0fa0333-12db-448f-b365-66ebc8fc7daa_en?filename=ff_ffn_monthly-report_202407.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -720,7 +738,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:46.149191",
+      "checked_at": "2026-10-26T13:47:05.629520",
       "final_url": "https://food.ec.europa.eu/document/download/6b5b3c4a-6f4f-481c-94ac-d028f46793a5_en?filename=ff_ffn_monthly-report_202408.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -737,7 +755,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:46.601397",
+      "checked_at": "2026-10-26T13:47:06.037215",
       "final_url": "https://food.ec.europa.eu/document/download/f3cdd149-9f5e-4490-8e75-ac3e98a9ffa7_en?filename=ff_ffn_monthly-report_202409.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -754,7 +772,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:47.078238",
+      "checked_at": "2026-10-26T13:47:06.505020",
       "final_url": "https://food.ec.europa.eu/document/download/e29455d7-6d59-4560-bdc7-c9513fc1cbb7_en?filename=ff_ffn_monthly-report_202410.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -771,7 +789,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:47.546506",
+      "checked_at": "2026-10-26T13:47:06.933542",
       "final_url": "https://food.ec.europa.eu/document/download/c015876a-6467-40d4-9967-e46a75507758_en?filename=ff_ffn_monthly-report_202411.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -788,7 +806,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:48.005386",
+      "checked_at": "2026-10-26T13:47:07.330987",
       "final_url": "https://food.ec.europa.eu/document/download/81d0f36d-35ad-4c0c-acd6-b887b8df5565_en?filename=ff_ffn_monthly-report_202412.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -805,7 +823,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:48.659456",
+      "checked_at": "2026-10-26T13:47:07.729962",
       "final_url": "https://food.ec.europa.eu/document/download/3e4c8ebf-258a-4952-bcc2-7fd7f21f8d42_en?filename=ff_ffn_monthly-report_202501.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -822,7 +840,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:49.125096",
+      "checked_at": "2026-10-26T13:47:08.140533",
       "final_url": "https://food.ec.europa.eu/document/download/d5cfa85c-7d25-4408-99c5-86bea1d3d1e3_en?filename=ff_ffn_monthly-report_202502.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -839,7 +857,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:49.802197",
+      "checked_at": "2026-10-26T13:47:08.543230",
       "final_url": "https://food.ec.europa.eu/document/download/c5153710-6c3e-4f81-8dc5-2587d81d8bc8_en?filename=ff_ffn_monthly-report_202503.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -856,7 +874,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:50.303852",
+      "checked_at": "2026-10-26T13:47:08.946812",
       "final_url": "https://food.ec.europa.eu/document/download/ca3f5482-e1e6-4d26-9d97-87f9a5a3b363_en?filename=ff_ffn_monthly-report_202504.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -873,7 +891,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:50.790302",
+      "checked_at": "2026-10-26T13:47:09.402252",
       "final_url": "https://food.ec.europa.eu/document/download/8433119d-ea2e-48b4-9491-ebd22217751b_en?filename=ff_ffn_monthly-report_202505.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -890,7 +908,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:51.264288",
+      "checked_at": "2026-10-26T13:47:09.856626",
       "final_url": "https://food.ec.europa.eu/document/download/966e1030-05d0-4398-9aa3-48b8282e4107_en?filename=ff_ffn_monthly-report_202506.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -907,7 +925,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:51.730172",
+      "checked_at": "2026-10-26T13:47:10.257963",
       "final_url": "https://food.ec.europa.eu/document/download/75126209-3845-4fc1-8fdb-1b4f5818e6ce_en?filename=ff_ffn_monthly-report_202507.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -924,7 +942,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:52.224310",
+      "checked_at": "2026-10-26T13:47:10.727722",
       "final_url": "https://food.ec.europa.eu/document/download/bf32a6b1-fa06-415c-a750-97d4468902ba_en?filename=ff_ffn_monthly-report_202508.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -941,7 +959,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:52.718125",
+      "checked_at": "2026-10-26T13:47:11.138513",
       "final_url": "https://food.ec.europa.eu/document/download/c5a1d061-cb82-4f6e-ae3f-2170dd5abb35_en?filename=ff_ffn_monthly-report_202509.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -958,7 +976,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:53.180424",
+      "checked_at": "2026-10-26T13:47:11.544024",
       "final_url": "https://food.ec.europa.eu/document/download/69a5d774-c044-42e5-9649-933ab13be143_en?filename=ff_ffn_monthly-report_202510.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -975,7 +993,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:53.663033",
+      "checked_at": "2026-10-26T13:47:11.962822",
       "final_url": "https://food.ec.europa.eu/document/download/c243e24b-ef17-4e7a-92ad-c44744a4c6e1_en?filename=ff_ffn_monthly-report_202511.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -992,7 +1010,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:54.403378",
+      "checked_at": "2026-10-26T13:47:12.396850",
       "final_url": "https://food.ec.europa.eu/document/download/ddf861ad-16da-42c7-b378-2af73c11899d_en?filename=ff_ffn_monthly-report_202512.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -1009,7 +1027,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:54.878008",
+      "checked_at": "2026-10-26T13:47:12.800662",
       "final_url": "https://food.ec.europa.eu/document/download/8df50c8a-4d51-4107-a594-4f37bb08feae_en?filename=ff_ffn_monthly-report_202601.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -1026,7 +1044,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:55.376582",
+      "checked_at": "2026-10-26T13:47:13.234284",
       "final_url": "https://food.ec.europa.eu/document/download/fc02d6f4-2ae6-495c-bb7d-06ef6e0cbd2f_en?filename=ff_ffn_monthly-report_202602.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -1043,7 +1061,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:55.829307",
+      "checked_at": "2026-10-26T13:47:13.848029",
       "final_url": "https://food.ec.europa.eu/document/download/39c8523f-e57b-4f39-a33e-0711d21886a2_en?filename=ff_ffn_monthly-report_202603.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -1060,7 +1078,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:56.302312",
+      "checked_at": "2026-10-26T13:47:14.468231",
       "final_url": "https://food.ec.europa.eu/document/download/3f01d034-4f91-46ff-bdc1-4d2428d6f46b_en?filename=ff_ffn_monthly-report_202604.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -1077,7 +1095,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:56.757880",
+      "checked_at": "2026-10-26T13:47:14.938289",
       "final_url": "https://food.ec.europa.eu/document/download/b2392656-4797-4ce0-a000-cc5dd1c16f83_en?filename=ff_ffn_monthly-report_202605.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -1094,7 +1112,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:57.252862",
+      "checked_at": "2026-10-26T13:47:15.564923",
       "final_url": "https://food.ec.europa.eu/document/download/38a6addd-e2de-4c4a-ab8e-d1aa52245247_en?filename=ff_ffn_monthly-report_202606.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -1111,7 +1129,7 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:57.729671",
+      "checked_at": "2026-10-26T13:47:16.009980",
       "final_url": "https://food.ec.europa.eu/document/download/68fa7bc0-ea86-4c4b-9bf9-972bc7d9bb32_en?filename=ff_ffn_monthly-report_202607.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
@@ -1128,8 +1146,25 @@
       "content_type": "application/pdf",
       "content_length_bytes": 0,
       "accessible": true,
-      "checked_at": "2026-10-19T14:14:58.193328",
+      "checked_at": "2026-10-26T13:47:16.452247",
       "final_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf",
+      "in_cross_window": true,
+      "variant": "official_ffn"
+    },
+    {
+      "year": 2026,
+      "month_num": 9,
+      "month": "September",
+      "uuid": "12810acc-99a7-4cb1-b63b-6ba75d01fb52",
+      "url": "https://food.ec.europa.eu/document/download/12810acc-99a7-4cb1-b63b-6ba75d01fb52_en?filename=ff_ffn_monthly-report_202609.pdf",
+      "clean_url": "https://food.ec.europa.eu/document/download/12810acc-99a7-4cb1-b63b-6ba75d01fb52_en",
+      "filename": "ff_ffn_monthly-report_202609.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "content_length_bytes": 0,
+      "accessible": true,
+      "checked_at": "2026-10-26T13:47:16.758160",
+      "final_url": "https://food.ec.europa.eu/document/download/12810acc-99a7-4cb1-b63b-6ba75d01fb52_en?filename=ff_ffn_monthly-report_202609.pdf",
       "in_cross_window": true,
       "variant": "official_ffn"
     }

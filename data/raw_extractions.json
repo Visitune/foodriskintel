@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-19T14:16:33.814645",
-  "total_reports": 28,
+  "generated_at": "2026-10-26T13:48:57.374969",
+  "total_reports": 29,
   "reused_previous": [],
   "extractions": [
     {
@@ -3722,6 +3722,55 @@
       "food_fraud_status": "published",
       "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_August_2026-EN.pdf",
       "report_id": "ifs-2026-aug"
+    },
+    {
+      "file": "IFS_Trend_Risk_Report_September_2026.pdf",
+      "publication_month": "September",
+      "publication_year": 2026,
+      "data_period": null,
+      "recalls": {
+        "Denmark": 4,
+        "Türkiye": 133,
+        "South Korea": 16,
+        "Greece": 1,
+        "Romania": 1,
+        "Argentina": 0,
+        "Israel": 7,
+        "Czech Rep.": 29,
+        "Singapore": 0,
+        "Luxembourg": 22,
+        "Italy": 33,
+        "New Zealand": 3,
+        "Iceland": 3,
+        "Brazil": 12,
+        "Belgium": 36,
+        "China": 1,
+        "Japan": 46,
+        "Australia": 6,
+        "Finnland": 3,
+        "Poland": 5,
+        "Scotland": 0,
+        "Philippines": 160,
+        "Germany": 12,
+        "Hungary": 2,
+        "USA (FDA)": 2,
+        "Netherlands": 11,
+        "England": 8,
+        "Spain": 0,
+        "Austria": 3,
+        "Viet Nam": null,
+        "France": 197,
+        "Slovakia": 0,
+        "Croatia": 6,
+        "USA (USDA)": 5,
+        "Ireland": 8,
+        "Canada": 26
+      },
+      "food_fraud": [],
+      "errors": [],
+      "food_fraud_status": "not_published",
+      "source_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_September_2026_EN.pdf",
+      "report_id": "ifs-2026-sep"
     }
   ]
 }

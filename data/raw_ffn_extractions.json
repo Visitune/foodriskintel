@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-19T14:18:38.638650",
-  "total_reports": 32,
+  "generated_at": "2026-10-26T13:51:09.463378",
+  "total_reports": 33,
   "extractions": [
     {
       "file": "ff_ffn_monthly-report_202401.pdf",
@@ -56811,6 +56811,1314 @@
       "filename": "ff_ffn_monthly-report_202608.pdf",
       "uuid": "8aabb837-85fa-412e-a4aa-acbcf475e6bc",
       "source_url": "https://food.ec.europa.eu/document/download/8aabb837-85fa-412e-a4aa-acbcf475e6bc_en?filename=ff_ffn_monthly-report_202608.pdf",
+      "in_cross_window": true
+    },
+    {
+      "file": "ff_ffn_monthly-report_202609.pdf",
+      "figures": {
+        "by_product_category": {
+          "Food contact materials": 1,
+          "Feed materials": 1,
+          "Live animals": 1,
+          "Soups, broths, sauces and condiments": 1,
+          "Cephalopods and products thereof": 1,
+          "Ices and desserts": 1,
+          "Wine": 2,
+          "Food additives and flavourings": 2,
+          "Alcoholic beverages": 3,
+          "Nuts, nut products and seeds": 3,
+          "Eggs and egg products": 3,
+          "Prepared dishes and snacks": 3,
+          "Poultry meat and poultry meat products": 3,
+          "Crustaceans and products thereof": 4,
+          "Herbs and spices": 4,
+          "Non-alcoholic beverages": 5,
+          "Milk and milk products": 5,
+          "Other food product / mixed": 5,
+          "Fruits and vegetables": 6,
+          "Honey and royal jelly": 6,
+          "Cocoa and cocoa preparations, coffee and tea": 7,
+          "Confectionery": 8,
+          "Cereals and bakery products": 8,
+          "Fats and oils": 9,
+          "Meat and meat products (other than poultry)": 10,
+          "Fish and fish products": 14,
+          "Dietetic foods, food supplements and fortified foods": 48
+        },
+        "by_fraud_category": {
+          "Record tampering": 41,
+          "Product tampering": 48,
+          "Other non-compliances (implicit claim violations)": 75
+        },
+        "by_detection_source": {
+          "Whistleblower information": 9,
+          "Monitoring of media": 14,
+          "Company's own check": 14,
+          "Consumer complaint": 20,
+          "Border control": 25,
+          "Market control": 82
+        }
+      },
+      "cases": [
+        {
+          "classification": "Additives not compliant with EU MLsi",
+          "product_category": "Crustaceans and products thereof",
+          "commodity": "shrimp tails (Litopenaeus vannamei) (frozen)",
+          "issue": "sulphites (E 200 - 228) (187 mg/kg)*",
+          "origin": "Ecuador",
+          "notified_by": "Estonia"
+        },
+        {
+          "classification": "Additives not compliant with EU MLsi",
+          "product_category": "Crustaceans and products thereof",
+          "commodity": "shrimps",
+          "issue": "sulphur dioxide (E 220) (167 mg/kg)*",
+          "origin": "Spain",
+          "notified_by": "Portugal"
+        },
+        {
+          "classification": "Additives not compliant with EU MLsi",
+          "product_category": "Non-alcoholic beverages",
+          "commodity": "soft and energy drinks",
+          "issue": "sodium benzoate (E 211) (360; 440 mg/l)",
+          "origin": "United States",
+          "notified_by": "Finland"
+        },
+        {
+          "classification": "Additives not compliant with EU MLsi",
+          "product_category": "Non-alcoholic beverages",
+          "commodity": "Poultry meat and",
+          "issue": "turkey meat erythorbic acid (E 315) (692 mg/kg), sodium",
+          "origin": "Poland",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Additives not compliant with EU MLsi",
+          "product_category": "Non-alcoholic beverages",
+          "commodity": "poultry meat products",
+          "issue": "",
+          "origin": "(sliced, chilled)",
+          "notified_by": "erythorbate (E 316) (702 mg/kg)"
+        },
+        {
+          "classification": "Adulteration (ingredient dilution)",
+          "product_category": "Fats and oils",
+          "commodity": "olive oil",
+          "issue": "other vegetable oil(s)",
+          "origin": "Belgium",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Adulteration (ingredient dilution)",
+          "product_category": "Fats and oils",
+          "commodity": "olive oil",
+          "issue": "sunflower oil",
+          "origin": "Greece",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Adulteration (ingredient dilution)",
+          "product_category": "Honey and royal jelly",
+          "commodity": "honey",
+          "issue": "foreign alpha-amylase (Aspergillus oryzae)",
+          "origin": "Spain",
+          "notified_by": "European Commission"
+        },
+        {
+          "classification": "Adulteration (ingredient dilution)",
+          "product_category": "Honey and royal jelly",
+          "commodity": "honey",
+          "issue": "foreign alpha-amylase (Aspergillus oryzae)",
+          "origin": "China,",
+          "notified_by": "European"
+        },
+        {
+          "classification": "Adulteration (ingredient dilution)",
+          "product_category": "Honey and royal jelly",
+          "commodity": "honey",
+          "issue": "foreign alpha-amylases (Aspergillus oryzae)",
+          "origin": "Romania",
+          "notified_by": "Czechia"
+        },
+        {
+          "classification": "Adulteration (ingredient dilution)",
+          "product_category": "Honey and royal jelly",
+          "commodity": "honey",
+          "issue": "foreign alpha-amylases (Bacillus",
+          "origin": "China",
+          "notified_by": "European"
+        },
+        {
+          "classification": "Adulteration (ingredient dilution)",
+          "product_category": "Honey and royal jelly",
+          "commodity": "honey (organic, non-organic)",
+          "issue": "foreign alpha-amylases (Bacillus amyloliquefaciens, Aspergillus oryzae)",
+          "origin": "unknown origin",
+          "notified_by": "European Commission"
+        },
+        {
+          "classification": "Adulteration (ingredient substitution)",
+          "product_category": "Confectionery",
+          "commodity": "brownies",
+          "issue": "misdeclared protein content (3.31 g/100 g",
+          "origin": "Spain",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Adulteration (ingredient substitution)",
+          "product_category": "Crustaceans and products thereof",
+          "commodity": "shrimps (Litopenaeus vannamei) (frozen in glaze) (organic)",
+          "issue": "water addition (21.9%) (W/P ratio: 5.7) (undeclared)",
+          "origin": "Netherlands",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Adulteration (ingredient substitution)",
+          "product_category": "Fish and fish products",
+          "commodity": "pangasius fillets",
+          "issue": "water addition (W/P ratio: 9.7)",
+          "origin": "Netherlands",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Adulteration (ingredient substitution)",
+          "product_category": "Meat and meat products (other than poultry)",
+          "commodity": "beef (canned)",
+          "issue": "water addition (W/P ratio: 6.5)",
+          "origin": "Austria",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Adulteration (ingredient substitution)",
+          "product_category": "Meat and meat products (other than poultry)",
+          "commodity": "mortadella",
+          "issue": "mechanically separated meat (MSM)",
+          "origin": "Italy",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Adulteration (ingredient substitution)",
+          "product_category": "Meat and meat products (other than poultry)",
+          "commodity": "pork meat (canned)",
+          "issue": "misdeclared meat content (78.6% instead of 89%)",
+          "origin": "Poland",
+          "notified_by": "Czechia"
+        },
+        {
+          "classification": "Adulteration (ingredient substitution)",
+          "product_category": "Meat and meat products (other than poultry)",
+          "commodity": "Other food product /",
+          "issue": "syrup claim \"natural vanilla flavour\", vanillin",
+          "origin": "Austria",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Adulteration (species substitution)",
+          "product_category": "Poultry meat and poultry meat products",
+          "commodity": "kebab meat (chicken and turkey)",
+          "issue": "absence of turkey (case 1), presence of bovine DNA (case 2)",
+          "origin": "Poland",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Adulteration (species substitution)",
+          "product_category": "Poultry meat and poultry meat products",
+          "commodity": "Prepared dishes and",
+          "issue": "food preparation chicken, pork (undeclared), absence of beef",
+          "origin": "Greece",
+          "notified_by": "Cyprus"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Alcoholic beverages",
+          "commodity": "beer",
+          "issue": "phosphoric acid (E 338), calcium phosphate",
+          "origin": "South Korea",
+          "notified_by": "Portugal"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Cereals and bakery products",
+          "commodity": "protein-enriched cereal-based food",
+          "issue": "titanium dioxide (E 171) (e-marketed)*",
+          "origin": "Poland",
+          "notified_by": "Hungary"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Cereals and bakery products",
+          "commodity": "Cocoa and cocoa",
+          "issue": "tea cetrimonium chloride (0.066 mg/kg)*",
+          "origin": "China",
+          "notified_by": "Malta"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Cereals and bakery products",
+          "commodity": "preparations, coffee",
+          "issue": "tea cetrimonium chloride (0.086 mg/kg)*",
+          "origin": "China",
+          "notified_by": "Malta"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Cereals and bakery products",
+          "commodity": "and tea",
+          "issue": "tea cetrimonium chloride (0.35 mg/kg)*",
+          "origin": "China",
+          "notified_by": "Malta"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Confectionery",
+          "commodity": "halva",
+          "issue": "erythrosine (E 127)",
+          "origin": "Syria",
+          "notified_by": "Sweden"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Confectionery",
+          "commodity": "sweets",
+          "issue": "titanium dioxide (E 171)*",
+          "origin": "China",
+          "notified_by": "Ireland"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Crustaceans and products thereof",
+          "commodity": "shrimps (Pleoticus muelleri) (frozen)",
+          "issue": "sodium carbonates (E 500) (2654 mg/kg), sodium citrate (E 331) (3261 mg/kg) (undeclared)",
+          "origin": "Spain",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Crustaceans and products thereof",
+          "commodity": "Dietetic foods, food",
+          "issue": "food supplements chlorate (120 mg/kg)*",
+          "origin": "United States",
+          "notified_by": "Netherlands"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Crustaceans and products thereof",
+          "commodity": "supplements and",
+          "issue": "food supplements chlorate (57 mg/kg)*",
+          "origin": "United States",
+          "notified_by": "Netherlands"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Fats and oils",
+          "commodity": "palm oil",
+          "issue": "sudan 4 (79 µg/kg)*",
+          "origin": "Nigeria",
+          "notified_by": "Netherlands"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Feed materials",
+          "commodity": "fish feed",
+          "issue": "ethoxyquin (E 324)*",
+          "origin": "Denmark",
+          "notified_by": "France"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Fish and fish products",
+          "commodity": "pangasius fillets",
+          "issue": "irradiation (>5 ng/kg) (undeclared)*",
+          "origin": "Vietnam",
+          "notified_by": "Spain"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Fish and fish products",
+          "commodity": "pangasius fillets (Pangasianodon hypophthalmus) (frozen)",
+          "issue": "irradiation (>5 ng/g)*",
+          "origin": "Vietnam",
+          "notified_by": "Spain"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Fish and fish products",
+          "commodity": "pangasius fillets",
+          "issue": "irradiation (>5 ng/kg) (undeclared)*",
+          "origin": "Vietnam",
+          "notified_by": "Italy"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Fish and fish products",
+          "commodity": "pangasius fillets (Pangasianodon hypophthalmus) (frozen)",
+          "issue": "irradiation*",
+          "origin": "Vietnam",
+          "notified_by": "Spain"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Fish and fish products",
+          "commodity": "sardines (Sardina",
+          "issue": "nitrites (E 249 - E 250)",
+          "origin": "Portugal",
+          "notified_by": "Spain"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Fish and fish products",
+          "commodity": "yellowfin tuna (Thunnus albacares) (frozen)",
+          "issue": "sodium nitrite (E 250) (21 mg/kg)*",
+          "origin": "Vietnam",
+          "notified_by": "Netherlands"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Fish and fish products",
+          "commodity": "yellowfin tuna",
+          "issue": "sodium nitrite (E 250) (17 mg/kg)*",
+          "origin": "Vietnam",
+          "notified_by": "Netherlands"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Ices and desserts",
+          "commodity": "instant powder mix for dessert",
+          "issue": "allura red AC (E 129), tartrazine (E 102) (undeclared)",
+          "origin": "Syria",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Ices and desserts",
+          "commodity": "Meat and meat",
+          "issue": "beef frozen close to expiry date with extension of best before date",
+          "origin": "Italy",
+          "notified_by": "Estonia"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Non-alcoholic beverages",
+          "commodity": "soft drinks",
+          "issue": "sorbitol (E 420)",
+          "origin": "South Korea",
+          "notified_by": "Finland"
+        },
+        {
+          "classification": "Unapproved process (concealment, enhancement)",
+          "product_category": "Non-alcoholic beverages",
+          "commodity": "soft drinks",
+          "issue": "sucralose (E 955), acesulfame K (E 950)",
+          "origin": "South Korea",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Unapproved process",
+          "product_category": "Nuts, nut products and seeds",
+          "commodity": "cumin seeds",
+          "issue": "ethylene oxide (0.26 mg/kg)",
+          "origin": "India",
+          "notified_by": "Spain"
+        },
+        {
+          "classification": "Undeclared process (concealment, enhancement)",
+          "product_category": "Nuts, nut products and seeds",
+          "commodity": "Meat and meat",
+          "issue": "chorizo nitrites (E 249 - E 250) (127 mg/kg) (above ML)",
+          "origin": "Poland",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Undeclared process (concealment, enhancement)",
+          "product_category": "Prepared dishes and snacks",
+          "commodity": "snacks",
+          "issue": "tartrazine (E 102)*",
+          "origin": "Afghanistan",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "EU protected designation",
+          "product_category": "Fats and oils",
+          "commodity": "extra virgin olive",
+          "issue": "counterfeit product (e-marketed)",
+          "origin": "Denmark",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "EU protected designation",
+          "product_category": "Fats and oils",
+          "commodity": "extra virgin olive oil (PDO \"Kalamata\")",
+          "issue": "counterfeit product (e-marketed)",
+          "origin": "Romania",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "EU protected designation",
+          "product_category": "Honey and royal jelly",
+          "commodity": "honey",
+          "issue": "misleading denomination “Mel de Barroso”, sugar profile deviation",
+          "origin": "Portugal",
+          "notified_by": "France"
+        },
+        {
+          "classification": "EU protected designation",
+          "product_category": "Milk and milk products",
+          "commodity": "cheese",
+          "issue": "misleading denomination “Queso Manchego cow and goat instead of sheep milk",
+          "origin": "”, Spain",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "EU protected designation",
+          "product_category": "Milk and milk products",
+          "commodity": "Nuts, nut products and",
+          "issue": "lentils evocation of \"Lentille verte du Puy\"",
+          "origin": "Spain",
+          "notified_by": "France"
+        },
+        {
+          "classification": "EU protected designation",
+          "product_category": "Wine",
+          "commodity": "wine",
+          "issue": "misleading denomination 'Mediterranean' (e- marketed)",
+          "origin": "Spain",
+          "notified_by": "France"
+        },
+        {
+          "classification": "EU protected designation",
+          "product_category": "Wine",
+          "commodity": "Intellectual Property Rights",
+          "issue": "Alcoholic beverages whisky (blended) counterfeiting (e-marketed)",
+          "origin": "Germany,",
+          "notified_by": "Italy"
+        },
+        {
+          "classification": "EU protected designation",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "patent infringement through unauthorised commercialization",
+          "origin": "Spain, Czechia, Netherlands",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "EU protected designation",
+          "product_category": "Fats and oils",
+          "commodity": "avocado oil",
+          "issue": "fraudulent use of another operator",
+          "origin": "Ukraine",
+          "notified_by": "Greece"
+        },
+        {
+          "classification": "EU protected designation",
+          "product_category": "Milk and milk products",
+          "commodity": "casein (rennet)",
+          "issue": "traceability defects (misuse of identity and approval number), forgery of documents",
+          "origin": "Lithuania",
+          "notified_by": "Norway"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Milk and milk products",
+          "commodity": "Cocoa and cocoa",
+          "issue": "tea health claims, senna leaves (undeclared)",
+          "origin": "Netherlands",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Milk and milk products",
+          "commodity": "preparations, coffee",
+          "issue": "tea (organic) health claims (e-marketed)",
+          "origin": "Bulgaria",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "health claims",
+          "origin": "United",
+          "notified_by": "Slovakia"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "health claims",
+          "origin": "Austria",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "health claims (e-marketed)",
+          "origin": "Netherlands",
+          "notified_by": "Finland"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "health claims (e-marketed)",
+          "origin": "Estonia",
+          "notified_by": "Finland"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "health claims (e-marketed)",
+          "origin": "China",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "health claims (e-marketed)",
+          "origin": "France",
+          "notified_by": "Belgium"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "health claims (e-marketed)",
+          "origin": "Netherlands",
+          "notified_by": "Belgium"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "health claims (e-marketed)",
+          "origin": "Switzerland",
+          "notified_by": "Slovenia"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "health claims (e-marketed)",
+          "origin": "Germany",
+          "notified_by": "Switzerland"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "health claims (e-marketed)*",
+          "origin": "United Kingdom",
+          "notified_by": "Hungary"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "misleading e-marketing",
+          "origin": "Netherlands",
+          "notified_by": "Denmark"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "misleading e-marketing",
+          "origin": "Netherlands",
+          "notified_by": "Denmark"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "Organic claims",
+          "issue": "Fruits and vegetables strawberries bifenazate (0.36 mg/kg)",
+          "origin": "Austria",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Fats and oils",
+          "commodity": "avocado oil",
+          "issue": "self-evident claim \"GMO free\", traceability",
+          "origin": "Türkiye",
+          "notified_by": "Austria"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Fats and oils",
+          "commodity": "Cocoa and cocoa",
+          "issue": "coffee (organic) misleading picturing and labelling evocating Italian origin",
+          "origin": "Germany",
+          "notified_by": "Italy"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Confectionery",
+          "commodity": "sweets (CBD)",
+          "issue": "misleading picturing (cannabis leaves)",
+          "origin": "Netherlands",
+          "notified_by": "Austria"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Fats and oils",
+          "commodity": "extra virgin olive",
+          "issue": "lampante oil",
+          "origin": "Lebanon",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Fats and oils",
+          "commodity": "extra virgin olive oil",
+          "issue": "lampante olive oil",
+          "origin": "Greece",
+          "notified_by": "Switzerland"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Fish and fish products",
+          "commodity": "salmon (Salmo",
+          "issue": "absence of drained weight indication",
+          "origin": "Denmark",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Fish and fish products",
+          "commodity": "skipjack tuna (Katsuwonus pelamis) (canned)",
+          "issue": "labeled as \"solid tuna\" despite an excessive flake content (30%)",
+          "origin": "Spain",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Milk and milk products",
+          "commodity": "butter (frozen and",
+          "issue": "discrepancies between labelling and",
+          "origin": "Ireland",
+          "notified_by": "Bulgaria"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Non-alcoholic beverages",
+          "commodity": "fruit juice",
+          "issue": "misdeclared vitamin C content (4 mg/100 ml instead of 12 mg/100 ml)",
+          "origin": "Bulgaria",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Non-alcoholic beverages",
+          "commodity": "Prepared dishes and",
+          "issue": "snacks GMO corn (undeclared)",
+          "origin": "Czechia",
+          "notified_by": "Hungary"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Non-alcoholic beverages",
+          "commodity": "Quantity (net, gross, weight, volume)",
+          "issue": "Fish and fish products tilapia (Oreochromis niloticus) (glazed and deep-frozen) misdeclared net weight (weight stated as a range: 400-640 g)",
+          "origin": "China",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Nutrition and health claims",
+          "product_category": "Fruits and vegetables",
+          "commodity": "broccoli (frozen)",
+          "issue": "misdeclared net weight (glaze: 15.91%",
+          "origin": "Spain",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Others (record tampering)",
+          "product_category": "Fruits and vegetables",
+          "commodity": "Cephalopods and products thereof",
+          "issue": "squid tubes (frozen) altered and extended best before date",
+          "origin": "Germany",
+          "notified_by": "Belgium"
+        },
+        {
+          "classification": "Others (record tampering)",
+          "product_category": "Fruits and vegetables",
+          "commodity": "Meat and meat",
+          "issue": "pork meat (frozen) forgery of documents, traceability defects",
+          "origin": "unknown origin",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "FCMs additives not authorised in the EU",
+          "product_category": "Food contact materials",
+          "commodity": "kitchenware",
+          "issue": "bamboo fibres*",
+          "origin": "China",
+          "notified_by": "Greece"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Cereals and bakery products",
+          "commodity": "rice cakes",
+          "issue": "GMO (p35S, tNOS, Cry1Ab/Ac)*",
+          "origin": "China",
+          "notified_by": "Belgium"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Cereals and bakery products",
+          "commodity": "rice cakes",
+          "issue": "GMO (tNOS)*",
+          "origin": "China",
+          "notified_by": "Italy"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Cereals and bakery products",
+          "commodity": "rice sticks",
+          "issue": "GMO (p-35S, t-NOS)*",
+          "origin": "China",
+          "notified_by": "Italy"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Confectionery",
+          "commodity": "sweets",
+          "issue": "tetrahydrocannabinol (delta-9-THC: 1.2 mg/kg)*",
+          "origin": "Netherlands",
+          "notified_by": "Czechia"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Confectionery",
+          "commodity": "sweets",
+          "issue": "tetrahydrocannabinol (THC) (delta-9-THC:",
+          "origin": "United States",
+          "notified_by": "Austria"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "pancreatin (e-marketed)*",
+          "origin": "China",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "Ajuga turkestanica (500 mg/dosage), health",
+          "origin": "United States",
+          "notified_by": "Spain"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "cannabidiol (CBD) (240 mg/day)*",
+          "origin": "Netherlands",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "cannabidiol (CBD) (e-marketed)",
+          "origin": "Italy,",
+          "notified_by": "Slovenia"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "cannabidiol (CBD), cannabigerol (CBG) (e- marketed)*",
+          "origin": "Netherlands",
+          "notified_by": "Finland"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "cannabidiol (CBD), health claims (e-marketed)",
+          "origin": "Poland",
+          "notified_by": "Finland"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "coltsfoot flowers (Tussilago farfara L.), comfrey (Symphytum officinale L.), Artemisia annua (e-marketed)*",
+          "origin": "Poland",
+          "notified_by": "Hungary"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "creatine malate, tri-creatine malate (e- marketed)*",
+          "origin": "Poland,",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "Fadogia agrestis (500 mg/item), tongkat ali (Eurycoma longifolia) (600 mg/item) (e- marketed)*",
+          "origin": "Netherlands",
+          "notified_by": "Belgium"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "gamma-aminobutyric acid (GABA)",
+          "origin": "Spain",
+          "notified_by": "Spain"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "greater celandine (Chelidonium majus L.), Mucuna pruriens (e-marketed)*",
+          "origin": "United States",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "ibutamoren (MK-677, MK-0677, L-163,191,",
+          "origin": "China",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "kava kava (Piper methysticum) (e-marketed)*",
+          "origin": "China",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "kava kava (Piper methysticum)*",
+          "origin": "United",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "Mucuna pruriens (e-marketed)*",
+          "origin": "Bulgaria",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "N-acetylcysteine (NAC) (700 mg/day)*",
+          "origin": "United",
+          "notified_by": "Spain"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "pancreatin (47 mg/dose) (e-marketed)*",
+          "origin": "United States",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "pancreatin (e-marketed)*",
+          "origin": "United States",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "pancreatin (e-marketed)*",
+          "origin": "Spain",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "pancreatin, kava kava (Piper methysticum),",
+          "origin": "United",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "pilosella plant extract (Hieracium pilosella), pumpkin seed extract (Curcubita pepo L.), health claims (e-marketed)",
+          "origin": "France, Romania",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "Trametes versicolor, tongkat ali (Eurycoma",
+          "origin": "United States",
+          "notified_by": "Sweden"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "tri-creatine malate (4500 mg/dosage)*",
+          "origin": "Hungary",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "tri-creatine malate*",
+          "origin": "Hungary",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "tri-creatine malate*",
+          "origin": "Poland",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "yohimbine hydrochloride (e-marketed)*",
+          "origin": "China",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Food, ingredient not authorised in the EU",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "yohimbine hydrochloride (e-marketed)*",
+          "origin": "United States",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Food additives and flavourings",
+          "product_category": "Fruits and vegetables",
+          "commodity": "prekese (Tetrapleura tetraptera) (dried)",
+          "issue": "prekese (Tetrapleura tetraptera)*",
+          "origin": "Ghana",
+          "notified_by": "Sweden"
+        },
+        {
+          "classification": "Food additives and flavourings",
+          "product_category": "Fruits and vegetables",
+          "commodity": "Non-alcoholic",
+          "issue": "soft drinks basil seeds*",
+          "origin": "Vietnam",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Food additives and flavourings",
+          "product_category": "Other food product / mixed",
+          "commodity": "herbal mix",
+          "issue": "Angelica archangelica, Potentilla erecta, Viburnum opulus, Cornus mas, Hierochloe odorata, Carlina acaulis, Tilia spp., Rhodiola rosea, Eleutherococcus senticosus, Acorus calamus*",
+          "origin": "Ukraine",
+          "notified_by": "Latvia"
+        },
+        {
+          "classification": "Residue of pesticide(s) not approved for use in the EU",
+          "product_category": "Confectionery",
+          "commodity": "strawberries",
+          "issue": "chlorpyrifos (0.21 mg/kg)*",
+          "origin": "Bulgaria",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Residue of pesticide(s) not approved for use in the EU",
+          "product_category": "Fruits and vegetables",
+          "commodity": "bananas (organic)",
+          "issue": "chlorpyrifos (0.023 mg/kg)",
+          "origin": "Ecuador",
+          "notified_by": "Netherlands"
+        },
+        {
+          "classification": "Residue of pesticide(s) not approved for use in the EU",
+          "product_category": "Fruits and vegetables",
+          "commodity": "zucchinis",
+          "issue": "picoxystrobin (0.016; 0.025 mg/kg)*",
+          "origin": "Belgium",
+          "notified_by": "Belgium"
+        },
+        {
+          "classification": "Residue of pesticide(s) not approved for use in the EU",
+          "product_category": "Fruits and vegetables",
+          "commodity": "parsley",
+          "issue": "chlorpyrifos (0.022 mg/kg)*",
+          "origin": "Belgium",
+          "notified_by": "Belgium"
+        },
+        {
+          "classification": "Residue of pesticide(s) not approved for use in the EU",
+          "product_category": "Herbs and spices",
+          "commodity": "cardamom",
+          "issue": "anthraquinone (0.028 mg/kg)*",
+          "origin": "Belgium",
+          "notified_by": "France"
+        },
+        {
+          "classification": "Residue of pesticide(s) not approved for use in the EU",
+          "product_category": "Herbs and spices",
+          "commodity": "turmeric (ground)",
+          "issue": "chlorpyrifos (0.031 mg/kg)*",
+          "origin": "France",
+          "notified_by": "France"
+        },
+        {
+          "classification": "Residue of pesticide(s) not approved for use in the EU",
+          "product_category": "Herbs and spices",
+          "commodity": "turmeric (ground)",
+          "issue": "chlorpyrifos (0.10 mg/kg)*",
+          "origin": "Belgium",
+          "notified_by": "France"
+        },
+        {
+          "classification": "Residue of pesticide(s) not approved for use in the EU",
+          "product_category": "Nuts, nut products and seeds",
+          "commodity": "sunflower seeds",
+          "issue": "chlorpyrifos (17.6 mg/kg), sulfotep (0.022 mg/kg), biphenyl (0.044 mg/kg)*",
+          "origin": "Poland",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+          "product_category": "Eggs and egg products",
+          "commodity": "liquid eggs melange (pasteurised)",
+          "issue": "enrofloxacin (46.7 µg/kg)*",
+          "origin": "Poland",
+          "notified_by": "Czechia"
+        },
+        {
+          "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+          "product_category": "Fish and fish products",
+          "commodity": "nile tilapia fillets (Oreochromis niloticus) (frozen)",
+          "issue": "crystal violet (10.34 µg/kg)*",
+          "origin": "China",
+          "notified_by": "Slovenia"
+        },
+        {
+          "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+          "product_category": "Meat and meat products (other than poultry)",
+          "commodity": "beef (chilled)",
+          "issue": "diclofenac (29.7 µg/kg)*",
+          "origin": "Poland",
+          "notified_by": "Poland"
+        },
+        {
+          "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+          "product_category": "Meat and meat products (other than poultry)",
+          "commodity": "beef and by- products (chilled)",
+          "issue": "withdrawal period not respected (ketoprofen)*",
+          "origin": "Denmark",
+          "notified_by": "Denmark"
+        },
+        {
+          "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+          "product_category": "Meat and meat products (other than poultry)",
+          "commodity": "beef meat",
+          "issue": "withdrawal period not respected (meloxicam, cefquinome)",
+          "origin": "Austria",
+          "notified_by": "Austria"
+        },
+        {
+          "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+          "product_category": "Meat and meat products (other than poultry)",
+          "commodity": "Smuggling",
+          "issue": "Cereals and bakery products biscuits milk ingredient, illegal import",
+          "origin": "Saudi Arabia",
+          "notified_by": "Sweden"
+        },
+        {
+          "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+          "product_category": "Meat and meat products (other than poultry)",
+          "commodity": "bread mix (gluten-",
+          "issue": "milk ingredient, attempt to illegally import*",
+          "origin": "Brazil",
+          "notified_by": "Portugal"
+        },
+        {
+          "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+          "product_category": "Cocoa and cocoa preparations, coffee and tea",
+          "commodity": "tea",
+          "issue": "attempt to illegally import*",
+          "origin": "China",
+          "notified_by": "Croatia"
+        },
+        {
+          "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+          "product_category": "Confectionery",
+          "commodity": "biscuits",
+          "issue": "milk ingredient, illegal import*",
+          "origin": "China",
+          "notified_by": "Netherlands"
+        },
+        {
+          "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+          "product_category": "Milk and milk products",
+          "commodity": "ghee (cow)",
+          "issue": "illegal import",
+          "origin": "India",
+          "notified_by": "Sweden"
+        },
+        {
+          "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+          "product_category": "Milk and milk products",
+          "commodity": "mouth-feel",
+          "issue": "illegal import*",
+          "origin": "United States",
+          "notified_by": "Belgium"
+        },
+        {
+          "classification": "Residues of veterinary medicines not compliant with EU MRLsii",
+          "product_category": "Other food product / mixed",
+          "commodity": "chicken and pork products",
+          "issue": "illegal import*",
+          "origin": "Thailand",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Unknown",
+          "product_category": "Soups, broths, sauces and condiments",
+          "commodity": "honey mustard sauce",
+          "issue": "honey, illegal import*",
+          "origin": "Egypt",
+          "notified_by": "Netherlands"
+        },
+        {
+          "classification": "Unknown",
+          "product_category": "Wine",
+          "commodity": "wine (bulk)",
+          "issue": "traceability defects (missing indication of",
+          "origin": "Spain",
+          "notified_by": "Italy"
+        },
+        {
+          "classification": "Unauthorised origin (country, operators, establishments… )",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "placing on the market without registration",
+          "origin": "Netherlands",
+          "notified_by": "Belgium"
+        },
+        {
+          "classification": "Unauthorised origin (country, operators, establishments… )",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "placing on the market without registration (e-",
+          "origin": "Netherlands",
+          "notified_by": "Belgium"
+        },
+        {
+          "classification": "Unauthorised origin (country, operators, establishments… )",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "unauthorised operator, nutrition and health claims",
+          "origin": "Hungary",
+          "notified_by": "Spain"
+        },
+        {
+          "classification": "Unauthorised origin (country, operators, establishments… )",
+          "product_category": "Dietetic foods, food supplements and fortified foods",
+          "commodity": "food supplements",
+          "issue": "unauthorised operator, traceability defects,",
+          "origin": "Germany,",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Unauthorised origin (country, operators, establishments… )",
+          "product_category": "Eggs and egg products",
+          "commodity": "eggs",
+          "issue": "unauthorised operator",
+          "origin": "Germany",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Unauthorised origin (country, operators, establishments… )",
+          "product_category": "Herbs and spices",
+          "commodity": "spice mix",
+          "issue": "unauthorised operator, irradiation (undeclared)",
+          "origin": "Lebanon",
+          "notified_by": "Germany"
+        },
+        {
+          "classification": "Unauthorised origin (country, operators, establishments… )",
+          "product_category": "Other food product / mixed",
+          "commodity": "food products",
+          "issue": "unauthorised operator",
+          "origin": "France",
+          "notified_by": "Belgium"
+        },
+        {
+          "classification": "Unauthorised origin (country, operators, establishments… )",
+          "product_category": "Other food product / mixed",
+          "commodity": "Others (implicit claim violations)",
+          "issue": "Cereals and bakery noodles label vs. documentation mismatch*",
+          "origin": "China",
+          "notified_by": "Slovenia"
+        },
+        {
+          "classification": "Unauthorised origin (country, operators, establishments… )",
+          "product_category": "Fish and fish products",
+          "commodity": "Cape hake (Merluccius paradoxus) (frozen)",
+          "issue": "transport temperature (up to -11°C)*",
+          "origin": "Namibia",
+          "notified_by": "Spain"
+        },
+        {
+          "classification": "Unauthorised origin (country, operators, establishments… )",
+          "product_category": "Fish and fish products",
+          "commodity": "ling (Molva molva)",
+          "issue": "traceability defects (absence of identification",
+          "origin": "Netherlands",
+          "notified_by": "Belgium"
+        },
+        {
+          "classification": "Unauthorised origin (country, operators, establishments… )",
+          "product_category": "Meat and meat products (other than poultry)",
+          "commodity": "game meat (deer and wild boar) (frozen)",
+          "issue": "traceability defects (absence of approval number and production/freezing date), unsuitable storage conditions",
+          "origin": "Spain",
+          "notified_by": "Italy"
+        },
+        {
+          "classification": "Unauthorised origin (country, operators, establishments… )",
+          "product_category": "Meat and meat products (other than poultry)",
+          "commodity": "Poultry meat and",
+          "issue": "chicken meat transport temperature (11.7°C)",
+          "origin": "Netherlands",
+          "notified_by": "Germany"
+        }
+      ],
+      "errors": [],
+      "pages": 10,
+      "text_len": 21834,
+      "total_suspicions": 164,
+      "year": 2026,
+      "month": "September",
+      "month_num": 9,
+      "filename": "ff_ffn_monthly-report_202609.pdf",
+      "uuid": "12810acc-99a7-4cb1-b63b-6ba75d01fb52",
+      "source_url": "https://food.ec.europa.eu/document/download/12810acc-99a7-4cb1-b63b-6ba75d01fb52_en?filename=ff_ffn_monthly-report_202609.pdf",
       "in_cross_window": true
     }
   ]
