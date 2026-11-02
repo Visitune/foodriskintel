@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-10-26T13:51:10.492246",
+  "generated_at": "2026-11-02T16:48:15.074517",
   "window": {
     "start": "2024-06",
     "end": "2026-09",
-    "months": 28
+    "months": 26
   },
   "summary": {
-    "months_in_window": 28,
-    "months_with_both_sources": 27,
+    "months_in_window": 26,
+    "months_with_both_sources": 25,
     "months_ffn_only": 1,
-    "ffn_total_in_window": 5714,
-    "ifs_recalls_total_in_window": 19404
+    "ffn_total_in_window": 5368,
+    "ifs_recalls_total_in_window": 18184
   },
   "cross": [
     {
@@ -266,20 +266,6 @@
       "in_cross_window": true
     },
     {
-      "month": "2025-12",
-      "year": 2025,
-      "month_num": 12,
-      "ffn_total_suspicions": 196,
-      "ffn_cases": 190,
-      "ffn_top_product": "Dietetic foods, food supplements and fortified foods",
-      "ifs_present": true,
-      "ifs_recalls_total": 647,
-      "ifs_food_fraud_count": 14,
-      "ifs_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_December_2025_EN.pdf",
-      "ffn_url": "https://food.ec.europa.eu/document/download/ddf861ad-16da-42c7-b378-2af73c11899d_en?filename=ff_ffn_monthly-report_202512.pdf",
-      "in_cross_window": true
-    },
-    {
       "month": "2026-01",
       "year": 2026,
       "month_num": 1,
@@ -333,20 +319,6 @@
       "ifs_food_fraud_count": 12,
       "ifs_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_April_2026_EN.pdf",
       "ffn_url": "https://food.ec.europa.eu/document/download/3f01d034-4f91-46ff-bdc1-4d2428d6f46b_en?filename=ff_ffn_monthly-report_202604.pdf",
-      "in_cross_window": true
-    },
-    {
-      "month": "2026-05",
-      "year": 2026,
-      "month_num": 5,
-      "ffn_total_suspicions": 150,
-      "ffn_cases": 147,
-      "ffn_top_product": "Dietetic foods, food supplements and fortified foods",
-      "ifs_present": true,
-      "ifs_recalls_total": 573,
-      "ifs_food_fraud_count": 0,
-      "ifs_url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_May_2026_EN.pdf",
-      "ffn_url": "https://food.ec.europa.eu/document/download/b2392656-4797-4ce0-a000-cc5dd1c16f83_en?filename=ff_ffn_monthly-report_202605.pdf",
       "in_cross_window": true
     },
     {
@@ -1683,60 +1655,6 @@
       "cases_count": 192
     },
     {
-      "id": "2025-12",
-      "year": 2025,
-      "month": "December",
-      "month_num": 12,
-      "publication_date": "2025-12",
-      "filename": "ff_ffn_monthly-report_202512.pdf",
-      "source_url": "https://food.ec.europa.eu/document/download/ddf861ad-16da-42c7-b378-2af73c11899d_en?filename=ff_ffn_monthly-report_202512.pdf",
-      "uuid": "ddf861ad-16da-42c7-b378-2af73c11899d",
-      "in_cross_window": true,
-      "total_suspicions": 196,
-      "by_product_category": {
-        "Animal by-products": 1,
-        "Alcoholic beverages": 1,
-        "Cephalopods and products thereof": 1,
-        "Feed materials": 1,
-        "Wine": 1,
-        "Ices and desserts": 1,
-        "Nuts, nut products and seeds": 1,
-        "Prepared dishes and snacks": 2,
-        "Feed additives": 2,
-        "Poultry meat and poultry meat products": 3,
-        "Food contact materials": 3,
-        "Cereals and bakery products": 4,
-        "Live animals": 4,
-        "Herbs and spices": 4,
-        "Non-alcoholic beverages": 5,
-        "Honey and royal jelly": 5,
-        "Fats and oils": 6,
-        "Other food product / mixed": 6,
-        "Crustaceans and products thereof": 7,
-        "Cocoa and cocoa preparations, coffee and tea": 8,
-        "Fish and fish products": 8,
-        "Fruits and vegetables": 10,
-        "Confectionery": 12,
-        "Meat and meat products (other than poultry)": 13,
-        "Dietetic foods, food supplements and fortified foods": 87
-      },
-      "by_fraud_category": {
-        "Record tampering": 58,
-        "Product tampering": 51,
-        "Other non-compliances (implicit claim violations)": 87
-      },
-      "by_detection_source": {
-        "Official control in non-member country": 1,
-        "Whistleblower information": 3,
-        "Company's own check": 3,
-        "Monitoring of media": 7,
-        "Consumer complaint": 18,
-        "Border control": 38,
-        "Market control": 126
-      },
-      "cases_count": 190
-    },
-    {
       "id": "2026-01",
       "year": 2026,
       "month": "January",
@@ -1958,64 +1876,6 @@
         "Market control": 133
       },
       "cases_count": 177
-    },
-    {
-      "id": "2026-05",
-      "year": 2026,
-      "month": "May",
-      "month_num": 5,
-      "publication_date": "2026-05",
-      "filename": "ff_ffn_monthly-report_202605.pdf",
-      "source_url": "https://food.ec.europa.eu/document/download/b2392656-4797-4ce0-a000-cc5dd1c16f83_en?filename=ff_ffn_monthly-report_202605.pdf",
-      "uuid": "b2392656-4797-4ce0-a000-cc5dd1c16f83",
-      "in_cross_window": true,
-      "total_suspicions": 150,
-      "by_product_category": {
-        "Eggs and egg products": 1,
-        "Compound feeds": 1,
-        "Feed additives": 1,
-        "Feed premixtures": 1,
-        "Food additives and flavourings": 1,
-        "Nuts, nut products and seeds": 1,
-        "Bivalve molluscs and products thereof": 1,
-        "Gastropods": 1,
-        "Cocoa and cocoa preparations, coffee and tea": 1,
-        "Wine": 2,
-        "Ices and desserts": 2,
-        "Milk and milk products": 3,
-        "Honey and royal jelly": 3,
-        "Prepared dishes and snacks": 3,
-        "Herbs and spices": 4,
-        "Poultry meat and poultry meat products": 4,
-        "Live animals": 4,
-        "Feed materials": 4,
-        "Fats and oils": 5,
-        "Crustaceans and products thereof": 5,
-        "Soups, broths, sauces and condiments": 5,
-        "Fish and fish products": 6,
-        "Non-alcoholic beverages": 6,
-        "Cereals and bakery products": 8,
-        "Confectionery": 8,
-        "Fruits and vegetables": 9,
-        "Other food product / mixed": 15,
-        "Meat and meat products (other than poultry)": 17,
-        "Dietetic foods, food supplements and fortified foods": 28
-      },
-      "by_fraud_category": {
-        "Record tampering": 39,
-        "Product tampering": 52,
-        "Other non-compliances (implicit claim violations)": 59
-      },
-      "by_detection_source": {
-        "Monitoring of media": 1,
-        "Official control in non-member country": 1,
-        "Whistleblower information": 1,
-        "Company's own check": 15,
-        "Consumer complaint": 18,
-        "Border control": 20,
-        "Market control": 94
-      },
-      "cases_count": 147
     },
     {
       "id": "2026-06",

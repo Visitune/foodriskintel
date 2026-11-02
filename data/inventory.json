@@ -1,8 +1,8 @@
 {
   "summary": {
-    "total_candidates_checked": 164,
+    "total_candidates_checked": 288,
     "accessible": 29,
-    "not_found": 5,
+    "not_found": 6,
     "years_covered": [
       2024,
       2025,
@@ -44,11 +44,12 @@
       "2024-03",
       "2024-05",
       "2024-08",
-      "2026-10"
+      "2026-10",
+      "2026-11"
     ],
     "latest_month": "2026-09",
     "manual_sources": 0,
-    "generated_at": "2026-10-26T13:46:02.758255"
+    "generated_at": "2026-11-02T16:42:55.372433"
   },
   "reports": [
     {
