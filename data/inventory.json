@@ -1,8 +1,8 @@
 {
   "summary": {
-    "total_candidates_checked": 288,
-    "accessible": 29,
-    "not_found": 6,
+    "total_candidates_checked": 162,
+    "accessible": 30,
+    "not_found": 5,
     "years_covered": [
       2024,
       2025,
@@ -37,19 +37,19 @@
       "2026-06",
       "2026-07",
       "2026-08",
-      "2026-09"
+      "2026-09",
+      "2026-10"
     ],
     "months_missing": [
       "2024-01",
       "2024-03",
       "2024-05",
       "2024-08",
-      "2026-10",
       "2026-11"
     ],
-    "latest_month": "2026-09",
+    "latest_month": "2026-10",
     "manual_sources": 0,
-    "generated_at": "2026-11-23T18:53:24.724356"
+    "generated_at": "2026-11-26T23:09:46.893327"
   },
   "reports": [
     {
@@ -370,6 +370,17 @@
       "content_type": "application/pdf",
       "status": "verified",
       "discovered_at": "2026-10-26T13:46:02.758255"
+    },
+    {
+      "year": 2026,
+      "month": "October",
+      "month_num": 10,
+      "url": "https://www.ifs-certification.com/images/ifs_documents/IFS_Trend_Risk_Report_October_2026_EN.pdf",
+      "variant": "official",
+      "content_length_bytes": 1366637,
+      "content_type": "application/pdf",
+      "status": "verified",
+      "discovered_at": "2026-11-26T23:01:04.811899"
     }
   ]
 }
