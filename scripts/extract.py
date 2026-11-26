@@ -297,9 +297,16 @@ def extract_from_pdf(pdf_path: Path) -> dict:
         t = page.extract_text()
         if t:
             full_text += t + "\n"
-    # IFS sometimes skips the fraud table ("unable to provide you with a summary
-    # of food fraud cases"): that month is "not published", never "0 cases".
-    fraud_skipped = "unable to provide you with a summary of food fraud" in re.sub(r"\s+", " ", full_text.lower())
+    # IFS sometimes skips the fraud table (announced in the editorial): that
+    # month is "not published", never "0 cases". Known phrasings:
+    #   - "...unable to provide you with a summary of food fraud cases..."
+    #   - (since October 2026) "...the provision of our summary of food fraud
+    #     cases has been sketchy over the last few months..."
+    flat_text = re.sub(r"\s+", " ", full_text.lower())
+    fraud_skipped = (
+        "unable to provide you with a summary of food fraud" in flat_text
+        or "summary of food fraud cases has been sketchy" in flat_text
+    )
     # Optional cross-check: if text month differs, log but keep filename
     period_text = detect_period_from_text(full_text)
     if period_text and (period_text["month"] != result["publication_month"] or period_text["year"] != result["publication_year"]):

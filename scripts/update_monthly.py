@@ -7,7 +7,7 @@ Usage:
     python scripts/update_monthly.py
     python scripts/update_monthly.py --dry-run
 """
-import subprocess, sys, json, argparse
+import subprocess, sys, json, argparse, os
 from pathlib import Path
 from datetime import datetime
 
@@ -18,7 +18,11 @@ def run(cmd, dry=False):
     if dry:
         print("  (dry-run — skipped)")
         return True
-    r = subprocess.run(cmd, cwd=ROOT)
+    # Windows consoles default to cp1252 and crash (UnicodeEncodeError) when a
+    # child script prints non-ASCII (e.g. "→"); force UTF-8 stdio everywhere.
+    env = os.environ.copy()
+    env["PYTHONUTF8"] = "1"
+    r = subprocess.run(cmd, cwd=ROOT, env=env)
     return r.returncode == 0
 
 def main():
