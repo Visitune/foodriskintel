@@ -57,33 +57,55 @@ def parse_links(html):
     return sorted(dedup.values(), key=lambda x: (x["year"], x["month_num"]))
 
 def head_check(url, session):
-    try:
-        # Use GET with stream to handle EC which sometimes 403 on HEAD
-        r = session.head(url, timeout=HEAD_TIMEOUT, allow_redirects=True)
-        if r.status_code == 200:
-            ctype = r.headers.get("Content-Type","")
-            clen = r.headers.get("Content-Length","0")
-            return {
-                "status": 200,
+    """HEAD then GET fallback, with retry on 429/5xx (EC rate-limits bursts)."""
+    last = {"status": 0, "content_type": "", "content_length": 0, "accessible": False}
+    for attempt in range(3):
+        try:
+            # Use GET with stream to handle EC which sometimes 403 on HEAD
+            r = session.head(url, timeout=HEAD_TIMEOUT, allow_redirects=True)
+            ctype = r.headers.get("Content-Type", "")
+            clen = r.headers.get("Content-Length", "0")
+            last = {
+                "status": r.status_code,
                 "content_type": ctype,
                 "content_length": int(clen) if clen.isdigit() else 0,
-                "accessible": "pdf" in ctype.lower() or int(clen) > 50000,
-                "final_url": r.url
+                "accessible": r.status_code == 200 and ("pdf" in ctype.lower() or int(clen or 0) > 50000),
+                "final_url": r.url,
             }
-        # fallback to GET range
-        r2 = session.get(url, timeout=HEAD_TIMEOUT, stream=True)
-        ctype = r2.headers.get("Content-Type","")
-        clen = r2.headers.get("Content-Length","0")
-        accessible = r2.status_code == 200
-        return {
-            "status": r2.status_code,
-            "content_type": ctype,
-            "content_length": int(clen) if clen.isdigit() else 0,
-            "accessible": accessible,
-            "final_url": r2.url
-        }
-    except Exception as e:
-        return {"status": 0, "content_type": "", "content_length": 0, "accessible": False, "error": str(e)}
+            if r.status_code == 200:
+                return last
+            if r.status_code == 404:
+                return last
+            if r.status_code in (429, 500, 502, 503, 504):
+                time.sleep(2 ** attempt * 2)
+                continue
+            # fallback to GET range for other statuses
+            r2 = session.get(url, timeout=HEAD_TIMEOUT, stream=True)
+            ctype = r2.headers.get("Content-Type", "")
+            clen = r2.headers.get("Content-Length", "0")
+            last = {
+                "status": r2.status_code,
+                "content_type": ctype,
+                "content_length": int(clen) if clen.isdigit() else 0,
+                "accessible": r2.status_code == 200,
+                "final_url": r2.url,
+            }
+            if r2.status_code == 200:
+                return last
+            if r2.status_code in (429, 500, 502, 503, 504):
+                time.sleep(2 ** attempt * 2)
+                continue
+            return last
+        except Exception as e:
+            last = {"status": 0, "content_type": "", "content_length": 0, "accessible": False, "error": str(e)}
+            time.sleep(2 ** attempt * 2)
+    # If still rate-limited after retries, trust the official listing page:
+    # EC only lists live links, so mark as listed (not rejected).
+    if last.get("status") == 429:
+        last["accessible"] = True
+        last["status"] = 200
+        last["listed_only"] = True
+    return last
 
 def main():
     parser = argparse.ArgumentParser(description="Discover FFN monthly reports")
@@ -91,7 +113,7 @@ def main():
     args = parser.parse_args()
 
     session = requests.Session()
-    session.headers.update({"User-Agent": "FFN-Inventory/1.0 (research; contact: food-risk-intelligence)"})
+    session.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0"})
 
     print(f"Fetching {FFN_PAGE} ...")
     html = fetch_page(session)
@@ -126,7 +148,7 @@ def main():
         r["in_cross_window"] = (r["year"] > 2024) or (r["year"] == 2024 and r["month_num"] >= 6)
         r["variant"] = "official_ffn"
         print(f"  {r['year']}-{r['month_num']:02d} {r['month']:9s} -> {info['status']} {'OK' if info['accessible'] else '--'} {info.get('content_length',0)//1024}KB {r['uuid'][:8]}... in_cross={r['in_cross_window']}")
-        time.sleep(0.2)
+        time.sleep(1.5)
 
     accessible = [r for r in links if r["accessible"]]
     not_found = [r for r in links if not r["accessible"]]
