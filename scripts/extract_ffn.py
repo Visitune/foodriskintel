@@ -17,14 +17,20 @@ FFN_MONTHS = {m.lower(): i for i, m in enumerate(["January","February","March","
 def download_pdf(url, dest, session):
     if dest.exists() and dest.stat().st_size > 10000:
         return True
-    try:
-        r = session.get(url, timeout=60)
-        if r.status_code == 200 and len(r.content) > 10000:
-            dest.write_bytes(r.content)
-            return True
-        print(f"    DL failed {r.status_code} len {len(r.content)}")
-    except Exception as e:
-        print(f"    DL exception {e}")
+    for attempt in range(3):
+        try:
+            r = session.get(url, timeout=60)
+            if r.status_code == 200 and len(r.content) > 10000:
+                dest.write_bytes(r.content)
+                return True
+            if r.status_code in (429, 500, 502, 503, 504):
+                time.sleep(2 ** attempt * 2)
+                continue
+            print(f"    DL failed {r.status_code} len {len(r.content)}")
+            return False
+        except Exception as e:
+            print(f"    DL exception {e}")
+            time.sleep(2 ** attempt * 2)
     return False
 
 def extract_figures(text):
@@ -272,7 +278,7 @@ def main():
         reports=reports[:args.limit]
     print(f"Processing {len(reports)} FFN reports...")
     session=requests.Session()
-    session.headers.update({"User-Agent":"FFN-Extractor/1.0"})
+    session.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0"})
 
     extractions=[]
     for i, rep in enumerate(reports,1):
