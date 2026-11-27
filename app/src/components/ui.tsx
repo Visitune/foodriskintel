@@ -1,5 +1,7 @@
+import { usePerimeter } from "../perimeter/PerimeterContext";
+import { searchTerms, termLabel } from "../perimeter/search";
 import { useId, useMemo, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import type { Lang } from "../i18n";
 import type { RiskIndex, SearchTerm, Trend } from "../types";
 import { GLOSSARY } from "../glossary";
@@ -110,7 +112,6 @@ const TYPE_LABEL = {
   commodity: { fr: "Produit", en: "Product" },
 };
 
-const norm = (s: string) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 
 export function termPath(t: SearchTerm): string {
   if (t.t === "family") return `/matiere/${t.id}`;
@@ -127,24 +128,20 @@ export function SearchBox({ index, lang, autoFocus = false, big = false }: { ind
   const listId = useId();
   const inputRef = useRef<HTMLInputElement>(null);
   const fr = lang === "fr";
+  const P = usePerimeter();
+  const [added, setAdded] = useState("");
 
   const results = useMemo(() => {
-    const nq = norm(q.trim());
-    if (nq.length < 2) return [];
-    const scored: { t: SearchTerm; score: number }[] = [];
-    for (const t of index.search) {
-      const names = [t.id, t.fr, t.en].filter(Boolean).map((x) => norm(x as string));
-      const hit = names.find((n) => n.includes(nq));
-      if (!hit) continue;
-      const starts = names.some((n) => n.startsWith(nq) || n.includes(" " + nq));
-      const typeBoost = t.t === "family" ? 3 : t.t === "origin" ? 2 : 1;
-      scored.push({ t, score: (starts ? 1000 : 0) + typeBoost * 100 + Math.log(t.n + 1) * 10 });
-    }
-    return scored.sort((a, b) => b.score - a.score).slice(0, 8).map((s) => s.t);
+    return searchTerms(index.search, q);
   }, [q, index.search]);
 
   const go = (t: SearchTerm) => { setQ(""); navigate(termPath(t)); };
-  const display = (t: SearchTerm) => (t.t === "family" ? (t[lang] as string) : t.id);
+  const display = (t: SearchTerm) => termLabel(t, lang);
+  const add = (t: SearchTerm) => {
+    if (P.has(t.t, t.id)) return;
+    P.add(t.t, t.id, display(t));
+    setAdded(display(t));
+  };
 
   return (
     <div className={big ? "search big" : "search"} role="search">
@@ -156,10 +153,11 @@ export function SearchBox({ index, lang, autoFocus = false, big = false }: { ind
         placeholder={fr ? "Matière première, produit, pays d'origine ou substance… (ex. cumin, miel, Inde, sulfites)" : "Raw material, product, origin country or substance… (e.g. cumin, honey, India, sulphites)"}
         aria-label={fr ? "Rechercher" : "Search"} role="combobox" aria-expanded={results.length > 0} aria-controls={listId}
         aria-activedescendant={results.length ? `${listId}-${cursor}` : undefined}
-        onChange={(e) => { setQ(e.target.value); setCursor(0); }}
+        onChange={(e) => { setQ(e.target.value); setCursor(0); setAdded(""); }}
         onKeyDown={(e) => {
           if (e.key === "ArrowDown") { e.preventDefault(); setCursor((c) => Math.min(c + 1, results.length - 1)); }
           else if (e.key === "ArrowUp") { e.preventDefault(); setCursor((c) => Math.max(c - 1, 0)); }
+          else if (e.key === "Enter" && e.shiftKey && results[cursor]) { e.preventDefault(); add(results[cursor]); }
           else if (e.key === "Enter" && results[cursor]) { e.preventDefault(); go(results[cursor]); }
           else if (e.key === "Escape") setQ("");
         }} />
@@ -174,8 +172,17 @@ export function SearchBox({ index, lang, autoFocus = false, big = false }: { ind
                 {t.f && t.t !== "family" ? ` · ${index.labels.families[t.f]?.[lang] ?? ""}` : ""}
                 {` · ${fmtNum(t.n, lang)} ${fr ? "cas" : "cases"}`}
               </span>
+              <button type="button" tabIndex={-1} className={P.has(t.t, t.id) ? "sr-add on" : "sr-add"} disabled={P.has(t.t, t.id)}
+                aria-label={`${fr ? "Ajouter à mon périmètre" : "Add to my perimeter"} — ${display(t)}`}
+                onMouseDown={(e) => { e.preventDefault(); e.stopPropagation(); add(t); }}
+                onClick={(e) => { e.stopPropagation(); add(t); }}>
+                {P.has(t.t, t.id) ? (fr ? "✓ suivi" : "✓ watched") : (fr ? "+ périmètre" : "+ perimeter")}
+              </button>
             </li>
           ))}
+          <li className="sr-hint" role="presentation">{added
+            ? <span role="status">{added} {fr ? "ajouté à votre périmètre." : "added to your perimeter."} <Link to="/perimetre" onMouseDown={(e) => { e.preventDefault(); navigate("/perimetre"); }}>{fr ? "Voir" : "Open"}</Link></span>
+            : (fr ? "Maj + Entrée : ajouter à mon périmètre" : "Shift + Enter: add to my perimeter")}</li>
         </ul>
       )}
       {q.trim().length >= 2 && results.length === 0 && (

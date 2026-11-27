@@ -24,7 +24,7 @@ import { loadJson, useCross, useFfn } from "./data";
 import { fmtMonth } from "./format";
 import { Loading } from "./components/ui";
 
-const APP_VERSION = "1.1.0";
+const APP_VERSION = "1.2.0";
 
 function CountryRedirect() {
   const { country = "" } = useParams();
@@ -163,7 +163,7 @@ export default function App() {
         <main className="content">
           <Routes>
             <Route path="/" element={<Watch index={index} lang={lang} />} />
-            <Route path="/perimetre" element={<Perimeter ifs={data} index={index} lang={lang} />} />
+            <Route path="/perimetre/:tab?" element={<Perimeter ifs={data} index={index} lang={lang} />} />
             <Route path="/matieres" element={<Materials index={index} lang={lang} />} />
             <Route path="/matiere/:id" element={<Material index={index} lang={lang} />} />
             <Route path="/origines" element={<Origins index={index} lang={lang} />} />

@@ -1,5 +1,5 @@
 import type { PerimeterPackage } from "./model";
-import { MAX_FILE_BYTES, SCHEMA_VERSION, validatePackage } from "./model";
+import { MAX_FILE_BYTES, validatePackage } from "./model";
 
 /** ─── File I/O for .vey packages (plain JSON, UTF-8, no network) ───────────── */
 
@@ -25,13 +25,7 @@ export async function readPackageFile(file: File): Promise<ReadResult> {
   return v.ok ? { ok: true, pkg: v.pkg } : { ok: false, reason: v.reason as Exclude<ReadResult, { ok: true }> extends { ok: false; reason: infer R } ? R : never };
 }
 
-/** Client-side migration hook: currently v1 only, older versions migrate here. */
-export function migrate(pkg: PerimeterPackage): PerimeterPackage {
-  // schema_version < SCHEMA_VERSION would be upgraded here, field by field.
-  return { ...pkg, schema_version: SCHEMA_VERSION };
-}
-
-export const download = (filename: string, content: string, mime = "application/json;charset=utf-8") => {
+export const download = (filename: string, content: BlobPart, mime = "application/json;charset=utf-8") => {
   const blob = new Blob([content], { type: mime });
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
@@ -50,24 +44,25 @@ export const serialize = (pkg: PerimeterPackage) => JSON.stringify(pkg, null, 2)
 /** Draft persistence (browser only — a convenience, never the source of truth). */
 const DRAFT_KEY = "fri-perimetre-draft";
 
-export function saveDraft(pkg: PerimeterPackage) {
+/** `false` when the browser refused to keep the copy (storage full or blocked). */
+export function saveDraft(pkg: PerimeterPackage, dirty: boolean): boolean {
   try {
-    localStorage.setItem(DRAFT_KEY, JSON.stringify({ saved_at: new Date().toISOString(), pkg }));
-  } catch { /* storage blocked — the .vey file remains the source of truth */ }
+    localStorage.setItem(DRAFT_KEY, JSON.stringify({ saved_at: new Date().toISOString(), dirty, pkg }));
+    return true;
+  } catch {
+    return false;
+  }
 }
 
-export function loadDraft(): { saved_at: string; pkg: PerimeterPackage } | null {
+export function loadDraft(): { dirty: boolean; pkg: PerimeterPackage } | null {
   try {
     const raw = localStorage.getItem(DRAFT_KEY);
     if (!raw) return null;
     const parsed = JSON.parse(raw);
     const v = validatePackage(parsed?.pkg);
-    return v.ok ? { saved_at: String(parsed.saved_at ?? ""), pkg: migrate(v.pkg) } : null;
+    // v1 drafts do not say whether a file holds them: assume not.
+    return v.ok ? { dirty: parsed.dirty !== false, pkg: v.pkg } : null;
   } catch {
     return null;
   }
-}
-
-export function clearDraft() {
-  try { localStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ }
 }
