@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import type { FfnDataset, CrossDataset, JrcDataset } from "./types";
 
 const base = import.meta.env.BASE_URL;
@@ -15,19 +15,22 @@ let ffnPromise: Promise<FfnDataset> | null = null;
 let crossPromise: Promise<CrossDataset> | null = null;
 let jrcPromise: Promise<JrcDataset> | null = null;
 
-function useLazy<T>(get: () => Promise<T>): { data: T | null; error: boolean } {
+function useLazy<T>(get: () => Promise<T>): { data: T | null; error: boolean; retry: () => void } {
   const [state, setState] = useState<{ data: T | null; error: boolean }>({ data: null, error: false });
+  const [attempt, setAttempt] = useState(0);
+  const retry = useCallback(() => { setState({ data: null, error: false }); setAttempt((n) => n + 1); }, []);
   useEffect(() => {
     let alive = true;
     get().then((d) => alive && setState({ data: d, error: false })).catch(() => alive && setState({ data: null, error: true }));
     return () => { alive = false; };
-  }, [get]);
-  return state;
+  }, [get, attempt]);
+  return { ...state, retry };
 }
 
-const getFfn = () => (ffnPromise ??= loadJson<FfnDataset>("dataset_ffn.json"));
-const getCross = () => (crossPromise ??= loadJson<CrossDataset>("dataset_cross.json"));
-const getJrc = () => (jrcPromise ??= loadJson<JrcDataset>("dataset_jrc.json"));
+// A failed download is not cached, so that "retry" fetches again.
+const getFfn = () => (ffnPromise ??= loadJson<FfnDataset>("dataset_ffn.json").catch((e) => { ffnPromise = null; throw e; }));
+const getCross = () => (crossPromise ??= loadJson<CrossDataset>("dataset_cross.json").catch((e) => { crossPromise = null; throw e; }));
+const getJrc = () => (jrcPromise ??= loadJson<JrcDataset>("dataset_jrc.json").catch((e) => { jrcPromise = null; throw e; }));
 
 export const useFfn = () => useLazy(getFfn);
 export const useCross = () => useLazy(getCross);

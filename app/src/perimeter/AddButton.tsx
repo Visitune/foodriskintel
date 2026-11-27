@@ -1,4 +1,5 @@
 import { usePerimeter } from "./PerimeterContext";
+import { confirmRemoveItem } from "./confirm";
 import type { ItemType } from "./model";
 import type { Lang } from "../i18n";
 
@@ -15,7 +16,11 @@ export function AddToPerimeterButton({ type, refId, label, lang }: { type: ItemT
       title={inPerimeter
         ? fr ? "Présent dans votre périmètre — page Mon périmètre" : "In your perimeter — My perimeter page"
         : fr ? "Suivre cette donnée dans votre veille mensuelle" : "Track this in your monthly watch"}
-      onClick={() => (inPerimeter ? P.remove(P.pkg.perimeter.find((i) => i.type === type && i.ref === refId)!.id) : P.add(type, refId, label))}
+      onClick={() => {
+        if (!inPerimeter) return P.add(type, refId, label);
+        const id = P.pkg.perimeter.find((i) => i.type === type && i.ref === refId)!.id;
+        if (confirmRemoveItem(P.pkg, id, lang)) P.remove(id);
+      }}
     >
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         {inPerimeter

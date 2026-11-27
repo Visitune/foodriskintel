@@ -21,7 +21,7 @@ FR · Interface et documentation en français ; données en anglais.
 Pensée pour les **entreprises certifiées IFS** (responsables qualité) : *« que signale-t-on sur mes matières premières et mes origines ? »*
 
 - **Ma veille (accueil)** — recherche par matière, produit, pays d'origine ou substance ; nouveautés du mois ; matières et origines les plus signalées avec tendance
-- **Mon périmètre** — vos matières, origines et dangers suivis dans un fichier `.vey` que vous enregistrez sur votre poste ; le mois suivant, l'app liste uniquement les nouveautés qui vous concernent, avec suivi des qualifications (à évaluer / évalué / non pertinent), export Excel daté et synthèse imprimable
+- **Mon périmètre** — une revue du mois guidée sur vos matières, origines et dangers : cas réunis par sujet, décision (non pertinent / maîtrisé / action à prévoir / plus tard), registre filtrable, échéances, revue datée, fichier `.vey` conservé sur votre poste, export Excel et synthèse imprimable
 - **Fiche matière** — ce qui est signalé (types de non-conformité, substances), d'où, depuis quand ; cas détaillés avec lien vers chaque PDF officiel ou article de presse ; **export CSV** ; encadré « pour votre évaluation de vulnérabilité à la fraude »
 - **Fiche pays d'origine** — matières concernées, problèmes, notifiants ; rappels publiés par le pays présentés à part (nature différente)
 - **Explorer les sources** — suspicions UE (FFN), fraude presse (IFS/JRC), carte des rappels IFS, croisement des sources
@@ -76,7 +76,7 @@ En local : `python scripts/discover_ifs_pdfs.py --register 2026-08 https://…/r
 app/                  Frontend React + Vite + TypeScript
   public/*.json       Datasets livrés (copy de data/)
   src/                Pages + i18n + CSS tokens (dark/light)
-  src/perimeter/      « Mon périmètre » : package .vey (JSON), correspondance, diff
+  src/perimeter/      « Mon périmètre » : fichier .vey (JSON), correspondance, file de revue
 scripts/              Pipeline Python (pdfplumber) — requirements.txt fourni
 data/                 Inventaires PDF + extractions brutes + datasets finaux
 .github/workflows/    MAJ hebdo (lundi) + déploiement Pages + alerte rapport manquant
@@ -86,12 +86,14 @@ data/                 Inventaires PDF + extractions brutes + datasets finaux
 
 Chaque responsable qualité suit ses propres matières et origines **sans compte et sans serveur** :
 
-1. **Ajouter** — depuis la recherche de l'accueil, la fiche matière ou la fiche origine : « Ajouter à mon périmètre ».
-2. **Qualifier** — sur la page *Mon périmètre* : classez chaque nouveauté (à évaluer / évalué / non pertinent), notez mesure de maîtrise, fréquence, responsable.
-3. **Enregistrer** — téléchargez le fichier `.vey` (simple JSON texte) : c'est la **seule copie** de votre périmètre, conservez-le. Le navigateur ne garde qu'un brouillon de secours.
-4. **Mettre à jour** — le mois suivant, rechargez votre `.vey` : l'app liste les nouveautés de votre périmètre et conserve vos qualifications.
+1. **Choisir** — matières, origines, dangers et produits sur un seul écran (ou « + périmètre » dans la recherche de l'accueil, ou depuis une fiche), puis le point de départ (3 derniers mois, dernier mois, tout l'historique ou prochaines publications). Les cas plus anciens sont notés « non examinés ».
+2. **Passer en revue** — les cas sont réunis par élément, source et type de problème. La décision s'applique aux cas cochés ; « Annuler » revient sur la dernière.
+3. **Clore** — la revue est datée et le fichier `.vey` (JSON texte) est téléchargé : c'est votre copie de référence, conservez-le. Le navigateur ne garde qu'une copie de travail.
+4. **Le mois suivant** — seuls les cas jamais décidés sont présentés ; les nouvelles publications, les revues de cas et les actions en retard sont signalées. Les fichiers de la version 1 se chargent sans perte du suivi.
 
-Le fichier ne contient que des références (identifiants, liens, dates) et vos notes — jamais le contenu des rapports (copyright IFS). Il contient vos matières et fournisseurs : traitez-le comme un document interne. Exemple fictif : `app/public/exemple-perimetre.vey`. Exports : `.vey`, Excel `.xlsx` (feuilles Synthèse / Périmètre / Suivi, datés et référencés), CSV, et synthèse imprimable (PDF via le navigateur, en-tête daté).
+Le fichier ne contient que des références (identifiants, liens, dates) et vos notes — jamais le contenu des rapports (copyright IFS). Il contient vos matières et fournisseurs : traitez-le comme un document interne. Exemple fictif : `app/public/exemple-perimetre.vey`. Exports : `.vey`, Excel `.xlsx` (feuilles Synthèse / Périmètre / Suivi / Revues / Historique, datés et référencés), CSV, et synthèse imprimable (PDF via le navigateur, en-tête daté).
+
+Sur Edge et Chrome, l'application réécrit le même fichier après votre autorisation et prévient s'il a été modifié ailleurs ; sur les autres navigateurs, chaque enregistrement télécharge un fichier. L'historique est un journal de travail dans un fichier modifiable : il ne constitue pas une preuve d'audit infalsifiable.
 
 ## 🗺️ Limites connues
 

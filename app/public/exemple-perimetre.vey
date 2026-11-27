@@ -1,7 +1,7 @@
 {
   "format": "food-risk-intelligence/perimeter",
-  "schema_version": 1,
-  "app_version": "1.1.0",
+  "schema_version": 2,
+  "app_version": "1.2.0",
   "created_at": "2026-11-27T09:00:00Z",
   "updated_at": "2026-11-27T09:00:00Z",
   "owner": { "company": "Exemple SAS (fictif)", "site": "Site de Lyon (fictif)", "author": "Exemple — à remplacer" },
@@ -14,7 +14,9 @@
       "label": "Miel",
       "criticality": "haute",
       "note": "Fournisseur principal : exemple fictif — remplacer",
-      "added_at": "2026-11-27T09:00:00Z"
+      "added_at": "2026-11-27T09:00:00Z",
+      "history_scope": "",
+      "history_skipped": 0
     },
     {
       "id": "exemple-uuid-0002",
@@ -23,7 +25,9 @@
       "label": "Herbes & épices",
       "criticality": "moyenne",
       "note": "Mélanges d'épices importés",
-      "added_at": "2026-11-27T09:00:00Z"
+      "added_at": "2026-11-27T09:00:00Z",
+      "history_scope": "",
+      "history_skipped": 0
     },
     {
       "id": "exemple-uuid-0003",
@@ -32,11 +36,14 @@
       "label": "Turkey",
       "criticality": "moyenne",
       "note": "Origine déclarée sur 2 gammes",
-      "added_at": "2026-11-27T09:00:00Z"
+      "added_at": "2026-11-27T09:00:00Z",
+      "history_scope": "",
+      "history_skipped": 0
     }
   ],
   "known_cases": { "ffn": [], "jrc": [], "ifs": [] },
   "follow_up": [],
+  "reviews": [],
   "history": [
     { "at": "2026-11-27T09:00:00Z", "event": "export", "detail": "exemple fictif" }
   ]
