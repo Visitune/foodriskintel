@@ -1,0 +1,43 @@
+{
+  "format": "food-risk-intelligence/perimeter",
+  "schema_version": 1,
+  "app_version": "1.1.0",
+  "created_at": "2026-11-27T09:00:00Z",
+  "updated_at": "2026-11-27T09:00:00Z",
+  "owner": { "company": "Exemple SAS (fictif)", "site": "Site de Lyon (fictif)", "author": "Exemple — à remplacer" },
+  "baseline": { "ffn_latest": "2026-09", "jrc_latest": "2026-06", "ifs_latest": "2026-10", "data_generated_at": "2026-11-26T23:14:52Z" },
+  "perimeter": [
+    {
+      "id": "exemple-uuid-0001",
+      "type": "family",
+      "ref": "honey",
+      "label": "Miel",
+      "criticality": "haute",
+      "note": "Fournisseur principal : exemple fictif — remplacer",
+      "added_at": "2026-11-27T09:00:00Z"
+    },
+    {
+      "id": "exemple-uuid-0002",
+      "type": "family",
+      "ref": "spices",
+      "label": "Herbes & épices",
+      "criticality": "moyenne",
+      "note": "Mélanges d'épices importés",
+      "added_at": "2026-11-27T09:00:00Z"
+    },
+    {
+      "id": "exemple-uuid-0003",
+      "type": "origin",
+      "ref": "Turkey",
+      "label": "Turkey",
+      "criticality": "moyenne",
+      "note": "Origine déclarée sur 2 gammes",
+      "added_at": "2026-11-27T09:00:00Z"
+    }
+  ],
+  "known_cases": { "ffn": [], "jrc": [], "ifs": [] },
+  "follow_up": [],
+  "history": [
+    { "at": "2026-11-27T09:00:00Z", "event": "export", "detail": "exemple fictif" }
+  ]
+}

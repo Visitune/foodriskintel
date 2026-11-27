@@ -63,7 +63,7 @@ export default function BottomNav({
     },
   ];
 
-  const knownPrefixes = ["/", "/matiere", "/origine", "/comprendre"];
+  const knownPrefixes = ["/", "/matiere", "/origine", "/comprendre", "/perimetre"];
   const onKnownTab = knownPrefixes.some((p) => (p === "/" ? pathname === "/" : pathname.startsWith(p)));
   const moreIsActive = moreOpen || !onKnownTab;
 

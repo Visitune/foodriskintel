@@ -8,6 +8,7 @@ import { BarList, Loading, SourceTag, Sparkline, Term, TrendBadge, countryRows, 
 import { SourceIcon } from "../components/icons";
 import { Flag } from "../flags";
 import { Card, FfnCaseTable, FraudCaseTable, caseOrigins, countBy } from "./shared";
+import { AddToPerimeterButton } from "../perimeter/AddButton";
 
 export default function Origin({ ifs, index, lang }: { ifs: Dataset; index: RiskIndex; lang: Lang }) {
   const fr = lang === "fr";
@@ -54,6 +55,7 @@ export default function Origin({ ifs, index, lang }: { ifs: Dataset; index: Risk
       <header className="page-header">
         <h2 className="title-with-icon"><span className="big-flag"><Flag country={country} /></span>{country}</h2>
         <p className="subtitle">{fr ? "Ce que les sources signalent sur les produits originaires de ce pays." : "What the sources report about products originating from this country."}</p>
+        <div className="tag-row"><AddToPerimeterButton type="origin" refId={country} label={country} lang={lang} /></div>
       </header>
 
       {error && <p className="notice warn">{fr ? "Les suspicions UE n'ont pas pu être chargées." : "EU suspicions could not be loaded."}</p>}

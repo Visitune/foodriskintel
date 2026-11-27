@@ -7,6 +7,7 @@ import { fmtMonth, fmtNum, lastMonths } from "../format";
 import { BarList, Loading, SourceTag, Sparkline, Term, TrendBadge, countryRows } from "../components/ui";
 import { FamilyIcon } from "../components/icons";
 import { Card, FfnCaseTable, FraudCaseTable, caseOrigins, countBy } from "./shared";
+import { AddToPerimeterButton } from "../perimeter/AddButton";
 
 const norm = (s: string) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 
@@ -87,6 +88,7 @@ export default function Material({ index, lang }: { index: RiskIndex; lang: Lang
         <h2 className="title-with-icon"><FamilyIcon id={id} size={30} />{q ? <>{q} <span className="h-sub">— {famLabel}</span></> : famLabel}</h2>
         <div className="tag-row">
           <SourceTag src="ffn" lang={lang} /> <SourceTag src="jrc" lang={lang} />
+          <AddToPerimeterButton type={q && !danger ? "commodity" : danger ? "substance" : "family"} refId={q && !danger ? q : danger ? danger : id} label={q && !danger ? q : danger ? danger : famLabel} lang={lang} />
         </div>
       </header>
 

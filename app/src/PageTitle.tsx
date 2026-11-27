@@ -10,6 +10,7 @@ export default function PageTitle({ lang, className = "topbar-title" }: { lang: 
 
   const routes: [string, string][] = [
     ["/matieres", nav.materials], ["/matiere/", nav.materials], ["/origines", nav.origins],
+    ["/perimetre", nav.perimeter],
     ["/cross", nav.cross], ["/map", nav.worldMap], ["/fraud", nav.ifsFraud], ["/ffn", nav.ffn],
     ["/overview", nav.overview], ["/comprendre", nav.guide], ["/sources", nav.sources],
   ];

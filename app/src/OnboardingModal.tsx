@@ -41,6 +41,7 @@ export default function OnboardingModal({ lang, onClose }: { lang: Lang; onClose
           <li>{tr.onboarding.feature3}</li>
           <li>{tr.onboarding.feature4}</li>
           <li>{tr.onboarding.feature5}</li>
+          <li>{tr.onboarding.feature6}</li>
         </ul>
         <p className="onboarding-disclaimer">{tr.onboarding.disclaimer}</p>
         <button type="button" className="btn-mini" onClick={onClose}>{tr.onboarding.dismiss}</button>

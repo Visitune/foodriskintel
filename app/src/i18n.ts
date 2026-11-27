@@ -2,7 +2,7 @@ export type Lang = "fr" | "en";
 
 export const t = {
   fr: {
-    nav: { home: "Accueil", materials: "Matières premières", origins: "Pays d'origine", guide: "Comprendre les données", overview: "Vue d'ensemble des sources", cross: "Croisement des sources", worldMap: "Carte des rappels (IFS)", ifsFraud: "Fraude presse (JRC)", ffn: "Suspicions UE (FFN)", sources: "Couverture & méthode", groupWatch: "Ma veille", groupAnalyze: "Analyser", groupExplore: "Explorer les sources", groupUnderstand: "Comprendre", menuOpen: "Ouvrir le menu", menuClose: "Fermer le menu", more: "Plus" },
+    nav: { home: "Accueil", perimeter: "Mon périmètre", materials: "Matières premières", origins: "Pays d'origine", guide: "Comprendre les données", overview: "Vue d'ensemble des sources", cross: "Croisement des sources", worldMap: "Carte des rappels (IFS)", ifsFraud: "Fraude presse (JRC)", ffn: "Suspicions UE (FFN)", sources: "Couverture & méthode", groupWatch: "Ma veille", groupAnalyze: "Analyser", groupExplore: "Explorer les sources", groupUnderstand: "Comprendre", menuOpen: "Ouvrir le menu", menuClose: "Fermer le menu", more: "Plus" },
     header: { subtitle: "Intelligence risque alimentaire" },
     langNote: "Interface bilingue — données EN",
     theme: { light: "Clair", dark: "Sombre" },
@@ -110,6 +110,7 @@ export const t = {
       feature3: "Exportez les cas en CSV pour nourrir votre évaluation de vulnérabilité à la fraude.",
       feature4: "Trois sources publiques, jamais additionnées : suspicions UE (FFN), fraude presse (JRC), rappels (IFS).",
       feature5: "Les termes soulignés en pointillé ont une définition : survolez-les ou touchez-les.",
+      feature6: "« Mon périmètre » conserve vos matières et origines dans un fichier .vey à enregistrer : le mois suivant, l'app vous montre uniquement vos nouveautés.",
       disclaimer: "Outil de visualisation indépendant, sans lien avec IFS, la JRC ou la DG SANTE — toujours consulter les rapports officiels.",
       dismiss: "Commencer",
       close: "Fermer",
@@ -117,7 +118,7 @@ export const t = {
     },
   },
   en: {
-    nav: { home: "Home", materials: "Raw materials", origins: "Origin countries", guide: "Understanding the data", overview: "Sources overview", cross: "Cross-source view", worldMap: "Recall map (IFS)", ifsFraud: "Press fraud (JRC)", ffn: "EU suspicions (FFN)", sources: "Coverage & method", groupWatch: "My watch", groupAnalyze: "Analyze", groupExplore: "Explore the sources", groupUnderstand: "Understand", menuOpen: "Open menu", menuClose: "Close menu", more: "More" },
+    nav: { home: "Home", perimeter: "My perimeter", materials: "Raw materials", origins: "Origin countries", guide: "Understanding the data", overview: "Sources overview", cross: "Cross-source view", worldMap: "Recall map (IFS)", ifsFraud: "Press fraud (JRC)", ffn: "EU suspicions (FFN)", sources: "Coverage & method", groupWatch: "My watch", groupAnalyze: "Analyze", groupExplore: "Explore the sources", groupUnderstand: "Understand", menuOpen: "Open menu", menuClose: "Close menu", more: "More" },
     header: { subtitle: "Food Risk Intelligence" },
     langNote: "Bilingual UI — data remains EN",
     theme: { light: "Light", dark: "Dark" },
@@ -225,6 +226,7 @@ export const t = {
       feature3: "Export cases as CSV to feed your food fraud vulnerability assessment.",
       feature4: "Three public sources, never added up: EU suspicions (FFN), press fraud (JRC), recalls (IFS).",
       feature5: "Terms with a dotted underline have a definition: hover or tap them.",
+      feature6: "“My perimeter” keeps track of your materials and origins in a .vey file you save: next month, the app shows only what is new for you.",
       disclaimer: "Independent visualization tool, not affiliated with IFS, JRC or DG SANTE — always refer to the official reports.",
       dismiss: "Get started",
       close: "Close",

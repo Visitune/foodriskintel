@@ -1738,3 +1738,85 @@ button.chip.hazard:hover { border-color: var(--ffn-fg); }
 .src-name.ifs::before { background: var(--ifs-bar); }
 .src-name small { font-weight: 400; font-size: 12px; color: var(--text-dim); }
 .src-link { display: inline-block; margin: 4px 0 0 14px; font-size: 12px; }
+
+/* ═══ Mon périmètre (.vey) ═════════════════════════════════════════════════════ */
+.perimeter-status {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md);
+  font-size: 13px; color: var(--text-dim);
+}
+.perimeter-status .dirty { color: var(--warn); font-weight: 600; }
+.perimeter-status .clean { color: var(--success); }
+.perimeter-status .fresh { color: var(--sun); font-weight: 600; }
+.perimeter-status .flash { color: var(--accent-hover, var(--accent)); font-weight: 600; }
+
+.empty-perimeter {
+  padding: var(--space-6); background: var(--bg-card);
+  border: 1px dashed var(--border-strong); border-radius: var(--radius-md);
+}
+.empty-perimeter > p:first-child { font-size: 17px; font-weight: 700; margin-bottom: var(--space-3); }
+.empty-perimeter ol { margin: 0 0 var(--space-3) var(--space-5); display: grid; gap: var(--space-2); }
+.empty-perimeter .meta { margin-bottom: var(--space-3); }
+
+.help-panel {
+  padding: var(--space-4) var(--space-5); background: var(--accent-dim, var(--bg-card));
+  border: 1px solid var(--border); border-radius: var(--radius-md);
+}
+.help-panel h3 { margin-bottom: var(--space-2); }
+.help-panel ol { margin: 0 0 var(--space-2) var(--space-5); display: grid; gap: var(--space-2); }
+
+.owner-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); }
+.owner-grid label { display: grid; gap: 4px; font-size: 12px; color: var(--text-dim); font-weight: 600; }
+.owner-grid input { width: 100%; }
+
+.btn-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.primary:hover { background: var(--accent-hover, var(--accent)); }
+.btn.in-perimeter { border-color: var(--success); color: var(--success); }
+.btn.ghost { background: transparent; }
+.sep { border: none; border-top: 1px solid var(--border); margin: var(--space-4) 0; }
+
+.import-row { display: flex; align-items: center; gap: var(--space-3); }
+.import-row input[type="file"] { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.import-row label.btn { cursor: pointer; }
+
+.import-preview {
+  margin-top: var(--space-3); padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm); font-size: 14px;
+  border: 1px solid var(--border);
+}
+.import-preview.ok { background: var(--success-dim); }
+.import-preview.error { background: var(--danger-dim); }
+.merge-preview { margin: var(--space-2) 0; }
+.warn-text { color: var(--warn); }
+
+.new-cases { display: grid; gap: var(--space-3); }
+.new-cases li { padding: var(--space-2) 0; border-bottom: 1px solid var(--border); }
+.new-cases li:last-child { border-bottom: none; }
+.new-head { display: flex; align-items: center; gap: var(--space-2); }
+.new-ref { font-family: var(--font-mono); font-size: 12.5px; font-weight: 600; }
+.new-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-2); }
+.all-seen { margin: var(--space-3) 0; }
+
+.follow-table select, .follow-table input, .data-table select, .data-table input[type="text"], .data-table input[type="date"] {
+  width: 100%; min-width: 90px; padding: 4px 6px; font-size: 13px;
+  background: var(--bg-elevated, var(--fill-empty)); color: var(--text);
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+}
+.follow-table input:focus, .data-table select:focus { outline: 2px solid var(--accent); outline-offset: 0; }
+
+/* Print: dated audit header + clean pages */
+.print-header { display: none; }
+@media print {
+  .print-header { display: block; margin-bottom: var(--space-4); }
+  .print-header h2 { font-size: 18px; }
+  .print-header p { font-size: 11px; color: #333; }
+  .perimeter .page-header, .perimeter-status, .help-panel, .empty-perimeter,
+  .new-actions, .import-preview, .btn-row, .table-head, .perimeter .card-more { display: none !important; }
+  .follow-table input, .follow-table select, .data-table input, .data-table select { border: none; background: none; appearance: none; }
+  .card { page-break-inside: avoid; }
+}
+@media (max-width: 768px) {
+  .owner-grid { grid-template-columns: 1fr; }
+}

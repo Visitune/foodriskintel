@@ -17,10 +17,14 @@ import Watch from "./pages/Watch";
 import Material from "./pages/Material";
 import Origin from "./pages/Origin";
 import Guide from "./pages/Guide";
+import Perimeter from "./pages/Perimeter";
+import { PerimeterProvider } from "./perimeter/PerimeterContext";
 import { Materials, Origins } from "./pages/Lists";
 import { loadJson, useCross, useFfn } from "./data";
 import { fmtMonth } from "./format";
 import { Loading } from "./components/ui";
+
+const APP_VERSION = "1.1.0";
 
 function CountryRedirect() {
   const { country = "" } = useParams();
@@ -84,6 +88,7 @@ export default function App() {
   const tr = t[lang];
   return (
     <HashRouter>
+      <PerimeterProvider appVersion={APP_VERSION}>
       {onboardingOpen && <OnboardingModal lang={lang} onClose={handleCloseOnboarding} />}
       <div className="topbar">
         <div className="topbar-inner">
@@ -129,6 +134,7 @@ export default function App() {
           <div className="nav-links">
             <div className="nav-group-label">{tr.nav.groupWatch}</div>
             <NavLink to="/" end onClick={() => setNavOpen(false)}>{tr.nav.home}</NavLink>
+            <NavLink to="/perimetre" onClick={() => setNavOpen(false)}>{tr.nav.perimeter}</NavLink>
             <NavLink to="/matieres" onClick={() => setNavOpen(false)}>{tr.nav.materials}</NavLink>
             <NavLink to="/origines" onClick={() => setNavOpen(false)}>{tr.nav.origins}</NavLink>
             <div className="nav-group-label">{tr.nav.groupExplore}</div>
@@ -157,6 +163,7 @@ export default function App() {
         <main className="content">
           <Routes>
             <Route path="/" element={<Watch index={index} lang={lang} />} />
+            <Route path="/perimetre" element={<Perimeter ifs={data} index={index} lang={lang} />} />
             <Route path="/matieres" element={<Materials index={index} lang={lang} />} />
             <Route path="/matiere/:id" element={<Material index={index} lang={lang} />} />
             <Route path="/origines" element={<Origins index={index} lang={lang} />} />
@@ -175,6 +182,7 @@ export default function App() {
       </div>
       <ScrollAssist lang={lang} />
       <BottomNav lang={lang} moreOpen={navOpen} onToggleMore={() => setNavOpen((v) => !v)} />
+      </PerimeterProvider>
     </HashRouter>
   );
 }
